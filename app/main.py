@@ -11,7 +11,7 @@ from sqlalchemy.orm import Session
 
 from app import clean
 from app import deal as deal_fn
-from app import wall
+from app import read, wall
 from app.config import Settings
 from app.deps import db, library, now, resolve_pilot, settings, sha256, writable_session
 from app.models import ZONES, Deal, Event, Floor, GameSession
@@ -31,6 +31,7 @@ OPTIONS = {"a", "b", "c", "d", "0"}
 
 app = FastAPI(title="Floor Tycoon backend")
 app.include_router(wall.router)
+app.include_router(read.router)
 
 
 def strip_forbidden(obj):

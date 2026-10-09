@@ -14,6 +14,7 @@ from sqlalchemy.orm import Session
 from app.config import Settings
 from app.deps import db, resolve_pilot, settings, writable_session
 from app.models import Addition, Deal, Event, Floor, GameSession, Pilot, WallPost, WallView
+from app.privacy import merge_small
 
 router = APIRouter()
 
@@ -82,20 +83,13 @@ def wall_viewer(
 
 
 def games_by_type(counts: dict[str, int], min_group: int) -> dict:
-    """Completed games per employee type, count and %. Types under `min_group` are merged
-    into "Other". If "Other" itself is under `min_group`, the smallest types join it until
-    it isn't, so no small group can be worked out by subtraction."""
-    total = sum(counts.values())
-    if total < min_group:
+    """Completed games per employee type, count and %, with types under 10 merged into "Other"."""
+    groups = merge_small(counts, min_group)
+    if groups is None:
         return {"total": None, "enough_data": False, "types": []}
-    shown = {TYPE_LABELS.get(t, t): n for t, n in counts.items() if n >= min_group}
-    other = total - sum(shown.values())
-    while 0 < other < min_group:
-        smallest = min(shown, key=lambda t: (shown[t], t))
-        other += shown.pop(smallest)
-    rows = sorted(shown.items(), key=lambda kv: (-kv[1], kv[0]))
-    if other:
-        rows.append(("Other", other))
+    total = sum(counts.values())
+    rows = [(TYPE_LABELS.get(g, g), sum(counts[k] for k in keys)) for g, keys in groups.items()]
+    rows.sort(key=lambda r: (r[0] == "Other", -r[1], r[0]))
     return {
         "total": total,
         "enough_data": True,
