@@ -38,6 +38,7 @@ class Derived:
     additions: list[AdditionRow]
     add_declines: list[dict]
     played_deal: list[int] | None
+    day_ms: int | None = None  # client t of the last decision of the day: start to the 18:00 floor
 
 
 def _how_placed(e: dict) -> str:
@@ -62,6 +63,7 @@ def derive(events: list[dict], zone_to_scenario: dict[str, int]) -> Derived:
     played_deal = None
     replaying: set[str] = set()  # zones being replayed at the 18:00 floor
     shuffles = 0
+    day_ms = None
 
     def moment(zone: str) -> MomentRow:
         if zone not in moments:
@@ -94,6 +96,7 @@ def derive(events: list[dict], zone_to_scenario: dict[str, int]) -> Derived:
             elif ev in ("keep", "skip"):
                 row.chosen = e.get("opt") if ev == "keep" else "skip"
                 row.rethinks = int(e.get("rethinks") or 0)
+                day_ms = t
                 decided = last_choose_at.get(m, t) if ev == "keep" else t
                 if m in answered_at:
                     row.time_to_decide_ms = max(0, decided - answered_at[m])
@@ -135,4 +138,5 @@ def derive(events: list[dict], zone_to_scenario: dict[str, int]) -> Derived:
         additions=additions,
         add_declines=declines,
         played_deal=played_deal,
+        day_ms=day_ms,
     )
