@@ -13,6 +13,9 @@ os.environ.setdefault(
     os.environ.get("TEST_DATABASE_URL", "postgresql+psycopg://ft@localhost:5432/floor_tycoon_test"),
 )
 os.environ.setdefault("SCENARIOS_PATH", str(ROOT / "sample" / "scenarios.json"))
+# Off for the suite (one test client makes hundreds of calls); tests/test_ratelimit.py turns them on.
+os.environ.setdefault("RATE_LIMIT_IP_PER_MIN", "0")
+os.environ.setdefault("RATE_LIMIT_PILOT_PER_MIN", "0")
 
 from fastapi.testclient import TestClient  # noqa: E402
 from sqlalchemy import text  # noqa: E402
