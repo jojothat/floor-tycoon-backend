@@ -10,7 +10,7 @@ FIXTURES = ROOT / "tests" / "fixtures"
 
 os.environ.setdefault(
     "DATABASE_URL",
-    os.environ.get("TEST_DATABASE_URL", "postgresql+psycopg://ft@localhost:5432/floor_tycoon_test"),
+    os.environ.get("TEST_DATABASE_URL", "postgresql+psycopg://ft:ft-local-only@localhost:5432/floor_tycoon_test"),
 )
 os.environ.setdefault("SCENARIOS_PATH", str(ROOT / "sample" / "scenarios.json"))
 # Off for the suite (one test client makes hundreds of calls); tests/test_ratelimit.py turns them on.

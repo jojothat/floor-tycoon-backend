@@ -7,6 +7,7 @@ from typing import Literal
 from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator
+from sqlalchemy import text
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.orm import Session
 
@@ -81,6 +82,13 @@ def viewport_bucket(h: int | None) -> str | None:
         if h < top:
             return f"<{top}"
     return "900+"
+
+
+@app.get("/healthz")
+def healthz(s: Session = Depends(db)):
+    """For the container health check and load balancers: the API is up and can reach the database."""
+    s.execute(text("SELECT 1"))
+    return {"ok": True}
 
 
 @app.post("/v1/sessions", status_code=201)

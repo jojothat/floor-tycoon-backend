@@ -1,12 +1,66 @@
-# Local Postgres for runs and tests, until the Korean-region host is chosen.
+# Local runs and test servers, until the Korean-region host is chosen.
+#   docker compose up -d db            Postgres only (for pytest on the host)
+#   docker compose up -d --build       Postgres, the API on :8000 and the scheduled jobs
+# Settings come from a .env file next to this one (see .env.example).
+x-app: &app
+  build:
+    context: .
+    secrets: [extra_ca]
+  restart: unless-stopped
+  depends_on:
+    db:
+      condition: service_healthy
+  environment:
+    DATABASE_URL: postgresql+psycopg://ft:${POSTGRES_PASSWORD:-ft-local-only}@db:5432/floor_tycoon
+    ACCESS_MODE: ${ACCESS_MODE:-invite}
+    READ_AUTH: ${READ_AUTH:-token}
+    READ_EXPORTERS: ${READ_EXPORTERS:-}
+    RETENTION_MONTHS: ${RETENTION_MONTHS:-12}
+    CORS_ORIGINS: ${CORS_ORIGINS:-}
+    RATE_LIMIT_SECRET: ${RATE_LIMIT_SECRET:-change-me}
+    RATE_LIMIT_IP_PER_MIN: ${RATE_LIMIT_IP_PER_MIN:-600}
+    RATE_LIMIT_PILOT_PER_MIN: ${RATE_LIMIT_PILOT_PER_MIN:-6000}
+    TRUST_PROXY: ${TRUST_PROXY:-false}
+
 services:
   db:
     image: postgres:16
+    restart: unless-stopped
     environment:
       POSTGRES_USER: ft
       POSTGRES_DB: floor_tycoon
-      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ft-local-only}
     ports:
-      - "5432:5432"
+      - "127.0.0.1:${DB_PORT:-5432}:5432"  # this machine only, never the internet
     volumes:
+      - pgdata:/var/lib/postgresql/data
       - ./docker/init-test-db.sql:/docker-entrypoint-initdb.d/init-test-db.sql:ro
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "ft"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  api:
+    <<: *app
+    ports:
+      - "${API_PORT:-8000}:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/healthz')"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  jobs:
+    <<: *app
+    command: ["sh", "/srv/jobs.sh"]
+    depends_on:  # the API creates the tables on start
+      api:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+
+secrets:
+  extra_ca:
+    file: ${EXTRA_CA_FILE:-/dev/null}  # only for a TLS-inspecting proxy; empty otherwise

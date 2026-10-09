@@ -18,7 +18,7 @@ class Settings:
     # Postgres in a Korean region. Local runs and tests use Postgres via Docker.
     database_url: str = field(
         default_factory=lambda: _env(
-            "DATABASE_URL", "postgresql+psycopg://ft@localhost:5432/floor_tycoon"
+            "DATABASE_URL", "postgresql+psycopg://ft:ft-local-only@localhost:5432/floor_tycoon"
         )
     )
     # "invite": a shared invite link per site (pilot token in the body).
