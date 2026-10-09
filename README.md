@@ -32,6 +32,4 @@ uvicorn app.main:app --reload                            # http://localhost:8000
 pytest                                                   # the tests use floor_tycoon_test
 ```
 
-`POST /v1/sessions` needs the scenario library at `sample/scenarios.json`. To try it before that file lands, set `SCENARIOS_PATH=tests/fixtures/scenarios-synthetic.json`.
-
 Configuration is through environment variables (see `app/config.py`): `DATABASE_URL` (any Postgres, so any Korean-region provider), `ACCESS_MODE` (`invite` or `sso`), `RETENTION_MONTHS`, `WRITE_KEY_TTL_MINUTES`, `MIN_GROUP_SIZE`, `SCENARIOS_PATH` and `DEAL_Z7_SCENARIO_ID`.

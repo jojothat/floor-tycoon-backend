@@ -1,17 +1,17 @@
 {
- "_sample": "SYNTHETIC play log written from events.md for tests, not a real play. Labelled sample.",
+ "_sample": "SYNTHETIC play log written from events.md for tests (deal ids from sample/scenarios.json), not a real play. Labelled sample.",
  "log": [
   {
    "ev": "deal",
    "t": 0,
    "ids": [
-    1,
-    2,
-    3,
-    4,
-    5,
+    46,
+    14,
+    17,
+    57,
+    38,
     30,
-    62
+    1
    ]
   },
   {
@@ -272,13 +272,13 @@
   "type": "CE",
   "role": "g1",
   "deal": [
-   1,
-   2,
-   3,
-   4,
-   5,
+   46,
+   14,
+   17,
+   57,
+   38,
    30,
-   62
+   1
   ]
  },
  "finalPicks": {

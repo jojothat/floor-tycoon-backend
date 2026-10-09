@@ -12,7 +12,7 @@ os.environ.setdefault(
     "DATABASE_URL",
     os.environ.get("TEST_DATABASE_URL", "postgresql+psycopg://ft@localhost:5432/floor_tycoon_test"),
 )
-os.environ.setdefault("SCENARIOS_PATH", str(FIXTURES / "scenarios-synthetic.json"))
+os.environ.setdefault("SCENARIOS_PATH", str(ROOT / "sample" / "scenarios.json"))
 
 from fastapi.testclient import TestClient  # noqa: E402
 from sqlalchemy import text  # noqa: E402

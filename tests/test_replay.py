@@ -17,7 +17,7 @@ END_OF_DAY = {"replay", "edit", "addRemoved", "addOpen", "addShuffle", "addSkip"
               "gap", "gapShuffle", "gapLeave", "add", "wallOpen"}
 
 LOGS = [
-    pytest.param(FIXTURES / "play-log-synthetic.json", FIXTURES / "scenarios-synthetic.json", id="synthetic"),
+    pytest.param(FIXTURES / "play-log-synthetic.json", ROOT / "sample" / "scenarios.json", id="synthetic"),
     pytest.param(
         ROOT / "sample" / "play-log-sample.json",
         ROOT / "sample" / "scenarios.json",
@@ -110,14 +110,13 @@ def test_replay_lands_complete(client, new_session, db, monkeypatch, log_path: P
 
 def test_synthetic_replay_exact(client, new_session, db, monkeypatch):
     """Exact values for the synthetic log, so the derivation itself is checked."""
-    monkeypatch.setenv("SCENARIOS_PATH", str(FIXTURES / "scenarios-synthetic.json"))
     s, _ = replay(client, new_session, load_json(FIXTURES / "play-log-synthetic.json"))
     sid = s["session_id"]
     moments = {m.zone: m for m in db.scalars(select(Moment).where(Moment.session_id == sid))}
     assert {z: m.chosen for z, m in moments.items()} == {
         "z1": "b", "z2": "a", "z3": "skip", "z4": "c", "z5": "d", "z6": "a", "z7": "b"}
     assert moments["z5"].previewed == ["a", "b", "d"] and moments["z5"].first_preview == "a"
-    assert moments["z6"].scenario_id == 30 and moments["z7"].scenario_id == 62
+    assert moments["z6"].scenario_id == 30 and moments["z7"].scenario_id == 1
     assert moments["z1"].time_to_decide_ms == 4500  # answer -> choose: 3 steps of 1.5 s
     assert moments["z3"].time_to_decide_ms == 3000  # answer -> skip
 
@@ -128,3 +127,27 @@ def test_synthetic_replay_exact(client, new_session, db, monkeypatch):
     [decline] = db.scalars(select(AddDecline).where(AddDecline.session_id == sid)).all()
     assert (decline.where_, decline.zone) == ("gap", "z2")
     assert db.get(Floor, sid).addition["item_id"] == "plants"
+
+
+def test_sample_replay_exact(client, new_session, db):
+    """The real play: PSE, z6 skipped, a swap addition at z5 later removed by editing z5 b -> c."""
+    s, _ = replay(client, new_session, load_json(ROOT / "sample" / "play-log-sample.json"))
+    sid = s["session_id"]
+    assert db.get(GameSession, sid).role_type == "PSE"
+    moments = {m.zone: m for m in db.scalars(select(Moment).where(Moment.session_id == sid))}
+    assert {z: m.chosen for z, m in moments.items()} == {
+        "z1": "a", "z2": "a", "z3": "a", "z4": "a", "z5": "b", "z6": "skip", "z7": "a"}
+    assert {z: m.scenario_id for z, m in moments.items()} == {
+        "z1": 46, "z2": 14, "z3": 17, "z4": 57, "z5": 38, "z6": 21, "z7": 1}
+    assert moments["z5"].previewed == ["a", "b"], "the replay's previews are not the day's"
+    assert moments["z1"].time_to_decide_ms == 3346 - 1726
+    assert moments["z6"].time_to_decide_ms == 32387 - 31627
+
+    [edit] = db.scalars(select(Edit).where(Edit.session_id == sid)).all()
+    assert (edit.zone, edit.from_option, edit.to_option) == ("z5", "b", "c")
+    [add] = db.scalars(select(Addition).where(Addition.session_id == sid)).all()
+    assert (add.item_id, add.how_placed, add.zone, add.swapped_out_option, add.shuffles, add.removed) == (
+        "training", "swap", "z5", "b", 1, True)
+    floor = db.get(Floor, sid)
+    assert floor.final_picks == load_json(ROOT / "sample" / "play-log-sample.json")["finalPicks"]
+    assert floor.skips == ["z6"] and floor.addition is None

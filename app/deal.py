@@ -30,6 +30,9 @@ PLACE_TO_ZONE = {
     "team desks": "z7",
 }
 EVERYONE = {"all", "everyone", "*"}
+# Role codes in scenarios.json -> employee types in the game.
+ROLE_CODES = {"CE": "CE", "PSE": "PSE", "INS": "IE", "IE": "IE", "SAL": "Sales", "SALES": "Sales",
+              "SUP": "Support", "SUPPORT": "Support", "LEAD": "Lead"}
 
 W_OWN_ROLE = 3.0
 W_EVERYONE = 1.5
@@ -45,7 +48,10 @@ class Scenario:
     time: str  # "HH:MM", used for play order
     theme: str
     tier: str
-    roles: frozenset[str]  # empty = for everyone
+    roles: frozenset[str]  # employee types; empty = for everyone
+    core_for: frozenset[str] | None = frozenset()  # None = Core for everyone; empty = not Core
+    hand_built: bool = False
+    question: str = ""
     fixes: tuple = field(default=(), compare=False)
 
 
@@ -61,14 +67,26 @@ def _zone(raw: dict) -> str:
     raise ValueError(f"scenario {raw.get('id')}: no zone")
 
 
-def _roles(raw: dict) -> frozenset[str]:
-    v = raw.get("roles", raw.get("role"))
+def _role_set(v) -> frozenset[str]:
+    """"CE;INS", "CE, INS" or ["CE", "INS"] -> {"CE", "IE"}. "ALL" -> empty (everyone)."""
     if v is None:
         return frozenset()
-    if isinstance(v, str):
-        v = [v]
-    roles = frozenset(str(r) for r in v)
-    return frozenset() if roles & EVERYONE else roles
+    parts = re.split(r"[;,]", v) if isinstance(v, str) else v
+    codes = [str(p).strip() for p in parts if str(p).strip()]
+    if any(c.lower() in EVERYONE for c in codes):
+        return frozenset()
+    unknown = [c for c in codes if c.upper() not in ROLE_CODES]
+    if unknown:
+        raise ValueError(f"unknown role codes {unknown}")
+    return frozenset(ROLE_CODES[c.upper()] for c in codes)
+
+
+def _core_for(tier: str) -> frozenset[str] | None:
+    """"Core" -> Core for everyone; "Core (CE, INS)" -> Core only for those types."""
+    m = re.fullmatch(r"\s*core\s*(?:\((.*)\))?\s*", tier, re.I)
+    if not m:
+        return frozenset()
+    return _role_set(m[1]) if m[1] else None
 
 
 def _time_key(t: str) -> tuple[int, int]:
@@ -77,14 +95,19 @@ def _time_key(t: str) -> tuple[int, int]:
 
 
 def parse_scenario(raw: dict) -> Scenario:
+    sid = int(raw["id"])
+    tier = str(raw.get("tier", ""))
     return Scenario(
-        id=int(raw["id"]),
+        id=sid,
         zone=_zone(raw),
         time=str(raw.get("time", "")),
-        theme=str(raw.get("theme", raw["id"])),
-        tier=str(raw.get("tier", "")),
-        roles=_roles(raw),
-        fixes=tuple(raw.get("fixes", ())),
+        theme=str(raw.get("theme", sid)),
+        tier=tier,
+        roles=_role_set(raw.get("roles", raw.get("role"))),
+        core_for=_core_for(tier),
+        hand_built=bool(raw.get("native", sid in HAND_BUILT_IDS)),
+        question=str(raw.get("question", "")),
+        fixes=tuple(raw.get("options", raw.get("fixes", ()))),
     )
 
 
@@ -99,7 +122,7 @@ def find_team_grows(library: dict[int, Scenario], configured: int | None) -> int
     if configured is not None:
         return configured
     z7 = [s for s in library.values() if s.zone == "z7"]
-    named = [s for s in z7 if re.search(r"team grows", s.theme, re.I)]
+    named = [s for s in z7 if re.search(r"team grows", f"{s.theme} {s.question}", re.I)]
     if len(named) == 1:
         return named[0].id
     if len(z7) == 1:
@@ -114,9 +137,9 @@ def weight(s: Scenario, role: str | None) -> float:
         w = W_OWN_ROLE
     else:
         w = W_OTHER_ROLE
-    if s.tier.lower() == "core":
+    if s.core_for is None or (role and role in s.core_for):
         w *= W_CORE
-    if s.id in HAND_BUILT_IDS:
+    if s.hand_built:
         w *= W_HAND_BUILT
     return w
 

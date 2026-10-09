@@ -1,6 +1,6 @@
 # sample/
 
-This folder should hold `play-log-sample.json` and `scenarios.json` (see the top-level README). They are not in the repo yet.
+Sample data, labelled as sample.
 
-- The API loads the scenario library from `sample/scenarios.json` (or `SCENARIOS_PATH`).
-- `tests/test_replay.py` replays `play-log-sample.json` once both files are here. Until then it runs on the synthetic files in `tests/fixtures/`, which are labelled as synthetic sample data.
+- `play-log-sample.json`: a real play from the current build. `tests/test_replay.py` replays it through the API.
+- `scenarios.json`: the 61 scenarios. The API deals from this file by default (`SCENARIOS_PATH` overrides it).
