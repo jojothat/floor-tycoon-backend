@@ -37,8 +37,12 @@ def _derive(s: Session, session_id: str) -> Derived:
     return derive(flat, zone_to_scenario)
 
 
-def rebuild_derived(s: Session, session_id: str) -> Derived:
-    """Rebuild moments, edits, additions and add_declines from the raw events."""
+def rebuild_derived(s: Session, session_id: str) -> Derived | None:
+    """Rebuild moments, edits, additions and add_declines from the raw events. Does nothing
+    (returns None) once the retention job has deleted the events: what was derived stays."""
+    gs = s.get(GameSession, session_id)
+    if gs is not None and gs.events_deleted_at is not None:
+        return None
     out = _derive(s, session_id)
     for model in (Moment, Edit, Addition, AddDecline):
         s.execute(delete(model).where(model.session_id == session_id))
@@ -75,7 +79,9 @@ def is_repeat(s: Session, gs: GameSession) -> bool:
     return bool(earlier)
 
 
-def score_session(s: Session, gs: GameSession, derived: Derived | None = None) -> Quality:
+def score_session(s: Session, gs: GameSession, derived: Derived | None = None) -> Quality | None:
+    if gs.events_deleted_at is not None:
+        return s.get(Quality, gs.session_id)  # kept as it was when the events went
     out = derived or rebuild_derived(s, gs.session_id)
     result = score_play(
         [MomentSignal(m.scenario_id, m.chosen, m.previewed, m.time_to_decide_ms) for m in out.moments],

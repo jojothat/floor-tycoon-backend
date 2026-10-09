@@ -275,4 +275,4 @@ def post_floor(body: FloorIn, gs: GameSession = Depends(writable_session), s: Se
     # The addition is taken from the events (add / addRemoved), not from this body.
     q = clean.score_session(s, gs)
     s.commit()
-    return {"quality": q.score}  # never shown to the player
+    return {"quality": q.score if q else None}  # never shown to the player

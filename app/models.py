@@ -66,6 +66,9 @@ class GameSession(Base):
     finished_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     write_key_hash: Mapped[str] = mapped_column(String(64))
     write_key_expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    # Set by the retention job when this play's raw events were deleted. Derived tables and
+    # the quality score are kept, and are no longer rebuilt.
+    events_deleted_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
 
 
 class Deal(Base):
