@@ -1,8 +1,8 @@
 """Build step 1 is done when a play log replays through the API and the session,
 events and derived moments come out complete (CLAUDE.md).
 
-Runs on sample/play-log-sample.json (with sample/scenarios.json) when those are in
-the repo, and always on a synthetic log written from events.md.
+Runs on the real sample/play-log-sample.json with sample/scenarios.json, and on the
+synthetic log in tests/fixtures/ (written from events.md, labelled synthetic).
 """
 
 from pathlib import Path
@@ -18,16 +18,7 @@ END_OF_DAY = {"replay", "edit", "addRemoved", "addOpen", "addShuffle", "addSkip"
 
 LOGS = [
     pytest.param(FIXTURES / "play-log-synthetic.json", ROOT / "sample" / "scenarios.json", id="synthetic"),
-    pytest.param(
-        ROOT / "sample" / "play-log-sample.json",
-        ROOT / "sample" / "scenarios.json",
-        id="sample",
-        marks=pytest.mark.skipif(
-            not (ROOT / "sample" / "play-log-sample.json").exists()
-            or not (ROOT / "sample" / "scenarios.json").exists(),
-            reason="sample/ files not in the repo yet",
-        ),
-    ),
+    pytest.param(ROOT / "sample" / "play-log-sample.json", ROOT / "sample" / "scenarios.json", id="sample"),
 ]
 
 

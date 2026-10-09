@@ -1,5 +1,6 @@
 {
- "_sample": "SYNTHETIC play log written from events.md for tests (deal ids from sample/scenarios.json), not a real play. Labelled sample.",
+ "_synthetic": true,
+ "_note": "SYNTHETIC play log made up for tests from events.md (deal ids from sample/scenarios.json). Not a real play: the real one is sample/play-log-sample.json.",
  "log": [
   {
    "ev": "deal",

@@ -11,6 +11,7 @@ The backend for Floor Tycoon, a 2.5D workplace-strategy game for Applied Materia
 | `CLAUDE.md` | Instructions and hard rules for Claude Code. |
 | `sample/play-log-sample.json` | A real play from the current build, including a skip, the add-something flow, an end-of-day edit, palette and the simulated-day results. |
 | `sample/scenarios.json` | The 61 scenarios: id, place, time, theme, tier, which roles, and the fixes with their furniture ids. |
+| `tests/fixtures/*-synthetic.json` | Synthetic test data, made up for tests and labelled `"_synthetic": true`. Never real data. |
 
 ## Playtest
 
