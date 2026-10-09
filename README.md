@@ -19,3 +19,19 @@ The game itself: https://claude.ai/artifact/RpuzqVhRsSVaAFCmqZUGuU (open it on a
 ## Status
 
 Spec agreed in draft. Open questions are at the end of `backend-spec.md`: hosting provider, access method, retention, viewers, role codes and pilot size.
+
+## Run it locally
+
+You need Docker and Python 3.11+.
+
+```sh
+docker compose up -d db                                  # Postgres 16, plus the test database
+pip install -r requirements.txt
+python -m app.db && python -m app.admin add-pilot local site-a local-invite
+uvicorn app.main:app --reload                            # http://localhost:8000/docs
+pytest                                                   # the tests use floor_tycoon_test
+```
+
+`POST /v1/sessions` needs the scenario library at `sample/scenarios.json`. To try it before that file lands, set `SCENARIOS_PATH=tests/fixtures/scenarios-synthetic.json`.
+
+Configuration is through environment variables (see `app/config.py`): `DATABASE_URL` (any Postgres, so any Korean-region provider), `ACCESS_MODE` (`invite` or `sso`), `RETENTION_MONTHS`, `WRITE_KEY_TTL_MINUTES`, `MIN_GROUP_SIZE`, `SCENARIOS_PATH` and `DEAL_Z7_SCENARIO_ID`.
