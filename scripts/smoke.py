@@ -39,12 +39,17 @@ def check(ok: bool, what: str) -> bool:
 
 
 def start(c: httpx.Client, token: str, anon: str, role: str) -> tuple[str, dict]:
-    r = c.post("/v1/sessions", json={"pilot_token": token, "anon_player_id": anon, "role_type": role,
-                                      "game_version": VERSION, "flow": "quick", "language": "ko",
-                                      "device_class": "phone", "viewport_height": 390})
-    r.raise_for_status()
-    body = r.json()
-    return body["session_id"], {"Authorization": f"Bearer {body['write_key']}"}
+    """Session start as the game sends it (frontend/FRONTEND.md), retried once like a flaky phone."""
+    body = {"client_session_id": str(uuid.uuid4()), "anon_player_id": anon, "pilot_token": token, "role_type": role,
+            "game_version": VERSION, "flow": "quick", "language": "ko", "device_class": "phone",
+            "viewport_h": 390, "viewport_w": 844}
+    first = c.post("/v1/sessions", json=body, headers={"X-FT-Player": anon})
+    first.raise_for_status()
+    again = c.post("/v1/sessions", json=body, headers={"X-FT-Player": anon})
+    again.raise_for_status()
+    if again.json()["session_id"] != first.json()["session_id"]:
+        failures.append("a retried start made a second session")
+    return again.json()["session_id"], {"X-FT-Player": anon, "Authorization": f"Bearer {again.json()['write_key']}"}
 
 
 def send(c: httpx.Client, sid: str, h: dict, events: list[dict], retry: bool) -> bool:
@@ -75,20 +80,25 @@ def play_sample(c: httpx.Client, token: str) -> str:
     sid, h = start(c, token, anon, play["profile"]["type"])
     check(True, f"session started ({sid[:8]}...)")
     check(send(c, sid, h, events[:cut], retry=True), f"{cut} day events stored, retried batches dropped as duplicates")
-    check(c.post(f"/v1/sessions/{sid}/finish", headers=h, json={"final_picks": first}).status_code == 200, "reached 18:00")
+    check(c.post(f"/v1/sessions/{sid}/finish", headers=h, json={"picks": first, "skips": {"z6": "none"}}).status_code == 200, "reached 18:00")
     check(send(c, sid, h, events[cut:], retry=True), f"{len(events) - cut} end-of-day events stored")
-    check(c.post(f"/v1/sessions/{sid}/finish", headers=h, json={"final_picks": final}).status_code == 200, "final picks")
-    sim = {**play["stats"], "use": play["end"]["use"], "happy": play["end"]["happy"]}
-    r = c.post(f"/v1/sessions/{sid}/floor", headers=h, json={"palette": play["end"]["palette"], "sim": sim})
+    st = play["stats"]
+    sim = {"use": play["end"]["use"], "happy": play["end"]["happy"], "desk_use": st["deskU"], "desks": st["desks"],
+           "peak": st["peak"], "peak_at": st["peakAt"], "busy": st["busy"], "occ": st["occ"], "occ_fab": st["occf"],
+           "fab_people": st["fabN"]}
+    r = c.post(f"/v1/sessions/{sid}/floor", headers=h, json={
+        "palette": play["end"]["pal"], "palette_name": play["end"]["palette"], "picks": final, "skips": {"z6": "none"},
+        "addition": {"adds": {}, "deskfit": None, "swaps": {}}, "sim": sim})
     check(r.status_code == 200 and r.json().get("quality") == 60, f"simulated day stored, quality {r.json().get('quality')} (expected 60)")
     check(c.post("/v1/wall", headers=h, json={"session_id": sid}).status_code == 200, "shared to the wall")
 
-    w = c.get("/v1/wall", headers={"X-Pilot-Token": token, "X-Anon-Player": anon})
+    w = c.get("/v1/wall", headers={"X-FT-Player": anon})
     mine = next((p for p in w.json().get("posts", []) if p["mine"]), None) if w.status_code == 200 else None
-    check(mine is not None and mine["picks"] == final and mine["skips"] == ["z6"], "the wall shows this office as mine, with its picks")
+    check(mine is not None and mine["picks"] == final and mine["skips"] == {"z6": "none"}, "the wall shows this office as mine, with its picks")
+    check(w.status_code == 200 and anon not in w.text, "the wall never returns the player's anon id")
     if mine:
-        c.post(f"/v1/wall/{mine['id']}/view", headers={"X-Pilot-Token": token, "X-Anon-Player": anon})
-        w = c.get("/v1/wall", headers={"X-Pilot-Token": token, "X-Anon-Player": anon}).json()
+        c.post(f"/v1/wall/{mine['id']}/view", headers={"X-FT-Player": anon}, json={})
+        w = c.get("/v1/wall", headers={"X-FT-Player": anon}).json()
         views = next(p["views"] for p in w["posts"] if p["id"] == mine["id"])
         check(views == 0, "opening your own office doesn't count as a view")
     return sid
@@ -103,7 +113,7 @@ def play_scripted(c: httpx.Client, token: str, n: int) -> None:
         events, picks = script_play(lib, "good", rng, rng.choice(["CE", "PSE", "Sales", "Lead"]))
         sid, h = start(c, token, f"smoke-{uuid.uuid4().hex[:12]}", "CE")
         ok &= send(c, sid, h, events, retry=False)
-        ok &= c.post(f"/v1/sessions/{sid}/finish", headers=h, json={"final_picks": picks}).status_code == 200
+        ok &= c.post(f"/v1/sessions/{sid}/finish", headers=h, json={"picks": picks, "skips": {}}).status_code == 200
         ok &= c.post(f"/v1/sessions/{sid}/floor", headers=h, json={"palette": "Scandi Light", "sim": {"use": 20, "happy": 50}}).status_code == 200
         ok &= c.post("/v1/wall", headers=h, json={"session_id": sid}).status_code == 200
     check(ok, f"{n} plays started, finished, scored and shared")
