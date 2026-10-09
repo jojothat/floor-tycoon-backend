@@ -42,3 +42,5 @@ The management read API (`/v1/read/...`) needs a viewer: `python -m app.admin ad
 The retention job runs daily with `python -m app.retention` (`--dry-run` to count only). It deletes raw events once a pilot ended more than `RETENTION_MONTHS` ago, and keeps derived tables and scores.
 
 Rate limits: `RATE_LIMIT_IP_PER_MIN` (default 600) and `RATE_LIMIT_PILOT_PER_MIN` (default 6000), 0 to turn one off. Set `RATE_LIMIT_SECRET` to the same value on every instance, and `TRUST_PROXY=true` behind a load balancer.
+
+Browser access: set `CORS_ORIGINS` to the game's origin (and the dashboard's, if separate), comma-separated, for example `CORS_ORIGINS=https://play.example.kr`. Empty allows no cross-origin calls.

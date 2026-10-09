@@ -34,6 +34,12 @@ class Settings:
     read_exporters: frozenset[str] = field(
         default_factory=lambda: frozenset(v for v in _env("READ_EXPORTERS", "").split(",") if v)
     )
+    # Web origins allowed to call the API from a browser: the game's domain (and the
+    # dashboard's, if separate), comma-separated, e.g. "https://play.example.kr".
+    # Empty means no cross-origin calls are allowed.
+    cors_origins: tuple[str, ...] = field(
+        default_factory=lambda: tuple(o.strip().rstrip("/") for o in _env("CORS_ORIGINS", "").split(",") if o.strip())
+    )
     # Rate limits (app/ratelimit.py): requests per minute; 0 turns one off.
     rate_limit_ip_per_min: int = field(default_factory=lambda: int(_env("RATE_LIMIT_IP_PER_MIN", "600")))
     rate_limit_pilot_per_min: int = field(default_factory=lambda: int(_env("RATE_LIMIT_PILOT_PER_MIN", "6000")))
