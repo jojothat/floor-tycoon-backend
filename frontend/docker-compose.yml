@@ -1,0 +1,41 @@
+# Game + backend + database, and an end-to-end test that plays one game through them.
+#   docker compose up --build web api db                 → play at http://localhost:8080
+#   docker compose --profile test run --rm e2e           → scripted full play, exit 0 = pass
+#   docker compose --profile mock up --build web mock    → game against the mock API (no backend needed)
+# The backend service assumes the backend sits in ../ (repo root) with its own Dockerfile and listens on 8000.
+# Adjust "api" to match the backend once it exists.
+services:
+  web:
+    build: { context: ., dockerfile: docker/web.Dockerfile }
+    ports: ["8080:80"]
+    environment:
+      API_UPSTREAM: ${API_UPSTREAM:-http://api:8000}
+      FT_PILOT_TOKEN: ${FT_PILOT_TOKEN:-dev-pilot}
+      FT_GAME_VERSION: ${FT_GAME_VERSION:-dev}
+      FT_SIM_MS: ${FT_SIM_MS:-20000}
+
+  api:
+    build: { context: .., dockerfile: Dockerfile }
+    environment:
+      DATABASE_URL: postgres://ft:ft@db:5432/ft
+      SCENARIOS_PATH: /app/sample/scenarios.json
+    depends_on: [db]
+
+  db:
+    image: postgres:16-alpine
+    environment: { POSTGRES_USER: ft, POSTGRES_PASSWORD: ft, POSTGRES_DB: ft }
+    volumes: [ftdb:/var/lib/postgresql/data]
+
+  mock:
+    profiles: [mock]
+    build: { context: ., dockerfile: docker/mock-api.Dockerfile }
+    networks: { default: { aliases: [api] } }
+
+  e2e:
+    profiles: [test]
+    build: { context: ., dockerfile: docker/e2e.Dockerfile }
+    environment: { BASE_URL: http://web }
+    depends_on: [web]
+
+volumes:
+  ftdb:

@@ -1,0 +1,26 @@
+server {
+  listen 80;
+  server_name _;
+  root /usr/share/nginx/html;
+
+  gzip on;
+  gzip_types text/html text/javascript application/javascript application/json;
+  gzip_min_length 1024;
+
+  # the game page and its config are never cached, so a new build or pilot token shows up at once
+  location = /index.html { add_header Cache-Control "no-cache"; }
+  location = /config.js  { add_header Cache-Control "no-store"; }
+  # pictures never change name between builds of the same content, cache them a day
+  location ~* \.(webp|png)$ { add_header Cache-Control "public, max-age=86400"; }
+
+  # the backend, on the same origin (no CORS needed). /api/v1/... → ${API_UPSTREAM}/v1/...
+  location /api/ {
+    proxy_pass ${API_UPSTREAM}/;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    client_max_body_size 128k;
+  }
+
+  location / { try_files $uri $uri/ /index.html; }
+}
