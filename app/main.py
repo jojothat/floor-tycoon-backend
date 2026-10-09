@@ -1,21 +1,20 @@
 """Ingest API, build step 1 (spec section 5)."""
 
-import hashlib
 import secrets
-from datetime import date, datetime, timedelta, timezone
+from datetime import timedelta
 from typing import Literal
 
-from fastapi import Depends, FastAPI, Header, HTTPException, Request
+from fastapi import Depends, FastAPI, HTTPException, Request
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator
-from sqlalchemy import select
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.orm import Session
 
 from app import clean
 from app import deal as deal_fn
-from app.config import Settings, get_settings
-from app.db import get_engine, make_sessionmaker
-from app.models import ZONES, Deal, Event, Floor, GameSession, Pilot
+from app import wall
+from app.config import Settings
+from app.deps import db, library, now, resolve_pilot, settings, sha256, writable_session
+from app.models import ZONES, Deal, Event, Floor, GameSession
 
 KNOWN_EVENTS = {
     # during the day
@@ -31,27 +30,7 @@ FORBIDDEN_KEYS = {"look"}
 OPTIONS = {"a", "b", "c", "d", "0"}
 
 app = FastAPI(title="Floor Tycoon backend")
-
-
-def settings() -> Settings:
-    return get_settings()
-
-
-def db(cfg: Settings = Depends(settings)):
-    with make_sessionmaker(get_engine(cfg.database_url))() as s:
-        yield s
-
-
-def library(cfg: Settings = Depends(settings)):
-    return clean.library(str(cfg.scenarios_path))
-
-
-def sha256(s: str) -> str:
-    return hashlib.sha256(s.encode()).hexdigest()
-
-
-def now() -> datetime:
-    return datetime.now(timezone.utc)
+app.include_router(wall.router)
 
 
 def strip_forbidden(obj):
@@ -90,25 +69,6 @@ def viewport_bucket(h: int | None) -> str | None:
     return "900+"
 
 
-def resolve_pilot(body: SessionIn, request: Request, s: Session, cfg: Settings) -> Pilot:
-    if cfg.access_mode == "sso":
-        if not request.headers.get(cfg.sso_header):
-            raise HTTPException(401, "not signed in")
-        pilot = s.get(Pilot, body.pilot_id) if body.pilot_id else None
-    else:
-        pilot = (
-            s.scalar(select(Pilot).where(Pilot.invite_token_hash == sha256(body.pilot_token)))
-            if body.pilot_token
-            else None
-        )
-    if pilot is None:
-        raise HTTPException(401, "unknown pilot")
-    today = date.today()
-    if (pilot.start_date and today < pilot.start_date) or (pilot.end_date and today > pilot.end_date):
-        raise HTTPException(403, "pilot is not running")
-    return pilot
-
-
 @app.post("/v1/sessions", status_code=201)
 def create_session(
     body: SessionIn,
@@ -117,7 +77,7 @@ def create_session(
     cfg: Settings = Depends(settings),
     lib=Depends(library),
 ):
-    pilot = resolve_pilot(body, request, s, cfg)
+    pilot = resolve_pilot(body.pilot_token, body.pilot_id, request, s, cfg)
     role = body.role_type or "none"
     dealt = deal_fn.deal(lib, role, team_grows_id=cfg.deal_z7_scenario_id)
     session_id = secrets.token_urlsafe(18)
@@ -148,21 +108,6 @@ def create_session(
         "write_key": write_key,
         "write_key_expires_at": expires.isoformat(),
     }
-
-
-def writable_session(
-    session_id: str,
-    authorization: str | None = Header(default=None),
-    s: Session = Depends(db),
-) -> GameSession:
-    gs = s.get(GameSession, session_id)
-    key = (authorization or "").removeprefix("Bearer ").strip()
-    # Same answer for unknown session and wrong key, so ids can't be probed.
-    if gs is None or not key or not secrets.compare_digest(gs.write_key_hash, sha256(key)):
-        raise HTTPException(401, "bad session or write key")
-    if gs.write_key_expires_at < now():
-        raise HTTPException(401, "write key expired")
-    return gs
 
 
 # ---------------------------------------------------------------- events
