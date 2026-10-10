@@ -34,6 +34,13 @@ class Settings:
     read_exporters: frozenset[str] = field(
         default_factory=lambda: frozenset(v for v in _env("READ_EXPORTERS", "").split(",") if v)
     )
+    # Rate limits (app/ratelimit.py): requests per minute; 0 turns one off.
+    rate_limit_ip_per_min: int = field(default_factory=lambda: int(_env("RATE_LIMIT_IP_PER_MIN", "600")))
+    rate_limit_pilot_per_min: int = field(default_factory=lambda: int(_env("RATE_LIMIT_PILOT_PER_MIN", "6000")))
+    # Keys the IP hash; set the same value on every instance.
+    rate_limit_secret: str = field(default_factory=lambda: _env("RATE_LIMIT_SECRET", "change-me"))
+    # Behind a load balancer, take the client IP from X-Forwarded-For.
+    trust_proxy: bool = field(default_factory=lambda: _env("TRUST_PROXY", "false").lower() == "true")
     write_key_ttl_minutes: int = field(
         default_factory=lambda: int(_env("WRITE_KEY_TTL_MINUTES", "120"))
     )
