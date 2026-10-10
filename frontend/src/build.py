@@ -1,5 +1,5 @@
 import base64,json,os
-t=open('game_tpl.html').read()
+t=open('game_tpl.html').read().replace('__KO__',open('i18n/ko.json').read())
 d=lambda p,m='image/webp':'data:%s;base64,%s'%(m,base64.b64encode(open(p,'rb').read()).decode())
 TH={'kit':'10-lockers','demo':'33-demo','video':'30-videoroom','booth':'05-phonebooth','enclave':'24-enclave','screens':'57-screens','lab':'32-protolab','desk':'01-desk','office':'25-office',
     'ped':'09-pedestal','team':'11-teamwall','pod':'04-focuspod','lib':'21-library','baffle':'56-baffles','pantry':'13-pantry','terrace':'37-terrace',

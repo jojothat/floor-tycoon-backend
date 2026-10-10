@@ -63,4 +63,4 @@ volumes:
 
 secrets:
   extra_ca:
-    file: ${EXTRA_CA_FILE:-/dev/null}  # only for a TLS-inspecting proxy; empty otherwise
+    file: ${EXTRA_CA_FILE:-./docker/no-extra-ca}  # only for a TLS-inspecting proxy; empty otherwise
