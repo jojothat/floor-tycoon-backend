@@ -1,6 +1,6 @@
 #!/bin/sh
 # Records the demo video against a throwaway copy of this stack, with its own empty database.
-# The real stack's data is never touched. Needs Docker, Node 18+, Python 3 and ffmpeg.
+# The real stack's data is never touched. Needs Docker, Node 18+, Python 3 with Pillow and ffmpeg.
 #   MANAGER=<readout login> MANAGER_PASSWORD=<its password> ./demo/demo.sh
 set -eu
 HERE=$(cd "$(dirname "$0")" && pwd)
@@ -13,6 +13,7 @@ if [ -n "$(cd "$DEPLOY" && docker compose ps -q caddy 2>/dev/null)" ]; then
   exit 1
 fi
 for tool in node python3 ffmpeg; do command -v $tool >/dev/null || { echo "needs $tool" >&2; exit 1; }; done
+python3 -c "import PIL" 2>/dev/null || { echo "needs Pillow: python3 -m pip install pillow" >&2; exit 1; }
 
 # The demo copy: same secrets and logins, its games labelled synthetic, a fast simulated day, no read cache.
 sed -e 's/^GAME_VERSION=.*/GAME_VERSION=synthetic-demo-ui/' "$DEPLOY/.env" > "$HERE/demo.env"

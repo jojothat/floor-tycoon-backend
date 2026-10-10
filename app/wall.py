@@ -71,7 +71,7 @@ def post_wall(body: WallPostIn, authorization: str | None = Header(default=None)
     s.commit()
     if activity.on():
         offices = s.scalar(select(func.count()).select_from(WallPost).where(WallPost.pilot_id == gs.pilot_id))
-        activity.say(gs.session_id, f"Shared the office to the wall · the wall now shows {offices} offices")
+        activity.say(gs.session_id, f"Shared the office to the wall · the wall now shows {offices} office{'s' if offices != 1 else ''}")
     return {"ok": True, "id": post_id}
 
 

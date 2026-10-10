@@ -130,8 +130,10 @@ def audit(s: Session, who: ReadViewer, endpoint: str, f: Filters, export=False) 
     s.commit()
     if endpoint in ("summary", "export.csv"):  # one line per readout load, not one per chart
         shown = ", ".join(f"{k}={v}" for k, v in params.items()) or "everyone"
+        done = s.scalar(select(func.count()).select_from(GameSession).where(GameSession.finished_at.is_not(None))) \
+            if activity.on() else 0
         activity.say(None, f"[readout]  {who.viewer_id} {'downloaded the CSV export' if export else 'opened the readout'}"
-                           f" ({shown})")
+                           f" ({shown}) · read from the database: {done} finished games")
 
 
 # ---------------------------------------------------------------- numbers, as the mock writes them

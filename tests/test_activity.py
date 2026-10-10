@@ -37,6 +37,7 @@ def test_a_played_game_reads_as_plain_english(client, new_session, console):
     assert "End of day: changed" in text
     assert "Batch was a resend: nothing new, 10 repeats ignored" in text, "retried batches are called out"
     assert "Reached 18:00 · 6 fixes kept, 1 skipped" in text
+    assert "events to the database (this game now has" in text, "says where the events went"
     # Never a player id, the session id in full, or the character look.
     assert s["session_id"] not in text and "anon" not in text and "hair" not in text
 

@@ -6,11 +6,11 @@
 - **Right:** the backend console, in plain English, as each tap is saved.
 - **Bottom left:** the manager readout, counting the games as they finish.
 
-It plays one game through the game's screens, sends 14 more through the same game API, then plays a second game while the readout is scrolled. It takes about 3 minutes and gives a video of about 100 seconds (gameplay at 2× speed). It also gives one real-time video per window.
+It plays one game through the game's screens, sends 14 more through the same game API, then plays a second game while the readout is scrolled. It takes about 3 minutes and gives a video of about 100 seconds (gameplay at 4× speed). It also gives one real-time video per window.
 
 ## Run it
 
-You need Docker, Node 18+, Python 3 and ffmpeg. From `deploy/local`:
+You need Docker, Node 18+, Python 3 with Pillow (`pip install pillow`) and ffmpeg. From `deploy/local`:
 
 ```sh
 docker compose stop        # the demo uses the same ports; your data is kept
