@@ -22,6 +22,8 @@ import math
 import re
 import secrets
 import statistics
+import threading
+import time
 from dataclasses import dataclass, field
 from datetime import date, datetime, timezone
 from functools import lru_cache
@@ -138,6 +140,15 @@ def js_round(x: float) -> int:
 def num(x):
     """1.0 -> 1, so integral numbers print as the mock prints them."""
     return int(x) if isinstance(x, float) and x.is_integer() else x
+
+
+def jsum(xs) -> float:
+    """Left-to-right float addition, as JavaScript's reduce does. Python 3.12's sum() compensates
+    for rounding, which can tip a share across a .05 boundary away from the mock's."""
+    total = 0
+    for x in xs:
+        total += x
+    return total
 
 
 def median(xs):
@@ -290,6 +301,23 @@ def load(s: Session, cfg: Settings, pilot: str | None) -> list[Rec]:
     return recs
 
 
+_cache: dict[str | None, tuple[float, datetime, list[Rec]]] = {}
+_cache_lock = threading.Lock()
+
+
+def cached_load(s: Session, cfg: Settings, pilot: str | None) -> tuple[datetime, list[Rec]]:
+    """The plays, reused for READ_CACHE_SECONDS; returns when they were loaded too."""
+    if cfg.read_cache_seconds <= 0:
+        return datetime.now(timezone.utc), load(s, cfg, pilot)
+    with _cache_lock:  # a burst of calls (the readout's 13) waits for one load
+        hit = _cache.get(pilot)
+        if hit and time.monotonic() - hit[0] < cfg.read_cache_seconds:
+            return hit[1], hit[2]
+        loaded_at, recs = datetime.now(timezone.utc), load(s, cfg, pilot)
+        _cache[pilot] = (time.monotonic(), loaded_at, recs)
+        return loaded_at, recs
+
+
 def keep(r: Rec, f: Filters) -> bool:
     if f.type and r.type != f.type:
         return False
@@ -327,13 +355,15 @@ class Ctx:
     items: dict
     palettes: list
     s: Session
+    computed_at: datetime
 
     @property
     def N(self):
         return len(self.done)
 
     def base(self):
-        return {"n": self.N, "updated_at": datetime.now(timezone.utc).isoformat(timespec="milliseconds").replace("+00:00", "Z")}
+        # updated_at: when these numbers were computed (READOUT.md §4.7)
+        return {"n": self.N, "updated_at": self.computed_at.isoformat(timespec="milliseconds").replace("+00:00", "Z")}
 
     def name(self, sid: int, k: str) -> str:
         if k == "skip":
@@ -345,7 +375,7 @@ class Ctx:
 
 def context(s: Session, cfg: Settings, f: Filters) -> Ctx:
     lib, items, palettes = catalogue(cfg)
-    every = load(s, cfg, f.pilot)
+    computed_at, every = cached_load(s, cfg, f.pilot)
     R = [r for r in every if keep(r, f)]
     done = [r for r in R if r.completed and r.counts_for_preferences]
     mg = cfg.min_group_size
@@ -355,7 +385,7 @@ def context(s: Session, cfg: Settings, f: Filters) -> Ctx:
         scope_done = [r for r in scope if r.completed and r.counts_for_preferences]
         if 0 < len(scope) - len(R) < mg or 0 < len(scope_done) - len(done) < mg:
             mg = NO_GROUP
-    return Ctx(every, R, done, Rules(mg), lib, items, palettes, s)
+    return Ctx(every, R, done, Rules(mg), lib, items, palettes, s, computed_at)
 
 
 def per_scenario(c: Ctx) -> list[dict]:
@@ -520,8 +550,8 @@ def ep_pain_hours(c: Ctx):
     for h in sorted(hours):
         ss = hours[h]
         dec = median([s["median_decide_s"] for s in ss if s["median_decide_s"] is not None]) or 0
-        sk = sum(s["skip_share"] or 0 for s in ss) / len(ss)
-        ed = sum(s["edit_share"] or 0 for s in ss) / len(ss)
+        sk = jsum(s["skip_share"] or 0 for s in ss) / len(ss)
+        ed = jsum(s["edit_share"] or 0 for s in ss) / len(ss)
         rows.append({"h": h, "scenarios": len(ss), "decide_s": dec, "skip_share": num(js_round(sk * 10) / 10),
                      "edit_share": num(js_round(ed * 10) / 10), "top": [s["question"] for s in ss][:2]})
 
@@ -595,7 +625,7 @@ def ep_sim(c: Ctx):
         n = len(s)
 
         def av(k):
-            return js_round(sum(_sim_value(r.sim, k) for r in s) / n) if n >= c.rules.mg else None
+            return js_round(jsum(_sim_value(r.sim, k) for r in s) / n) if n >= c.rules.mg else None
 
         return c.rules.sup(n, {"n": n, "use": av("use"), "happy": av("happy"), "desk_use": av("desk_use")})
 

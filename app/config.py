@@ -43,6 +43,9 @@ class Settings:
     # "off" (default): preference numbers use every completed game, as READOUT.md defines.
     # "on": they also leave out repeat plays and plays scoring under 40 (spec section 7).
     read_quality: str = field(default_factory=lambda: _env("READ_QUALITY", "off"))
+    # How long the read API reuses the plays it loaded (READOUT.md allows up to 5 minutes).
+    # The readout fires all its calls at once; this makes them one database load.
+    read_cache_seconds: float = field(default_factory=lambda: float(_env("READ_CACHE_SECONDS", "30")))
     # The game's item catalogue and palette list, for the read API's meta and space-brief.
     items_path: Path = field(
         default_factory=lambda: Path(_env("ITEMS_PATH", str(ROOT / "sample" / "items.json")))

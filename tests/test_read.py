@@ -207,3 +207,17 @@ def test_merge_small():
     assert merge_small({"a": 9}, 10) is None
     assert merge_small({"a": 12, "b": 11}, 10) == {"a": ["a"], "b": ["b"]}
     assert merge_small({"a": 12, "b": 6, "c": 5}, 10) == {"a": ["a"], "Other": ["b", "c"]}
+
+
+def test_reads_reuse_the_loaded_plays_briefly(client, new_session, db, monkeypatch):
+    from app import read as read_mod
+    read_mod._cache.clear()
+    monkeypatch.setenv("READ_CACHE_SECONDS", "60")
+    populate(client, new_session, db, [("CE", "good", 10)])
+    first = ok(client, "summary")
+    populate(client, new_session, db, [("PSE", "good", 1)], version="pilot-1.1")
+    again = ok(client, "summary")
+    assert again["completed"] == first["completed"] == 10 and again["updated_at"] == first["updated_at"]
+    monkeypatch.setenv("READ_CACHE_SECONDS", "0")
+    assert ok(client, "summary")["completed"] == 11
+    read_mod._cache.clear()
