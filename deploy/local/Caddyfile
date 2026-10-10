@@ -1,0 +1,29 @@
+# The one front door. Addresses and certificates come from .env (see .env.example).
+{
+	admin off
+}
+
+# The game, for players.
+{$GAME_ADDRESS} {
+	tls {$CADDY_TLS}
+	# The backend trusts X-Auth-User to name a signed-in manager, so a player can never send one.
+	request_header -X-Auth-User
+	# Management reads go only through the readout address, after sign-in.
+	respond /api/v1/read/* 404
+	reverse_proxy web:80
+}
+
+# The Space Readout, for managers. Logins live in managers.caddy (./init.sh <name> adds one).
+{$READOUT_ADDRESS} {
+	tls {$CADDY_TLS}
+	basic_auth {
+		import managers.caddy
+	}
+	reverse_proxy readout:80 {
+		header_up X-Auth-User {http.auth.user.id}
+	}
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options nosniff
+	}
+}

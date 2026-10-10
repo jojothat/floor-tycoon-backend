@@ -1,0 +1,507 @@
+<title>Space Readout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* One deliberate light look (paper and ink), matching the approved readout. Colours are set explicitly everywhere. */
+:root{--bg:#F6F3EC;--card:#FFFFFF;--ink:#22252A;--mut:#6B6A64;--line:#E4DED2;--blue:#1F5FBF;--ochre:#D98A1C;--teal:#2E9E86;--plum:#9B4FB8;--grey:#A9B3C4;--track:#EEE9DE;--con:#B4470C;color-scheme:light}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px;padding-block:28px 56px;display:grid;gap:18px}
+.kicker{font:500 12px 'IBM Plex Mono',ui-monospace,Menlo,monospace;letter-spacing:.05em;text-transform:uppercase;color:var(--mut)}
+h1{font-size:clamp(28px,4.6vw,46px);font-weight:800;letter-spacing:-.025em;line-height:1.05;margin:4px 0 0;text-wrap:balance}
+h2{font-size:clamp(20px,2.8vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.12;margin:2px 0 0;text-wrap:balance}
+p{margin:0}
+.lead{color:var(--mut);max-width:62ch}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.facts span{background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13px}
+.facts b{font-variant-numeric:tabular-nums}
+.facts .live{border-color:#2E9E86;color:#1d6e5d} .facts .sample{background:#FFF8E6;border-color:#E8C873}
+@media (max-width:560px){.facts{display:grid;grid-template-columns:1fr 1fr}.facts span{border-radius:12px}}
+.note{font-size:13px;color:#5d4f1d;background:#FFF8E6;border:1.5px dashed #E8C873;border-radius:10px;padding:8px 12px}
+.note.err{background:#FCEBDD;border-color:#B4470C;color:#7a2f06}
+/* filters live in a drawer: management reads the story, analysts open the drawer */
+details.ctl{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:0 16px}
+details.ctl>summary{cursor:pointer;padding:10px 0;font:600 14px Archivo,system-ui,sans-serif;list-style:none;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+details.ctl>summary::-webkit-details-marker{display:none}
+details.ctl>summary::before{content:'▸';color:var(--mut)} details.ctl[open]>summary::before{content:'▾'}
+details.ctl summary .cur{font-weight:400;color:var(--mut);font-size:13px}
+.filters{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:end;padding:4px 0 14px}
+.filters label{display:grid;gap:3px;font:500 11px 'IBM Plex Mono',ui-monospace,monospace;text-transform:uppercase;letter-spacing:.04em;color:var(--mut)}
+.filters select,.filters input[type=date]{font:14px Archivo,system-ui,sans-serif;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:8px;padding:6px 8px;min-width:0}
+.filters .tg{display:flex;gap:6px;align-items:center;text-transform:none;font:14px Archivo,system-ui,sans-serif;color:var(--ink);letter-spacing:0}
+.btn{font:600 13px Archivo,system-ui,sans-serif;background:var(--card);color:var(--ink);border:1.5px solid var(--ink);border-radius:8px;padding:6px 12px;cursor:pointer}
+.btn:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.slide{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:16px;min-width:0}
+@media (max-width:560px){.slide{padding:16px;border-radius:14px}}
+.slide .num{font:500 12px 'IBM Plex Mono',ui-monospace,monospace;color:var(--mut)}
+.so{font-size:14.5px;border-left:4px solid var(--ink);padding:4px 0 4px 12px;max-width:72ch}
+.so b{font-weight:800}
+.lt10{background:var(--bg);border-radius:12px;padding:22px;text-align:center;color:var(--mut);font-size:14px}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:24px;align-items:center}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px}
+@media (max-width:760px){.grid2,.two{grid-template-columns:1fr}}
+.hero{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap}
+.hero .big{font-size:clamp(56px,10vw,96px);font-weight:800;letter-spacing:-.04em;line-height:.9;font-variant-numeric:tabular-nums}
+.hero .cap{font-size:15px;max-width:24ch;padding-bottom:8px}
+.big2{font-size:clamp(44px,7vw,68px);font-weight:800;letter-spacing:-.04em;line-height:.95;font-variant-numeric:tabular-nums}
+.sub{font-weight:800;font-size:15px}
+/* option pictures */
+.pair{display:flex;gap:10px;flex-wrap:wrap}
+.spr{display:grid;justify-items:center;align-content:start;gap:4px;background:var(--bg);border-radius:12px;padding:10px 12px;min-width:108px;flex:1 1 0;text-align:center}
+.spr img{height:84px;width:auto;max-width:130px;object-fit:contain}
+.spr b{font-size:13px;line-height:1.2} .spr span{font-size:12px;color:var(--mut);font-variant-numeric:tabular-nums}
+.spr.win{box-shadow:inset 0 0 0 2px var(--ink)}
+@media (max-width:560px){.pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:8px}.spr{min-width:0;padding:8px 4px}.spr img{height:60px;max-width:100%}}
+svg{display:block;width:100%;height:auto;overflow:visible}
+svg text{font-family:Archivo,system-ui,sans-serif;fill:var(--ink)}
+svg .s{font-size:12px;fill:var(--mut)} svg .halo{paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round} svg .m{font:500 11px 'IBM Plex Mono',ui-monospace,monospace;fill:var(--mut)} svg .v{font-size:13px;font-weight:700}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--mut)} .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+/* the office most people built */
+.floor{position:relative;width:100%;border-radius:12px;background:var(--bg);overflow:hidden}
+.floor img{position:absolute;display:block;max-width:none}
+.floor img.base{position:relative;width:100%;height:auto}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.chip{display:grid;grid-template-columns:48px minmax(0,1fr);gap:2px 8px;align-items:center;background:var(--bg);border-radius:10px;padding:6px 8px}
+.chip img{width:48px;height:42px;object-fit:contain;grid-row:span 2}
+.chip b{font-size:12.5px;line-height:1.15} .chip span{font:500 11px 'IBM Plex Mono',ui-monospace,monospace;color:var(--mut)}
+.pal{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:14px}
+.sw{display:flex;border-radius:6px;overflow:hidden;border:1px solid var(--line)} .sw i{width:22px;height:22px;display:block}
+.pals{display:grid;gap:8px}
+/* rings */
+.rings{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.ring{background:var(--bg);border-radius:14px;padding:14px;display:grid;gap:10px;align-content:start}
+.ring .top{display:grid;grid-template-columns:86px minmax(0,1fr);gap:12px;align-items:center}
+.ring .q{font-weight:800;font-size:15px;line-height:1.2} .ring .t{font:500 11px 'IBM Plex Mono',ui-monospace,monospace;color:var(--mut)}
+.ring .offered{display:flex;gap:6px;align-items:center;flex-wrap:wrap;font-size:12px;color:var(--mut)}
+.ring .offered img{height:34px;width:auto;max-width:60px;object-fit:contain;filter:grayscale(1);opacity:.6}
+.also{font-size:13.5px;color:var(--mut)} .also b{color:var(--ink);font-weight:600}
+/* additions */
+.addgrid{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:760px){.addgrid{grid-template-columns:1fr}}
+.waf{display:grid;gap:10px;max-width:220px}
+.tiles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.tile{background:var(--bg);border-radius:12px;padding:8px;display:grid;justify-items:center;align-content:center;gap:2px;text-align:center;grid-column:span 2;min-width:0}
+.tile.l{grid-column:span 3;grid-row:span 2;padding:14px}
+.tile img{height:46px;width:auto;max-width:100%;object-fit:contain} .tile.l img{height:92px}
+.tile b{font-size:12.5px;line-height:1.15} .tile.l b{font-size:15px}
+.tile span{font:500 11px 'IBM Plex Mono',ui-monospace,monospace;color:var(--mut)} .tile.l .pct{font:800 30px Archivo,system-ui,sans-serif;color:var(--ink);letter-spacing:-.02em}
+@media (max-width:560px){.tiles{grid-template-columns:repeat(4,minmax(0,1fr))}.tile.l{grid-column:span 2;grid-row:span 1}.tile.l img{height:64px}.tile.l .pct{font-size:22px}}
+.room{display:grid;gap:6px;font-size:14px}
+.mini{display:flex;height:10px;border-radius:5px;overflow:hidden;gap:2px;max-width:420px}
+/* second thoughts */
+.callout{display:flex;gap:12px;align-items:center;background:var(--bg);border-radius:12px;padding:10px 12px;flex-wrap:wrap}
+.callout img{height:56px;width:auto;max-width:90px;object-fit:contain}
+.callout .arrow{font:800 20px Archivo,sans-serif;color:var(--mut)}
+.callout p{flex:1;min-width:180px;font-size:14px}
+.rank{display:grid;gap:6px;margin:0;padding:0;list-style:none;counter-reset:r}
+.rank li{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:8px;align-items:baseline;font-size:14px;counter-increment:r;border-bottom:1px solid var(--line);padding-bottom:6px}
+.rank li::before{content:counter(r);font:500 12px 'IBM Plex Mono',ui-monospace,monospace;color:var(--mut)}
+.rank em{font-style:normal;font-weight:700;font-variant-numeric:tabular-nums}
+/* groups */
+.stack{display:grid;gap:8px;align-content:start}
+.srow{display:grid;grid-template-columns:130px minmax(0,1fr);gap:10px;align-items:center;font-size:13.5px}
+.srow small{color:var(--mut)}
+.seg{display:flex;height:24px;border-radius:5px;overflow:hidden;gap:2px;background:var(--card)}
+.seg span{display:flex;align-items:center;justify-content:center;color:#fff;font:700 11.5px Archivo,sans-serif;font-variant-numeric:tabular-nums;min-width:0;overflow:hidden;white-space:nowrap}
+.seg .a{background:var(--blue)} .seg .b{background:var(--ochre);color:#22252A} .seg .c{background:var(--teal)} .seg .d{background:var(--plum)} .seg .skip{background:#CFCAC0;color:#22252A}
+@media (max-width:560px){.srow{grid-template-columns:1fr;gap:3px}}
+/* pairs */
+.pairs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.pc{background:var(--bg);border-radius:12px;padding:10px 12px;display:grid;gap:6px}
+.pc .im{display:flex;align-items:center;gap:6px} .pc .im img{height:50px;width:auto;max-width:80px;object-fit:contain} .pc .im b{font:800 18px Archivo,sans-serif;color:var(--mut)}
+.pc .x{font:800 24px Archivo,sans-serif;letter-spacing:-.02em} .pc .x small{font:500 12px Archivo,sans-serif;color:var(--mut);letter-spacing:0}
+.pc p{font-size:13px;line-height:1.3}
+/* kinds of space */
+.fills{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:10px}
+.fill{position:relative;background:var(--bg);border-radius:12px;height:132px;overflow:hidden;display:grid;align-content:end;padding:10px}
+.fill i{position:absolute;left:0;right:0;bottom:0;background:#CFE0F5}
+.fill b{position:relative;font:800 26px Archivo,sans-serif;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.fill span{position:relative;font-size:13px;line-height:1.2}
+/* funnel */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.st{background:var(--bg);border-radius:12px;padding:12px;display:grid;gap:2px;position:relative}
+.st b{font:800 30px Archivo,sans-serif;letter-spacing:-.02em;font-variant-numeric:tabular-nums} .st span{font-size:13px} .st em{font:500 11px 'IBM Plex Mono',ui-monospace,monospace;color:var(--mut);font-style:normal}
+@media (max-width:640px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* explorer */
+.ex{display:grid;gap:12px}
+/* long option text must not widen the page */
+.slide>*,.body{min-width:0} .ex{min-width:0} .ex select{width:100%;min-width:0;font:600 14px Archivo,system-ui,sans-serif;border:1.5px solid var(--line);border-radius:8px;padding:7px 9px;max-width:100%;background:var(--card);color:var(--ink)}
+.exmeta{font-size:13px;color:var(--mut)}
+/* numbers drawer per slide */
+details.nums>summary{cursor:pointer;font:600 12.5px Archivo,sans-serif;color:var(--blue);text-decoration:underline;width:max-content}
+details.nums .tw{overflow-x:auto;margin-top:8px}
+table{border-collapse:collapse;font-size:13px;min-width:320px} th,td{text-align:left;padding:4px 10px 4px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums} th{font:500 11px 'IBM Plex Mono',ui-monospace,monospace;text-transform:uppercase;color:var(--mut)}
+footer{display:grid;gap:8px;font-size:13px;color:var(--mut);padding-top:6px}
+footer ul{margin:0;padding-left:18px;display:grid;gap:3px}
+footer .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="kicker">Floor Tycoon · readout for management</div>
+  <h1 id="h1">What people built when they redesigned their own floor</h1>
+  <p class="lead" style="margin-top:8px">Seven moments from a normal workday at Applied Materials Korea. Each time, people fixed the problem by changing the office, and every fix meant giving something up. This page shows what they chose and what they gave up.</p>
+  <div class="facts" id="facts"></div>
+</header>
+<div id="msg"></div>
+<details class="ctl" id="ctl">
+  <summary>Filters <span class="cur" id="cur">Everyone · all versions</span></summary>
+  <form class="filters" id="filters" aria-label="Filters" onsubmit="return false">
+    <label>Employee type<select name="type"><option value="">Everyone</option></select></label>
+    <label>Game version<select name="version"><option value="">All versions</option></select></label>
+    <label>Flow<select name="flow"><option value="">Both</option><option value="quick">Quick (default)</option><option value="classic">Classic</option></select></label>
+    <label>From<input type="date" name="from"></label>
+    <label>To<input type="date" name="to"></label>
+    <label class="tg" id="synWrap"><input type="checkbox" name="synthetic"> Include synthetic test plays</label>
+    <button type="button" class="btn" id="refresh">Refresh</button>
+  </form>
+</details>
+<main id="g" style="display:grid;gap:18px"></main>
+<footer>
+  <div class="kicker">How to read this</div>
+  <ul>
+    <li>Each moment offered a few fixes plus "None of these work". Percentages are shares of people who finished the game (reached 18:00), using the pick they ended the day with.</li>
+    <li>Groups smaller than 10 people are never shown. No names are collected, and no one's individual choices appear anywhere.</li>
+    <li>Headlines and "So what" lines are written from the numbers by fixed rules, so they update as people play. Read them as prompts, not conclusions.</li>
+    <li>The simulated day inside the game (how busy each space was) is a demo and is not used here.</li>
+  </ul>
+  <div class="row"><button type="button" class="btn" id="csv">Export the picks as CSV</button><span id="upd"></span></div>
+</footer>
+</div>
+
+<script>
+(function(){
+const CFG=window.RO_CONFIG||{}, SAMPLE=window.RO_SAMPLE||null, INL=window.RO_ASSETS||null;
+const ABASE=(CFG.assetBase||'assets/').replace(/\/?$/,'/');
+const C={a:'#1F5FBF',b:'#D98A1C',c:'#2E9E86',d:'#9B4FB8',skip:'#CFCAC0',grey:'#A9B3C4',track:'#EEE9DE',line:'#E4DED2',mut:'#6B6A64',ink:'#22252A',bg:'#F6F3EC'};
+const TN={CE:'Customer engineers',PSE:'Process support',IE:'Installation',Sales:'Account & sales',Support:'Office & support',Lead:'Team leads',all:'Everyone'};
+const TYPES=['CE','PSE','IE','Sales','Support','Lead'];
+const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const p0=v=>v==null?'–':Math.round(v)+'%', p1=v=>v==null?'–':(Math.round(v*10)/10)+'%';
+const list=a=>a.length<2?a.join(''):a.slice(0,-1).join(', ')+' and '+a[a.length-1];
+const q=s=>'“'+String(s||'').replace(/\?$/,'')+'”';
+const cap=s=>String(s).replace(/^./,c=>c.toUpperCase());
+const asset=p=>INL&&typeof INL[p]==='string'?INL[p]:ABASE+p;
+const NS='http://www.w3.org/2000/svg';
+function S(w,h,label){const s=document.createElementNS(NS,'svg');s.setAttribute('viewBox',`0 0 ${w} ${h}`);s.setAttribute('role','img');s.setAttribute('aria-label',label);return s}
+function E(p,tag,at,txt){const e=document.createElementNS(NS,tag);for(const k in at)e.setAttribute(k,at[k]);if(txt!=null)e.textContent=txt;p.appendChild(e);return e}
+function tip(el,t){E(el,'title',{},t);return el}
+const cut=(s,n)=>s.length>n?s.slice(0,n-1)+'…':s;
+
+// ---------- data ----------
+let MODE='sample', META=null, ZM={}, LM={};
+function qs(){const f=new FormData($('#filters')),p=new URLSearchParams();for(const k of ['type','version','flow','from','to'])if(f.get(k))p.set(k,f.get(k));if(f.get('synthetic'))p.set('synthetic','include');return p.toString();}
+async function get(name){
+  if(MODE==='sample') return SAMPLE&&SAMPLE[name];
+  const r=await fetch(`${CFG.apiBase.replace(/\/$/,'')}/v1/read/${name}?${qs()}`,{headers:CFG.readToken?{Authorization:'Bearer '+CFG.readToken}:{},credentials:'same-origin'});
+  if(r.status===401||r.status===403) throw new Error('signin');
+  if(!r.ok) throw new Error(name+' '+r.status); return r.json();
+}
+async function json(p){ if(INL&&INL[p]&&typeof INL[p]==='object') return INL[p]; try{const r=await fetch(ABASE+p);return r.ok?r.json():{};}catch(e){return {};} }
+const scOf=id=>META&&META.scenarios.find(s=>s.id===id);
+// the picture for one option: its library layer if it has one, else its zone's layer (the game does the same)
+function layer(sc,k){ if(!sc||!k||k==='skip') return null; const L='L'+sc.id+k; if(!sc.native&&LM[L]) return {src:asset('ll/'+L+'.webp'),m:LM[L]}; const Z=sc.zone+k; return ZM[Z]?{src:asset('zl/'+Z+'.webp'),m:ZM[Z]}:null; }
+const optImg=(sc,k)=>{const l=layer(sc,k);return l?l.src:null};
+const itemImg=id=>asset('sp/'+id+'.webp');
+
+// ---------- widths: charts are drawn at the pixel width they get, so text stays 12-14 px on a phone and a monitor ----------
+const inner=()=>{const w=G.clientWidth||900;return Math.max(280,w-(innerWidth<=560?34:46))};
+const half=()=>{const i=inner();return G.clientWidth>=760?Math.round((i-24)*1.2/2.2):i};
+// ---------- slide frame ----------
+const G=$('#g'); let SN=0;
+function slide(kicker,{h,lead,body,so,table}){
+  const d=document.createElement('section'); d.className='slide'; SN++;
+  d.innerHTML=`<span class="num">${String(SN).padStart(2,'0')} · ${esc(kicker)}</span>${h?`<h2>${esc(h)}</h2>`:''}${lead?`<p class="lead">${esc(lead)}</p>`:''}<div class="body"></div>${so?`<p class="so"><b>So what:</b> ${esc(so)}</p>`:''}`;
+  const b=d.querySelector('.body'); if(typeof body==='string') b.innerHTML=body; else if(body) b.appendChild(body);
+  if(table&&table.rows&&table.rows.length){const t=document.createElement('details');t.className='nums';t.innerHTML=`<summary>See the numbers</summary><div class="tw"><table><thead><tr>${table.cols.map(c=>`<th>${esc(c)}</th>`).join('')}</tr></thead><tbody>${table.rows.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;d.appendChild(t);}
+  G.appendChild(d); return d;
+}
+function under10(kicker,h){ slide(kicker,{h,body:'<div class="lt10">Fewer than 10 games for this view yet. Widen the filters or check back later.</div>'}); }
+const el=html=>{const t=document.createElement('div');t.innerHTML=html.trim();return t.firstElementChild};
+const img=(src,alt='',title)=>src?`<img src="${src}" alt="${esc(alt)}"${title?` title="${esc(title)}"`:''}>`:'';
+
+// ---------- 01 desk sharing: hero number, option pictures, dot plot by role ----------
+function sDesks(sh){
+  const K='DESK SHARING', td=sh&&sh.team_desks, all=td&&td.by_type.all, sc=scOf(1);
+  if(!all||all.lt10) return under10(K,'Desk sharing');
+  const share=(all.a||0)+(all.b||0), keep=all.c||0, win=['a','b','c'].reduce((m,k)=>(all[k]||0)>(all[m]||0)?k:m,'a');
+  const rows=TYPES.map(t=>[t,td.by_type[t]]).filter(([,v])=>v&&!v.lt10).map(([t,v])=>[t,(v.a||0)+(v.b||0),v.n]);
+  const h=share>=50?`${Math.round(share/10)} in 10 chose a way to share desks`:`Most people kept a desk of their own (${p0(keep)})`;
+  const tiles=td.options.map(o=>`<div class="spr${o.k===win?' win':''}">${img(optImg(sc,o.k),o.name)}<b>${esc(o.name)}</b><span>${p0(all[o.k])} picked it</span></div>`).join('');
+  const box=el(`<div class="grid2"><div style="display:grid;gap:14px"><div class="hero"><span class="big">${p0(share)}</span><span class="cap">gave up a fixed desk so the growing team could fit</span></div><div class="pair">${tiles}</div>${all.skip?`<span class="exmeta">${p0(all.skip)} said none of these work.</span>`:''}</div><div style="display:grid;gap:8px"><div class="kicker">Chose to share, by role</div><div class="dp"></div></div></div>`);
+  if(rows.length){ const W=half(),L=W<420?150:210,R=W-48,RH=34,H=rows.length*RH+30,x=v=>L+v/100*(R-L),s=S(W,H,'Share who chose to share desks, by role');
+    E(s,'line',{x1:x(share),x2:x(share),y1:0,y2:H-24,stroke:C.ink,'stroke-dasharray':'3 3','stroke-width':1});
+    E(s,'text',{x:x(share),y:H-6,class:'m','text-anchor':'middle'},`everyone ${p0(share)}`);
+    [...rows].sort((a,b)=>b[1]-a[1]).forEach(([t,v,n],i)=>{const y=i*RH+14;
+      const tl=E(s,'text',{x:0,y:y+5,'font-size':W<420?13:14},TN[t]+' '); E(tl,'tspan',{class:'s'},`(${n})`);
+      E(s,'line',{x1:L,x2:R,y1:y,y2:y,stroke:C.track,'stroke-width':6,'stroke-linecap':'round'});
+      E(s,'line',{x1:x(Math.min(v,share)),x2:x(Math.max(v,share)),y1:y,y2:y,stroke:v>=share?C.a:C.grey,'stroke-width':6});
+      tip(E(s,'circle',{cx:x(v),cy:y,r:8,fill:v>=share?C.a:C.grey,stroke:'#fff','stroke-width':2}),`${TN[t]}: ${p1(v)} chose to share (${n} people)`);
+      E(s,'text',{x:W,y:y+5,class:'v','text-anchor':'end'},p0(v));});
+    box.querySelector('.dp').appendChild(s);
+  } else box.querySelector('.dp').innerHTML='<div class="lt10">Each role needs 10 games before it shows.</div>';
+  let so=null;
+  if(rows.length>=2){ const srt=[...rows].sort((a,b)=>b[1]-a[1]), hi=srt.filter(r=>r[1]>=share+8).map(r=>TN[r[0]].toLowerCase()), lo=srt.filter(r=>r[1]<=share-8).map(r=>TN[r[0]].toLowerCase());
+    so=hi.length&&lo.length?cap(`${list(hi)} are the most ready to share. ${cap(list(lo))} are less sure. Start pilots with teams heavy in ${hi[0]}, and bring ${lo[lo.length-1]} in early.`)
+      :`Roles are within a few points of each other (${p0(srt[srt.length-1][1])}–${p0(srt[0][1])}), so one desk approach can work across teams.`; }
+  slide(K,{h,body:box,so,table:{cols:['Group','People','Compact or shared','Kept own desk','None work'],rows:[['Everyone',all.n,p1(share),p1(keep),p1(all.skip)],...TYPES.filter(t=>td.by_type[t]&&!td.by_type[t].lt10).map(t=>{const v=td.by_type[t];return [TN[t],v.n,p1((v.a||0)+(v.b||0)),p1(v.c),p1(v.skip)]})]}});
+}
+
+// ---------- 02 the office most people built: assembled floor, chips, palette swatches ----------
+function sOffice(picks,styles){
+  const K='THE OFFICE MOST PEOPLE BUILT', ok=(picks&&picks.scenarios||[]).filter(s=>!s.lt10&&s.options.some(o=>o.share!=null));
+  if(ok.length<3) return under10(K,'The office most people built');
+  const zones=['z1','z2','z3','z4','z5','z6','z7'], top=[];
+  for(const z of zones){ const c=ok.filter(s=>s.zone===z).sort((a,b)=>b.n-a.n)[0]; if(!c) continue; const o=[...c.options].sort((a,b)=>(b.share||0)-(a.share||0))[0];
+    top.push({z,s:c,o:(c.skip_share||0)>(o.share||0)?{k:'skip',name:'None of these work',share:c.skip_share}:o}); }
+  top.sort((a,b)=>a.s.time.localeCompare(b.s.time));
+  const fl=el(`<div class="floor"><img class="base" src="${asset('zl/base.webp')}" alt="The floor assembled from the most popular pick in each moment"></div>`);
+  for(const z of zones){ const t=top.find(x=>x.z===z); let L=t?layer(scOf(t.s.id),t.o.k):null; if(!L&&ZM[z+'0']) L={src:asset('zl/'+z+'0.webp'),m:ZM[z+'0']}; if(!L) continue;
+    const im=document.createElement('img'); im.src=L.src; im.alt=''; Object.assign(im.style,{left:L.m.l*100+'%',top:L.m.t*100+'%',width:L.m.w*100+'%',height:L.m.h*100+'%'}); fl.appendChild(im); }
+  const chips=top.map(t=>`<div class="chip">${img(optImg(scOf(t.s.id),t.o.k))||'<span></span>'}<b>${esc(t.o.name)}</b><span>${esc(t.s.time)} · ${p0(t.o.share)}</span></div>`).join('');
+  const sh=top.map(t=>t.o.share||0), mn=Math.min(...sh), mx=Math.max(...sh), strong=top.filter(t=>(t.o.share||0)>=60);
+  const box=el(`<div style="display:grid;gap:14px"></div>`); box.appendChild(fl); box.appendChild(el(`<div class="chips">${chips}</div>`));
+  const P=(styles&&styles.palettes||[]).filter(p=>p.share!=null), PD=(META&&META.palettes)||[];
+  if(P.length){ const neutral=P.reduce((a,p)=>a+((PD.find(x=>x.name===p.name)||{}).kind==='Neutral'?p.share:0),0);
+    box.appendChild(el(`<div class="pals"><div class="kicker">The look they picked for the render</div>${P.slice(0,3).map(p=>{const d=PD.find(x=>x.name===p.name);return `<div class="pal">${d?`<span class="sw">${d.colors.map(c=>`<i style="background:${c}"></i>`).join('')}</span>`:''}<span><b>${esc(p.name)}</b> · ${p0(p.share)}</span></div>`}).join('')}<p class="exmeta">${p0(neutral)} chose a calm, neutral palette over a bolder one.</p></div>`)); }
+  const h=mx<55?'No single fix wins outright: people agree on the direction, not one layout':`${top.find(t=>t.o.share===mx).o.name} is the clearest favourite of the day (${p0(mx)})`;
+  const so=strong.length?`Where one pick passes 60% (${list(strong.map(t=>t.o.name))}), one standard will do. Elsewhere top picks get ${p0(mn)}–${p0(mx)}, so leave room for choice in those zones.`
+    :`Top picks get ${p0(mn)}–${p0(mx)}. People agree on the direction, not on one exact layout, so leave room for choice in each zone.`;
+  slide(K,{h,lead:'The most popular pick from each moment, put together on one floor. Where several moments share a zone, the one most people played is shown.',body:box,so,
+    table:{cols:['Time','Moment','Most picked','Share','People'],rows:top.map(t=>[t.s.time,t.s.question,t.o.name,p1(t.o.share),t.s.n])}});
+}
+
+// ---------- 03 clear winners vs split decisions: quadrant scatter ----------
+function sAgree(picks){
+  const K='CLEAR WINNERS AND SPLIT DECISIONS', ok=(picks&&picks.scenarios||[]).filter(s=>!s.lt10&&s.top_share!=null&&s.median_decide_s!=null);
+  if(ok.length<3) return under10(K,'Clear winners and split decisions');
+  const clear=ok.filter(s=>s.top_share>=50), W=inner(), nar=W<520, H=nar?290:340,L=40,B=34,T=24;
+  const xs=ok.map(s=>s.top_share), minX=Math.max(0,Math.floor(Math.min(...xs,40)/10)*10-5), maxX=Math.min(100,Math.ceil(Math.max(...xs,60)/10)*10+5);
+  const ys=ok.map(s=>s.median_decide_s), maxY=Math.ceil(Math.max(...ys)/5)*5+2, midY=[...ys].sort((a,b)=>a-b)[ys.length>>1];
+  const x=v=>L+(v-minX)/(maxX-minX)*(W-L-10), y=v=>H-B-v/maxY*(H-B-T), s=S(W,H,'Agreement against time to decide, one dot per moment');
+  E(s,'rect',{x:L,y:T,width:x(50)-L,height:y(midY)-T,fill:'#FBEFD9'}); E(s,'rect',{x:x(50),y:y(midY),width:W-10-x(50),height:H-B-y(midY),fill:'#E3ECF8'});
+  E(s,'text',{x:L+8,y:T+16,class:'m'},nar?'SPLIT · SLOW':'SPLIT AND SLOW → OFFER A CHOICE'); E(s,'text',{x:W-18,y:H-B-10,class:'m','text-anchor':'end'},nar?'CLEAR · QUICK':'CLEAR AND QUICK → STANDARDISE');
+  for(let v=Math.ceil(minX/10)*10;v<=maxX;v+=10){E(s,'line',{x1:x(v),x2:x(v),y1:T,y2:H-B,stroke:v===50?C.ink:C.line,'stroke-dasharray':v===50?'3 3':'0'});E(s,'text',{x:x(v),y:H-B+16,class:'s','text-anchor':'middle'},v+'%')}
+  for(let v=0;v<=maxY;v+=5){E(s,'text',{x:L-6,y:y(v)+4,class:'s','text-anchor':'end'},v+'s')}
+  E(s,'text',{x:(W+L)/2,y:H-2,class:'s','text-anchor':'middle'},'Share who picked the most popular fix →');
+  const lab=new Set([...ok].sort((a,b)=>(b.median_decide_s-b.top_share/4)-(a.median_decide_s-a.top_share/4)).slice(0,nar?1:2).concat([...ok].sort((a,b)=>b.top_share-a.top_share).slice(0,nar?1:2)));
+  const placed=[];
+  ok.forEach(o=>{const cx=x(o.top_share),cy=y(o.median_decide_s),cl=o.top_share>=50;
+    tip(E(s,'circle',{cx,cy,r:7,fill:cl?C.a:C.b,stroke:'#fff','stroke-width':2}),`${o.time} · ${o.question}: ${p1(o.top_share)} picked the top fix, ${o.median_decide_s.toFixed(1)} s to decide (${o.n} people)`);
+    if(lab.has(o)&&!placed.some(p=>Math.abs(p[1]-cy)<15&&Math.abs(p[0]-cx)<190)){placed.push([cx,cy]);const right=cx<W-(nar?150:200);E(s,'text',{x:right?cx+11:cx-11,y:cy+4,class:'s halo','text-anchor':right?'start':'end'},cut(o.question,nar?22:30))}});
+  const box=el('<div style="display:grid;gap:8px"></div>'); box.appendChild(el(`<div class="legend"><span><i style="background:${C.a}"></i>Clear winner (one fix got half or more)</span><span><i style="background:${C.b}"></i>Split</span></div>`)); box.appendChild(s);
+  const sl=[...ok].filter(o=>o.top_share<50).sort((a,b)=>b.median_decide_s-a.median_decide_s)[0], cw=[...clear].sort((a,b)=>b.top_share-a.top_share)[0];
+  const h=clear.length?`${clear.length} of ${ok.length} moments have a clear winner`:`No moment has a clear winner: every one splits`;
+  const so=[cw?`Where one fix passed half the votes (${q(cw.question)}, ${p0(cw.top_share)}), one standard will do.`:'',sl?`Where votes split and people took longest (${q(sl.question)}), offer a choice in that zone.`:''].filter(Boolean).join(' ');
+  slide(K,{h,lead:'Each dot is one moment: how many people picked the same fix, against how long they took to choose.',body:box,so,
+    table:{cols:['Time','Moment','Top fix share','Median seconds','People'],rows:[...ok].sort((a,b)=>a.time.localeCompare(b.time)).map(o=>[o.time,o.question,p1(o.top_share),o.median_decide_s.toFixed(1),o.n])}});
+}
+
+// ---------- 04 where none of the fixes worked: ring gauges ----------
+function ring(v){const r=34,c=2*Math.PI*r,s=S(86,86,`${Math.round(v)}% said none of these work`);
+  E(s,'circle',{cx:43,cy:43,r,fill:'none',stroke:C.track,'stroke-width':10});
+  E(s,'circle',{cx:43,cy:43,r,fill:'none',stroke:'#B4470C','stroke-width':10,'stroke-dasharray':`${c*Math.min(v,100)/100} ${c}`,'stroke-linecap':'round',transform:'rotate(-90 43 43)'});
+  E(s,'text',{x:43,y:49,'text-anchor':'middle','font-size':19,'font-weight':800},Math.round(v)+'%'); return s;}
+function sSkips(sk){
+  const K='WHERE NONE OF THE FIXES WORKED', rows=(sk&&sk.rows||[]).filter(r=>r.skip_share!=null);
+  if(!rows.length) return under10(K,'Where none of the fixes worked');
+  const t3=rows.slice(0,3), rest=rows.slice(3,7), box=el('<div style="display:grid;gap:12px"><div class="rings"></div></div>');
+  t3.forEach(r=>{const sc=scOf(r.id), c=el(`<div class="ring"><div class="top"><div class="g"></div><div><div class="t">${esc(r.time)} · ${r.n} people</div><div class="q">${esc(r.question)}</div></div></div><div class="offered"><span>Offered:</span>${sc?sc.options.map(o=>optImg(sc,o.k)?img(optImg(sc,o.k),o.name,o.name):`<span>${esc(o.name)}</span>`).join(''):''}</div></div>`);
+    c.querySelector('.g').appendChild(ring(r.skip_share)); box.firstElementChild.appendChild(c);});
+  if(rest.length) box.appendChild(el(`<p class="also">Also often skipped: ${rest.map(r=>`<b>${esc(r.question)}</b> ${p0(r.skip_share)}`).join(' · ')}</p>`));
+  const a=t3[0], one=a.skip_share>=8?`1 in ${Math.round(100/a.skip_share)}`:p0(a.skip_share);
+  slide(K,{h:`At ${a.time}, ${one} said none of the fixes work`,lead:'Share of people who chose "None of these work" at that moment, with the fixes they were offered.',body:box,
+    so:`Rethink the options for ${list(t3.slice(0,2).map(r=>q(r.question)))} first. What was on offer there didn't solve the problem.`,
+    table:{cols:['Time','Moment','None of these work','People'],rows:rows.map(r=>[r.time,r.question,p1(r.skip_share),r.n])}});
+}
+
+// ---------- 05 additions: waffle + sized item tiles + making room ----------
+function waffle(parts){const s=S(220,220,parts.map(p=>`${p[1]} ${Math.round(p[0])}%`).join(', '));let i=0;const cells=[];
+  parts.forEach(([v,,c])=>{for(let k=0;k<Math.round(v);k++)cells.push(c)}); while(cells.length<100)cells.push(C.track);
+  for(let r=0;r<10;r++)for(let c=0;c<10;c++){E(s,'rect',{x:c*22,y:r*22,width:20,height:20,rx:4,fill:cells[i++]||C.track})} return s;}
+function sAdds(ad,sh){
+  const K='WHAT PEOPLE WOULD ADD';
+  if(!ad||ad.added_share==null) return under10(K,'What people would add');
+  const items=(ad.items||[]).slice(0,8), box=el('<div class="addgrid"><div class="waf"></div><div style="display:grid;gap:12px;min-width:0"><div class="kicker">Most added</div><div class="tiles"></div></div></div>');
+  const no=ad.declined_share||0, rest=Math.max(0,100-ad.added_share-no);
+  box.querySelector('.waf').appendChild(waffle([[ad.added_share,'added something',C.c],[no,'said no thanks',C.grey]]));
+  box.querySelector('.waf').appendChild(el(`<div class="legend" style="display:grid;gap:4px"><span><i style="background:${C.c}"></i><b style="color:${C.ink}">${p0(ad.added_share)}</b> added something</span><span><i style="background:${C.grey}"></i>${p0(no)} said no thanks</span><span><i style="background:${C.track}"></i>${p0(rest)} skipped the step</span></div>`));
+  const T=box.querySelector('.tiles');
+  if(items.length) items.forEach((it,i)=>T.appendChild(el(`<div class="tile${i<2?' l':''}">${img(itemImg(it.id))}<b>${esc(it.name)}</b>${i<2?`<span class="pct">${p0(it.share)}</span><span>${esc(it.cat||'')}</span>`:`<span>${p0(it.share)}</span>`}</div>`)));
+  else T.outerHTML='<div class="lt10">No single item has 10 picks yet.</div>';
+  const R=box.lastElementChild;
+  if(ad.other_items_lt10) R.appendChild(el(`<p class="exmeta">${ad.other_items_lt10} more picks were spread over items with fewer than 10 each.</p>`));
+  const mr=sh&&sh.making_room;
+  if(mr&&!mr.lt10) R.appendChild(el(`<div class="room"><div class="kicker">When it didn't fit (${mr.n} people)</div><div class="mini"><span style="flex:${mr.desks_smaller||0};background:${C.a}"></span><span style="flex:${mr.desks_share||0};background:${C.b}"></span><span style="flex:${mr.swap||0};background:${C.d}"></span></div><p>${p0(mr.desks_smaller)} made desks smaller, ${p0(mr.desks_share)} shared desks, ${p0(mr.swap)} swapped out one of their fixes.</p></div>`));
+  const n3=items.slice(0,3).map(i=>i.name);
+  slide(K,{h:`${p0(ad.added_share)} added something none of the moments offered`+(items[0]?`. ${items[0].name} led.`:''),lead:'At 18:00 everyone could add one more thing to their floor, from the full catalogue.',body:box,
+    so:n3.length?`${list(n3)} are needs the seven moments didn't cover. Brief them as part of the space programme, not as extras.`:null,
+    table:{cols:['Item','Kind','Share of people','People'],rows:(ad.items||[]).map(i=>[i.name,i.cat||'',p1(i.share),i.n])}});
+}
+
+// ---------- 06 when in the day it hurts: heat strip on the clock ----------
+function sHours(ph){
+  const K='WHEN IN THE DAY IT HURTS', hs=(ph&&ph.hours||[]);
+  if(hs.length<3) return under10(K,'When in the day it hurts');
+  const H0=Math.min(5,...hs.map(h=>h.h)), H1=Math.max(21,...hs.map(h=>h.h)), n=H1-H0+1, W=inner(), cw=(W-2)/n, s=S(W,124,'Friction by hour of the workday'), step=cw>=34?2:4;
+  const multi=hs.filter(h=>h.scenarios>=2), peak=[...(multi.length?multi:hs)].sort((a,b)=>b.index-a.index)[0], col=v=>{const t=Math.max(0,Math.min(1,v/100)),a=[227,236,248],b=[20,64,140];return `rgb(${a.map((x,i)=>Math.round(x+(b[i]-x)*t)).join(',')})`};
+  for(let h=H0;h<=H1;h++){const r=hs.find(x=>x.h===h),x=(h-H0)*cw+1;
+    const c=E(s,'rect',{x,y:34,width:cw-2,height:52,rx:6,fill:r?col(r.index):'#F2EFE8',stroke:r===peak?C.ink:'none','stroke-width':2.5});
+    if(r){tip(c,`${String(h).padStart(2,'0')}:00 · score ${r.index} · median ${r.decide_s.toFixed(1)} s to decide, ${p1(r.skip_share)} none work, ${p1(r.edit_share)} changed later · ${r.top.join(' / ')}`);
+      if(cw>=26)E(s,'text',{x:x+cw/2-1,y:65,'text-anchor':'middle','font-size':12,'font-weight':700,fill:r.index>55?'#fff':C.ink},r.index);}
+    if((h-H0)%step===0)E(s,'text',{x:x+cw/2-1,y:104,class:'m','text-anchor':'middle'},String(h).padStart(2,'0')+':00');}
+  const px=(peak.h-H0)*cw+1+cw/2, right=px<W/2;
+  E(s,'line',{x1:px,x2:px,y1:14,y2:32,stroke:C.ink}); E(s,'text',{x:right?px+6:px-6,y:20,'font-size':12.5,'font-weight':700,'text-anchor':right?'start':'end'},`Peak · ${cut(peak.top[0]||'',Math.max(14,Math.floor((right?W-px:px)/7.5)-8))}`);
+  const box=el('<div style="display:grid;gap:8px"></div>'); box.appendChild(s);
+  box.appendChild(el(`<div class="legend"><span>Lighter = easier</span><span style="display:inline-flex;gap:2px">${[0,25,50,75,100].map(v=>`<i style="background:${col(v)};margin:0"></i>`).join('')}</span><span>Darker = more friction</span></div>`));
+  const hh=String(peak.h).padStart(2,'0')+':00';
+  slide(K,{h:`The hardest part of the day is around ${hh}`,lead:'Each hour scored on how long people took to choose, how often none of the fixes worked, and how often they changed their pick later (0–100).',body:box,
+    so:`Design for ${hh} first. At that hour people took longest and were least satisfied with the fixes on offer${peak.top[0]?` (${q(peak.top[0])})`:''}.`,
+    table:{cols:['Hour','Score','Median s to decide','None work','Changed later','Moments'],rows:hs.map(r=>[String(r.h).padStart(2,'0')+':00',r.index,r.decide_s.toFixed(1),p1(r.skip_share),p1(r.edit_share),r.scenarios])}});
+}
+
+// ---------- 07 second thoughts: big number, ranked list, picture switches ----------
+function sEdits(ed){
+  const K='SECOND THOUGHTS', rows=(ed&&ed.rows||[]).filter(r=>r.edit_share!=null&&r.edit_share>0);
+  if(!ed||ed.any_share==null||!rows.length) return under10(K,'Second thoughts');
+  const sw=(ed.switches||[]).slice(0,3), box=el(`<div class="two"><div style="display:grid;gap:14px;align-content:start"><div class="hero"><span class="big2">${p0(ed.any_share)}</span><span class="cap">went back at the end of the day and changed at least one pick</span></div><div class="kicker">Changed most, by moment</div><ol class="rank">${rows.slice(0,5).map(r=>`<li><span>${esc(r.question)} <small style="color:var(--mut)">${esc(r.time||'')}</small></span><em>${p0(r.edit_share)}</em></li>`).join('')}</ol></div><div style="display:grid;gap:10px;align-content:start"><div class="kicker">Most common switches</div></div></div>`);
+  const R=box.lastElementChild;
+  if(sw.length) sw.forEach(x=>{const sc=scOf(x.id);R.appendChild(el(`<div class="callout">${img(optImg(sc,x.from.k),x.from.name)}<span class="arrow">→</span>${img(optImg(sc,x.to.k),x.to.name)}<p><b>${esc(x.from.name)} → ${esc(x.to.name)}</b><br>${p1(x.share)} of everyone · ${esc(x.question)}</p></div>`))});
+  else R.appendChild(el('<div class="lt10">No single switch has 10 people yet.</div>'));
+  const top=rows[0];
+  slide(K,{h:`${q(top.question)} was where people changed their minds most`,body:box,
+    so:(sw[0]?`The most common switch was ${sw[0].from.name} → ${sw[0].to.name}. `:'')+'People change their pick once they see the whole floor, so show the trade-offs together when this goes to teams.',
+    table:{cols:['Moment','Changed later','Top switch','People'],rows:rows.map(r=>[r.question,p1(r.edit_share),r.top_switch?`${r.top_switch.from} → ${r.top_switch.to} (${r.top_switch.n})`:'',r.n])}});
+}
+
+// ---------- 08 where groups disagree: 100% segmented rows ----------
+function segBlock(title,blk){ if(!blk) return ''; const keys=[...blk.options.map(o=>o.k),'skip'], nm=Object.fromEntries(blk.options.map(o=>[o.k,o.name]).concat([['skip','None work']]));
+  const rows=[...TYPES,'all'].filter(t=>blk.by_type[t]&&!blk.by_type[t].lt10);
+  if(rows.length<2) return '';
+  return `<div class="stack"><div class="sub">${esc(title)}</div>${rows.map(t=>{const v=blk.by_type[t];return `<div class="srow"><span>${esc(TN[t])} <small>(${v.n})</small></span><div class="seg">${keys.filter(k=>v[k]>0).map(k=>`<span class="${k}" style="flex:${v[k]}" title="${esc(nm[k])} ${p1(v[k])}">${v[k]>=12?Math.round(v[k])+'%':''}</span>`).join('')}</div></div>`}).join('')}<div class="legend">${keys.map(k=>`<span><i style="background:${k==='skip'?C.skip:C[k]}"></i>${esc(nm[k])}</span>`).join('')}</div></div>`; }
+function sGroups(sh){
+  const K='WHERE GROUPS DISAGREE', td=sh&&sh.team_desks; if(!td) return under10(K,'Where groups disagree');
+  const a=segBlock('17:00 · The team grows to 14',td), s1=scOf(30), b=segBlock(s1?`${s1.time} · ${s1.question}`:'',sh.fab_days);
+  if(!a&&!b) return under10(K,'Where groups disagree');
+  const rows=TYPES.filter(t=>td.by_type[t]&&!td.by_type[t].lt10).map(t=>[t,td.by_type[t].c||0]).sort((x,y)=>y[1]-x[1]), big=rows.length>=2&&rows[0][1]-rows[rows.length-1][1]>=10;
+  slide(K,{h:big?`${TN[rows[0][0]]} hold on to their desks most; ${TN[rows[rows.length-1][0]].toLowerCase()} let go first`:'Roles choose much the same way',body:`<div class="two">${a}${b}</div>`,
+    so:big?`One layout won't suit every team. ${TN[rows[rows.length-1][0]]} are ready for shared settings; ${TN[rows[0][0]].toLowerCase()} need a reason to share before they will.`:'Differences between roles are small here, so a common approach is reasonable.'});
+}
+
+// ---------- 09 leads vs staff: dumbbell ----------
+function sLeads(lg){
+  const K='LEADS AND STAFF', rows=(lg&&lg.rows||[]).filter(r=>r.lead!=null&&r.staff!=null).slice(0,6);
+  if(!rows.length) return under10(K,'Leads and staff');
+  const W=inner(),nar=W<560,L=nar?0:230,R=W-12,RH=nar?62:42,H=rows.length*RH+36,x=v=>L+8+v/100*(R-L-8),s=S(W,H,'Share picking each fix: team leads against everyone else');
+  [0,25,50,75,100].forEach(v=>{E(s,'line',{x1:x(v),x2:x(v),y1:6,y2:H-26,stroke:C.line});E(s,'text',{x:x(v),y:H-8,class:'s','text-anchor':'middle'},v+'%')});
+  rows.forEach((r,i)=>{const y=nar?i*RH+44:i*RH+24;
+    if(nar){const t=E(s,'text',{x:0,y:y-16,'font-size':13.5,'font-weight':700},cut(r.name,26)+'  ');E(t,'tspan',{class:'s','font-weight':400},cut(r.question,Math.floor(W/7.5)-r.name.length-4));}
+    else{E(s,'text',{x:0,y:y-2,'font-size':13.5,'font-weight':700},cut(r.name,30)); E(s,'text',{x:0,y:y+13,class:'s'},cut(r.question,34));}
+    E(s,'line',{x1:x(r.lead),x2:x(r.staff),y1:y,y2:y,stroke:C.grey,'stroke-width':3});
+    tip(E(s,'circle',{cx:x(r.lead),cy:y,r:7,fill:C.b,stroke:'#fff','stroke-width':2}),`Team leads: ${p1(r.lead)} picked ${r.name} (${r.n_lead})`);
+    tip(E(s,'circle',{cx:x(r.staff),cy:y,r:7,fill:C.a,stroke:'#fff','stroke-width':2}),`Everyone else: ${p1(r.staff)} picked ${r.name} (${r.n_staff})`);});
+  const box=el('<div style="display:grid;gap:8px"></div>'); box.appendChild(el(`<div class="legend"><span><i style="background:${C.b}"></i>Team leads (${lg.n_lead})</span><span><i style="background:${C.a}"></i>Everyone else (${lg.n_staff})</span></div>`)); box.appendChild(s);
+  const t=rows[0], staffMore=t.gap>0;
+  slide(K,{h:`Leads and staff differ most on ${t.name} (${Math.round(Math.abs(t.gap))} points)`,lead:'The fixes where team leads and everyone else chose most differently.',body:box,
+    so:staffMore?`Staff want ${t.name} more than their leads do. Bring leads in before deciding ${q(t.question)}, or the change may stall at team level.`:`Leads favour ${t.name} more than their teams do. Test it with staff before rolling it out for ${q(t.question)}.`,
+    table:{cols:['Moment','Fix','Leads','Everyone else','Gap (points)'],rows:(lg.rows||[]).map(r=>[r.question,r.name,p1(r.lead),p1(r.staff),r.gap])}});
+}
+
+// ---------- 10 fixes that go together: picture pairs ----------
+function sPairs(bd){
+  const K='FIXES THAT GO TOGETHER', ps=(bd&&bd.pairs||[]).filter(p=>p.lift>=1.15).slice(0,6);
+  if(!ps.length) return under10(K,'Fixes that go together');
+  const html=`<div class="pairs">${ps.map(p=>`<div class="pc"><div class="im">${img(optImg(scOf(p.a.id),p.a.k))}<b>+</b>${img(optImg(scOf(p.b.id),p.b.k))}</div><div class="x">${p.lift.toFixed(1)}× <small>as often as chance</small></div><p><b>${esc(p.a.name)}</b> with <b>${esc(p.b.name)}</b><br><span style="color:var(--mut)">${p.n_both} people chose both</span></p></div>`).join('')}</div>`;
+  const t=ps[0];
+  slide(K,{h:`People who pick ${t.a.name} also tend to pick ${t.b.name}`,lead:'Pairs of fixes chosen together on the same floor more often than chance would predict.',body:html,
+    so:'Plan these as pairs. Placing one without the other may miss what people were after.',
+    table:{cols:['Fix','With','Times as often as chance','People'],rows:(bd.pairs||[]).map(p=>[p.a.name,p.b.name,p.lift,p.n_both])}});
+}
+
+// ---------- 11 kinds of space: fill tiles ----------
+function sKinds(br){
+  const K='THE KINDS OF SPACE PEOPLE BUILT', cs=(br&&br.categories||[]).filter(c=>c.share_of_floors!=null);
+  if(!cs.length) return under10(K,'The kinds of space people built');
+  const html=`<div class="fills">${cs.map(c=>`<div class="fill" title="${esc(c.cat)}: on ${p1(c.share_of_floors)} of floors"><i style="height:${c.share_of_floors}%"></i><b>${p0(c.share_of_floors)}</b><span>${esc(c.cat)}</span></div>`).join('')}</div>`;
+  const hi=cs.filter(c=>c.share_of_floors>=80).map(c=>c.cat.toLowerCase()), lo=cs[cs.length-1];
+  slide(K,{h:hi.length>=2?`${cap(list(hi.slice(0,2)))} are on almost every floor`:`${cs[0].cat} is on the most floors (${p0(cs[0].share_of_floors)})`,lead:'Share of finished floors with at least one space of each kind, from the final picks and the addition.',body:html,
+    so:`Use this as a first-pass space programme and check it against occupancy data. ${lo.cat} appeared least (${p0(lo.share_of_floors)}).`,
+    table:{cols:['Kind of space','Share of floors'],rows:cs.map(c=>[c.cat,p1(c.share_of_floors)])}});
+}
+
+// ---------- 12 how far people got: milestones + drop line ----------
+function sFunnel(fn,sum){
+  const K='HOW FAR PEOPLE GOT', st=fn&&fn.steps;
+  if(!st) return under10(K,'How far people got');
+  const g=k=>(st.find(s=>s.key===k)||{}).n||0, n0=g('started')||1;
+  const ms=[['started','Started a game'],['end','Reached 18:00'],['render','Opened the render'],['wall','Shared to the wall']];
+  const box=el(`<div style="display:grid;gap:14px"><div class="steps">${ms.map(([k,l])=>`<div class="st"><b>${g(k)}</b><span>${l}</span><em>${k==='started'?'100%':p0(g(k)/n0*100)} of starts</em></div>`).join('')}</div><div class="kicker">Still playing after each moment</div></div>`);
+  const pts=[['Start',n0],...[1,2,3,4,5,6,7].map(i=>['M'+i,g('m'+i)]),['18:00',g('end')]], W=inner(),H=160,L=40,x=i=>L+i*(W-L-20)/(pts.length-1),lo=Math.max(0,Math.floor(Math.min(...pts.map(p=>p[1]/n0*100))/10)*10-10),y=v=>14+(100-v)/(100-lo)*(H-44);
+  const s=S(W,H,'Share of starters still playing after each moment');
+  [lo,(lo+100)/2,100].forEach(v=>{E(s,'line',{x1:L,x2:W-20,y1:y(v),y2:y(v),stroke:C.line});E(s,'text',{x:L-6,y:y(v)+4,class:'s','text-anchor':'end'},Math.round(v)+'%')});
+  E(s,'path',{d:pts.map((p,i)=>(i?'L':'M')+x(i)+' '+y(p[1]/n0*100)).join(' '),fill:'none',stroke:C.a,'stroke-width':2});
+  pts.forEach((p,i)=>{tip(E(s,'circle',{cx:x(i),cy:y(p[1]/n0*100),r:4.5,fill:C.a,stroke:'#fff','stroke-width':1.5}),`${p[0]}: ${p[1]} (${p1(p[1]/n0*100)})`);if(W>=480||i%2===0||i===pts.length-1)E(s,'text',{x:x(i),y:H-6,class:'m','text-anchor':'middle'},p[0])});
+  box.appendChild(s);
+  const done=g('end')/n0*100;
+  slide(K,{h:`${p0(done)} of people who started finished the day`,body:box,
+    so:`${sum.completed} finished games sit behind this readout. ${done>=80?'Completion is high, so the results are not skewed toward a keen few.':'Completion is low enough that keen players may be over-represented; read close results with care.'}`,
+    table:{cols:['Step','People','Share of starts'],rows:st.map(s=>[s.label,s.n,p1(s.n/n0*100)])}});
+}
+
+// ---------- 13 every moment: explorer ----------
+function sExplore(picks){
+  const K='EVERY MOMENT', ok=(picks&&picks.scenarios||[]).filter(s=>!s.lt10).sort((a,b)=>a.time.localeCompare(b.time)||b.n-a.n);
+  if(!ok.length) return under10(K,'Every moment');
+  const box=el(`<div class="ex"><select aria-label="Pick a moment">${ok.map(s=>`<option value="${s.id}">${esc(s.time)} · ${esc(s.question)} (${s.n})</option>`).join('')}</select><div class="pair"></div><p class="exmeta"></p></div>`);
+  const draw=()=>{const s=ok.find(x=>x.id===+box.querySelector('select').value), sc=scOf(s.id), mx=Math.max(...s.options.map(o=>o.share||0));
+    box.querySelector('.pair').innerHTML=s.options.map(o=>`<div class="spr${o.share===mx?' win':''}">${img(optImg(sc,o.k),o.name)}<b>${esc(o.name)}</b><span>${p0(o.share)} picked it</span></div>`).join('')+`<div class="spr" style="align-content:center"><b>None of these work</b><span>${p0(s.skip_share)}</span></div>`;
+    box.querySelector('.exmeta').textContent=`${s.theme} · ${s.n} people played it · median ${s.median_decide_s!=null?s.median_decide_s.toFixed(1)+' s':'–'} to decide · ${p0(s.edit_share)} changed it later`;};
+  box.querySelector('select').addEventListener('change',draw); draw();
+  slide(K,{h:'Look up any moment',lead:'Every moment that at least 10 people played, in workday order.',body:box});
+}
+
+// ---------- page ----------
+function paintHeader(sum){
+  const live=MODE==='live';
+  $('#h1').textContent=sum.completed>=10?`What ${sum.completed} people built when they redesigned their own floor`:'What people built when they redesigned their own floor';
+  const m=sum.median_play_s!=null?Math.round(sum.median_play_s/6)/10:null;
+  $('#facts').innerHTML=`<span class="${live?'live':'sample'}">${live?'● Live data':'Sample data'}</span><span><b>${sum.completed??0}</b> finished the game</span>${sum.completion!=null?`<span><b>${p0(sum.completion)}</b> of people who started</span>`:''}${m!=null?`<span><b>${m} min</b> typical play time</span>`:''}<span>No names, no individual answers</span>${sum.synthetic?`<span class="sample"><b>${sum.synthetic}</b> synthetic test plays</span>`:''}`;
+  $('#upd').textContent=sum.updated_at?`Numbers as of ${new Date(sum.updated_at).toLocaleString()}`:'';
+  if(!live&&!$('#msg .note')) $('#msg').innerHTML='<div class="note"><b>Sample data.</b> These numbers come from synthetic test plays so the readout can be judged before the pilot. Live numbers replace them once the backend is connected.</div>';
+  const f=new FormData($('#filters')), tsel=$('#filters [name=type]');
+  $('#cur').textContent=[tsel.options[tsel.selectedIndex].text,f.get('version')||'all versions',f.get('synthetic')?'with synthetic plays':''].filter(Boolean).join(' · ');
+}
+let busy=0, LAST=null, LW=0;
+function render(sum,D){ LAST=[sum,D]; LW=G.clientWidth; G.innerHTML=''; SN=0; renderBody(sum,D); }
+async function draw(){
+  const my=++busy, msg=$('#msg'); if(MODE==='live') msg.innerHTML='';
+  let sum;
+  try{ sum=await get('summary'); }catch(e){ G.innerHTML=''; $('#facts').innerHTML='';
+    msg.innerHTML=e.message==='signin'?'<div class="note err">Sign in to view the readout (viewer access is required). Ask the project team for access.</div>':`<div class="note err">Could not reach the game backend (${esc(e.message)}). No numbers are shown rather than old or sample ones. Try Refresh in a minute.</div>`; return; }
+  if(!sum){ msg.innerHTML='<div class="note err">No data to show.</div>'; return; }
+  const names=['funnel','picks','skips','edits','additions','sharing','pain-hours','bundles','space-brief','leads-gap','styles'];
+  const D=Object.fromEntries(await Promise.all(names.map(n=>Promise.resolve().then(()=>get(n)).then(v=>[n,v]).catch(()=>[n,null]))));
+  if(my!==busy) return;
+  paintHeader(sum); render(sum,D);
+}
+function renderBody(sum,D){
+  if(!sum.completed||sum.completed<10){ slide('NOT ENOUGH GAMES YET',{h:`${sum.completed||0} finished so far`,body:'<div class="lt10">Each part of this readout needs at least 10 finished games before it shows. It fills in as people play.</div>'}); return; }
+  const parts=[()=>sDesks(D.sharing),()=>sOffice(D.picks,D.styles),()=>sAgree(D.picks),()=>sSkips(D.skips),()=>sAdds(D.additions,D.sharing),()=>sHours(D['pain-hours']),
+    ()=>sEdits(D.edits),()=>sGroups(D.sharing),()=>sLeads(D['leads-gap']),()=>sPairs(D.bundles),()=>sKinds(D['space-brief']),()=>sFunnel(D.funnel,sum),()=>sExplore(D.picks)];
+  for(const f of parts){ try{ f(); }catch(e){ console.error(e); } }   // one broken card never blanks the page
+}
+async function boot(){
+  MODE=CFG.apiBase?'live':'sample';
+  [ZM,LM]=await Promise.all([json('zl/meta.json'),json('ll/meta.json')]);
+  const tsel=$('#filters [name=type]'); TYPES.forEach(t=>tsel.appendChild(new Option(TN[t],t)));
+  try{ META=await get('meta'); }catch(e){ META=null; }
+  if(META&&MODE==='live'){ const v=$('#filters [name=version]'); (META.versions||[]).forEach(x=>v.appendChild(new Option(x+(/^synthetic/.test(x)?' (synthetic)':''),x))); }
+  if(MODE!=='live'){ $('#ctl').hidden=true; $('#csv').hidden=true; }
+  await draw();
+}
+let rz; addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>{if(LAST&&Math.abs(G.clientWidth-LW)>8)render(...LAST)},200)});
+$('#refresh').onclick=draw; $('#filters').addEventListener('change',()=>{ if(MODE==='live') draw(); });
+$('#csv').onclick=async()=>{ try{ const r=await fetch(`${CFG.apiBase.replace(/\/$/,'')}/v1/read/export.csv?${qs()}`,{headers:CFG.readToken?{Authorization:'Bearer '+CFG.readToken}:{},credentials:'same-origin'}); if(!r.ok) throw new Error(r.status); const b=await r.blob(); const a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download='space-readout-picks.csv'; a.click(); }catch(e){ $('#msg').insertAdjacentHTML('afterbegin','<div class="note err">Export failed. Check the connection and try again.</div>'); } };
+boot();
+})();
+</script>

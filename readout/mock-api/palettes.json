@@ -1,0 +1,122 @@
+[
+ {
+  "name": "Warm Minimal",
+  "kind": "Neutral",
+  "colors": [
+   "#F3EEE6",
+   "#E2D6C3",
+   "#C9A882",
+   "#8C8C86",
+   "#3A3735"
+  ],
+  "desc": "Oatmeal walls, light oak, greige upholstery, charcoal accents"
+ },
+ {
+  "name": "Scandi Light",
+  "kind": "Neutral",
+  "colors": [
+   "#FAFAF7",
+   "#E8E2D6",
+   "#D1C2A5",
+   "#A9B5A0",
+   "#1F2124"
+  ],
+  "desc": "White, birch, pale grey, a little sage, black details"
+ },
+ {
+  "name": "Japandi",
+  "kind": "Neutral",
+  "colors": [
+   "#F1EBE1",
+   "#CDBBA2",
+   "#A27E62",
+   "#6E7357",
+   "#2B2926"
+  ],
+  "desc": "Rice-paper white, ash wood, clay, moss, ink"
+ },
+ {
+  "name": "Biophilic Calm",
+  "kind": "Neutral",
+  "colors": [
+   "#F2EFE7",
+   "#CBB89A",
+   "#9DAF92",
+   "#5E7D62",
+   "#2F3B30"
+  ],
+  "desc": "Linen, oak, sage and eucalyptus greens, forest accents"
+ },
+ {
+  "name": "Soft Greige",
+  "kind": "Neutral",
+  "colors": [
+   "#ECE8E2",
+   "#D3CCC2",
+   "#B3A99C",
+   "#7B6A58",
+   "#3E3F42"
+  ],
+  "desc": "Stone, putty, mushroom, walnut, graphite"
+ },
+ {
+  "name": "Terracotta Studio",
+  "kind": "Edgy",
+  "colors": [
+   "#F4E9DC",
+   "#D9A07A",
+   "#B5582F",
+   "#6E7445",
+   "#3B2A22"
+  ],
+  "desc": "Cream, terracotta, rust, olive, espresso"
+ },
+ {
+  "name": "Midnight Brass",
+  "kind": "Edgy",
+  "colors": [
+   "#F2EDE3",
+   "#1F2A44",
+   "#B08D57",
+   "#2F6A6A",
+   "#26282C"
+  ],
+  "desc": "Ivory, deep navy, brushed brass, teal, charcoal"
+ },
+ {
+  "name": "Industrial Loft",
+  "kind": "Edgy",
+  "colors": [
+   "#BDBAB4",
+   "#7A7672",
+   "#A0603A",
+   "#8E3B2E",
+   "#232323"
+  ],
+  "desc": "Concrete, cognac leather, brick, blackened steel"
+ },
+ {
+  "name": "Mid-century Pop",
+  "kind": "Edgy",
+  "colors": [
+   "#F3EAD8",
+   "#D9A42B",
+   "#C8582A",
+   "#2E7C7A",
+   "#5A3B26"
+  ],
+  "desc": "Cream, mustard, burnt orange, teal, walnut"
+ },
+ {
+  "name": "Colour-block Tech",
+  "kind": "Edgy",
+  "colors": [
+   "#F7F7F5",
+   "#2F55D4",
+   "#F07B63",
+   "#9ED9C4",
+   "#2D3440"
+  ],
+  "desc": "White, cobalt, coral, mint, slate"
+ }
+]
