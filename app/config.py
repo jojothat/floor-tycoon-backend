@@ -28,6 +28,12 @@ class Settings:
     sso_header: str = field(default_factory=lambda: _env("SSO_HEADER", "X-Auth-User"))
     # Raw events are kept for the pilot plus this many months (spec section 8, to confirm).
     retention_months: int = field(default_factory=lambda: int(_env("RETENTION_MONTHS", "12")))
+    # Management read: "token" (named viewers, `python -m app.admin add-viewer`) or "sso"
+    # (the SSO proxy's header names the viewer). Who may export is configuration too.
+    read_auth: str = field(default_factory=lambda: _env("READ_AUTH", "token"))
+    read_exporters: frozenset[str] = field(
+        default_factory=lambda: frozenset(v for v in _env("READ_EXPORTERS", "").split(",") if v)
+    )
     write_key_ttl_minutes: int = field(
         default_factory=lambda: int(_env("WRITE_KEY_TTL_MINUTES", "120"))
     )

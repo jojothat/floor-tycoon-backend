@@ -199,3 +199,27 @@ class Quality(Base):
     # False for unfinished and repeat plays: kept for drop-off and skip analysis only.
     for_preferences: Mapped[bool] = mapped_column(Boolean)
     computed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+
+
+class Viewer(Base):
+    """A named management viewer (read API). Not a player: players are never named."""
+
+    __tablename__ = "viewers"
+
+    viewer_id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    token_hash: Mapped[str] = mapped_column(String(64), unique=True)
+    can_export: Mapped[bool] = mapped_column(Boolean, default=False)
+
+
+class AuditLog(Base):
+    """Who viewed and who exported (spec section 10)."""
+
+    __tablename__ = "audit_log"
+
+    id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+    viewer_id: Mapped[str] = mapped_column(String(64), index=True)
+    endpoint: Mapped[str] = mapped_column(String(64))
+    params: Mapped[dict] = mapped_column(JSONB, default=dict)
+    export: Mapped[bool] = mapped_column(Boolean, default=False)
+    refused: Mapped[bool] = mapped_column(Boolean, default=False)
+    at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
