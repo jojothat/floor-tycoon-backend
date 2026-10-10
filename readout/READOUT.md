@@ -67,8 +67,6 @@ The 13 slides deliberately use different chart forms, so the page doesn't read a
 | `from`, `to` | `YYYY-MM-DD` | Session start date, inclusive |
 | `synthetic` | absent, `include` or `only` | Synthetic plays (`game_version` starting `synthetic`) are **left out unless asked** |
 
-Once invite codes ship (`docs/invite-codes-spec.md`), every preference number uses only `counted = true` sessions. Test-code sessions are left out everywhere. The funnel shows counted and uncounted starts separately (add `counted` / `uncounted` to each funnel step).
-
 ## 4. Rules every endpoint follows
 
 1. **Completed games only for preferences.** A game is complete when `/finish` was called (reached 18:00). Only `funnel` and `summary.started` count unfinished games.
@@ -91,7 +89,7 @@ All are under `/v1/read/`. The table gives the response shape, and each endpoint
 | --- | --- | --- |
 | `meta` | `{n, n_all, versions[], synthetic_in_store, types[], palettes:[{name, kind: Neutral or Edgy, colors[5], desc}], scenarios:[{id, zone, time, question, theme, native, options:[{k, name, item}]}]}` | filter lists, pictures, palette swatches |
 | `summary` | `{n, started, completed, completion, median_play_s, by_type:{CE..Lead, none: n or null}, synthetic}`; `started` and `completion` are null when 1 to 9 started games are unfinished (started − completed would show them); `synthetic` counts completed games | KPI tiles, status chips |
-| `funnel` | `{n: starts or null (as summary.started), steps:[{key, label, n, lt10?, dropped_lt10?, near_lt10?}] or null, lt10?}`; a step's `n` is null when under 10 (`lt10`), fewer than 10 short of the starts (`dropped_lt10`), or within 10 of the finished count `summary.completed` (`near_lt10`) | Did people actually play? |
+| `funnel` | `{n: starts or null (as summary.started), steps:[{key, label, n, lt10?, dropped_lt10?, near_lt10?}] or null, lt10?}`; a step's `n` is null when under 10 (`lt10`), fewer than 10 short of the starts (`dropped_lt10`), or within 10 of the finished count `summary.completed` (`near_lt10`); any other step is rounded to the nearest 10 unless it equals the shown starts or finishes | Did people actually play? |
 | `picks` | `{n, scenarios:[{id, zone, time, question, theme, n, lt10?, options:[{k, name, share}], skip_share, top_share, median_decide_s, edit_share}]}` | Agree vs argue, explorer, CSV |
 | `skips` | `{n, rows:[{id, question, time, n, skip_share}]}`, sorted by skip_share descending | Where none of the fixes worked |
 | `edits` | `{n, any_share, rows:[{id, question, time, n, edit_share, top_switch:{from, to, from_k, to_k, n} or null}], switches:[{id, question, from:{k, name}, to:{k, name}, n, share}] (n≥10, top 4)}` | Second thoughts |

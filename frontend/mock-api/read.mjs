@@ -91,7 +91,9 @@ export function readApi(path, url, ctx) {
     const near = (a, b) => a !== b && Math.abs(a - b) < MIN;
     const step = (key, label) => { const n = cnt(key);
       return n < MIN ? { key, label, n: null, lt10: true } : near(R.length, n) ? { key, label, n: null, dropped_lt10: true }
-        : near(n, N) ? { key, label, n: null, near_lt10: true } : { key, label, n }; };
+        : near(n, N) ? { key, label, n: null, near_lt10: true }
+        // rounded to 10 so neighbouring steps never subtract to an exact small group; starts and finishes are already public
+        : { key, label, n: n === started || n === N ? n : Math.round(n / 10) * 10 }; };
     return { n: started, updated_at: base.updated_at, steps: R.length >= MIN ? steps.map(([key, label]) => step(key, label)) : null, lt10: R.length < MIN || undefined };
   }
 
