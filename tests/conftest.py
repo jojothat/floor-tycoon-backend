@@ -16,6 +16,8 @@ os.environ.setdefault("SCENARIOS_PATH", str(ROOT / "sample" / "scenarios.json"))
 # Off for the suite (one test client makes hundreds of calls); tests/test_ratelimit.py turns them on.
 os.environ.setdefault("RATE_LIMIT_IP_PER_MIN", "0")
 os.environ.setdefault("RATE_LIMIT_PILOT_PER_MIN", "0")
+# The CORS origins are read once, when the app is built.
+os.environ.setdefault("CORS_ORIGINS", "https://game.example, https://dashboard.example/")
 
 from fastapi.testclient import TestClient  # noqa: E402
 from sqlalchemy import text  # noqa: E402

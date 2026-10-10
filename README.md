@@ -33,6 +33,8 @@ uvicorn app.main:app --reload                            # http://localhost:8000
 pytest                                                   # the tests use floor_tycoon_test
 ```
 
+GitHub Actions runs the same lint and tests on every pull request (`.github/workflows/test.yml`), against a Postgres 16 service.
+
 Configuration is through environment variables (see `app/config.py`): `DATABASE_URL` (any Postgres, so any Korean-region provider), `ACCESS_MODE` (`invite` or `sso`), `RETENTION_MONTHS`, `WRITE_KEY_TTL_MINUTES`, `MIN_GROUP_SIZE`, `SCENARIOS_PATH` and `DEAL_Z7_SCENARIO_ID`.
 
 The scheduled job (quality scores, repeat plays, derived tables) runs with `python -m app.clean`. Run it every 15 minutes during the pilot. Quality thresholds and penalties are in `app/quality.py`.
@@ -42,3 +44,5 @@ The management read API (`/v1/read/...`) needs a viewer: `python -m app.admin ad
 The retention job runs daily with `python -m app.retention` (`--dry-run` to count only). It deletes raw events once a pilot ended more than `RETENTION_MONTHS` ago, and keeps derived tables and scores.
 
 Rate limits: `RATE_LIMIT_IP_PER_MIN` (default 600) and `RATE_LIMIT_PILOT_PER_MIN` (default 6000), 0 to turn one off. Set `RATE_LIMIT_SECRET` to the same value on every instance, and `TRUST_PROXY=true` behind a load balancer.
+
+Browser access: set `CORS_ORIGINS` to the game's origin (and the dashboard's, if separate), comma-separated, for example `CORS_ORIGINS=https://play.example.kr`. Empty allows no cross-origin calls.

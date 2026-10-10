@@ -5,6 +5,7 @@ from datetime import timedelta
 from typing import Literal
 
 from fastapi import Depends, FastAPI, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.orm import Session
@@ -12,7 +13,7 @@ from sqlalchemy.orm import Session
 from app import clean
 from app import deal as deal_fn
 from app import ratelimit, read, wall
-from app.config import Settings
+from app.config import Settings, get_settings
 from app.deps import db, library, now, resolve_pilot, settings, sha256, writable_session
 from app.models import ZONES, Deal, Event, Floor, GameSession
 
@@ -31,6 +32,17 @@ OPTIONS = {"a", "b", "c", "d", "0"}
 
 app = FastAPI(title="Floor Tycoon backend")
 app.middleware("http")(ratelimit.limit_by_ip)
+# Added last, so it wraps everything: preflights are answered before the rate limit,
+# and a 429 still carries the CORS headers the game needs to read it.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=list(get_settings().cors_origins),
+    allow_methods=["GET", "POST"],
+    allow_headers=["Authorization", "Content-Type", "X-Pilot-Token", "X-Pilot-Id", "X-Anon-Player"],
+    expose_headers=["Retry-After"],
+    allow_credentials=False,  # no cookies: the API uses tokens in headers
+    max_age=600,
+)
 app.include_router(wall.router)
 app.include_router(read.router)
 
