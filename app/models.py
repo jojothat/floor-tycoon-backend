@@ -16,6 +16,7 @@ from sqlalchemy import (
     CheckConstraint,
     Date,
     DateTime,
+    Float,
     ForeignKey,
     Integer,
     String,
@@ -166,6 +167,7 @@ class WallPost(Base):
 
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
     anon_player_id: Mapped[str] = mapped_column(String(64), unique=True)  # latest only
+    pilot_id: Mapped[str] = mapped_column(ForeignKey("pilots.pilot_id"), index=True)
     session_id: Mapped[str] = mapped_column(ForeignKey("sessions.session_id"))
     deal: Mapped[list[int]] = mapped_column(JSONB)
     picks: Mapped[dict] = mapped_column(JSONB)
@@ -193,3 +195,7 @@ class Quality(Base):
     session_id: Mapped[str] = mapped_column(ForeignKey("sessions.session_id"), primary_key=True)
     score: Mapped[int] = mapped_column(Integer)
     flags: Mapped[list[str]] = mapped_column(JSONB, default=list)
+    weight: Mapped[float] = mapped_column(Float)  # 0, 0.5 or 1 from the score
+    # False for unfinished and repeat plays: kept for drop-off and skip analysis only.
+    for_preferences: Mapped[bool] = mapped_column(Boolean)
+    computed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())

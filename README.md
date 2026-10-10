@@ -34,3 +34,5 @@ pytest                                                   # the tests use floor_t
 ```
 
 Configuration is through environment variables (see `app/config.py`): `DATABASE_URL` (any Postgres, so any Korean-region provider), `ACCESS_MODE` (`invite` or `sso`), `RETENTION_MONTHS`, `WRITE_KEY_TTL_MINUTES`, `MIN_GROUP_SIZE`, `SCENARIOS_PATH` and `DEAL_Z7_SCENARIO_ID`.
+
+The scheduled job (quality scores, repeat plays, derived tables) runs with `python -m app.clean`. Run it every 15 minutes during the pilot. Quality thresholds and penalties are in `app/quality.py`.

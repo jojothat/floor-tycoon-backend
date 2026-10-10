@@ -1,33 +1,20 @@
 """Ingest API, build step 1 (spec section 5)."""
 
-import hashlib
 import secrets
-from datetime import date, datetime, timedelta, timezone
-from functools import lru_cache
+from datetime import timedelta
 from typing import Literal
 
-from fastapi import Depends, FastAPI, Header, HTTPException, Request
+from fastapi import Depends, FastAPI, HTTPException, Request
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator
-from sqlalchemy import delete, select
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.orm import Session
 
+from app import clean
 from app import deal as deal_fn
-from app.config import Settings, get_settings
-from app.db import get_engine, make_sessionmaker
-from app.derive import derive
-from app.models import (
-    ZONES,
-    AddDecline,
-    Addition,
-    Deal,
-    Edit,
-    Event,
-    Floor,
-    GameSession,
-    Moment,
-    Pilot,
-)
+from app import wall
+from app.config import Settings
+from app.deps import db, library, now, resolve_pilot, settings, sha256, writable_session
+from app.models import ZONES, Deal, Event, Floor, GameSession
 
 KNOWN_EVENTS = {
     # during the day
@@ -43,32 +30,7 @@ FORBIDDEN_KEYS = {"look"}
 OPTIONS = {"a", "b", "c", "d", "0"}
 
 app = FastAPI(title="Floor Tycoon backend")
-
-
-def settings() -> Settings:
-    return get_settings()
-
-
-def db(cfg: Settings = Depends(settings)):
-    with make_sessionmaker(get_engine(cfg.database_url))() as s:
-        yield s
-
-
-@lru_cache
-def _library(path: str):
-    return deal_fn.load_scenarios(path)
-
-
-def library(cfg: Settings = Depends(settings)):
-    return _library(str(cfg.scenarios_path))
-
-
-def sha256(s: str) -> str:
-    return hashlib.sha256(s.encode()).hexdigest()
-
-
-def now() -> datetime:
-    return datetime.now(timezone.utc)
+app.include_router(wall.router)
 
 
 def strip_forbidden(obj):
@@ -107,25 +69,6 @@ def viewport_bucket(h: int | None) -> str | None:
     return "900+"
 
 
-def resolve_pilot(body: SessionIn, request: Request, s: Session, cfg: Settings) -> Pilot:
-    if cfg.access_mode == "sso":
-        if not request.headers.get(cfg.sso_header):
-            raise HTTPException(401, "not signed in")
-        pilot = s.get(Pilot, body.pilot_id) if body.pilot_id else None
-    else:
-        pilot = (
-            s.scalar(select(Pilot).where(Pilot.invite_token_hash == sha256(body.pilot_token)))
-            if body.pilot_token
-            else None
-        )
-    if pilot is None:
-        raise HTTPException(401, "unknown pilot")
-    today = date.today()
-    if (pilot.start_date and today < pilot.start_date) or (pilot.end_date and today > pilot.end_date):
-        raise HTTPException(403, "pilot is not running")
-    return pilot
-
-
 @app.post("/v1/sessions", status_code=201)
 def create_session(
     body: SessionIn,
@@ -134,7 +77,7 @@ def create_session(
     cfg: Settings = Depends(settings),
     lib=Depends(library),
 ):
-    pilot = resolve_pilot(body, request, s, cfg)
+    pilot = resolve_pilot(body.pilot_token, body.pilot_id, request, s, cfg)
     role = body.role_type or "none"
     dealt = deal_fn.deal(lib, role, team_grows_id=cfg.deal_z7_scenario_id)
     session_id = secrets.token_urlsafe(18)
@@ -165,21 +108,6 @@ def create_session(
         "write_key": write_key,
         "write_key_expires_at": expires.isoformat(),
     }
-
-
-def writable_session(
-    session_id: str,
-    authorization: str | None = Header(default=None),
-    s: Session = Depends(db),
-) -> GameSession:
-    gs = s.get(GameSession, session_id)
-    key = (authorization or "").removeprefix("Bearer ").strip()
-    # Same answer for unknown session and wrong key, so ids can't be probed.
-    if gs is None or not key or not secrets.compare_digest(gs.write_key_hash, sha256(key)):
-        raise HTTPException(401, "bad session or write key")
-    if gs.write_key_expires_at < now():
-        raise HTTPException(401, "write key expired")
-    return gs
 
 
 # ---------------------------------------------------------------- events
@@ -246,7 +174,7 @@ async def post_events(
 
     # Events can arrive after finish (offline queue, end-of-day edits and additions).
     if gs.finished_at is not None and inserted:
-        rebuild_derived(s, gs.session_id)
+        clean.rebuild_derived(s, gs.session_id)
         s.commit()
 
     seqs = [e.seq for e in body.events]
@@ -275,34 +203,6 @@ class FinishIn(BaseModel):
         return {z: str(o) for z, o in v.items()}
 
 
-def rebuild_derived(s: Session, session_id: str) -> None:
-    """Rebuild moments, edits, additions and add_declines from the raw events."""
-    events = s.scalars(select(Event).where(Event.session_id == session_id).order_by(Event.seq)).all()
-    flat = [{**e.payload, "ev": e.ev, "m": e.m, "t": e.t} for e in events]
-
-    lib = _library(str(get_settings().scenarios_path))
-    played = next((f.get("ids") for f in flat if f["ev"] == "deal"), None)
-    if played:
-        # The deal the player actually played, as logged by the game.
-        zone_to_scenario = {lib[int(i)].zone: int(i) for i in played if int(i) in lib}
-    else:
-        d = s.get(Deal, session_id)
-        zone_to_scenario = dict(zip(d.zones, d.scenario_ids)) if d else {}
-
-    out = derive(flat, zone_to_scenario)
-    for model in (Moment, Edit, Addition, AddDecline):
-        s.execute(delete(model).where(model.session_id == session_id))
-    s.add_all(Moment(session_id=session_id, **vars(m)) for m in out.moments)
-    s.add_all(Edit(session_id=session_id, **e) for e in out.edits)
-    s.add_all(Addition(session_id=session_id, **vars(a)) for a in out.additions)
-    s.add_all(AddDecline(session_id=session_id, **d) for d in out.add_declines)
-
-    floor = s.get(Floor, session_id)
-    if floor is not None:
-        live = [a for a in out.additions if not a.removed]
-        floor.addition = vars(live[-1]) if live else None
-
-
 @app.post("/v1/sessions/{session_id}/finish")
 def finish(body: FinishIn, gs: GameSession = Depends(writable_session), s: Session = Depends(db)):
     skips = sorted(z for z, o in body.final_picks.items() if o == "0")
@@ -315,6 +215,63 @@ def finish(body: FinishIn, gs: GameSession = Depends(writable_session), s: Sessi
     if first:
         gs.finished_at = now()  # counts as a completed game for the wall strip
     s.flush()
-    rebuild_derived(s, gs.session_id)
+    clean.rebuild_derived(s, gs.session_id)
     s.commit()
     return {"ok": True, "first_finish": first}
+
+
+# ---------------------------------------------------------------- floor
+
+# What the game's simulated day reports (events.md, `stats` and `end`). Anything else
+# is dropped, so no free text can arrive this way.
+
+
+class BusyIn(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    t: str | None = Field(default=None, max_length=5)
+    name: str = Field(max_length=64)  # the fix's name from scenarios.json, not free text
+    pct: float | None = Field(default=None, ge=0, le=100)
+
+
+class SimIn(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    use: float | None = Field(default=None, ge=0, le=100)
+    happy: float | None = Field(default=None, ge=0, le=100)
+    deskU: float | None = Field(default=None, ge=0, le=100)
+    desks: int | None = Field(default=None, ge=0, le=100)
+    peak: int | None = Field(default=None, ge=0, le=100)
+    peakAt: str | None = Field(default=None, max_length=5)
+    calls: float | None = Field(default=None, ge=0)
+    focusH: float | None = Field(default=None, ge=0)
+    lunch: float | None = Field(default=None, ge=0)
+    breaks: float | None = Field(default=None, ge=0)
+    joint: float | None = Field(default=None, ge=0)
+    walk: float | None = Field(default=None, ge=0)
+    fabN: int | None = Field(default=None, ge=0)
+    fabH: float | None = Field(default=None, ge=0)
+    seats: int | None = Field(default=None, ge=0)
+    occ: list[int] | None = Field(default=None, max_length=96)
+    occf: list[int] | None = Field(default=None, max_length=96)
+    busy: list[BusyIn] | None = Field(default=None, max_length=7)
+
+
+class FloorIn(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    palette: str | None = Field(default=None, max_length=32)
+    sim: SimIn
+
+
+@app.post("/v1/sessions/{session_id}/floor")
+def post_floor(body: FloorIn, gs: GameSession = Depends(writable_session), s: Session = Depends(db)):
+    floor = s.get(Floor, gs.session_id)
+    if floor is None:
+        raise HTTPException(409, "finish the day first")
+    floor.palette_id = body.palette
+    floor.sim = body.sim.model_dump(exclude_none=True)
+    # The addition is taken from the events (add / addRemoved), not from this body.
+    q = clean.score_session(s, gs)
+    s.commit()
+    return {"quality": q.score}  # never shown to the player
