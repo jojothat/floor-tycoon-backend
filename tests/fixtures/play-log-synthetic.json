@@ -1,0 +1,302 @@
+{
+ "_synthetic": true,
+ "_note": "SYNTHETIC play log made up for tests from events.md (deal ids from sample/scenarios.json). Not a real play: the real one is sample/play-log-sample.json.",
+ "log": [
+  {
+   "ev": "deal",
+   "t": 0,
+   "ids": [
+    46,
+    14,
+    17,
+    57,
+    38,
+    30,
+    1
+   ]
+  },
+  {
+   "ev": "answer",
+   "t": 4000,
+   "m": "z1"
+  },
+  {
+   "ev": "preview",
+   "t": 5500,
+   "m": "z1",
+   "opt": "a"
+  },
+  {
+   "ev": "preview",
+   "t": 7000,
+   "m": "z1",
+   "opt": "b"
+  },
+  {
+   "ev": "choose",
+   "t": 8500,
+   "m": "z1",
+   "opt": "b"
+  },
+  {
+   "ev": "keep",
+   "t": 11100,
+   "m": "z1",
+   "opt": "b",
+   "rethinks": 0
+  },
+  {
+   "ev": "answer",
+   "t": 12600,
+   "m": "z2"
+  },
+  {
+   "ev": "preview",
+   "t": 14100,
+   "m": "z2",
+   "opt": "c"
+  },
+  {
+   "ev": "preview",
+   "t": 15600,
+   "m": "z2",
+   "opt": "a"
+  },
+  {
+   "ev": "choose",
+   "t": 17100,
+   "m": "z2",
+   "opt": "a"
+  },
+  {
+   "ev": "keep",
+   "t": 19700,
+   "m": "z2",
+   "opt": "a",
+   "rethinks": 0
+  },
+  {
+   "ev": "answer",
+   "t": 21200,
+   "m": "z3"
+  },
+  {
+   "ev": "preview",
+   "t": 22700,
+   "m": "z3",
+   "opt": "a"
+  },
+  {
+   "ev": "skip",
+   "t": 24200,
+   "m": "z3",
+   "why": "none",
+   "rethinks": 0
+  },
+  {
+   "ev": "answer",
+   "t": 25700,
+   "m": "z4"
+  },
+  {
+   "ev": "preview",
+   "t": 27200,
+   "m": "z4",
+   "opt": "c"
+  },
+  {
+   "ev": "choose",
+   "t": 28700,
+   "m": "z4",
+   "opt": "c"
+  },
+  {
+   "ev": "keep",
+   "t": 31300,
+   "m": "z4",
+   "opt": "c",
+   "rethinks": 0
+  },
+  {
+   "ev": "answer",
+   "t": 32800,
+   "m": "z5"
+  },
+  {
+   "ev": "preview",
+   "t": 34300,
+   "m": "z5",
+   "opt": "a"
+  },
+  {
+   "ev": "preview",
+   "t": 35800,
+   "m": "z5",
+   "opt": "b"
+  },
+  {
+   "ev": "preview",
+   "t": 37300,
+   "m": "z5",
+   "opt": "d"
+  },
+  {
+   "ev": "choose",
+   "t": 38800,
+   "m": "z5",
+   "opt": "d"
+  },
+  {
+   "ev": "keep",
+   "t": 41400,
+   "m": "z5",
+   "opt": "d",
+   "rethinks": 0
+  },
+  {
+   "ev": "answer",
+   "t": 42900,
+   "m": "z6"
+  },
+  {
+   "ev": "preview",
+   "t": 44400,
+   "m": "z6",
+   "opt": "a"
+  },
+  {
+   "ev": "preview",
+   "t": 45900,
+   "m": "z6",
+   "opt": "b"
+  },
+  {
+   "ev": "choose",
+   "t": 47400,
+   "m": "z6",
+   "opt": "a"
+  },
+  {
+   "ev": "keep",
+   "t": 50000,
+   "m": "z6",
+   "opt": "a",
+   "rethinks": 0
+  },
+  {
+   "ev": "answer",
+   "t": 51500,
+   "m": "z7"
+  },
+  {
+   "ev": "preview",
+   "t": 53000,
+   "m": "z7",
+   "opt": "b"
+  },
+  {
+   "ev": "choose",
+   "t": 54500,
+   "m": "z7",
+   "opt": "b"
+  },
+  {
+   "ev": "keep",
+   "t": 57100,
+   "m": "z7",
+   "opt": "b",
+   "rethinks": 0
+  },
+  {
+   "ev": "gapLeave",
+   "t": 58600,
+   "m": "z2"
+  },
+  {
+   "ev": "addOpen",
+   "t": 60100
+  },
+  {
+   "ev": "addShuffle",
+   "t": 61600
+  },
+  {
+   "ev": "add",
+   "t": 63100,
+   "m": "z5",
+   "item": "plants",
+   "via": "end"
+  },
+  {
+   "ev": "replay",
+   "t": 64600,
+   "m": "z4"
+  },
+  {
+   "ev": "answer",
+   "t": 66100,
+   "m": "z4"
+  },
+  {
+   "ev": "preview",
+   "t": 67600,
+   "m": "z4",
+   "opt": "a"
+  },
+  {
+   "ev": "choose",
+   "t": 69100,
+   "m": "z4",
+   "opt": "a"
+  },
+  {
+   "ev": "keep",
+   "t": 70600,
+   "m": "z4",
+   "opt": "a",
+   "rethinks": 0
+  },
+  {
+   "ev": "edit",
+   "t": 72100,
+   "m": "z4",
+   "from": "c",
+   "to": "a"
+  },
+  {
+   "ev": "wallOpen",
+   "t": 73600,
+   "id": "s3"
+  }
+ ],
+ "profile": {
+  "type": "CE",
+  "role": "g1",
+  "deal": [
+   46,
+   14,
+   17,
+   57,
+   38,
+   30,
+   1
+  ]
+ },
+ "finalPicks": {
+  "z1": "b",
+  "z2": "a",
+  "z3": "0",
+  "z4": "a",
+  "z5": "d",
+  "z6": "a",
+  "z7": "b"
+ },
+ "end": {
+  "picks": 6,
+  "skips": 1,
+  "adds": [
+   "plants"
+  ],
+  "palette": "p3"
+ }
+}
