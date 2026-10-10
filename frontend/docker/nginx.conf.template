@@ -4,7 +4,7 @@ server {
   root /usr/share/nginx/html;
 
   gzip on;
-  gzip_types text/html text/javascript application/javascript application/json;
+  gzip_types text/javascript application/javascript application/json;  # text/html is always on
   gzip_min_length 1024;
 
   # the game page and its config are never cached, so a new build or pilot token shows up at once
@@ -14,8 +14,13 @@ server {
   location ~* \.(webp|png)$ { add_header Cache-Control "public, max-age=86400"; }
 
   # the backend, on the same origin (no CORS needed). /api/v1/... → ${API_UPSTREAM}/v1/...
+  # The upstream is looked up per request through Docker's DNS, so nginx starts even
+  # before the api (or mock) container is up, instead of exiting.
   location /api/ {
-    proxy_pass ${API_UPSTREAM}/;
+    resolver 127.0.0.11 valid=10s ipv6=off;
+    set $api_upstream ${API_UPSTREAM};
+    rewrite ^/api/(.*)$ /$1 break;
+    proxy_pass $api_upstream;
     proxy_set_header Host $host;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header X-Forwarded-Proto $scheme;

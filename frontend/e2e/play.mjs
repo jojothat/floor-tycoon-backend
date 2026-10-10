@@ -14,7 +14,7 @@ const browser = await chromium.launch({ headless: process.env.HEADLESS !== '0', 
   args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
 const page = await browser.newPage({ viewport: { width: 844, height: 390 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
 const calls = [];
-page.on('response', r => { const u = new URL(r.url()); if (u.pathname.includes('/v1/')) calls.push(`${r.request().method()} ${u.pathname.replace(/[0-9a-f-]{36}/g, ':id')} ${r.status()}`); });
+page.on('response', r => { const u = new URL(r.url()); if (u.pathname.includes('/v1/')) calls.push(`${r.request().method()} ${u.pathname.replace(/\/sessions\/[^/]+\//, '/sessions/:id/').replace(/[0-9a-f-]{36}/g, ':id')} ${r.status()}`); });  // session ids are the server's, not always UUIDs
 const errors = []; page.on('pageerror', e => errors.push(e.message));
 
 await page.goto(BASE + '/');
