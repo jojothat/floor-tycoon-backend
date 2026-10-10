@@ -11,7 +11,7 @@ from sqlalchemy.orm import Session
 
 from app import clean
 from app import deal as deal_fn
-from app import read, wall
+from app import ratelimit, read, wall
 from app.config import Settings
 from app.deps import db, library, now, resolve_pilot, settings, sha256, writable_session
 from app.models import ZONES, Deal, Event, Floor, GameSession
@@ -30,6 +30,7 @@ FORBIDDEN_KEYS = {"look"}
 OPTIONS = {"a", "b", "c", "d", "0"}
 
 app = FastAPI(title="Floor Tycoon backend")
+app.middleware("http")(ratelimit.limit_by_ip)
 app.include_router(wall.router)
 app.include_router(read.router)
 

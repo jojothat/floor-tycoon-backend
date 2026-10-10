@@ -11,6 +11,7 @@ from sqlalchemy import delete, func, or_, select
 from sqlalchemy.orm import Session
 
 from app import deal as deal_fn
+from app import ratelimit
 from app.config import get_settings
 from app.derive import Derived, derive
 from app.models import AddDecline, Addition, Deal, Edit, Event, Floor, GameSession, Moment, Quality
@@ -143,6 +144,7 @@ def run(s: Session, now: datetime | None = None) -> int:
     due = due_sessions(s, now)
     for gs in due:
         score_session(s, gs)
+    ratelimit.prune(s)
     s.commit()
     return len(due)
 

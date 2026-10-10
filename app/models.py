@@ -226,3 +226,13 @@ class AuditLog(Base):
     export: Mapped[bool] = mapped_column(Boolean, default=False)
     refused: Mapped[bool] = mapped_column(Boolean, default=False)
     at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+
+
+class RateCounter(Base):
+    """Requests per key per one-minute window (app/ratelimit.py). Never holds an IP address."""
+
+    __tablename__ = "rate_counters"
+
+    key: Mapped[str] = mapped_column(String(80), primary_key=True)
+    window: Mapped[int] = mapped_column(BigInteger, primary_key=True)
+    count: Mapped[int] = mapped_column(Integer, default=0)

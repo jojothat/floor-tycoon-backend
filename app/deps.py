@@ -12,6 +12,7 @@ from app import clean
 from app.config import Settings, get_settings
 from app.db import get_engine, make_sessionmaker
 from app.models import GameSession, Pilot
+from app.ratelimit import limit_pilot
 
 
 def settings() -> Settings:
@@ -54,6 +55,7 @@ def resolve_pilot(
     today = date.today()
     if (pilot.start_date and today < pilot.start_date) or (pilot.end_date and today > pilot.end_date):
         raise HTTPException(403, "pilot is not running")
+    limit_pilot(pilot.pilot_id, cfg)
     return pilot
 
 
@@ -69,4 +71,5 @@ def writable_session(
         raise HTTPException(401, "bad session or write key")
     if gs.write_key_expires_at < now():
         raise HTTPException(401, "write key expired")
+    limit_pilot(gs.pilot_id)
     return gs
