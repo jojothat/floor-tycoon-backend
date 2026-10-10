@@ -451,7 +451,7 @@ function sFunnel(fn,sum){
     box.appendChild(s);
   }
   const end=f('end'), few=!n0||end.dropped_lt10, done=end.n!=null&&n0?end.n/n0*100:end.lt10?0:100;
-  slide(K,{h:end.n!=null&&n0?`${p0(done)} of people who started finished the day`:few?'Fewer than 10 people who started did not finish the day':end.lt10?'Fewer than 10 people who started finished the day':`${N} people finished the day`,body:box,
+  slide(K,{h:end.n!=null&&n0?`${p0(done)} of people who started finished the day`:few?'Fewer than 10 people who started did not finish the day':end.lt10?'Fewer than 10 people who started finished the day':`${N} people finished the day`,lead:'Counts are rounded to the nearest 10, except the starts and finishes.',body:box,
     so:`${N} finished games sit behind this readout. ${!n0?'The start count is hidden because fewer than 10 people left before the end, so completion is not shown.':done>=80?'Completion is high, so the results are not skewed toward a keen few.':'Completion is low enough that keen players may be over-represented; read close results with care.'}`,
     table:{cols:['Step','People','Share of starts'],rows:st.map(s=>[s.label,word(s),share(s)])}});
 }

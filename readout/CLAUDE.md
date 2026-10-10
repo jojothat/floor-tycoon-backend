@@ -20,7 +20,6 @@ This folder is the management dashboard (v2, the story readout). It is a static 
    - **Data:** compute from the backend's derived tables, not by replaying raw events per request.
    - **meta** must carry `palettes` (from `mock-api/palettes.json`, which mirrors the game's palette list), each scenario's `native` flag and each option's `item`; the page uses them for pictures and swatches.
    - **Parity test:** load the same event logs into the mock and the backend and diff every endpoint's JSON, ignoring `updated_at`. Use `frontend/sample/play-log-sample.json` plus a seeded run.
-   - **Invite codes:** if they are implemented (`docs/invite-codes-spec.md`), preference numbers use `counted = true` sessions only, and the funnel splits counted and uncounted.
 3. **Containerise.**
    - `docker compose --profile mock up --build readout mock` must work as shipped.
    - Then make the readout run against the real backend. Either:

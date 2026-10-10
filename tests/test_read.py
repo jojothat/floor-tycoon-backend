@@ -137,12 +137,14 @@ def test_filters_where_both_sides_are_ten(client, new_session, db):
     assert ce["n"] == 10 and "lt10" not in team(ce)
 
 
-def leave_after_moment_1(client, new_session, role, count):
+def leave_after_moment_1(client, new_session, role, count, moments=1):
     for i in range(count):
-        s = new_session(role, anon_player_id=f"anon-leaver-{role}-{i:04d}")
-        client.post(f"/v1/sessions/{s['session_id']}/events", headers=s["headers"], json={"events": [
-            {"seq": 1, "ev": "deal", "t": 0, "ids": s["deal"]}, {"seq": 2, "ev": "answer", "t": 5000, "m": "z1"},
-            {"seq": 3, "ev": "keep", "t": 9000, "m": "z1", "opt": "a", "rethinks": 0}]})
+        s = new_session(role, anon_player_id=f"anon-leaver-{role}-{moments}-{i:04d}")
+        events = [{"seq": 1, "ev": "deal", "t": 0, "ids": s["deal"]}]
+        for k in range(1, moments + 1):
+            events += [{"seq": 2 * k, "ev": "answer", "t": 10000 * k, "m": f"z{k}"},
+                       {"seq": 2 * k + 1, "ev": "keep", "t": 10000 * k + 4000, "m": f"z{k}", "opt": "a", "rethinks": 0}]
+        client.post(f"/v1/sessions/{s['session_id']}/events", headers=s["headers"], json={"events": events})
 
 
 def no_small_difference(*ns):
@@ -166,6 +168,17 @@ def test_funnel_steps_under_ten_are_hidden(client, new_session, db):
     assert (s["n"], s["started"], s["completed"], s["completion"]) == (12, None, 12, None)
     assert all(st["n"] is None or st["n"] >= 10 for st in f["steps"])
     assert no_small_difference(s["n"], s["started"], f["n"], *(st["n"] for st in f["steps"]))
+
+
+def test_funnel_steps_are_rounded_to_10(client, new_session, db):
+    populate(client, new_session, db, [("CE", "good", 20)])
+    leave_after_moment_1(client, new_session, "CE", 13)
+    leave_after_moment_1(client, new_session, "CE", 12, moments=2)
+    f = ok(client, "funnel")
+    steps = {st["key"]: st["n"] for st in f["steps"]}
+    # 45 started and 20 finished are public, so they stay exact; 32 played moment 2, shown as 30
+    assert (f["n"], steps["started"], steps["m1"], steps["m2"], steps["m3"], steps["end"]) == (45, 45, 45, 30, 20, 20)
+    assert all(n is None or n in (45, 20) or n % 10 == 0 for n in steps.values())
 
 
 def test_ten_unfinished_games_show_the_starts(client, new_session, db):

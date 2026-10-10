@@ -11,6 +11,7 @@ The group-of-10 rule is applied here, never in the page:
 - a whole group under 10 comes back as {"n": n, "lt10": true};
 - lists drop entries under 10;
 - a funnel step under 10, or within 10 of the starts or the finished count, has a null count;
+  any other step is rounded to 10 unless it equals the shown starts or finishes;
 - the start count is null when fewer than 10 of the started games are unfinished;
 - a filter that leaves out fewer than 10 games (so subtracting two views would show
   a small group) suppresses every number in the response.
@@ -472,7 +473,9 @@ def ep_funnel(c: Ctx):
             return {"key": key, "label": label, "n": None, "dropped_lt10": True}
         if 0 < abs(n - c.N) < c.rules.mg:
             return {"key": key, "label": label, "n": None, "near_lt10": True}
-        return {"key": key, "label": label, "n": n}
+        # rounded to 10 so two neighbouring steps never subtract to an exact small group;
+        # a step equal to the shown starts or finishes is already public, so it stays exact
+        return {"key": key, "label": label, "n": n if n in (c.started, c.N) else js_round(n / 10) * 10}
 
     out = {"n": c.started, "updated_at": c.base()["updated_at"],
            "steps": [step(k, label) for k, label in FUNNEL] if len(c.R) >= c.rules.mg else None}
