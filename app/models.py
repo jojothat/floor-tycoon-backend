@@ -167,6 +167,7 @@ class WallPost(Base):
 
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
     anon_player_id: Mapped[str] = mapped_column(String(64), unique=True)  # latest only
+    pilot_id: Mapped[str] = mapped_column(ForeignKey("pilots.pilot_id"), index=True)
     session_id: Mapped[str] = mapped_column(ForeignKey("sessions.session_id"))
     deal: Mapped[list[int]] = mapped_column(JSONB)
     picks: Mapped[dict] = mapped_column(JSONB)
