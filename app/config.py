@@ -45,6 +45,8 @@ class Settings:
     read_quality: str = field(default_factory=lambda: _env("READ_QUALITY", "off"))
     # How long the read API reuses the plays it loaded (READOUT.md allows up to 5 minutes).
     # The readout fires all its calls at once; this makes them one database load.
+    # Plain-English lines on the console as games arrive (app/activity.py): "on" or "off".
+    log_activity: str = field(default_factory=lambda: _env("LOG_ACTIVITY", "on"))
     read_cache_seconds: float = field(default_factory=lambda: float(_env("READ_CACHE_SECONDS", "30")))
     # The game's item catalogue and palette list, for the read API's meta and space-brief.
     items_path: Path = field(

@@ -7,12 +7,12 @@ from typing import Annotated, Literal
 from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import AliasChoices, BaseModel, ConfigDict, Field, ValidationError, field_validator
-from sqlalchemy import select, text
+from sqlalchemy import func, select, text
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.orm import Session
 
-from app import clean
+from app import activity, clean
 from app import deal as deal_fn
 from app import ratelimit, read, wall
 from app.config import Settings, get_settings
@@ -156,6 +156,8 @@ def create_session(
         if again is None:
             raise
         return retried_start(s, again, body, cfg)
+    activity.say(session_id, f"New game started · employee type {role if role != 'none' else 'not given'} · "
+                             f"{body.flow} flow · {len(dealt)} moments dealt")
     return {
         "session_id": session_id,
         "deal": [d.id for d in dealt],
@@ -219,6 +221,7 @@ async def post_events(
     gs: GameSession = Depends(writable_session),
     s: Session = Depends(db),
     cfg: Settings = Depends(settings),
+    lib=Depends(library),
 ):
     raw = await request.body()
     if len(raw) > cfg.max_batch_bytes:
@@ -258,6 +261,17 @@ async def post_events(
         s.commit()
 
     seqs = [e.seq for e in body.events]
+    if activity.on():
+        new = set(inserted)
+        saved = [{**r["payload"], "ev": r["ev"], "m": r["m"]} for r in rows if r["seq"] in new]
+        played = next((r.get("ids") for r in saved if r["ev"] == "deal"), None)
+        if played:
+            zone_to_id = {lib[int(i)].zone: int(i) for i in played if int(i) in lib}
+        else:
+            d = s.get(Deal, gs.session_id)
+            zone_to_id = dict(zip(d.zones, d.scenario_ids)) if d else {}
+        total = s.scalar(select(func.count()).select_from(Event).where(Event.session_id == gs.session_id))
+        activity.events_saved(gs.session_id, saved, len(seqs) - len(inserted), total, lib, zone_to_id)
     return {
         "accepted": {"from": min(seqs), "to": max(seqs)},
         "inserted": len(inserted),
@@ -304,6 +318,11 @@ def finish(body: FinishIn, gs: GameSession = Depends(writable_session), s: Sessi
     s.flush()
     clean.rebuild_derived(s, gs.session_id)
     s.commit()
+    if first and activity.on():
+        kept = len(body.final_picks) - len(skips)
+        done = s.scalar(select(func.count()).select_from(GameSession).where(GameSession.finished_at.is_not(None)))
+        activity.say(gs.session_id, f"Reached 18:00 · {kept} fixes kept, {len(skips)} skipped · "
+                                    f"finished games in the database: {done}")
     return {"ok": True, "first_finish": first}
 
 
@@ -422,4 +441,10 @@ def post_floor(body: FloorIn, gs: GameSession = Depends(writable_session), s: Se
         floor.wall_addition = body.addition.model_dump()
     q = clean.score_session(s, gs)
     s.commit()
+    if activity.on():
+        sim = floor.sim
+        nums = ", ".join(f"{label} {sim[k]:.0f}%" for k, label in (("use", "space use"), ("happy", "happiness"),
+                                                                    ("deskU", "desk use")) if k in sim)
+        activity.say(gs.session_id, f"Simulated day results saved{': ' + nums if nums else ''}"
+                                    f"{' · quality score ' + str(q.score) + '/100' if q else ''}")
     return {"quality": q.score if q else None}  # never shown to the player
