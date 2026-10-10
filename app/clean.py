@@ -54,8 +54,7 @@ def rebuild_derived(s: Session, session_id: str) -> Derived | None:
 
     floor = s.get(Floor, session_id)
     if floor is not None:
-        live = [a for a in out.additions if not a.removed]
-        floor.addition = vars(live[-1]) if live else None
+        floor.addition = out.final_add
     return out
 
 

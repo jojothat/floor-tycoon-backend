@@ -32,6 +32,19 @@ KNOWN_EVENTS = {
 FORBIDDEN_KEYS = {"look"}
 OPTIONS = {"a", "b", "c", "d", "0"}
 
+
+
+def check_production(cfg: Settings) -> None:
+    """Refuse to start in production with a shared or default credential (READOUT.md §2)."""
+    if cfg.app_env != "production":
+        return
+    if cfg.read_token:
+        raise RuntimeError("READ_TOKEN is for dev and staging only: use named viewers or SSO in production")
+    if cfg.rate_limit_secret == "change-me":
+        raise RuntimeError("set RATE_LIMIT_SECRET in production")
+
+
+check_production(get_settings())
 app = FastAPI(title="Floor Tycoon backend")
 app.middleware("http")(ratelimit.limit_by_ip)
 # Added last, so it wraps everything: preflights are answered before the rate limit,
@@ -347,7 +360,7 @@ class DeskFitIn(BaseModel):
 
     mode: Literal["smaller", "share"]
     add: ItemId
-    k: Literal["a", "b", "c", "d"]
+    k: Literal["a", "b", "c", "d", "0"]  # "0": the team desks were left as they were (z7 skipped)
 
 
 class AdditionIn(BaseModel):

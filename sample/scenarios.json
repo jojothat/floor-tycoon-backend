@@ -11,24 +11,39 @@
   "options": [
    {
     "k": "a",
-    "name": null,
-    "item": null,
-    "removes": false,
-    "none": false
+    "name": "Compact Desks",
+    "item": "bench",
+    "removes": true,
+    "none": false,
+    "real": "Three tight benches, 12 seats",
+    "items": [
+     "bench"
+    ]
    },
    {
     "k": "b",
-    "name": null,
-    "item": null,
-    "removes": false,
-    "none": false
+    "name": "Team Nest",
+    "item": "bench",
+    "removes": true,
+    "none": false,
+    "real": "10 shared seats for 14 + team storage",
+    "items": [
+     "bench",
+     "teamwall",
+     "neighbourhood"
+    ]
    },
    {
     "k": "c",
-    "name": null,
-    "item": null,
+    "name": "Keep My Desk",
+    "item": "desk",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "6 desks stay + a perch counter",
+    "items": [
+     "desk",
+     "touchdown"
+    ]
    }
   ]
  },
@@ -47,21 +62,33 @@
     "name": "Keep them all",
     "item": "desk",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Every desk stays assigned",
+    "items": [
+     "desk"
+    ]
    },
    {
     "k": "b",
     "name": "Make a project room",
     "item": "warroom",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "6 desks become a war room",
+    "items": [
+     "warroom"
+    ]
    },
    {
     "k": "c",
     "name": "Book-ahead desks",
     "item": "deskstatus",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Desks get a status light, booked in an app",
+    "items": [
+     "deskstatus"
+    ]
    }
   ]
  },
@@ -80,21 +107,33 @@
     "name": "Lock my desk",
     "item": "pedestal",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "It waits for you, empty",
+    "items": [
+     "pedestal"
+    ]
    },
    {
     "k": "b",
     "name": "Release it, keep a caddy",
     "item": "caddy",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Your things roll with you",
+    "items": [
+     "caddy"
+    ]
    },
    {
     "k": "c",
     "name": "Team landing zone",
     "item": "touchdown",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Shared spots for returners near the team",
+    "items": [
+     "touchdown"
+    ]
    }
   ]
  },
@@ -113,21 +152,33 @@
     "name": "Second monitor",
     "item": "desk",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Dual screens on an arm",
+    "items": [
+     "desk"
+    ]
    },
    {
     "k": "b",
     "name": "Dock-and-go set-up",
     "item": "dockdesk",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "One cable, any desk works",
+    "items": [
+     "dockdesk"
+    ]
    },
    {
     "k": "c",
     "name": "Bigger storage",
     "item": "pedestal",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "A deep lockable pedestal",
+    "items": [
+     "pedestal"
+    ]
    }
   ]
  },
@@ -146,21 +197,33 @@
     "name": "Locker nearby",
     "item": "smartlockers",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Personal locker ten steps away",
+    "items": [
+     "smartlockers"
+    ]
    },
    {
     "k": "b",
     "name": "Caddy on wheels",
     "item": "caddy",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "A pedestal you roll each day",
+    "items": [
+     "caddy"
+    ]
    },
    {
     "k": "c",
     "name": "Opt out",
     "item": "desk",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Your things stay out",
+    "items": [
+     "desk"
+    ]
    }
   ]
  },
@@ -172,35 +235,55 @@
   "tier": "Role",
   "roles": "CE;INS",
   "native": true,
-  "question": "Gear after a fab visit",
+  "question": "Where does the gear live?",
   "options": [
    {
     "k": "a",
-    "name": null,
-    "item": null,
-    "removes": false,
-    "none": false
+    "name": "Kit Nook",
+    "item": "kitnook",
+    "removes": true,
+    "none": false,
+    "real": "Kit shelves + day lockers by the entry",
+    "items": [
+     "kitnook",
+     "lockers"
+    ]
    },
    {
     "k": "b",
-    "name": null,
-    "item": null,
+    "name": "Bottomless Pedestal",
+    "item": "sofa",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "A big lockable pedestal at your own desk",
+    "items": [
+     "sofa",
+     "welcome",
+     "pedestal"
+    ]
    },
    {
     "k": "c",
-    "name": null,
-    "item": null,
-    "removes": false,
-    "none": false
+    "name": "Team Armoury",
+    "item": "teamwall",
+    "removes": true,
+    "none": false,
+    "real": "A team shelf wall + a few lockers",
+    "items": [
+     "teamwall",
+     "lockers"
+    ]
    },
    {
     "k": "d",
     "name": "Personal lockers",
     "item": "lockers",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Lockers beside the team zone",
+    "items": [
+     "lockers"
+    ]
    }
   ]
  },
@@ -219,21 +302,33 @@
     "name": "Tool crib",
     "item": "toolcrib",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Caged parts room with a hatch",
+    "items": [
+     "toolcrib"
+    ]
    },
    {
     "k": "b",
     "name": "Smart lockers",
     "item": "smartlockers",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "App-booked lockers with status screens",
+    "items": [
+     "smartlockers"
+    ]
    },
    {
     "k": "c",
     "name": "Own kits",
     "item": "pedestal",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Each engineer keeps a full kit",
+    "items": [
+     "pedestal"
+    ]
    }
   ]
  },
@@ -252,21 +347,33 @@
     "name": "Sample cabinet",
     "item": "samplecab",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Anti-static cabinet in the team zone",
+    "items": [
+     "samplecab"
+    ]
    },
    {
     "k": "b",
     "name": "Keep them in the lab",
     "item": "protolab",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Lab holds all samples",
+    "items": [
+     "protolab"
+    ]
    },
    {
     "k": "c",
     "name": "At your desk",
     "item": "desk",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Boxes stay with you",
+    "items": [
+     "desk"
+    ]
    }
   ]
  },
@@ -285,21 +392,33 @@
     "name": "Parcel lockers",
     "item": "mail",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Pick up any time with a code",
+    "items": [
+     "mail"
+    ]
    },
    {
     "k": "b",
     "name": "Desk delivery",
     "item": "welcome",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Facilities brings it up",
+    "items": [
+     "welcome"
+    ]
    },
    {
     "k": "c",
     "name": "Pick up when you can",
     "item": "welcome",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "As today",
+    "items": [
+     "welcome"
+    ]
    }
   ]
  },
@@ -311,35 +430,52 @@
   "tier": "Core",
   "roles": "ALL",
   "native": true,
-  "question": "A confidential customer call",
+  "question": "Where do you take the call?",
   "options": [
    {
     "k": "a",
-    "name": null,
-    "item": null,
-    "removes": false,
-    "none": false
+    "name": "Pop-up Booth",
+    "item": "phonebooth",
+    "removes": true,
+    "none": false,
+    "real": "Phone booths beside the team",
+    "items": [
+     "phonebooth"
+    ]
    },
    {
     "k": "b",
-    "name": null,
-    "item": null,
-    "removes": false,
-    "none": false
+    "name": "Whisper Room",
+    "item": "enclave",
+    "removes": true,
+    "none": false,
+    "real": "Two small bookable rooms",
+    "items": [
+     "enclave"
+    ]
    },
    {
     "k": "c",
-    "name": null,
-    "item": null,
+    "name": "Sound Cone",
+    "item": "screens",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Acoustic screens + privacy seats",
+    "items": [
+     "screens",
+     "wingchair"
+    ]
    },
    {
     "k": "d",
     "name": "Privacy Chair",
     "item": "wingchair",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Wing-back chair that wraps around you",
+    "items": [
+     "wingchair"
+    ]
    }
   ]
  },
@@ -358,21 +494,33 @@
     "name": "Duo booth",
     "item": "duobooth",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Enclosed booth for two",
+    "items": [
+     "duobooth"
+    ]
    },
    {
     "k": "b",
     "name": "One-to-one room",
     "item": "oneonone",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Small room, round table",
+    "items": [
+     "oneonone"
+    ]
    },
    {
     "k": "c",
     "name": "Walk outside",
     "item": "terrace",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Talk on the terrace",
+    "items": [
+     "terrace"
+    ]
    }
   ]
  },
@@ -391,21 +539,33 @@
     "name": "Secure NDA room",
     "item": "ndaroom",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Windowless room with a badge reader",
+    "items": [
+     "ndaroom"
+    ]
    },
    {
     "k": "b",
     "name": "Phone booth",
     "item": "phonebooth",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Small booth, no screen",
+    "items": [
+     "phonebooth"
+    ]
    },
    {
     "k": "c",
     "name": "Your car",
     "item": "evcharge",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Call from the car park",
+    "items": [
+     "evcharge"
+    ]
    }
   ]
  },
@@ -424,21 +584,33 @@
     "name": "Privacy screens",
     "item": "screens",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Screens on every desk",
+    "items": [
+     "screens"
+    ]
    },
    {
     "k": "b",
     "name": "Closed team zone",
     "item": "partition",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Partition the team area",
+    "items": [
+     "partition"
+    ]
    },
    {
     "k": "c",
     "name": "Accept it",
     "item": "desk",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Stay open",
+    "items": [
+     "desk"
+    ]
    }
   ]
  },
@@ -457,21 +629,33 @@
     "name": "Take it from home",
     "item": "touchdown",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Leave at 6, dial in later",
+    "items": [
+     "touchdown"
+    ]
    },
    {
     "k": "b",
     "name": "After-hours video room",
     "item": "videoroom",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Stay and use a proper room",
+    "items": [
+     "videoroom"
+    ]
    },
    {
     "k": "c",
     "name": "Hybrid pod near the exit",
     "item": "hybridpod",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "A pod you can use any hour",
+    "items": [
+     "hybridpod"
+    ]
    }
   ]
  },
@@ -483,35 +667,55 @@
   "tier": "Core",
   "roles": "ALL",
   "native": true,
-  "question": "Recipe review at noon",
+  "question": "Where do you get two quiet hours?",
   "options": [
    {
     "k": "a",
-    "name": null,
-    "item": null,
-    "removes": false,
-    "none": false
+    "name": "Silence Bubble",
+    "item": "focuspod",
+    "removes": true,
+    "none": false,
+    "real": "Focus pods for one",
+    "items": [
+     "focuspod",
+     "collabtable"
+    ]
    },
    {
     "k": "b",
-    "name": null,
-    "item": null,
-    "removes": false,
-    "none": false
+    "name": "Library Wing",
+    "item": "greenwall",
+    "removes": true,
+    "none": false,
+    "real": "A quiet zone behind a green wall",
+    "items": [
+     "greenwall",
+     "library",
+     "screens"
+    ]
    },
    {
     "k": "c",
-    "name": null,
-    "item": null,
+    "name": "Hush Canopy",
+    "item": "collabtable",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Ceiling baffles + plants over the tables",
+    "items": [
+     "collabtable",
+     "greenwall"
+    ]
    },
    {
     "k": "d",
     "name": "Focus Cockpit",
     "item": "cockpit",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Paired desks with tall acoustic sides",
+    "items": [
+     "cockpit"
+    ]
    }
   ]
  },
@@ -530,21 +734,33 @@
     "name": "Study carrels",
     "item": "carrels",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "A row of high-sided desks",
+    "items": [
+     "carrels"
+    ]
    },
    {
     "k": "b",
     "name": "Hanging pod",
     "item": "hangpod",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Open-top felt pod, one seat",
+    "items": [
+     "hangpod"
+    ]
    },
    {
     "k": "c",
     "name": "Work from home tomorrow",
     "item": "touchdown",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Write them at home",
+    "items": [
+     "touchdown"
+    ]
    }
   ]
  },
@@ -563,21 +779,33 @@
     "name": "Noise traffic light",
     "item": "noiselight",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "A light that turns red when it’s loud",
+    "items": [
+     "noiselight"
+    ]
    },
    {
     "k": "b",
     "name": "Stand-up table",
     "item": "standtable",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Move stand-ups to a bar table",
+    "items": [
+     "standtable"
+    ]
    },
    {
     "k": "c",
     "name": "Headphones",
     "item": "screens",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Live with it",
+    "items": [
+     "screens"
+    ]
    }
   ]
  },
@@ -596,21 +824,33 @@
     "name": "Book a pod all day",
     "item": "focuspod",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "A focus pod till 6",
+    "items": [
+     "focuspod"
+    ]
    },
    {
     "k": "b",
     "name": "Quiet zone",
     "item": "library",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Rules: no calls, no chat",
+    "items": [
+     "library"
+    ]
    },
    {
     "k": "c",
     "name": "Daylight lamp desk",
     "item": "lightdesk",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Bright desk by the window",
+    "items": [
+     "lightdesk"
+    ]
    }
   ]
  },
@@ -629,21 +869,33 @@
     "name": "Training room slots",
     "item": "training",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Fixed-time group sessions",
+    "items": [
+     "training"
+    ]
    },
    {
     "k": "b",
     "name": "VR training station",
     "item": "vrstation",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Practise the tool in VR",
+    "items": [
+     "vrstation"
+    ]
    },
    {
     "k": "c",
     "name": "At your desk",
     "item": "desk",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Fit it in",
+    "items": [
+     "desk"
+    ]
    }
   ]
  },
@@ -655,35 +907,52 @@
   "tier": "Core",
   "roles": "PSE;CE",
   "native": true,
-  "question": "A yield issue across two teams",
+  "question": "Where do both teams work it out?",
   "options": [
    {
     "k": "a",
-    "name": null,
-    "item": null,
-    "removes": false,
-    "none": false
+    "name": "War Room",
+    "item": "warroom",
+    "removes": true,
+    "none": false,
+    "real": "A project room kept for weeks",
+    "items": [
+     "warroom"
+    ]
    },
    {
     "k": "b",
-    "name": null,
-    "item": null,
-    "removes": false,
-    "none": false
+    "name": "Crossroads Café",
+    "item": "cafebar",
+    "removes": true,
+    "none": false,
+    "real": "A coffee bar halfway between teams",
+    "items": [
+     "cafebar",
+     "huddle"
+    ]
    },
    {
     "k": "c",
-    "name": null,
-    "item": null,
-    "removes": false,
-    "none": false
+    "name": "Spiral Stair",
+    "item": "stair",
+    "removes": true,
+    "none": false,
+    "real": "An open stair to the next floor",
+    "items": [
+     "stair"
+    ]
    },
    {
     "k": "d",
     "name": "Open collab table",
     "item": "collabtable",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Big shared table between the teams",
+    "items": [
+     "collabtable"
+    ]
    }
   ]
  },
@@ -702,21 +971,33 @@
     "name": "Tool monitoring centre",
     "item": "opscentre",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Wall of screens watching tools live",
+    "items": [
+     "opscentre"
+    ]
    },
    {
     "k": "b",
     "name": "Remote-support station",
     "item": "vrstation",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Guide the fab team by AR",
+    "items": [
+     "vrstation"
+    ]
    },
    {
     "k": "c",
     "name": "Everyone drives over",
     "item": "shuttle",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "All hands at the fab",
+    "items": [
+     "shuttle"
+    ]
    }
   ]
  },
@@ -735,21 +1016,33 @@
     "name": "Hybrid meeting pod",
     "item": "hybridpod",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Small room with a video bar",
+    "items": [
+     "hybridpod"
+    ]
    },
    {
     "k": "b",
     "name": "Boardroom with camera",
     "item": "boardroom",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "The big room, one floor up",
+    "items": [
+     "boardroom"
+    ]
    },
    {
     "k": "c",
     "name": "Headsets at desks",
     "item": "desk",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Everyone stays put",
+    "items": [
+     "desk"
+    ]
    }
   ]
  },
@@ -768,21 +1061,33 @@
     "name": "Obeya wall",
     "item": "obeya",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Lean board wall with sticky notes",
+    "items": [
+     "obeya"
+    ]
    },
    {
     "k": "b",
     "name": "Rolling screen",
     "item": "mediacart",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "A digital board on wheels",
+    "items": [
+     "mediacart"
+    ]
    },
    {
     "k": "c",
     "name": "Shared spreadsheet",
     "item": "touchdown",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Stay digital",
+    "items": [
+     "touchdown"
+    ]
    }
   ]
  },
@@ -801,28 +1106,44 @@
     "name": "Stand-up table",
     "item": "standtable",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Bar table for quick huddles",
+    "items": [
+     "standtable"
+    ]
    },
    {
     "k": "b",
     "name": "Huddle room",
     "item": "huddleroom",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Small room for four",
+    "items": [
+     "huddleroom"
+    ]
    },
    {
     "k": "c",
     "name": "At your desk",
     "item": "desk",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Chat where you sit",
+    "items": [
+     "desk"
+    ]
    },
    {
     "k": "d",
     "name": "Huddle table",
     "item": "huddle",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Round table in the open",
+    "items": [
+     "huddle"
+    ]
    }
   ]
  },
@@ -841,21 +1162,33 @@
     "name": "Writable wall",
     "item": "ideawall",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Whiteboard paint on a wall",
+    "items": [
+     "ideawall"
+    ]
    },
    {
     "k": "b",
     "name": "Modular cubes",
     "item": "modcubes",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Re-arrangeable soft seats",
+    "items": [
+     "modcubes"
+    ]
    },
    {
     "k": "c",
     "name": "Meeting room whiteboard",
     "item": "whiteboard",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Book a room",
+    "items": [
+     "whiteboard"
+    ]
    }
   ]
  },
@@ -874,21 +1207,33 @@
     "name": "Auto-release",
     "item": "occscreen",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Rooms free up after 10 minutes empty",
+    "items": [
+     "occscreen"
+    ]
    },
    {
     "k": "b",
     "name": "More small rooms",
     "item": "huddleroom",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Split it into two",
+    "items": [
+     "huddleroom"
+    ]
    },
    {
     "k": "c",
     "name": "Leave it",
     "item": "meeting",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "As today",
+    "items": [
+     "meeting"
+    ]
    }
   ]
  },
@@ -907,21 +1252,33 @@
     "name": "Remote-support station",
     "item": "vrstation",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "AR headset bay",
+    "items": [
+     "vrstation"
+    ]
    },
    {
     "k": "b",
     "name": "Video room",
     "item": "videoroom",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Book a room and dial in",
+    "items": [
+     "videoroom"
+    ]
    },
    {
     "k": "c",
     "name": "Drive over",
     "item": "shuttle",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Go to the fab",
+    "items": [
+     "shuttle"
+    ]
    }
   ]
  },
@@ -940,21 +1297,33 @@
     "name": "Handover desk at the entry",
     "item": "touchdown",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Drop-in spot near the door",
+    "items": [
+     "touchdown"
+    ]
    },
    {
     "k": "b",
     "name": "Video handover",
     "item": "videoroom",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "From home before driving",
+    "items": [
+     "videoroom"
+    ]
    },
    {
     "k": "c",
     "name": "At the fab",
     "item": "gates",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Skip the office",
+    "items": [
+     "gates"
+    ]
    }
   ]
  },
@@ -973,21 +1342,33 @@
     "name": "Keep my own desk",
     "item": "desk",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Mine, even when empty",
+    "items": [
+     "desk"
+    ]
    },
    {
     "k": "b",
     "name": "Share on fab days",
     "item": "neighbourhood",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "A teammate uses it when you’re out",
+    "items": [
+     "neighbourhood"
+    ]
    },
    {
     "k": "c",
     "name": "Hot desk with locker",
     "item": "smartlockers",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Any desk, personal locker",
+    "items": [
+     "smartlockers"
+    ]
    }
   ]
  },
@@ -1006,28 +1387,44 @@
     "name": "Visitor lounge",
     "item": "visitorlounge",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Sofas and check-in at the entry",
+    "items": [
+     "visitorlounge"
+    ]
    },
    {
     "k": "b",
     "name": "Tool cutaway showcase",
     "item": "cutaway",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "A cutaway tool on a plinth",
+    "items": [
+     "cutaway"
+    ]
    },
    {
     "k": "c",
     "name": "Book the boardroom",
     "item": "boardroom",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "As today",
+    "items": [
+     "boardroom"
+    ]
    },
    {
     "k": "d",
     "name": "Live demo wall",
     "item": "demo",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Screens showing tools running",
+    "items": [
+     "demo"
+    ]
    }
   ]
  },
@@ -1046,21 +1443,33 @@
     "name": "Gates and escorts",
     "item": "gates",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Badge gates, escorted zones",
+    "items": [
+     "gates"
+    ]
    },
    {
     "k": "b",
     "name": "Visitor lounge only",
     "item": "visitorlounge",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Guests stay at the front",
+    "items": [
+     "visitorlounge"
+    ]
    },
    {
     "k": "c",
     "name": "Trust and sign",
     "item": "welcome",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Sign an NDA at reception",
+    "items": [
+     "welcome"
+    ]
    }
   ]
  },
@@ -1079,28 +1488,44 @@
     "name": "Team dining table",
     "item": "dining",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Long table on the floor",
+    "items": [
+     "dining"
+    ]
    },
    {
     "k": "b",
     "name": "Pergola café",
     "item": "pergola",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Indoor bistro with vines",
+    "items": [
+     "pergola"
+    ]
    },
    {
     "k": "c",
     "name": "Cafeteria",
     "item": "cafebar",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "As today",
+    "items": [
+     "cafebar"
+    ]
    },
    {
     "k": "d",
     "name": "Booth seating",
     "item": "booth",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Diner-style booths",
+    "items": [
+     "booth"
+    ]
    }
   ]
  },
@@ -1112,28 +1537,42 @@
   "tier": "Core",
   "roles": "ALL",
   "native": true,
-  "question": "The lunch queue",
+  "question": "How does the team eat?",
   "options": [
    {
     "k": "a",
-    "name": null,
-    "item": null,
-    "removes": false,
-    "none": false
+    "name": "Floor Kitchen",
+    "item": "pantry",
+    "removes": true,
+    "none": false,
+    "real": "Pantry + a long team table",
+    "items": [
+     "pantry",
+     "dining"
+    ]
    },
    {
     "k": "b",
-    "name": null,
-    "item": null,
-    "removes": false,
-    "none": false
+    "name": "Garden Table",
+    "item": "terrace",
+    "removes": true,
+    "none": false,
+    "real": "An indoor terrace with planters",
+    "items": [
+     "terrace"
+    ]
    },
    {
     "k": "c",
-    "name": null,
-    "item": null,
-    "removes": false,
-    "none": false
+    "name": "Grab & Go",
+    "item": "cafebar",
+    "removes": true,
+    "none": false,
+    "real": "A café bar + a perch counter",
+    "items": [
+     "cafebar",
+     "touchdown"
+    ]
    }
   ]
  },
@@ -1152,21 +1591,33 @@
     "name": "Food pickup lockers",
     "item": "foodlocker",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Heated lockers on the floor",
+    "items": [
+     "foodlocker"
+    ]
    },
    {
     "k": "b",
     "name": "Pantry pickup",
     "item": "pantry",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Delivered to the pantry",
+    "items": [
+     "pantry"
+    ]
    },
    {
     "k": "c",
     "name": "Go down",
     "item": "gates",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "As today",
+    "items": [
+     "gates"
+    ]
    }
   ]
  },
@@ -1185,21 +1636,33 @@
     "name": "Coffee robot",
     "item": "coffeerobot",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Robot-arm coffee kiosk",
+    "items": [
+     "coffeerobot"
+    ]
    },
    {
     "k": "b",
     "name": "Café bar",
     "item": "cafebar",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "A barista-style bar",
+    "items": [
+     "cafebar"
+    ]
    },
    {
     "k": "c",
     "name": "Pantry coffee",
     "item": "pantry",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Drip coffee in the pantry",
+    "items": [
+     "pantry"
+    ]
    }
   ]
  },
@@ -1218,21 +1681,33 @@
     "name": "24/7 food lockers",
     "item": "foodlocker",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Stocked meals any hour",
+    "items": [
+     "foodlocker"
+    ]
    },
    {
     "k": "b",
     "name": "Stocked pantry",
     "item": "pantry",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Snacks and ready meals",
+    "items": [
+     "pantry"
+    ]
    },
    {
     "k": "c",
     "name": "Nothing",
     "item": "pantry",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "As today",
+    "items": [
+     "pantry"
+    ]
    }
   ]
  },
@@ -1244,28 +1719,42 @@
   "tier": "Core",
   "roles": "ALL",
   "native": true,
-  "question": "The afternoon slump",
+  "question": "How do you reset?",
   "options": [
    {
     "k": "a",
-    "name": null,
-    "item": null,
-    "removes": false,
-    "none": false
+    "name": "Dream Pod",
+    "item": "nappod",
+    "removes": true,
+    "none": false,
+    "real": "Nap pods behind a green wall",
+    "items": [
+     "nappod",
+     "greenwall"
+    ]
    },
    {
     "k": "b",
-    "name": null,
-    "item": null,
-    "removes": false,
-    "none": false
+    "name": "Green Loop",
+    "item": "greenwall",
+    "removes": true,
+    "none": false,
+    "real": "An indoor garden walk",
+    "items": [
+     "greenwall"
+    ]
    },
    {
     "k": "c",
-    "name": null,
-    "item": null,
-    "removes": false,
-    "none": false
+    "name": "Massage Lounge",
+    "item": "massage",
+    "removes": true,
+    "none": false,
+    "real": "Massage chairs + a sofa",
+    "items": [
+     "massage",
+     "sofa"
+    ]
    }
   ]
  },
@@ -1284,21 +1773,33 @@
     "name": "Recharge recliner",
     "item": "recliner",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Recliner with a reading lamp",
+    "items": [
+     "recliner"
+    ]
    },
    {
     "k": "b",
     "name": "Showers and changing",
     "item": "showers",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Freshen up before the office",
+    "items": [
+     "showers"
+    ]
    },
    {
     "k": "c",
     "name": "Go home",
     "item": "touchdown",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Write it tomorrow",
+    "items": [
+     "touchdown"
+    ]
    }
   ]
  },
@@ -1317,21 +1818,33 @@
     "name": "Treadmill desk",
     "item": "treaddesk",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Walk while you work",
+    "items": [
+     "treaddesk"
+    ]
    },
    {
     "k": "b",
     "name": "Gym corner",
     "item": "gym",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Small gym on the floor",
+    "items": [
+     "gym"
+    ]
    },
    {
     "k": "c",
     "name": "Walking trail",
     "item": "terrace",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Loop outside",
+    "items": [
+     "terrace"
+    ]
    }
   ]
  },
@@ -1350,28 +1863,44 @@
     "name": "Wellness room",
     "item": "meditation",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Quiet room, low light",
+    "items": [
+     "meditation"
+    ]
    },
    {
     "k": "b",
     "name": "Swing seat corner",
     "item": "hammock",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Hanging chair by the window",
+    "items": [
+     "hammock"
+    ]
    },
    {
     "k": "c",
     "name": "Stairwell",
     "item": "stair",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "As today",
+    "items": [
+     "stair"
+    ]
    },
    {
     "k": "d",
     "name": "Reflection room",
     "item": "prayer",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Quiet room for prayer or reflection",
+    "items": [
+     "prayer"
+    ]
    }
   ]
  },
@@ -1390,21 +1919,33 @@
     "name": "Parents’ room",
     "item": "mothers",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Room with fridge and sink",
+    "items": [
+     "mothers"
+    ]
    },
    {
     "k": "b",
     "name": "Any small room",
     "item": "enclave",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Book what’s free",
+    "items": [
+     "enclave"
+    ]
    },
    {
     "k": "c",
     "name": "Leave early",
     "item": "touchdown",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Go home sooner",
+    "items": [
+     "touchdown"
+    ]
    }
   ]
  },
@@ -1423,21 +1964,33 @@
     "name": "Shuttle lounge",
     "item": "shuttle",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Live timetable at a lobby lounge",
+    "items": [
+     "shuttle"
+    ]
    },
    {
     "k": "b",
     "name": "Flexible hours",
     "item": "touchdown",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Leave early when you need to",
+    "items": [
+     "touchdown"
+    ]
    },
    {
     "k": "c",
     "name": "Drive",
     "item": "evcharge",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Take the car",
+    "items": [
+     "evcharge"
+    ]
    }
   ]
  },
@@ -1456,21 +2009,33 @@
     "name": "Priority parking for fab-goers",
     "item": "evcharge",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Bays for people driving to fabs",
+    "items": [
+     "evcharge"
+    ]
    },
    {
     "k": "b",
     "name": "Bikes and showers",
     "item": "bikes",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Bike storage and showers",
+    "items": [
+     "bikes"
+    ]
    },
    {
     "k": "c",
     "name": "More shuttles",
     "item": "shuttle",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Extra shuttle runs",
+    "items": [
+     "shuttle"
+    ]
    }
   ]
  },
@@ -1489,21 +2054,33 @@
     "name": "Team neighbourhood",
     "item": "neighbourhood",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Your team’s zone, marked",
+    "items": [
+     "neighbourhood"
+    ]
    },
    {
     "k": "b",
     "name": "Occupancy screen",
     "item": "occscreen",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Find a free spot on a map",
+    "items": [
+     "occscreen"
+    ]
    },
    {
     "k": "c",
     "name": "Any free desk",
     "item": "dockdesk",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "First you find",
+    "items": [
+     "dockdesk"
+    ]
    }
   ]
  },
@@ -1522,21 +2099,33 @@
     "name": "Satellite hub",
     "item": "dockdesk",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Book a desk near home",
+    "items": [
+     "dockdesk"
+    ]
    },
    {
     "k": "b",
     "name": "Come in late",
     "item": "shuttle",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Arrive after the jam",
+    "items": [
+     "shuttle"
+    ]
    },
    {
     "k": "c",
     "name": "Work from home",
     "item": "touchdown",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Stay home",
+    "items": [
+     "touchdown"
+    ]
    }
   ]
  },
@@ -1555,21 +2144,33 @@
     "name": "Onboarding desk",
     "item": "buddydesk",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Welcome desk with a starter kit",
+    "items": [
+     "buddydesk"
+    ]
    },
    {
     "k": "b",
     "name": "Sit with a mentor",
     "item": "mentornook",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Next to their buddy",
+    "items": [
+     "mentornook"
+    ]
    },
    {
     "k": "c",
     "name": "Any free desk",
     "item": "touchdown",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Wherever is open",
+    "items": [
+     "touchdown"
+    ]
    }
   ]
  },
@@ -1588,21 +2189,33 @@
     "name": "Mentoring nook",
     "item": "mentornook",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Two armchairs and a side table",
+    "items": [
+     "mentornook"
+    ]
    },
    {
     "k": "b",
     "name": "Prototyping bench",
     "item": "protolab",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Show it on real parts",
+    "items": [
+     "protolab"
+    ]
    },
    {
     "k": "c",
     "name": "At your desk",
     "item": "desk",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Explain there",
+    "items": [
+     "desk"
+    ]
    }
   ]
  },
@@ -1621,21 +2234,33 @@
     "name": "Share at 1:1.25",
     "item": "neighbourhood",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "More people than desks",
+    "items": [
+     "neighbourhood"
+    ]
    },
    {
     "k": "b",
     "name": "A new floor elsewhere",
     "item": "stair",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Take space in another building",
+    "items": [
+     "stair"
+    ]
    },
    {
     "k": "c",
     "name": "Smaller desks",
     "item": "bench",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Shrink every desk",
+    "items": [
+     "bench"
+    ]
    }
   ]
  },
@@ -1654,21 +2279,33 @@
     "name": "Fixed team day",
     "item": "neighbourhood",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Everyone in on Tuesdays",
+    "items": [
+     "neighbourhood"
+    ]
    },
    {
     "k": "b",
     "name": "Free choice",
     "item": "touchdown",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Come when you like",
+    "items": [
+     "touchdown"
+    ]
    },
    {
     "k": "c",
     "name": "Half-teams rotate",
     "item": "huddleroom",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Two groups alternate",
+    "items": [
+     "huddleroom"
+    ]
    }
   ]
  },
@@ -1687,21 +2324,33 @@
     "name": "Book the night before",
     "item": "deskstatus",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "In the app",
+    "items": [
+     "deskstatus"
+    ]
    },
    {
     "k": "b",
     "name": "First come",
     "item": "touchdown",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Turn up and find one",
+    "items": [
+     "touchdown"
+    ]
    },
    {
     "k": "c",
     "name": "Team block",
     "item": "neighbourhood",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "The team books a zone",
+    "items": [
+     "neighbourhood"
+    ]
    }
   ]
  },
@@ -1720,21 +2369,33 @@
     "name": "Climate control zones",
     "item": "climate",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Adjust your zone",
+    "items": [
+     "climate"
+    ]
    },
    {
     "k": "b",
     "name": "Move from the window",
     "item": "window",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Swap seats",
+    "items": [
+     "window"
+    ]
    },
    {
     "k": "c",
     "name": "Blanket",
     "item": "sofa",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Make do",
+    "items": [
+     "sofa"
+    ]
    }
   ]
  },
@@ -1753,21 +2414,33 @@
     "name": "Circadian lighting",
     "item": "lights",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Lights that follow the day",
+    "items": [
+     "lights"
+    ]
    },
    {
     "k": "b",
     "name": "Windows for shared spaces",
     "item": "window",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Lounges by the glass, desks inside",
+    "items": [
+     "window"
+    ]
    },
    {
     "k": "c",
     "name": "Window desks by seniority",
     "item": "office",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "As often today",
+    "items": [
+     "office"
+    ]
    }
   ]
  },
@@ -1786,21 +2459,33 @@
     "name": "Green wall",
     "item": "greenwall",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Planted wall",
+    "items": [
+     "greenwall"
+    ]
    },
    {
     "k": "b",
     "name": "Hydroponic wall",
     "item": "hydrowall",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Grow herbs at work",
+    "items": [
+     "hydrowall"
+    ]
    },
    {
     "k": "c",
     "name": "Terrace planters",
     "item": "terrace",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Plants outside only",
+    "items": [
+     "terrace"
+    ]
    }
   ]
  },
@@ -1819,21 +2504,33 @@
     "name": "Refill and recycle hub",
     "item": "waterhub",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Taps and sorted bins",
+    "items": [
+     "waterhub"
+    ]
    },
    {
     "k": "b",
     "name": "No single-use cups",
     "item": "pantry",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Bring your own",
+    "items": [
+     "pantry"
+    ]
    },
    {
     "k": "c",
     "name": "Leave it",
     "item": "pantry",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "As today",
+    "items": [
+     "pantry"
+    ]
    }
   ]
  },
@@ -1852,21 +2549,33 @@
     "name": "Leads sit with the team",
     "item": "desk",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Open desks for everyone",
+    "items": [
+     "desk"
+    ]
    },
    {
     "k": "b",
     "name": "Glass offices",
     "item": "office",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Leads keep rooms",
+    "items": [
+     "office"
+    ]
    },
    {
     "k": "c",
     "name": "Bookable rooms",
     "item": "enclave",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Leads book rooms when needed",
+    "items": [
+     "enclave"
+    ]
    }
   ]
  },
@@ -1885,21 +2594,33 @@
     "name": "Culture wall",
     "item": "culturewall",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Wins and photos on a wall",
+    "items": [
+     "culturewall"
+    ]
    },
    {
     "k": "b",
     "name": "Social stair",
     "item": "bleachers",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Steps for town halls",
+    "items": [
+     "bleachers"
+    ]
    },
    {
     "k": "c",
     "name": "Team dinner out",
     "item": "dining",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Celebrate off site",
+    "items": [
+     "dining"
+    ]
    }
   ]
  },
@@ -1918,21 +2639,33 @@
     "name": "Games corner",
     "item": "gamecorner",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Board games and snacks",
+    "items": [
+     "gamecorner"
+    ]
    },
    {
     "k": "b",
     "name": "Table tennis",
     "item": "pingpong",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "A table on the floor",
+    "items": [
+     "pingpong"
+    ]
    },
    {
     "k": "c",
     "name": "Go out",
     "item": "dining",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Dinner out together",
+    "items": [
+     "dining"
+    ]
    }
   ]
  },
@@ -1951,21 +2684,33 @@
     "name": "Secure shred station",
     "item": "shredder",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Lockable confidential bins",
+    "items": [
+     "shredder"
+    ]
    },
    {
     "k": "b",
     "name": "Print release",
     "item": "printhub",
     "removes": false,
-    "none": false
+    "none": false,
+    "real": "Print only at the hub with a badge",
+    "items": [
+     "printhub"
+    ]
    },
    {
     "k": "c",
     "name": "Go paperless",
     "item": "itbar",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "No printing",
+    "items": [
+     "itbar"
+    ]
    }
   ]
  },
@@ -1984,21 +2729,33 @@
     "name": "IT help bar",
     "item": "itbar",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Walk-up IT desk",
+    "items": [
+     "itbar"
+    ]
    },
    {
     "k": "b",
     "name": "Swap locker",
     "item": "smartlockers",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Pick up a spare from a locker",
+    "items": [
+     "smartlockers"
+    ]
    },
    {
     "k": "c",
     "name": "Ship and wait",
     "item": "mail",
     "removes": false,
-    "none": true
+    "none": true,
+    "real": "Send it off",
+    "items": [
+     "mail"
+    ]
    }
   ]
  },
@@ -2017,21 +2774,33 @@
     "name": "Wayfinding totems",
     "item": "totem",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Signs with live maps at each junction",
+    "items": [
+     "totem"
+    ]
    },
    {
     "k": "b",
     "name": "Main street",
     "item": "mainstreet",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "One clear walkway through the floor",
+    "items": [
+     "mainstreet"
+    ]
    },
    {
     "k": "c",
     "name": "Booking kiosk",
     "item": "kiosk",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Touch screen to find people and rooms",
+    "items": [
+     "kiosk"
+    ]
    }
   ]
  },
@@ -2050,21 +2819,33 @@
     "name": "First-aid room",
     "item": "firstaid",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Bed, kit and a door",
+    "items": [
+     "firstaid"
+    ]
    },
    {
     "k": "b",
     "name": "Wellness room",
     "item": "meditation",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "Quiet room with a daybed",
+    "items": [
+     "meditation"
+    ]
    },
    {
     "k": "c",
     "name": "Recharge recliner",
     "item": "recliner",
     "removes": true,
-    "none": false
+    "none": false,
+    "real": "A recliner in a quiet corner",
+    "items": [
+     "recliner"
+    ]
    }
   ]
  }

@@ -62,6 +62,7 @@ def post_wall(body: WallPostIn, authorization: str | None = Header(default=None)
     old = s.scalar(select(WallPost).where(WallPost.anon_player_id == gs.anon_player_id))
     if old is not None and old.session_id != gs.session_id:
         s.query(WallView).filter(WallView.wall_post_id == old.id).delete()
+    gs.posted_to_wall = True
     stmt = insert(WallPost).values(anon_player_id=gs.anon_player_id, **fields)
     post_id = s.execute(
         stmt.on_conflict_do_update(index_elements=[WallPost.anon_player_id], set_=fields).returning(WallPost.id)

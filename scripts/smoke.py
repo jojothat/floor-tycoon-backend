@@ -122,9 +122,9 @@ def play_scripted(c: httpx.Client, token: str, n: int) -> None:
 def read_back(c: httpx.Client, viewer: str) -> None:
     print("Management read:")
     h = {"Authorization": f"Bearer {viewer}"}
-    s = c.get("/v1/read/summary", headers=h)
-    check(s.status_code == 200, f"summary: {s.json().get('plays')} plays, finished {s.json().get('finished_pct')}%")
-    p = c.get("/v1/read/picks", headers=h).json()
+    s = c.get("/v1/read/summary", params={"version": VERSION}, headers=h)
+    check(s.status_code == 200, f"summary: {s.json().get('completed')} of {s.json().get('started')} games finished")
+    p = c.get("/v1/read/picks", params={"version": VERSION}, headers=h).json()
     team = next((r for r in p.get("scenarios", []) if r["scenario_id"] == 1), None)
     check(team is not None, f"picks: 'The team grows to 14' from {team and team['n']} plays")
     check(c.get("/v1/read/summary").status_code == 401, "read API refuses a request with no viewer")
