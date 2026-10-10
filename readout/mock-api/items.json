@@ -1,0 +1,674 @@
+[
+ {
+  "id": "desk",
+  "name": "Sit-stand desk",
+  "cat": "Solo work",
+  "real": "Assigned 1:1 desk with height adjust",
+  "area_m2": 2.24
+ },
+ {
+  "id": "bench",
+  "name": "Shared bench",
+  "cat": "Solo work",
+  "real": "Hot-desk bench for 4, book a seat",
+  "area_m2": 5.28
+ },
+ {
+  "id": "cockpit",
+  "name": "Two-person cockpit",
+  "cat": "Solo work",
+  "real": "Paired desks with acoustic side screens",
+  "area_m2": 3.6
+ },
+ {
+  "id": "focuspod",
+  "name": "Focus pod",
+  "cat": "Solo work",
+  "real": "Enclosed 1-person focus room",
+  "area_m2": 1.96
+ },
+ {
+  "id": "phonebooth",
+  "name": "Phone booth",
+  "cat": "Solo work",
+  "real": "1-person call booth, walk-in",
+  "area_m2": 1.0
+ },
+ {
+  "id": "huddle",
+  "name": "Huddle table",
+  "cat": "Collaboration",
+  "real": "Stand-up table for 3–4, no booking",
+  "area_m2": 3.24
+ },
+ {
+  "id": "meeting",
+  "name": "Meeting room (6)",
+  "cat": "Collaboration",
+  "real": "Glass-fronted bookable room",
+  "area_m2": 7.8
+ },
+ {
+  "id": "whiteboard",
+  "name": "Mobile whiteboard",
+  "cat": "Collaboration",
+  "real": "Writable wall on wheels",
+  "area_m2": 0.84
+ },
+ {
+  "id": "pedestal",
+  "name": "Pedestal",
+  "cat": "Storage",
+  "real": "Personal under-desk storage, lockable",
+  "area_m2": 0.48
+ },
+ {
+  "id": "lockers",
+  "name": "Personal lockers",
+  "cat": "Storage",
+  "real": "Day lockers for desk sharers",
+  "area_m2": 0.84
+ },
+ {
+  "id": "teamwall",
+  "name": "Team storage wall",
+  "cat": "Storage",
+  "real": "Shared shelves + bins for the team",
+  "area_m2": 1.44
+ },
+ {
+  "id": "kitnook",
+  "name": "Kit nook",
+  "cat": "Storage",
+  "real": "Kit shelves + bench for fab returns",
+  "area_m2": 1.8
+ },
+ {
+  "id": "pantry",
+  "name": "Floor pantry",
+  "cat": "Social & food",
+  "real": "Kitchenette with fridge + long table edge",
+  "area_m2": 2.08
+ },
+ {
+  "id": "cafebar",
+  "name": "Café bar",
+  "cat": "Social & food",
+  "real": "Coffee point at a crossing — chance meetings",
+  "area_m2": 2.8
+ },
+ {
+  "id": "nappod",
+  "name": "Nap pod",
+  "cat": "Wellbeing",
+  "real": "20-min rest pod, dimmable",
+  "area_m2": 2.0
+ },
+ {
+  "id": "massage",
+  "name": "Massage chair",
+  "cat": "Wellbeing",
+  "real": "Massage lounge seat",
+  "area_m2": 1.6
+ },
+ {
+  "id": "sofa",
+  "name": "Lounge sofa",
+  "cat": "Wellbeing",
+  "real": "Soft seating corner with rug",
+  "area_m2": 4.32
+ },
+ {
+  "id": "greenwall",
+  "name": "Green wall + planters",
+  "cat": "Environment",
+  "real": "Biophilic screen, divides zones",
+  "area_m2": 1.6
+ },
+ {
+  "id": "printhub",
+  "name": "Print hub",
+  "cat": "Support",
+  "real": "One shared print + supply point",
+  "area_m2": 1.28
+ },
+ {
+  "id": "bleachers",
+  "name": "Social stair",
+  "cat": "Flow",
+  "real": "Bleacher seats for town halls + breaks",
+  "area_m2": 4.32
+ },
+ {
+  "id": "library",
+  "name": "Library table",
+  "cat": "Solo work",
+  "real": "Quiet-zone shared table, no calls",
+  "area_m2": 4.32
+ },
+ {
+  "id": "touchdown",
+  "name": "Touchdown counter",
+  "cat": "Solo work",
+  "real": "Drop-in standing/perch spot, 30–60 min",
+  "area_m2": 2.0
+ },
+ {
+  "id": "wingchair",
+  "name": "Privacy chair",
+  "cat": "Solo work",
+  "real": "High-back lounge seat for heads-down reading",
+  "area_m2": 1.43
+ },
+ {
+  "id": "enclave",
+  "name": "Enclave room",
+  "cat": "Solo work",
+  "real": "Small room for 1–3, focus or quick chat",
+  "area_m2": 3.6
+ },
+ {
+  "id": "office",
+  "name": "Glass office",
+  "cat": "Solo work",
+  "real": "Private office for a lead, glass-fronted",
+  "area_m2": 6.24
+ },
+ {
+  "id": "huddleroom",
+  "name": "Huddle room (4)",
+  "cat": "Collaboration",
+  "real": "Enclosed 2–4 person room, short bookings",
+  "area_m2": 4.4
+ },
+ {
+  "id": "boardroom",
+  "name": "Boardroom (12)",
+  "cat": "Collaboration",
+  "real": "Large formal room — rarely full",
+  "area_m2": 12.0
+ },
+ {
+  "id": "warroom",
+  "name": "Project war room",
+  "cat": "Collaboration",
+  "real": "Room a team keeps for weeks, walls of work",
+  "area_m2": 7.8
+ },
+ {
+  "id": "collabtable",
+  "name": "Open collab table",
+  "cat": "Collaboration",
+  "real": "Long shared table in the open, no booking",
+  "area_m2": 6.6
+ },
+ {
+  "id": "videoroom",
+  "name": "Video-call room",
+  "cat": "Collaboration",
+  "real": "Camera, screen and acoustic panels for hybrid calls",
+  "area_m2": 5.28
+ },
+ {
+  "id": "training",
+  "name": "Training room",
+  "cat": "Collaboration",
+  "real": "Rows facing a screen, for onboarding + courses",
+  "area_m2": 8.96
+ },
+ {
+  "id": "protolab",
+  "name": "Prototyping bench",
+  "cat": "Collaboration",
+  "real": "Hands-on lab bench near the team",
+  "area_m2": 3.36
+ },
+ {
+  "id": "demo",
+  "name": "Demo showcase",
+  "cat": "Collaboration",
+  "real": "Customer demo point with tool model + screen",
+  "area_m2": 3.52
+ },
+ {
+  "id": "booth",
+  "name": "Booth seating",
+  "cat": "Collaboration",
+  "real": "Diner-style booth for 4 — semi-private chats",
+  "area_m2": 3.52
+ },
+ {
+  "id": "pingpong",
+  "name": "Table tennis",
+  "cat": "Social & food",
+  "real": "Game table — energy break, loud zone",
+  "area_m2": 5.4
+ },
+ {
+  "id": "welcome",
+  "name": "Welcome desk",
+  "cat": "Social & food",
+  "real": "Host / concierge point at the entry",
+  "area_m2": 3.08
+ },
+ {
+  "id": "terrace",
+  "name": "Terrace deck",
+  "cat": "Social & food",
+  "real": "Outdoor seating with shade + planters",
+  "area_m2": 6.76
+ },
+ {
+  "id": "dining",
+  "name": "Team dining table",
+  "cat": "Social & food",
+  "real": "Long table for eating together on-floor",
+  "area_m2": 5.04
+ },
+ {
+  "id": "meditation",
+  "name": "Wellness room",
+  "cat": "Wellbeing",
+  "real": "Quiet room for stretching or resetting",
+  "area_m2": 4.4
+ },
+ {
+  "id": "prayer",
+  "name": "Reflection room",
+  "cat": "Wellbeing",
+  "real": "Prayer / reflection space",
+  "area_m2": 3.6
+ },
+ {
+  "id": "gym",
+  "name": "Gym corner",
+  "cat": "Wellbeing",
+  "real": "Small fitness corner + showers nearby",
+  "area_m2": 5.6
+ },
+ {
+  "id": "firstaid",
+  "name": "First-aid room",
+  "cat": "Wellbeing",
+  "real": "Rest bed + kit for when someone feels unwell",
+  "area_m2": 3.6
+ },
+ {
+  "id": "showers",
+  "name": "Showers + changing",
+  "cat": "Wellbeing",
+  "real": "For cyclists, gym users and fab returns",
+  "area_m2": 3.2
+ },
+ {
+  "id": "bikes",
+  "name": "Bike storage",
+  "cat": "Support",
+  "real": "Secure bike racks near the entry",
+  "area_m2": 2.88
+ },
+ {
+  "id": "mail",
+  "name": "Parcel lockers",
+  "cat": "Support",
+  "real": "Mail + parcel pickup without a front desk",
+  "area_m2": 1.08
+ },
+ {
+  "id": "itbar",
+  "name": "IT help bar",
+  "cat": "Support",
+  "real": "Walk-up tech help + device swap",
+  "area_m2": 2.64
+ },
+ {
+  "id": "kiosk",
+  "name": "Booking kiosk",
+  "cat": "Support",
+  "real": "Find + book a desk or room on the spot",
+  "area_m2": 0.48
+ },
+ {
+  "id": "mainstreet",
+  "name": "Main street path",
+  "cat": "Flow",
+  "real": "Clear spine that links zones + wayfinding",
+  "area_m2": 3.6
+ },
+ {
+  "id": "totem",
+  "name": "Wayfinding totem",
+  "cat": "Flow",
+  "real": "Zone sign with live room + desk status",
+  "area_m2": 0.48
+ },
+ {
+  "id": "stair",
+  "name": "Connecting stair",
+  "cat": "Flow",
+  "real": "Open stair between floors — fewer lift trips",
+  "area_m2": 5.12
+ },
+ {
+  "id": "gates",
+  "name": "Entry gates",
+  "cat": "Flow",
+  "real": "Badge turnstiles — your arrival moment",
+  "area_m2": 2.88
+ },
+ {
+  "id": "window",
+  "name": "Window wall",
+  "cat": "Environment",
+  "real": "Daylight edge given to shared space",
+  "area_m2": 2.08
+ },
+ {
+  "id": "lights",
+  "name": "Circadian lighting",
+  "cat": "Environment",
+  "real": "Pendants that shift warm → cool through the day",
+  "area_m2": 3.24
+ },
+ {
+  "id": "baffles",
+  "name": "Acoustic baffles",
+  "cat": "Environment",
+  "real": "Ceiling sound absorbers over busy desks",
+  "area_m2": 3.84
+ },
+ {
+  "id": "screens",
+  "name": "Acoustic screens",
+  "cat": "Environment",
+  "real": "Free-standing felt panels to carve quiet",
+  "area_m2": 1.92
+ },
+ {
+  "id": "climate",
+  "name": "Air + climate control",
+  "cat": "Environment",
+  "real": "Local purifier + thermostat per zone",
+  "area_m2": 0.84
+ },
+ {
+  "id": "partition",
+  "name": "Folding partition",
+  "cat": "Environment",
+  "real": "Movable wall — one room becomes two",
+  "area_m2": 2.4
+ },
+ {
+  "id": "culturewall",
+  "name": "Culture wall",
+  "cat": "Environment",
+  "real": "Team story, milestones, first wafers",
+  "area_m2": 1.82
+ },
+ {
+  "id": "smartlockers",
+  "name": "Smart lockers",
+  "cat": "Storage",
+  "real": "App-booked locker wall with small status screens",
+  "area_m2": 1.2
+ },
+ {
+  "id": "toolcrib",
+  "name": "Tool crib",
+  "cat": "Storage",
+  "real": "Caged tool and spare-parts room with shelves and a hatch counter",
+  "area_m2": 4.32
+ },
+ {
+  "id": "samplecab",
+  "name": "Sample cabinet",
+  "cat": "Storage",
+  "real": "Anti-static cabinet for wafer and sample boxes",
+  "area_m2": 0.8
+ },
+ {
+  "id": "caddy",
+  "name": "Personal caddy",
+  "cat": "Storage",
+  "real": "Mobile pedestal on wheels with a cushion top",
+  "area_m2": 0.48
+ },
+ {
+  "id": "dockdesk",
+  "name": "Dock-and-go desk",
+  "cat": "Solo work",
+  "real": "Hot desk with monitor arm, dock and status light",
+  "area_m2": 2.24
+ },
+ {
+  "id": "treaddesk",
+  "name": "Treadmill desk",
+  "cat": "Wellbeing",
+  "real": "Walking treadmill under a standing desk",
+  "area_m2": 3.2
+ },
+ {
+  "id": "standtable",
+  "name": "Stand-up table",
+  "cat": "Collaboration",
+  "real": "Bar-height table with stools for 10-minute huddles",
+  "area_m2": 3.08
+ },
+ {
+  "id": "hybridpod",
+  "name": "Hybrid meeting pod",
+  "cat": "Collaboration",
+  "real": "Small room with a video bar, big screen and round table",
+  "area_m2": 6.24
+ },
+ {
+  "id": "vrstation",
+  "name": "Remote-support station",
+  "cat": "Collaboration",
+  "real": "AR/VR headset bay for guiding fab engineers remotely",
+  "area_m2": 4.8
+ },
+ {
+  "id": "opscentre",
+  "name": "Tool monitoring centre",
+  "cat": "Collaboration",
+  "real": "Wall of screens watching customer tools live",
+  "area_m2": 7.68
+ },
+ {
+  "id": "ndaroom",
+  "name": "Secure NDA room",
+  "cat": "Collaboration",
+  "real": "Windowless room with badge reader and frosted door",
+  "area_m2": 5.28
+ },
+ {
+  "id": "shredder",
+  "name": "Secure shred station",
+  "cat": "Support",
+  "real": "Lockable confidential-waste bin and shredder",
+  "area_m2": 1.12
+ },
+ {
+  "id": "carrels",
+  "name": "Study carrels",
+  "cat": "Solo work",
+  "real": "Row of high-sided single desks",
+  "area_m2": 4.2
+ },
+ {
+  "id": "hangpod",
+  "name": "Hanging acoustic pod",
+  "cat": "Solo work",
+  "real": "Open-top felt pod hung over one chair",
+  "area_m2": 3.24
+ },
+ {
+  "id": "duobooth",
+  "name": "Duo booth",
+  "cat": "Solo work",
+  "real": "Two-person enclosed booth for a call or 1:1",
+  "area_m2": 2.52
+ },
+ {
+  "id": "oneonone",
+  "name": "One-to-one room",
+  "cat": "Collaboration",
+  "real": "Small room, round table, two chairs",
+  "area_m2": 3.6
+ },
+ {
+  "id": "recliner",
+  "name": "Recharge recliner",
+  "cat": "Wellbeing",
+  "real": "Reclining chair with a reading lamp",
+  "area_m2": 2.52
+ },
+ {
+  "id": "hammock",
+  "name": "Swing seat",
+  "cat": "Wellbeing",
+  "real": "Hanging swing/hammock chair",
+  "area_m2": 2.56
+ },
+ {
+  "id": "hydrowall",
+  "name": "Hydroponic wall",
+  "cat": "Environment",
+  "real": "Indoor herb/veg growing wall",
+  "area_m2": 1.76
+ },
+ {
+  "id": "lightdesk",
+  "name": "Daylight lamp desk",
+  "cat": "Wellbeing",
+  "real": "Desk with a bright daylight therapy lamp",
+  "area_m2": 2.24
+ },
+ {
+  "id": "shuttle",
+  "name": "Shuttle lounge",
+  "cat": "Support",
+  "real": "Bench seating with a live shuttle timetable screen",
+  "area_m2": 3.12
+ },
+ {
+  "id": "evcharge",
+  "name": "EV charging bay",
+  "cat": "Support",
+  "real": "Parking bay with car and charger",
+  "area_m2": 14.0
+ },
+ {
+  "id": "obeya",
+  "name": "Obeya wall",
+  "cat": "Collaboration",
+  "real": "Lean board wall with sticky notes and charts",
+  "area_m2": 3.6
+ },
+ {
+  "id": "mediacart",
+  "name": "Rolling screen",
+  "cat": "Collaboration",
+  "real": "Screen on a mobile stand",
+  "area_m2": 1.12
+ },
+ {
+  "id": "modcubes",
+  "name": "Modular cubes",
+  "cat": "Collaboration",
+  "real": "Re-arrangeable soft cube seats",
+  "area_m2": 3.6
+ },
+ {
+  "id": "ideawall",
+  "name": "Writable wall",
+  "cat": "Collaboration",
+  "real": "Whiteboard-paint wall with sketches",
+  "area_m2": 2.08
+ },
+ {
+  "id": "mentornook",
+  "name": "Mentoring nook",
+  "cat": "Collaboration",
+  "real": "Two armchairs and a side table by a plant",
+  "area_m2": 3.96
+ },
+ {
+  "id": "buddydesk",
+  "name": "Onboarding desk",
+  "cat": "Support",
+  "real": "Welcome desk with a starter kit box and laptop",
+  "area_m2": 2.24
+ },
+ {
+  "id": "gamecorner",
+  "name": "Games corner",
+  "cat": "Social & food",
+  "real": "Board-game shelf, small table and snack jars",
+  "area_m2": 3.96
+ },
+ {
+  "id": "coffeerobot",
+  "name": "Coffee robot",
+  "cat": "Social & food",
+  "real": "Robot-arm coffee kiosk",
+  "area_m2": 3.08
+ },
+ {
+  "id": "waterhub",
+  "name": "Refill and recycle hub",
+  "cat": "Environment",
+  "real": "Water refill tap and sorted recycling bins",
+  "area_m2": 1.92
+ },
+ {
+  "id": "foodlocker",
+  "name": "Food pickup lockers",
+  "cat": "Social & food",
+  "real": "Heated lockers for delivered lunch",
+  "area_m2": 0.96
+ },
+ {
+  "id": "pergola",
+  "name": "Pergola café",
+  "cat": "Social & food",
+  "real": "Indoor pergola with bistro tables and vines",
+  "area_m2": 7.28
+ },
+ {
+  "id": "cutaway",
+  "name": "Tool cutaway showcase",
+  "cat": "Collaboration",
+  "real": "Cutaway model of a chip tool on a plinth for visitors",
+  "area_m2": 3.6
+ },
+ {
+  "id": "deskstatus",
+  "name": "Desk status light",
+  "cat": "Support",
+  "real": "Small desk sign with a green/red light (show on a desk)",
+  "area_m2": 3.64
+ },
+ {
+  "id": "occscreen",
+  "name": "Occupancy screen",
+  "cat": "Support",
+  "real": "Wall screen showing a floor map with free spaces",
+  "area_m2": 1.08
+ },
+ {
+  "id": "noiselight",
+  "name": "Noise traffic light",
+  "cat": "Environment",
+  "real": "Traffic-light noise meter on a stand",
+  "area_m2": 0.64
+ },
+ {
+  "id": "visitorlounge",
+  "name": "Visitor lounge",
+  "cat": "Social & food",
+  "real": "Sofa, coffee table and a check-in tablet stand",
+  "area_m2": 6.16
+ }
+]
