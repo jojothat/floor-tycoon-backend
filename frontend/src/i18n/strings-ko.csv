@@ -1,0 +1,2855 @@
+key_or_location,english,korean
+# MACHINE DRAFT: Korean is a machine translation and needs native review before release. Keyed by English text: the game looks each displayed English string up in i18n/ko.json.,,
+ui,Customer · fab lead,고객사 · 팹 리드
+ui,Tap to answer,눌러서 답하기
+ui,Team zone,팀 구역
+ui,Moment 1 of 7,상황 1/7
+ui,Moment {0} of {1},상황 {0}/{1}
+ui,Choices,선택지
+ui,Where do you take the call?,어디서 통화할까요?
+ui,Tap one to see it on your floor. Every fix costs something.,하나를 누르면 사무실에 바로 보여요. 모든 해결책엔 대가가 있어요.
+ui,Tap a fix to see it on your floor,해결책을 눌러 사무실에서 확인하세요
+ui,A workplace game,오피스 전략 게임
+ui,One workday. Seven fixes. Your floor.,하루 근무. 해결책 7개. 나만의 사무실.
+ui,Start,시작
+ui,4 minutes · anonymous,4분 · 익명
+ui,How it plays,게임 방법
+ui,Three things to know,알아 둘 세 가지
+ui,See what others have built,다른 사람들이 만든 사무실 보기
+ui,Explore ›,둘러보기 ›
+ui,1 · MOMENTS,1 · 상황
+ui,Customer · 09:40,고객 · 09:40
+ui,Can we talk yield numbers? Now?,수율 얘기 좀 할 수 있을까요? 지금요?
+ui,Something comes up,일이 생겨요
+ui,A bubble pops up during your day. Tap it to deal with it.,하루 중 말풍선이 떠요. 눌러서 해결하세요.
+ui,2 · FIXES,2 · 해결책
+ui,Fix it with the floor,공간으로 해결하세요
+ui,Pick a piece of office. Watch it appear on your floor.,사무실 요소를 고르면 내 사무실에 바로 나타나요.
+ui,3 · TRADE-OFFS,3 · 트레이드오프
+ui,−6-seat meeting room,−6인 회의실
+ui,12:00 · the catch,12:00 · 대가
+ui,Every fix costs something,모든 해결책엔 대가가 있어요
+ui,Space is fixed. Some costs show later in the day. You can change any fix at the end.,공간은 한정돼 있어요. 어떤 대가는 나중에 드러나요. 해결책은 마지막에 바꿀 수 있어요.
+ui,Got it,알겠어요
+ui,"At the end, your floor becomes a picture of the office you built.",마지막에 내가 만든 사무실이 한 장의 이미지가 돼요.
+ui,Before you walk in,출근 전에
+ui,Which one is closest to your job?,내 업무와 가장 가까운 건?
+ui,Next,다음
+ui,Prefer not to say,선택 안 함
+ui,Only used to compare groups of 10 or more.,10명 이상 그룹 비교에만 쓰여요.
+ui,Pick your look,캐릭터 꾸미기
+ui,Shuffle look,랜덤 외모
+ui,⟳ Shuffle look,⟳ 랜덤
+ui,Outfit,옷차림
+ui,Hair,헤어
+ui,Hair colour · skin,머리색 · 피부톤
+ui,Extras,소품
+ui,Walk in,출근하기
+ui,Your floor,내 사무실
+ui,Drag to look around · tap a bubble,드래그해서 둘러보기 · 말풍선 누르기
+ui,Open your render,내 렌더링 열기
+ui,Your render ↗,내 렌더링 ↗
+ui,Rendering your office,사무실 렌더링 중
+ui,Zoom in,확대
+ui,Zoom out,축소
+ui,See whole floor,전체 보기
+ui,Your floor · tap,내 사무실 · 
+ui,to replay a moment, 눌러서 상황 다시 하기
+ui,"7 fixes, one office","해결책 7개, 사무실 하나"
+ui,Day in numbers ›,숫자로 본 하루 ›
+ui,Pick a palette for the render,렌더링 팔레트 고르기
+ui,Previous palette,이전 팔레트
+ui,Next palette,다음 팔레트
+ui,Use this palette,이 팔레트 사용
+ui,Render my office,내 사무실 렌더링
+ui,Back to the wall,갤러리로 돌아가기
+ui,Turns your floor into a picture of the real thing.,내 사무실을 실제 모습처럼 보여 줘요.
+ui,Rendered office,렌더링된 사무실
+ui,"Your office, the camera circling the floor","내 사무실, 카메라가 공간을 한 바퀴 돌아요"
+ui,❚❚ Pause,❚❚ 일시정지
+ui,▶ Play,▶ 재생
+ui,Previous angle,이전 앵글
+ui,Next angle,다음 앵글
+ui,⤢ Full screen,⤢ 전체 화면
+ui,Your office,내 사무실
+ui,This is the floor you built.,내가 만든 사무실이에요.
+ui,Model render in your palette · production uses an AI render,선택한 팔레트의 모델 렌더링 · 정식 버전은 AI 렌더링 사용
+ui,↙ Back to my floor,↙ 내 사무실로
+ui,Share to the wall,갤러리에 공유
+ui,Day in numbers,숫자로 본 하루
+ui,The wall,갤러리
+ui,Play again,다시 하기
+ui,Offices built by your colleagues,동료들이 만든 사무실
+ui,"Tap an office to watch its day, then see its render.",사무실을 누르면 그 하루를 보고 렌더링도 볼 수 있어요.
+ui,‹ Back,‹ 뒤로
+ui,Back to my render,내 렌더링으로
+ui,Completed games by employee type,직무 유형별 완료 게임
+ui,Keep or rethink,유지 또는 다시 생각
+ui,Sample day · 14 people,샘플 하루 · 14명
+ui,Close,닫기
+ui,Turn your phone sideways,휴대폰을 가로로 돌려 주세요
+ui,This one plays in landscape.,가로 화면에서 플레이해요.
+ui,Play anyway,그냥 하기
+ui,Choose {0},{0} 선택
+ui,None of these work,다 별로예요
+ui,Skip ›,건너뛰기 ›
+ui,None of these work for me. Skip to the next moment,맞는 게 없어요. 다음 상황으로 건너뛰기
+ui,Leave it as it is,그대로 두기
+ui,I’d want something else,다른 게 필요해요
+ui,This doesn’t come up for me,저한텐 없는 일이에요
+ui,Skip this moment?,이 상황을 건너뛸까요?
+ui,Why,이유
+ui,What would work instead? (optional),대신 뭐가 좋을까요? (선택)
+ui,What would work instead (optional),대신 뭐가 좋을까요 (선택)
+ui,Back to the fixes,해결책으로 돌아가기
+ui,Skip,건너뛰기
+ui,Moment skipped. That place stays as it was.,건너뛰었어요. 그 자리는 그대로예요.
+ui,Entry,입구
+ui,Focus area,집중 구역
+ui,Kitchen corner,주방 코너
+ui,Window corner,창가 코너
+ui,Project corner,프로젝트 코너
+ui,The catch,대가
+ui,Keep {0},{0} 유지
+ui,Rethink,다시 생각
+ui,Back to {0}. What else could work?,{0}로 돌아왔어요. 다른 방법은 없을까요?
+ui,Kept your fix.,해결책을 유지했어요.
+ui,Fix changed on your floor.,사무실의 해결책을 바꿨어요.
+ui,You,나
+ui,Teammate,팀원
+ui,Your lead,팀장님
+ui,Short crop,짧은 커트
+ui,Side part,옆 가르마
+ui,Buzz cut,버즈컷
+ui,Long,긴 머리
+ui,Bob,단발
+ui,Ponytail,포니테일
+ui,Bun,올림머리
+ui,Curly,곱슬머리
+ui,Hair: Short crop,헤어: 짧은 커트
+ui,Hair: Side part,헤어: 옆 가르마
+ui,Hair: Buzz cut,헤어: 버즈컷
+ui,Hair: Long,헤어: 긴 머리
+ui,Hair: Bob,헤어: 단발
+ui,Hair: Ponytail,헤어: 포니테일
+ui,Hair: Bun,헤어: 올림머리
+ui,Hair: Curly,헤어: 곱슬머리
+ui,black hair,검은 머리
+ui,dark hair,짙은 갈색 머리
+ui,brown hair,갈색 머리
+ui,grey hair,회색 머리
+ui,Skin tone 1,피부톤 1
+ui,Skin tone 2,피부톤 2
+ui,Skin tone 3,피부톤 3
+ui,Skin tone 4,피부톤 4
+ui,Skin tone 5,피부톤 5
+ui,Skin tone 6,피부톤 6
+ui,Puffer vest,패딩 조끼
+ui,Cardigan,카디건
+ui,Wool coat,울 코트
+ui,Hoodie,후드티
+ui,Zip fleece,집업 플리스
+ui,Striped top,스트라이프 상의
+ui,Blazer,블레이저
+ui,Polo,폴로 셔츠
+ui,Knit and skirt,니트와 스커트
+ui,Bomber,봄버 재킷
+ui,Sweater vest,스웨터 조끼
+ui,Oxford shirt,옥스퍼드 셔츠
+ui,Glasses,안경
+ui,Backpack,백팩
+ui,Tote bag,토트백
+ui,standing,서 있음
+ui,walking,걷는 중
+ui,"standing, back view","서 있음, 뒷모습"
+ui,"walking, back view","걷는 중, 뒷모습"
+ui,"sitting, facing","앉아 있음, 정면"
+ui,"sitting, back to us","앉아 있음, 뒷모습"
+ui,Customer Engineer,고객 엔지니어
+ui,"At customer fabs, keeping tools running",고객사 팹에서 장비 가동 유지
+ui,Process Support Engineer,공정 지원 엔지니어
+ui,"Process data, lab and desk","공정 데이터, 랩과 자리"
+ui,Installation Engineer,설치 엔지니어
+ui,New tool installs on site,현장 신규 장비 설치
+ui,Account & Sales,어카운트 & 영업
+ui,"Customers, calls, visits","고객, 통화, 방문"
+ui,Office & Support,사무 & 지원
+ui,"Ops, finance, HR, admin","운영, 재무, 인사, 총무"
+ui,Team lead,팀장
+ui,"People, reviews, planning","사람, 리뷰, 계획"
+ui,Did not say,선택 안 함
+ui,You’d leave it as it is,그대로 두고 싶어요
+ui,You’d want something else,다른 게 필요해요
+ui,Doesn’t come up for you,나에겐 없는 일이에요
+ui,None of the fixes worked,맞는 해결책이 없었어요
+ui,Skipped,건너뜀
+ui,Left as it was,그대로 둠
+ui,Nothing changed,바뀐 것 없음
+ui,Swapped in for {0},{0} 대신 들어옴
+ui,the old fix,기존 해결책
+ui,The old fix,기존 해결책
+ui,Added at the end of the day,하루 끝에 추가함
+ui, · desks shared, · 자리 공유
+ui, · desks made smaller, · 책상 축소
+ui,From the wall · watching its day,갤러리에서 · 이 사무실의 하루 보는 중
+ui,Your office on the wall,갤러리에 올린 내 사무실
+ui,An office from the wall,갤러리의 사무실
+ui,Gave up: {0},포기한 것: {0}
+ui,Replay {0} and change {1},{0} 다시 하고 {1} 바꾸기
+ui,Nothing added,추가한 것 없음
+ui,Changed your mind? Add something,마음이 바뀌었나요? 추가해 보세요
+ui,Add something to your floor,사무실에 뭔가 추가하기
+ui,Anything missing? Pick one more thing,빠진 게 있나요? 하나 더 골라 보세요
+ui,Empty space beside {0}. Add something,{0} 옆 빈 공간. 뭔가 추가하기
+ui,Add something,추가하기
+ui,Empty space · {0},빈 공간 · {0}
+ui,Add something beside {0},{0} 옆에 추가하기
+ui,Back to your fixes,해결책 목록으로
+ui,18:00 · one more thing,18:00 · 하나 더
+ui,What would you add to your floor?,사무실에 무엇을 추가할까요?
+ui,Shuffle,섞기
+ui,Nothing to add,추가 안 함
+ui,Nothing added.,아무것도 추가하지 않았어요.
+ui,Added {0}.,{0} 추가했어요.
+ui,Your team desks are already shared.,팀 자리는 이미 공유 중이에요.
+ui,Your team desks are already as compact as they go.,팀 책상은 이미 최대한 촘촘해요.
+ui,Back to the options,선택지로 돌아가기
+ui,Needs more room,공간이 더 필요해요
+ui,{0} needs space.,{0}에는 공간이 필요해요.
+ui,Make room at the team desks?,팀 자리에서 공간을 만들까요?
+ui,Swap out one of your fixes?,해결책 하나를 바꿀까요?
+ui,Make the desks smaller,책상 줄이기
+ui,{0} compact desks for 14 people,14명을 위한 소형 책상 {0}개
+ui,Share desks,자리 공유하기
+ui,"{0} shared bench seats for 14, book a seat","14명이 쓰는 공용 벤치 좌석 {0}석, 예약제"
+ui,Or swap out a fix,또는 해결책 바꾸기
+ui,Swap out {0},{0} 빼기
+ui,{0} · {1} takes its place,{0} · {1}(으)로 교체
+ui,the empty place,빈 자리
+ui,Nothing on this floor can make room for it.,이 사무실에는 들어갈 공간이 없어요.
+ui,Pick something else,다른 것 고르기
+ui,{0} swapped in for {1}.,{1} 대신 {0}을(를) 넣었어요.
+ui,Desks shared to fit {0}.,{0}을(를) 넣으려고 자리를 공유했어요.
+ui,Desks made smaller to fit {0}.,{0}을(를) 넣으려고 책상을 줄였어요.
+ui,{0} · empty space beside {1},{0} · {1} 옆 빈 공간
+ui,What would you add here?,여기에 무엇을 추가할까요?
+ui,Leave it empty,비워 두기
+ui,Left as open space.,빈 공간으로 남겼어요.
+ui,{0} · change your fix,{0} · 해결책 바꾸기
+ui,At the fab,팹 출장 중
+ui,At the fab · back {0},팹 출장 중 · {0} 복귀
+ui,To the fab,팹으로
+ui,Back from the fab,팹에서 복귀
+ui,{0}. Love it.,{0}. 너무 좋아요.
+ui,{0}. Finally.,{0}. 드디어!
+ui,{0}. Nice.,{0}. 좋네요.
+ui,Ugh. {0}.,아휴. {0}.
+ui,{0}… not ideal.,{0}… 좀 아쉽네요.
+ui,"Hmm, {0}.","음, {0}."
+ui,Ji-woo,지우
+ui,Min-jun,민준
+ui,Seo-yeon,서연
+ui,Hyun-woo,현우
+ui,Ha-eun,하은
+ui,Do-hyun,도현
+ui,Su-bin,수빈
+ui,Jae-won,재원
+ui,Ye-jin,예진
+ui,Tae-yang,태양
+ui,Na-rae,나래
+ui,Woo-jin,우진
+ui,Eun-ji,은지
+ui,Sang-min,상민
+ui, · {0} at the fab, · 팹 {0}명
+ui,{0} · {1} people arriving,{0} · {1}명 출근 중
+ui,{0} · {1} in the office,{0} · 사무실 {1}명
+ui,{0} of 14 seated,14명 중 {0}명 착석
+ui,busy {0}% of the day,하루 {0}% 사용
+ui,{0} · applying materials and light,{0} · 재질과 조명 적용 중
+ui,Whole floor,사무실 전체
+ui,Kitchen and entry,주방과 입구
+ui,Focus and project wing,집중·프로젝트 구역
+ui,From the wall,갤러리에서
+ui,Your office on the wall.,갤러리에 올린 내 사무실이에요.
+ui,An office a colleague built.,동료가 만든 사무실이에요.
+ui,See its render,렌더링 보기
+ui,See my render,내 렌더링 보기
+ui,Its render is ready,렌더링이 준비됐어요
+ui,Your render is ready,내 렌더링이 준비됐어요
+ui,Happy,만족
+ui,Desk use,자리 사용률
+ui,Peak,최대 인원
+ui,Change a fix,해결책 바꾸기
+ui,"Happy remarks · {0} happy, {1} grumbles","긍정 반응 · 만족 {0}, 불만 {1}"
+ui,Peak on the floor · {0},최대 인원 · {0}
+ui,Private calls taken,개인 통화 수
+ui,{0} h,{0}시간
+ui,Quiet focus time,조용한 집중 시간
+ui,{0} of 14,14명 중 {0}명
+ui,Ate lunch together,함께 점심 먹음
+ui,Cross-team sessions,팀 간 협업 횟수
+ui,Have a seat to land at,앉을 자리가 있음
+ui,"Desk use · {0} desks, 09:00–18:00","자리 사용률 · 책상 {0}개, 09:00–18:00"
+ui,"People on the floor and at the fab through the day, peaking at {0} on the floor around {1}","하루 동안 사무실과 팹에 있는 인원, {1}쯤 사무실 최대 {0}명"
+ui,— on the floor   - - at the fab,— 사무실   - - 팹
+ui,"{0} · {1} on the floor, {2} at the fab","{0} · 사무실 {1}명, 팹 {2}명"
+ui,{0} · busy {1}% of the working day,{0} · 근무 시간의 {1}% 사용
+ui,People on the floor,사무실 인원
+ui,How busy each fix was · share of 09:00–18:00,해결책별 사용률 · 09:00–18:00 기준
+ui,"Simulated with 14 people on a sample day, five of them field engineers who go out to customer fabs and come back. Not study data.",14명이 보내는 샘플 하루를 시뮬레이션했어요. 그중 5명은 고객사 팹에 다녀오는 현장 엔지니어예요. 실제 조사 데이터가 아니에요.
+ui,Warm Minimal,웜 미니멀
+ui,Scandi Light,스칸디 라이트
+ui,Japandi,재팬디
+ui,Biophilic Calm,바이오필릭 캄
+ui,Soft Greige,소프트 그레이지
+ui,Terracotta Studio,테라코타 스튜디오
+ui,Midnight Brass,미드나잇 브라스
+ui,Industrial Loft,인더스트리얼 로프트
+ui,Mid-century Pop,미드센추리 팝
+ui,Colour-block Tech,컬러블록 테크
+ui,Neutral,뉴트럴
+ui,Edgy,개성파
+ui,Popular,인기
+ui,"Oatmeal walls, light oak, greige upholstery, charcoal accents","오트밀 벽, 밝은 오크, 그레이지 패브릭, 차콜 포인트"
+ui,"White, birch, pale grey, a little sage, black details","화이트, 자작나무, 연회색, 약간의 세이지, 블랙 디테일"
+ui,"Rice-paper white, ash wood, clay, moss, ink","한지 화이트, 애쉬 우드, 점토, 이끼, 먹색"
+ui,"Linen, oak, sage and eucalyptus greens, forest accents","린넨, 오크, 세이지와 유칼립투스 그린, 포레스트 포인트"
+ui,"Stone, putty, mushroom, walnut, graphite","스톤, 퍼티, 머시룸, 월넛, 그래파이트"
+ui,"Cream, terracotta, rust, olive, espresso","크림, 테라코타, 러스트, 올리브, 에스프레소"
+ui,"Ivory, deep navy, brushed brass, teal, charcoal","아이보리, 딥 네이비, 브러시드 브라스, 틸, 차콜"
+ui,"Concrete, cognac leather, brick, blackened steel","콘크리트, 코냑 가죽, 벽돌, 흑철"
+ui,"Cream, mustard, burnt orange, teal, walnut","크림, 머스터드, 번트 오렌지, 틸, 월넛"
+ui,"White, cobalt, coral, mint, slate","화이트, 코발트, 코랄, 민트, 슬레이트"
+ui,{0} · {1} games · {2}%,{0} · {1}게임 · {2}%
+ui,{0} games completed,완료된 게임 {0}회
+ui,By type of employee,직무 유형별
+ui,sample data,샘플 데이터
+ui,Other types,기타 유형
+ui,Types with fewer than 10 games are grouped under Other so nobody can be singled out.,10게임 미만인 유형은 개인이 드러나지 않도록 기타로 묶어요.
+ui,You have {0} office on the wall,갤러리에 내 사무실 {0}개
+ui,You have {0} offices on the wall,갤러리에 내 사무실 {0}개
+ui,{0} office on the wall,갤러리의 사무실 {0}개
+ui,{0} offices on the wall,갤러리의 사무실 {0}개
+ui,Offices on the wall,갤러리의 사무실
+ui,Watch the day in this office,이 사무실의 하루 보기
+ui,▶ Watch its day,▶ 하루 보기
+ui,Use,사용률
+ui,Happiness,만족도
+ui,view,회 조회
+ui,views,회 조회
+ui,On the wall ✓,갤러리에 올림 ✓
+ui,"Shared, no name attached",이름 없이 공유했어요
+ui,"Could not share, try again",공유하지 못했어요. 다시 시도해 주세요
+ui,Sharing needs a signed-in view,공유하려면 로그인이 필요해요
+ui,You can view the wall but not post from this link,이 링크로는 갤러리를 볼 수만 있어요
+ui,just now,방금
+ui,{0} min ago,{0}분 전
+ui,{0} h ago,{0}시간 전
+ui,{0} d ago,{0}일 전
+ui,Deal with it,해결하기
+native.z1.msg,"Back from the customer fab: a tool kit, a laptop bag and two sample boxes. Where does it all go?","고객사 팹에서 복귀했어요. 공구 키트, 노트북 가방, 샘플 박스 두 개. 다 어디에 두죠?"
+native.z1.tap,Sort it out,정리하기
+native.z1.q,Where does the gear live?,장비는 어디에 둘까요?
+native.z1.opts.a.name,Kit Nook,키트 코너
+native.z1.opts.a.real,Kit shelves + day lockers by the entry,입구 옆 키트 선반 + 일일 사물함
+native.z1.opts.a.cost,−welcome lounge,−방문객 라운지
+native.z1.opts.a.catchT,"Tidy entry, nowhere to welcome guests.","입구는 깔끔, 손님 맞을 곳은 없음."
+native.z1.opts.a.gain,Gear sorted the moment you walk in,들어오는 순간 장비 정리 끝
+native.z1.opts.a.gave,The welcome lounge,방문객 라운지
+native.z1.opts.a.pros[0],Gear sorted at the door,들어오자마자 장비 정리
+native.z1.opts.a.pros[1],Drop your kit before you hit the floor,자리 가기 전에 키트 보관
+native.z1.opts.a.cons[0],Welcome lounge is gone,방문객 라운지가 사라짐
+native.z1.opts.a.cons[1],"Lockers: first come, first served",사물함은 선착순
+native.z1.opts.a.reply[0],Security,보안팀
+native.z1.opts.a.reply[1],Neat. No more boxes in the corridor.,깔끔하네요. 복도에 박스가 없어졌어요.
+native.z1.opts.a.conseq[2],Visitors waited standing today. The lounge is gone.,오늘 방문객들이 서서 기다렸어요. 라운지가 없어서요.
+native.z1.opts.b.name,Bottomless Pedestal,무한 서랍장
+native.z1.opts.b.real,A big lockable pedestal at your own desk,내 자리에 잠금식 대형 서랍장
+native.z1.opts.b.cost,+1 pedestal per desk,+책상마다 서랍장 1개
+native.z1.opts.b.catchT,"Handy for you, cluttered for everyone.","나는 편하고, 모두는 복잡하고."
+native.z1.opts.b.gain,Your gear at arm’s reach,내 장비는 손 닿는 곳에
+native.z1.opts.b.gave,A desk anyone could use,누구나 쓸 수 있는 자리
+native.z1.opts.b.pros[0],Everything within arm’s reach,모든 게 손 닿는 곳에
+native.z1.opts.b.pros[1],Lounge stays for guests,라운지는 손님용으로 유지
+native.z1.opts.b.cons[0],Your desk can’t be shared,내 자리는 공유 불가
+native.z1.opts.b.cons[1],Tool cases carried across the floor,공구 케이스를 들고 사무실 횡단
+native.z1.opts.b.reply[0],Facilities,시설팀
+native.z1.opts.b.reply[1],"Okay, just keep the boxes off the walkway.","좋아요, 통로에만 박스 두지 마세요."
+native.z1.opts.b.conseq[2],Your gear trolley blocked the aisle again this morning.,오늘 아침에도 장비 카트가 통로를 막았어요.
+native.z1.opts.c.name,Team Armoury,팀 무기고
+native.z1.opts.c.real,A team shelf wall + a few lockers,팀 선반 벽 + 사물함 몇 개
+native.z1.opts.c.catchT,"Shared shelves, shared mess.","선반도 공유, 어수선함도 공유."
+native.z1.opts.c.gain,The team’s tools in one place,팀 공구를 한곳에
+native.z1.opts.c.pros[0],One shelf for the whole team,팀 전체가 선반 하나로
+native.z1.opts.c.pros[1],"Shared tools, no hunting","공용 공구, 찾을 필요 없음"
+native.z1.opts.c.cons[0],Someone moves your stuff,누가 내 물건을 옮김
+native.z1.opts.c.reply[1],"Finally, I can find the torque driver.",드디어 토크 드라이버를 찾았어요.
+native.z1.opts.c.conseq[2],Someone moved your sample boxes to the top shelf.,누가 샘플 박스를 맨 위 선반으로 옮겨놨어요.
+native.z2.msg,Can we go over the yield numbers? It’s under NDA. Now?,수율 수치 같이 볼 수 있을까요? NDA 건이에요. 지금 되나요?
+native.z2.info,Booked till 12:00,12:00까지 예약됨
+native.z2.opts.a.name,Pop-up Booth,팝업 부스
+native.z2.opts.a.real,Phone booths beside the team,팀 옆에 폰부스
+native.z2.opts.a.catchT,"Four booths, no room for six.","부스는 네 개, 여섯 명 자리는 없음."
+native.z2.opts.a.gain,Private calls ten steps away,열 걸음 거리의 비공개 통화
+native.z2.opts.a.gave,The 6-seat meeting room,6인 회의실
+native.z2.opts.a.pros[0],"Walk in, no booking",예약 없이 바로 입장
+native.z2.opts.a.pros[1],"Fully private, NDA-safe","완전 차단, NDA도 안심"
+native.z2.opts.a.cons[0],Meeting room is gone,회의실이 사라짐
+native.z2.opts.a.cons[1],One person per booth,부스당 한 명
+native.z2.opts.a.reply[1],"Clear line, no echo. Thanks, talk Thursday.","울림 없이 잘 들려요. 감사해요, 목요일에 봬요."
+native.z2.opts.a.conseq[2],Team review at 12. Where do six of us meet now?,"12시에 팀 리뷰인데, 이제 여섯 명이 어디서 모여요?"
+native.z2.opts.b.name,Whisper Room,속삭임 룸
+native.z2.opts.b.real,Two small bookable rooms,예약제 소형 회의실 2개
+native.z2.opts.b.catchT,"Private, if you booked in time.",제때 예약했다면 비공개.
+native.z2.opts.b.gain,"The door closes, NDA-safe",문이 닫히니 NDA도 안심
+native.z2.opts.b.gave,The meeting room; you book ahead,"회의실, 이제는 미리 예약"
+native.z2.opts.b.pros[0],"Door closes, NDA-safe",문 닫으면 NDA도 안심
+native.z2.opts.b.pros[1],Fits 2–3 for a call,2–3명 통화 가능
+native.z2.opts.b.cons[0],"Book ahead, often taken","미리 예약, 자주 꽉 참"
+native.z2.opts.b.reply[1],Sounds private on your side. Send me the deck after.,보안 잘 되는 것 같네요. 끝나고 자료 보내주세요.
+native.z2.opts.b.conseq[2],Both small rooms are booked all afternoon. Did you book one?,작은 방 두 개 다 오후 내내 예약이에요. 예약하셨어요?
+native.z2.opts.c.name,Sound Cone,사운드 콘
+native.z2.opts.c.real,Acoustic screens + privacy seats,흡음 스크린 + 프라이버시 좌석
+native.z2.opts.c.cost,"+3 screens, nothing removed","+스크린 3개, 철거 없음"
+native.z2.opts.c.catchT,"Every room kept, the call wasn’t private.","방은 다 지켰지만, 통화는 다 샜다."
+native.z2.opts.c.gain,Calls without leaving the team,팀 곁에서 바로 통화
+native.z2.opts.c.gave,Real privacy on calls,제대로 된 통화 보안
+native.z2.opts.c.pros[0],Stay near your desk,내 자리 근처에서
+native.z2.opts.c.pros[1],Nothing gets taken away,없어지는 것 없음
+native.z2.opts.c.cons[0],Others still see you,다른 사람 눈에 보임
+native.z2.opts.c.cons[1],Voices still carry,목소리는 여전히 새어 나감
+native.z2.opts.c.reply[1],"Sorry, you’re a bit echoey. Is someone next to you?",죄송한데 좀 울려요. 옆에 누구 있어요?
+native.z2.opts.c.conseq[2],Heard bits of your call through the screens. Was that the yield data?,스크린 너머로 통화가 좀 들렸어요. 수율 데이터 얘기였어요?
+native.z3.msg,Recipe review is due at noon. Can you finish the analysis? It’s loud out here.,레시피 리뷰가 정오까지예요. 분석 마무리할 수 있어요? 여기 좀 시끄럽네요.
+native.z3.tap,Find some quiet,조용한 곳 찾기
+native.z3.q,Where do you get two quiet hours?,"조용한 두 시간, 어디서 만들까요?"
+native.z3.info,Stand-up in progress,스탠드업 진행 중
+native.z3.opts.a.name,Silence Bubble,침묵 버블
+native.z3.opts.a.real,Focus pods for one,1인용 집중 부스
+native.z3.opts.a.cost,−1 collab table,−협업 테이블 1개
+native.z3.opts.a.catchT,"Silence, if you get a slot.",자리만 잡으면 고요.
+native.z3.opts.a.gain,Silence in one step,한 걸음이면 찾아오는 고요
+native.z3.opts.a.gave,A collab table,협업 테이블 하나
+native.z3.opts.a.pros[0],Silent in one step,한 걸음이면 고요
+native.z3.opts.a.pros[1],"Door, desk, screen","문, 책상, 모니터"
+native.z3.opts.a.cons[0],Booked in 1-hour slots,1시간 단위 예약
+native.z3.opts.a.cons[1],Only three at a time,한 번에 세 명만
+native.z3.opts.a.reply[1],Analysis looks solid. Thanks.,분석 탄탄하네요. 고마워요.
+native.z3.opts.a.conseq[2],All three pods were booked when I needed one.,필요할 때 부스 세 개가 다 예약돼 있었어요.
+native.z3.opts.b.name,Library Wing,도서관 별관
+native.z3.opts.b.real,A quiet zone behind a green wall,그린월 뒤 조용한 구역
+native.z3.opts.b.cost,−2 collab tables,−협업 테이블 2개
+native.z3.opts.b.catchT,"Deep focus, far from the team.","깊은 집중, 팀과는 먼 거리."
+native.z3.opts.b.gain,Two hours of real focus,제대로 집중하는 두 시간
+native.z3.opts.b.gave,Two collab tables,협업 테이블 두 개
+native.z3.opts.b.pros[1],Room for eight,8명 수용
+native.z3.opts.b.cons[0],Far from your team,팀과 멀어짐
+native.z3.opts.b.cons[1],No quick questions,가볍게 묻기 어려움
+native.z3.opts.b.reply[1],"Great, done early.","좋네요, 일찍 끝났어요."
+native.z3.opts.b.conseq[2],I came by with a question. You were all the way in the library.,"물어볼 게 있어서 왔는데, 저 멀리 도서관에 계셨더라고요."
+native.z3.opts.c.name,Hush Canopy,고요 캐노피
+native.z3.opts.c.real,Ceiling baffles + plants over the tables,테이블 위 천장 흡음재 + 식물
+native.z3.opts.c.cost,"+baffles, nothing removed","+흡음재, 철거 없음"
+native.z3.opts.c.catchT,"Better, never truly quiet.","나아졌지만, 고요하진 않다."
+native.z3.opts.c.gain,A calmer team zone,한결 차분해진 팀 구역
+native.z3.opts.c.gave,Real silence,진짜 고요함
+native.z3.opts.c.pros[0],Stay with your team,팀과 함께 그대로
+native.z3.opts.c.pros[1],Collab tables stay,협업 테이블 유지
+native.z3.opts.c.cons[0],"Quieter, never silent","덜 시끄러울 뿐, 고요하진 않음"
+native.z3.opts.c.cons[1],Calls still carry,통화 소리는 여전히 들림
+native.z3.opts.c.reply[1],A few typos. Noisy morning?,오타가 좀 있네요. 아침에 시끄러웠어요?
+native.z3.opts.c.conseq[2],"Sorry, our stand-up was right next to you.","죄송해요, 저희 스탠드업이 바로 옆이었죠."
+native.z4.msg,Lunch? The cafeteria queue is out the door again.,점심 드실래요? 구내식당 줄이 또 문밖까지예요.
+native.z4.tap,Sort out lunch,점심 해결하기
+native.z4.q,How does the team eat?,팀은 어떻게 밥을 먹을까요?
+native.z4.opts.a.name,Floor Kitchen,층별 키친
+native.z4.opts.a.real,Pantry + a long team table,탕비실 + 긴 팀 테이블
+native.z4.opts.a.cost,−print corner,−프린터 코너
+native.z4.opts.a.catchT,"Social lunches, smelly afternoons.","점심은 화기애애, 오후엔 냄새."
+native.z4.opts.a.gain,"Lunch together, no queue",줄 없이 함께 점심
+native.z4.opts.a.gave,The print corner,프린터 코너
+native.z4.opts.a.pros[1],Bring food from home,집밥 도시락 OK
+native.z4.opts.a.cons[0],Smells reach the desks,음식 냄새가 자리까지
+native.z4.opts.a.cons[1],Printing moved away,프린터가 멀어짐
+native.z4.opts.a.reply[1],Best lunch we’ve had at work.,회사에서 먹은 점심 중 최고예요.
+native.z4.opts.a.conseq[2],The whole zone smells of kimchi stew now.,이제 구역 전체에서 김치찌개 냄새가 나요.
+native.z4.opts.b.name,Garden Table,가든 테이블
+native.z4.opts.b.real,An indoor terrace with planters,화분이 있는 실내 테라스
+native.z4.opts.b.catchT,"Lovely, but small.","근사하지만, 좁다."
+native.z4.opts.b.gain,A real break in the light,햇살 속 진짜 휴식
+native.z4.opts.b.pros[0],"A real break, in the light",햇살 아래 진짜 휴식
+native.z4.opts.b.pros[1],Feels like outside,야외 같은 느낌
+native.z4.opts.b.cons[0],Takes the most floor,가장 넓은 공간 차지
+native.z4.opts.b.cons[1],Seats only six,좌석은 6개뿐
+native.z4.opts.b.reply[1],"Ahh, I needed daylight.","아, 햇빛이 필요했어요."
+native.z4.opts.b.conseq[2],Only six seats. Half of us ate standing.,자리가 여섯 개뿐이라 절반은 서서 먹었어요.
+native.z4.opts.c.name,Grab & Go,그랩 앤 고
+native.z4.opts.c.real,A café bar + a perch counter,카페 바 + 스탠딩 카운터
+native.z4.opts.c.catchT,"Fast food, no break.","식사는 빠르게, 휴식은 없이."
+native.z4.opts.c.gain,Food in 30 seconds,30초 만에 식사
+native.z4.opts.c.gave,A proper lunch break,제대로 된 점심시간
+native.z4.opts.c.pros[1],Quick chats at the bar,바에서 짧은 수다
+native.z4.opts.c.cons[0],You eat at your desk,결국 자리에서 먹음
+native.z4.opts.c.cons[1],No real break,제대로 못 쉼
+native.z4.opts.c.reply[1],"Quick. Back to work, I guess.",빠르네요. 다시 일하러 가야겠죠.
+native.z4.opts.c.conseq[2],You worked straight through lunch again.,또 점심시간 내내 일하셨네요.
+native.z5.msg,Eyes heavy. The 2 pm review is going to be brutal.,눈꺼풀이 무거워요. 오후 2시 리뷰 만만치 않을 텐데.
+native.z5.tap,Take a break,잠깐 쉬기
+native.z5.q,How do you reset?,어떻게 재충전할까요?
+native.z5.opts.a.name,Dream Pod,꿈나라 포드
+native.z5.opts.a.real,Nap pods behind a green wall,그린월 뒤 낮잠 포드
+native.z5.opts.a.cost,−2 window desks,−창가 자리 2개
+native.z5.opts.a.catchT,"Rested, minus two window desks.","푹 쉬었지만, 창가 자리 두 개 잃음."
+native.z5.opts.a.gain,A 20-minute reset after lunch,점심 후 20분 재충전
+native.z5.opts.a.gave,Two window desks,창가 자리 두 개
+native.z5.opts.a.pros[0],A 20-minute reset,20분 재충전
+native.z5.opts.a.pros[1],Hidden behind greenery,초록 식물 뒤에 숨어서
+native.z5.opts.a.cons[0],Two window desks gone,창가 자리 2개 사라짐
+native.z5.opts.a.cons[1],People notice who naps,누가 자는지 다 보임
+native.z5.opts.a.reply[1],Out like a light. Feeling human again.,기절하듯 잤어요. 이제 사람 같네요.
+native.z5.opts.a.conseq[2],"Wait, who gave up the window desks for nap pods?","잠깐, 누가 창가 자리를 낮잠 포드로 바꿨어요?"
+native.z5.opts.b.name,Green Loop,그린 루프
+native.z5.opts.b.real,An indoor garden walk,실내 정원 산책로
+native.z5.opts.b.catchT,"A breather, not a nap.","숨은 돌렸지만, 잠은 못 잤다."
+native.z5.opts.b.gain,A green walk mid-afternoon,오후의 초록 산책
+native.z5.opts.b.pros[0],A walk among plants,식물 사이 산책
+native.z5.opts.b.pros[1],Free for everyone,누구나 무료
+native.z5.opts.b.cons[1],Not a real rest,제대로 된 휴식은 아님
+native.z5.opts.b.reply[1],A lap in the green. Head’s clearer.,초록길 한 바퀴. 머리가 맑아졌어요.
+native.z5.opts.b.conseq[2],Nice garden. Shame about the desks.,"정원은 좋은데, 자리가 아쉽네요."
+native.z5.opts.c.name,Massage Lounge,마사지 라운지
+native.z5.opts.c.real,Massage chairs + a sofa,안마의자 + 소파
+native.z5.opts.c.catchT,"Popular, so you wait.","인기 만점, 그래서 대기."
+native.z5.opts.c.gain,Ten minutes in the chair,안마의자에서 10분
+native.z5.opts.c.pros[0],Kneaded back to life,주물러서 되살아남
+native.z5.opts.c.pros[1],A sofa to chat,수다 떨 소파
+native.z5.opts.c.cons[0],A queue for the chairs,안마의자 대기 줄
+native.z5.opts.c.reply[1],Ten minutes in the chair. Worth it.,안마의자 10분. 그럴 가치 있었어요.
+native.z5.opts.c.conseq[2],There’s a queue for the massage chairs again.,안마의자 또 줄 서 있어요.
+native.z6.who,"Process team, 2 floors up",두 층 위 공정팀
+native.z6.msg,This yield issue needs both teams. Email isn’t working.,이 수율 이슈는 두 팀이 같이 봐야 해요. 이메일로는 안 되네요.
+native.z6.tap,Get together,모이기
+native.z6.q,Where do both teams work it out?,두 팀은 어디서 해결할까요?
+native.z6.opts.a.name,War Room,워룸
+native.z6.opts.a.real,A project room kept for weeks,몇 주간 쓰는 프로젝트 룸
+native.z6.opts.a.cost,−huddle table,−허들 테이블
+native.z6.opts.a.catchT,"Great for you, closed to others.","우리에겐 최고, 남들에겐 닫힌 문."
+native.z6.opts.a.gain,Your project wall stays up,프로젝트 벽 그대로 유지
+native.z6.opts.a.gave,A room others could book,다른 팀도 예약할 수 있던 방
+native.z6.opts.a.pros[1],Room for both teams,두 팀 모두 수용
+native.z6.opts.a.cons[0],Locked to one project,한 프로젝트 전용
+native.z6.opts.a.cons[1],One fewer room for others,다른 팀 회의실 하나 줄어듦
+native.z6.opts.a.reply[0],Process team,공정팀
+native.z6.opts.a.reply[1],Love the wall. Let’s keep it up all month.,벽 좋네요. 한 달 내내 붙여 둬요.
+native.z6.opts.a.conseq[2],Another team needs a room. Ours is locked for weeks.,"다른 팀이 회의실이 필요한데, 우리 방은 몇 주째 잠겨 있어요."
+native.z6.opts.b.name,Crossroads Café,교차로 카페
+native.z6.opts.b.real,A coffee bar halfway between teams,두 팀 사이 중간의 커피 바
+native.z6.opts.b.catchT,"Easy to meet, hard to keep private.","만나기는 쉽고, 지키기는 어렵다."
+native.z6.opts.b.gain,Neutral ground for two teams,두 팀을 위한 중립 지대
+native.z6.opts.b.gave,Privacy for project data,프로젝트 데이터 보안
+native.z6.opts.b.pros[0],Neutral ground,중립 지대
+native.z6.opts.b.pros[1],Coffee helps,커피가 도움 됨
+native.z6.opts.b.cons[0],Everyone sees your screen,화면이 다 보임
+native.z6.opts.b.cons[1],Loud at 3 pm,오후 3시엔 시끄러움
+native.z6.opts.b.reply[1],"Good coffee. Hard to hear you, though.",커피 맛있네요. 근데 말소리가 잘 안 들려요.
+native.z6.opts.b.conseq[2],Someone from another team read our yield chart over my shoulder.,다른 팀 사람이 제 어깨 너머로 수율 차트를 봤어요.
+native.z6.opts.c.name,Spiral Stair,나선 계단
+native.z6.opts.c.real,An open stair to the next floor,위층으로 이어지는 오픈 계단
+native.z6.opts.c.cost,"−huddle table, a hole in the floor","−허들 테이블, 바닥에 구멍"
+native.z6.opts.c.catchT,"Connected, and a bit louder.","연결은 됐지만, 조금 시끄러워졌다."
+native.z6.opts.c.gain,"The next floor, one minute away",1분 거리의 위층
+native.z6.opts.c.gave,"Some floor, some quiet",약간의 면적과 고요
+native.z6.opts.c.pros[0],"Next floor, one minute away",위층까지 1분
+native.z6.opts.c.pros[1],Teams bump into each other,팀끼리 자주 마주침
+native.z6.opts.c.cons[0],Cuts into your floor,사무실 면적이 줄어듦
+native.z6.opts.c.cons[1],Noise drifts down,소음이 내려옴
+native.z6.opts.c.reply[1],Down the stairs in a minute. Let’s do this weekly.,계단으로 1분이면 내려가요. 매주 이렇게 해요.
+native.z6.opts.c.conseq[2],Their stand-up is echoing down the stairwell.,그 팀 스탠드업 소리가 계단으로 울려 내려와요.
+native.z7.msg,Good news: four new engineers join next month. Same floor.,좋은 소식이에요. 다음 달 엔지니어 네 명이 합류해요. 같은 층으로요.
+native.z7.tap,Make room,자리 만들기
+native.z7.q,How do 14 people fit?,14명은 어떻게 앉을까요?
+native.z7.info,Seats today: 6,현재 좌석: 6
+native.z7.opts.a.name,Compact Desks,컴팩트 책상
+native.z7.opts.a.real,"Three tight benches, 12 seats","빽빽한 벤치 3개, 12석"
+native.z7.opts.a.cost,"−6 desks, +3 benches","−책상 6개, +벤치 3개"
+native.z7.opts.a.catchT,"Everyone fits, barely.","모두 앉았다, 겨우."
+native.z7.opts.a.gain,12 seats in the same space,같은 공간에 12석
+native.z7.opts.a.gave,Desk width,책상 너비
+native.z7.opts.a.pros[0],A seat for nearly everyone,거의 모두에게 자리
+native.z7.opts.a.pros[1],Team stays together,팀은 한자리에
+native.z7.opts.a.cons[0],Your second monitor gets tight,보조 모니터 둘 곳이 빠듯
+native.z7.opts.a.cons[1],Elbow to elbow,팔꿈치가 닿을 거리
+native.z7.opts.a.reply[1],"Tight, but we’re all here.","좁지만, 다 같이 있네요."
+native.z7.opts.a.conseq[2],Can you move your monitor? It’s in my space.,모니터 좀 옮겨 줄래요? 제 자리까지 왔어요.
+native.z7.opts.b.name,Team Nest,팀 둥지
+native.z7.opts.b.real,10 shared seats for 14 + team storage,14명이 쓰는 공용 좌석 10개 + 팀 수납
+native.z7.opts.b.cost,−your fixed desk,−내 고정석
+native.z7.opts.b.catchT,"Room for all, no desk is yours.","모두를 위한 공간, 내 자리는 없다."
+native.z7.opts.b.gain,Room for 14 without a new floor,새 층 없이 14명 수용
+native.z7.opts.b.gave,Your own fixed desk,나만의 고정석
+native.z7.opts.b.pros[0],"Room for 14, no new floor",새 층 없이 14명 수용
+native.z7.opts.b.pros[1],Team storage for all,모두를 위한 팀 수납
+native.z7.opts.b.cons[0],Not everyone has a desk,모두에게 자리가 있진 않음
+native.z7.opts.b.cons[1],Clear your desk each night,매일 저녁 책상 비우기
+native.z7.opts.b.reply[1],"Nice, and it still feels open.","좋네요, 여전히 탁 트인 느낌이에요."
+native.z7.opts.b.conseq[2],Someone sat at “your” spot by the window today.,오늘 누가 창가 ‘내’ 자리에 앉았어요.
+native.z7.opts.c.name,Keep My Desk,내 자리 사수
+native.z7.opts.c.real,6 desks stay + a perch counter,책상 6개 유지 + 스탠딩 카운터
+native.z7.opts.c.cost,"+perch counter, nothing removed","+스탠딩 카운터, 철거 없음"
+native.z7.opts.c.catchT,Yours is safe; theirs isn’t.,"내 자리는 안전, 그들 자리는 아니다."
+native.z7.opts.c.gain,Your desk stays yours,내 자리는 그대로 내 것
+native.z7.opts.c.gave,A real seat for newcomers,신입을 위한 진짜 자리
+native.z7.opts.c.pros[1],Nothing changes for you,나에겐 변화 없음
+native.z7.opts.c.cons[0],Newcomers perch at a counter,신입은 카운터에 걸터앉음
+native.z7.opts.c.cons[1],Team split up,팀이 흩어짐
+native.z7.opts.c.reply[1],Okay… the new folks will perch for now.,알겠어요… 신입들은 당분간 카운터에서.
+native.z7.opts.c.conseq[2],The new engineers asked if they’re a “real” part of the team.,새로 온 엔지니어들이 자기도 ‘진짜’ 팀원이냐고 묻더라고요.
+item.desk.name,Sit-stand desk,높이조절 책상
+item.desk.real,Assigned 1:1 desk with height adjust,높이 조절되는 1인 지정 책상
+item.bench.name,Shared bench,공용 벤치
+item.bench.real,"Hot-desk bench for 4, book a seat","4인 공용 좌석 벤치, 좌석 예약"
+item.cockpit.name,Two-person cockpit,2인 콕핏
+item.cockpit.real,Paired desks with acoustic side screens,흡음 사이드 스크린이 있는 짝 책상
+item.focuspod.name,Focus pod,집중 부스
+item.focuspod.real,Enclosed 1-person focus room,밀폐형 1인 집중실
+item.phonebooth.name,Phone booth,폰부스
+item.phonebooth.real,"1-person call booth, walk-in",예약 없는 1인 통화 부스
+item.huddle.name,Huddle table,허들 테이블
+item.huddle.real,"Stand-up table for 3–4, no booking","3–4인 스탠딩 테이블, 예약 없음"
+item.meeting.name,Meeting room (6),회의실 (6)
+item.meeting.real,Glass-fronted bookable room,"유리 전면, 예약제 회의실"
+item.whiteboard.name,Mobile whiteboard,이동식 화이트보드
+item.whiteboard.real,Writable wall on wheels,바퀴 달린 필기 벽
+item.pedestal.name,Pedestal,서랍장
+item.pedestal.real,"Personal under-desk storage, lockable","책상 아래 개인 수납, 잠금 가능"
+item.lockers.name,Personal lockers,개인 사물함
+item.lockers.real,Day lockers for desk sharers,자리 공유자용 일일 사물함
+item.teamwall.name,Team storage wall,팀 수납 벽
+item.teamwall.real,Shared shelves + bins for the team,팀 공용 선반 + 수납함
+item.pantry.name,Floor pantry,층별 탕비실
+item.pantry.real,Kitchenette with fridge + long table edge,냉장고 + 긴 테이블이 있는 미니 주방
+item.cafebar.name,Café bar,카페 바
+item.cafebar.real,Coffee point at a crossing — chance meetings,"교차 지점의 커피 스폿, 우연한 만남"
+item.nappod.name,Nap pod,낮잠 포드
+item.nappod.real,"20-min rest pod, dimmable",조명 조절되는 20분 휴식 포드
+item.massage.name,Massage chair,안마의자
+item.massage.real,Massage lounge seat,마사지 라운지 좌석
+item.sofa.name,Lounge sofa,라운지 소파
+item.sofa.real,Soft seating corner with rug,러그를 깐 푹신한 좌석 코너
+item.greenwall.name,Green wall + planters,그린월 + 화분
+item.greenwall.real,"Biophilic screen, divides zones",구역을 나누는 바이오필릭 스크린
+item.printhub.name,Print hub,프린트 허브
+item.printhub.real,One shared print + supply point,공용 프린터 + 비품 한곳에
+item.bleachers.name,Social stair,계단식 좌석
+item.bleachers.real,Bleacher seats for town halls + breaks,타운홀 + 휴식용 스탠드 좌석
+item.library.name,Library table,도서관 테이블
+item.library.real,"Quiet-zone shared table, no calls","조용한 구역 공용 테이블, 통화 금지"
+item.touchdown.name,Touchdown counter,터치다운 카운터
+item.touchdown.real,"Drop-in standing/perch spot, 30–60 min","잠깐 들르는 스탠딩 자리, 30–60분"
+item.wingchair.name,Privacy chair,프라이버시 체어
+item.wingchair.real,High-back lounge seat for heads-down reading,몰입 독서용 하이백 라운지 의자
+item.enclave.name,Enclave room,소형 룸
+item.enclave.real,"Small room for 1–3, focus or quick chat","1–3인실, 집중이나 짧은 대화용"
+item.office.name,Glass office,유리 오피스
+item.office.real,"Private office for a lead, glass-fronted","팀장용 개인 사무실, 유리 전면"
+item.huddleroom.name,Huddle room (4),허들 룸 (4)
+item.huddleroom.real,"Enclosed 2–4 person room, short bookings","2–4인 밀폐형 룸, 단시간 예약"
+item.boardroom.name,Boardroom (12),대회의실 (12)
+item.boardroom.real,Large formal room — rarely full,"격식 있는 대형 룸, 꽉 차는 일은 드묾"
+item.warroom.name,Project war room,프로젝트 워룸
+item.warroom.real,"Room a team keeps for weeks, walls of work","한 팀이 몇 주간 쓰는 방, 벽마다 작업물"
+item.collabtable.name,Open collab table,오픈 협업 테이블
+item.collabtable.real,"Long shared table in the open, no booking","오픈 공간의 긴 공용 테이블, 예약 없음"
+item.videoroom.name,Video-call room,화상회의실
+item.videoroom.real,"Camera, screen and acoustic panels for hybrid calls","하이브리드 회의용 카메라, 화면, 흡음 패널"
+item.training.name,Training room,교육실
+item.training.real,"Rows facing a screen, for onboarding + courses","화면을 향한 좌석 배치, 온보딩 + 교육용"
+item.protolab.name,Prototyping bench,프로토타입 작업대
+item.protolab.real,Hands-on lab bench near the team,팀 근처의 실습용 랩 벤치
+item.demo.name,Demo showcase,데모 쇼케이스
+item.demo.real,Customer demo point with tool model + screen,장비 모형 + 화면을 갖춘 고객 데모 공간
+item.booth.name,Booth seating,부스 좌석
+item.booth.real,Diner-style booth for 4 — semi-private chats,"식당식 4인 부스, 반독립 대화 공간"
+item.pingpong.name,Table tennis,탁구대
+item.pingpong.real,"Game table — energy break, loud zone","에너지 충전 게임 테이블, 시끄러운 구역"
+item.welcome.name,Welcome desk,웰컴 데스크
+item.welcome.real,Host / concierge point at the entry,입구의 안내 / 컨시어지 데스크
+item.terrace.name,Terrace deck,테라스 데크
+item.terrace.real,Outdoor seating with shade + planters,차양 + 화분이 있는 야외 좌석
+item.dining.name,Team dining table,팀 다이닝 테이블
+item.dining.real,Long table for eating together on-floor,사무실 안에서 함께 먹는 긴 테이블
+item.meditation.name,Wellness room,웰니스 룸
+item.meditation.real,Quiet room for stretching or resetting,스트레칭이나 재충전을 위한 조용한 방
+item.prayer.name,Reflection room,명상실
+item.prayer.real,Prayer / reflection space,기도 / 명상 공간
+item.mothers.name,Parents' room,수유실
+item.mothers.real,Private room with fridge + sink for nursing,냉장고 + 싱크대를 갖춘 수유용 개인실
+item.gym.name,Gym corner,피트니스 코너
+item.gym.real,Small fitness corner + showers nearby,작은 운동 공간 + 근처 샤워실
+item.firstaid.name,First-aid room,응급 처치실
+item.firstaid.real,Rest bed + kit for when someone feels unwell,몸이 안 좋을 때 쓰는 휴식 침대 + 구급함
+item.showers.name,Showers + changing,샤워실 + 탈의실
+item.showers.real,"For cyclists, gym users and fab returns","자전거 출근자, 운동하는 사람, 팹 복귀자용"
+item.bikes.name,Bike storage,자전거 보관소
+item.bikes.real,Secure bike racks near the entry,입구 근처 보안 자전거 거치대
+item.mail.name,Parcel lockers,택배 보관함
+item.mail.real,Mail + parcel pickup without a front desk,안내 데스크 없이 우편 + 택배 수령
+item.itbar.name,IT help bar,IT 헬프 바
+item.itbar.real,Walk-up tech help + device swap,바로 찾아가는 IT 지원 + 기기 교체
+item.kiosk.name,Booking kiosk,예약 키오스크
+item.kiosk.real,Find + book a desk or room on the spot,현장에서 자리나 회의실 찾기 + 예약
+item.mainstreet.name,Main street path,메인 스트리트 통로
+item.mainstreet.real,Clear spine that links zones + wayfinding,구역을 잇는 중심 동선 + 길 안내
+item.totem.name,Wayfinding totem,안내 토템
+item.totem.real,Zone sign with live room + desk status,실시간 회의실 + 좌석 현황 구역 표지판
+item.stair.name,Connecting stair,연결 계단
+item.stair.real,Open stair between floors — fewer lift trips,"층간 오픈 계단, 엘리베이터 이용 감소"
+item.gates.name,Entry gates,출입 게이트
+item.gates.real,Badge turnstiles — your arrival moment,"사원증 스피드게이트, 출근의 순간"
+item.neighbourhood.name,Team marker,팀 표지
+item.neighbourhood.real,Team neighbourhood sign + board — 'this is us',"팀 구역 표지판 + 보드, '여기가 우리 팀'"
+item.window.name,Window wall,창가 벽
+item.window.real,Daylight edge given to shared space,햇살 드는 창가를 공용 공간으로
+item.lights.name,Circadian lighting,생체리듬 조명
+item.lights.real,Pendants that shift warm → cool through the day,하루 동안 따뜻한 빛 → 차가운 빛으로 바뀌는 펜던트
+item.baffles.name,Acoustic baffles,흡음 배플
+item.baffles.real,Ceiling sound absorbers over busy desks,붐비는 자리 위 천장 흡음재
+item.screens.name,Acoustic screens,흡음 스크린
+item.screens.real,Free-standing felt panels to carve quiet,조용한 공간을 만드는 독립형 펠트 패널
+item.climate.name,Air + climate control,공기 + 온도 조절
+item.climate.real,Local purifier + thermostat per zone,구역별 공기청정기 + 온도 조절기
+item.partition.name,Folding partition,접이식 파티션
+item.partition.real,Movable wall — one room becomes two,"이동식 벽, 방 하나를 둘로"
+item.culturewall.name,Culture wall,컬처 월
+item.culturewall.real,"Team story, milestones, first wafers","팀 이야기, 이정표, 첫 웨이퍼"
+item.smartlockers.name,Smart lockers,스마트 사물함
+item.smartlockers.real,App-booked locker wall with small status screens,작은 상태 화면이 달린 앱 예약 사물함 벽
+item.toolcrib.name,Tool crib,공구실
+item.toolcrib.real,Caged tool and spare-parts room with shelves and a hatch counter,선반과 창구 카운터가 있는 공구·예비 부품 보관실
+item.samplecab.name,Sample cabinet,샘플 캐비닛
+item.samplecab.real,Anti-static cabinet for wafer and sample boxes,웨이퍼·샘플 박스용 정전기 방지 캐비닛
+item.caddy.name,Personal caddy,개인 캐디
+item.caddy.real,Mobile pedestal on wheels with a cushion top,쿠션 상판이 있는 바퀴 달린 이동식 서랍장
+item.dockdesk.name,Dock-and-go desk,도킹 데스크
+item.dockdesk.real,"Hot desk with monitor arm, dock and status light","모니터 암, 도크, 상태 표시등을 갖춘 공용 좌석"
+item.treaddesk.name,Treadmill desk,트레드밀 책상
+item.treaddesk.real,Walking treadmill under a standing desk,스탠딩 책상 아래 워킹 트레드밀
+item.standtable.name,Stand-up table,스탠드업 테이블
+item.standtable.real,Bar-height table with stools for 10-minute huddles,10분 회의용 바 높이 테이블 + 스툴
+item.hybridpod.name,Hybrid meeting pod,하이브리드 회의 포드
+item.hybridpod.real,"Small room with a video bar, big screen and round table","비디오 바, 대형 화면, 원탁을 갖춘 소형 룸"
+item.vrstation.name,Remote-support station,원격 지원 스테이션
+item.vrstation.real,AR/VR headset bay for guiding fab engineers remotely,팹 엔지니어 원격 지원용 AR/VR 헤드셋 공간
+item.opscentre.name,Tool monitoring centre,장비 모니터링 센터
+item.opscentre.real,Wall of screens watching customer tools live,고객사 장비를 실시간으로 보는 화면 벽
+item.ndaroom.name,Secure NDA room,NDA 보안실
+item.ndaroom.real,Windowless room with badge reader and frosted door,사원증 리더기와 불투명 유리문을 갖춘 무창실
+item.shredder.name,Secure shred station,보안 파쇄 스테이션
+item.shredder.real,Lockable confidential-waste bin and shredder,잠금식 기밀 폐기함과 파쇄기
+item.carrels.name,Study carrels,독서실 책상
+item.carrels.real,Row of high-sided single desks,칸막이 높은 1인 책상 줄
+item.hangpod.name,Hanging acoustic pod,행잉 흡음 포드
+item.hangpod.real,Open-top felt pod hung over one chair,의자 하나 위에 매단 상단 개방형 펠트 포드
+item.duobooth.name,Duo booth,2인 부스
+item.duobooth.real,Two-person enclosed booth for a call or 1:1,통화나 1:1용 밀폐형 2인 부스
+item.oneonone.name,One-to-one room,1:1 룸
+item.oneonone.real,"Small room, round table, two chairs",원탁과 의자 두 개가 있는 작은 방
+item.recliner.name,Recharge recliner,충전 리클라이너
+item.recliner.real,Reclining chair with a reading lamp,독서등이 달린 리클라이닝 의자
+item.hammock.name,Swing seat,그네 의자
+item.hammock.real,Hanging swing/hammock chair,매달린 그네/해먹 의자
+item.hydrowall.name,Hydroponic wall,수경 재배 벽
+item.hydrowall.real,Indoor herb/veg growing wall,실내 허브·채소 재배 벽
+item.lightdesk.name,Daylight lamp desk,자연광 램프 책상
+item.lightdesk.real,Desk with a bright daylight therapy lamp,밝은 광치료 램프가 달린 책상
+item.shuttle.name,Shuttle lounge,셔틀 라운지
+item.shuttle.real,Bench seating with a live shuttle timetable screen,실시간 셔틀 시간표 화면이 있는 벤치 좌석
+item.evcharge.name,EV charging bay,EV 충전 구역
+item.evcharge.real,Parking bay with car and charger,차량과 충전기가 있는 주차 구역
+item.obeya.name,Obeya wall,오베야 월
+item.obeya.real,Lean board wall with sticky notes and charts,포스트잇과 차트가 붙은 린 보드 벽
+item.mediacart.name,Rolling screen,이동식 스크린
+item.mediacart.real,Screen on a mobile stand,이동식 거치대에 올린 화면
+item.modcubes.name,Modular cubes,모듈 큐브
+item.modcubes.real,Re-arrangeable soft cube seats,자유롭게 배치하는 소프트 큐브 의자
+item.ideawall.name,Writable wall,필기 벽
+item.ideawall.real,Whiteboard-paint wall with sketches,스케치가 가득한 화이트보드 페인트 벽
+item.mentornook.name,Mentoring nook,멘토링 코너
+item.mentornook.real,Two armchairs and a side table by a plant,식물 옆 안락의자 두 개와 사이드 테이블
+item.buddydesk.name,Onboarding desk,온보딩 데스크
+item.buddydesk.real,Welcome desk with a starter kit box and laptop,스타터 키트 박스와 노트북이 놓인 웰컴 데스크
+item.gamecorner.name,Games corner,게임 코너
+item.gamecorner.real,"Board-game shelf, small table and snack jars","보드게임 선반, 작은 테이블, 간식 통"
+item.coffeerobot.name,Coffee robot,커피 로봇
+item.coffeerobot.real,Robot-arm coffee kiosk,로봇 팔 커피 키오스크
+item.waterhub.name,Refill and recycle hub,급수·재활용 허브
+item.waterhub.real,Water refill tap and sorted recycling bins,정수 급수대와 분리수거함
+item.foodlocker.name,Food pickup lockers,음식 픽업 보관함
+item.foodlocker.real,Heated lockers for delivered lunch,배달 점심용 보온 보관함
+item.pergola.name,Pergola café,퍼걸러 카페
+item.pergola.real,Indoor pergola with bistro tables and vines,비스트로 테이블과 덩굴이 있는 실내 퍼걸러
+item.cutaway.name,Tool cutaway showcase,장비 단면 쇼케이스
+item.cutaway.real,Cutaway model of a chip tool on a plinth for visitors,방문객용 받침대 위 반도체 장비 단면 모형
+item.deskstatus.name,Desk status light,자리 상태 표시등
+item.deskstatus.real,Small desk sign with a green/red light (show on a desk),초록/빨강 불이 켜지는 작은 책상 표지 (책상 위에 표시)
+item.occscreen.name,Occupancy screen,재실 현황 화면
+item.occscreen.real,Wall screen showing a floor map with free spaces,빈 공간을 보여주는 플로어 지도 벽 화면
+item.noiselight.name,Noise traffic light,소음 신호등
+item.noiselight.real,Traffic-light noise meter on a stand,거치대에 올린 신호등식 소음 측정기
+item.visitorlounge.name,Visitor lounge,방문객 라운지
+item.visitorlounge.real,"Sofa, coffee table and a check-in tablet stand","소파, 커피 테이블, 체크인 태블릿 거치대"
+deal#1.theme,Desk & sharing,자리 & 공유
+deal#1.title,The team grows to 14,팀원이 14명으로 늘어요
+deal#1.msg,Four new engineers join next month. Same floor.,다음 달 엔지니어 4명이 새로 와요. 사무실은 그대로예요.
+deal#2.title,Half the desks are empty,자리 절반이 비어 있어요
+deal#2.msg,"Mondays and Fridays, half our desks sit empty. What should we do with them?",월요일과 금요일엔 자리 절반이 비어요. 어떻게 할까요?
+deal#2.tap,Decide on desks,자리 정하기
+deal#2.q,What happens to the empty desks?,빈자리는 어떻게 할까요?
+deal#2.opts.a.name,Keep them all,전부 유지
+deal#2.opts.a.real,Every desk stays assigned,모든 자리를 지정석으로 유지
+deal#2.opts.a.cost,Nothing is freed,확보되는 공간 없음
+deal#2.opts.a.catchT,"Desks for all, room for nothing else.","자리는 다 있는데, 다른 건 없어요."
+deal#2.opts.a.gain,Every desk stays yours,모든 자리 그대로
+deal#2.opts.a.gave,Space for anything new,새로운 공간
+deal#2.opts.a.pros[0],Everyone keeps their own desk,모두 자기 자리 유지
+deal#2.opts.a.pros[1],No new habits to learn,새로 익힐 습관 없음
+deal#2.opts.a.cons[0],Empty rows twice a week,주 2회 텅 빈 줄
+deal#2.opts.a.cons[1],Nothing new for the team,팀에 새로운 공간 없음
+deal#2.opts.a.reply[1],"Good. I like knowing my desk is mine, even on Fridays.",좋아요. 금요일에도 제 자리가 있다는 게 좋아요.
+deal#2.opts.a.conseq[2],The project team asked for a war room again. Still no space.,프로젝트팀이 또 워룸을 요청했어요. 여전히 공간이 없네요.
+deal#2.opts.b.name,Make a project room,프로젝트룸 만들기
+deal#2.opts.b.real,6 desks become a war room,책상 6개를 워룸으로 전환
+deal#2.opts.b.cost,−6 desks,−책상 6개
+deal#2.opts.b.catchT,"A war room, but tight Tuesdays.","워룸은 생겼지만, 화요일이 빠듯해요."
+deal#2.opts.b.gain,A room for project work,프로젝트 전용 공간
+deal#2.opts.b.gave,Six desks,책상 6개
+deal#2.opts.b.pros[0],A war room for big pushes,큰 프로젝트용 워룸
+deal#2.opts.b.pros[1],Walls for charts and plans,차트와 계획을 붙일 벽
+deal#2.opts.b.cons[0],Six fewer desks,책상 6개 감소
+deal#2.opts.b.cons[1],Busy days get tight,바쁜 날엔 빠듯함
+deal#2.opts.b.reply[1],"Finally, somewhere to pin up the schedule and leave it there.",드디어 일정표를 붙여 두고 그대로 둘 데가 생겼네요.
+deal#2.opts.b.conseq[2],Tuesday was full. Two people ended up working from the cafe.,화요일에 자리가 꽉 찼어요. 두 명은 카페에서 일했어요.
+deal#2.opts.c.name,Book-ahead desks,자리 예약제
+deal#2.opts.c.real,"Desks get a status light, booked in an app",상태 표시등이 달린 앱 예약 자리
+deal#2.opts.c.cost,Booking every day,매일 예약
+deal#2.opts.c.catchT,"No waste, but no home base.","낭비는 없지만, 내 자리도 없어요."
+deal#2.opts.c.gain,Desks that never sit empty,비는 일 없는 자리
+deal#2.opts.c.pros[0],Empty desks get used,빈자리 활용
+deal#2.opts.c.pros[1],Lights show what is free,표시등으로 빈자리 확인
+deal#2.opts.c.cons[0],Booking before every office day,출근 전마다 예약
+deal#2.opts.c.cons[1],No desk to call yours,내 자리라고 할 곳 없음
+deal#2.opts.c.reply[1],"I'll set up the app. Green means free, red means booked.","앱은 제가 설정할게요. 초록은 빈자리, 빨강은 예약이에요."
+deal#2.opts.c.conseq[2],I forgot to book. The only free desk was by the printer.,예약을 깜빡했어요. 남은 자리는 프린터 옆뿐이었어요.
+deal#3.title,Back after three weeks at the fab,팹에서 3주 만에 복귀
+deal#3.msg,First day back in three weeks. Someone has been using your desk as a parcel shelf.,3주 만의 출근이에요. 누가 내 자리를 택배 선반으로 쓰고 있었어요.
+deal#3.tap,Claim a spot,자리 잡기
+deal#3.q,What happens to your desk while away?,자리를 비운 동안 내 자리는요?
+deal#3.opts.a.name,Lock my desk,내 자리 잠금
+deal#3.opts.a.real,"It waits for you, empty",빈 채로 나를 기다리는 자리
+deal#3.opts.a.cost,Desk sits unused for weeks,몇 주씩 비는 자리
+deal#3.opts.a.catchT,"Always yours, mostly empty.","늘 내 자리, 대부분 빈자리."
+deal#3.opts.a.gain,A desk that is always yours,언제나 내 자리
+deal#3.opts.a.gave,A desk others could use,다른 사람이 쓸 수 있는 자리
+deal#3.opts.a.pros[0],Your desk waits exactly as left,두고 간 그대로인 자리
+deal#3.opts.a.pros[1],No parcels on your chair,의자 위에 택배 없음
+deal#3.opts.a.cons[0],Empty for weeks at a time,몇 주씩 비어 있음
+deal#3.opts.a.cons[1],Others still short of desks,다른 사람은 여전히 자리 부족
+deal#3.opts.a.reply[1],"My desk, my stuff. It should be here when I'm back.","내 자리, 내 물건이에요. 돌아왔을 때 그대로 있어야죠."
+deal#3.opts.a.conseq[2],Your locked desk sat empty all month while the team hunted for seats.,팀이 자리를 찾아 헤매는 동안 잠긴 자리는 한 달 내내 비어 있었어요.
+deal#3.opts.b.name,"Release it, keep a caddy","자리 반납, 이동 카트"
+deal#3.opts.b.real,Your things roll with you,내 물건이 나와 함께 이동
+deal#3.opts.b.cost,No fixed spot,고정 자리 없음
+deal#3.opts.b.catchT,"Fair to others, no place to land.","남에겐 공평, 나는 갈 곳 없음."
+deal#3.opts.b.gain,Your things always with you,늘 곁에 있는 내 물건
+deal#3.opts.b.gave,Your fixed desk,나의 고정석
+deal#3.opts.b.pros[1],Desk helps others while you're away,비운 동안 다른 사람이 사용
+deal#3.opts.b.cons[0],No fixed spot to return to,돌아올 고정 자리 없음
+deal#3.opts.b.cons[1],Pack up before every fab trip,팹 출장마다 짐 정리
+deal#3.opts.b.reply[1],Thanks. We really needed that desk while you were gone.,고마워요. 없는 동안 그 자리가 정말 필요했거든요.
+deal#3.opts.b.conseq[2],"Back from the fab, you spent twenty minutes finding a free desk.",팹에서 돌아와 빈자리 찾는 데 20분이 걸렸어요.
+deal#3.opts.c.name,Team landing zone,팀 복귀존
+deal#3.opts.c.real,Shared spots for returners near the team,팀 근처 복귀자용 공용 자리
+deal#3.opts.c.cost,−Any free spot,−아무 빈자리
+deal#3.opts.c.catchT,"Close to the team, never quite yours.","팀과 가깝지만, 내 자리는 아니에요."
+deal#3.opts.c.gain,A spot near the team,팀 근처 자리
+deal#3.opts.c.gave,A few desks for returners,복귀자용 책상 몇 개
+deal#3.opts.c.pros[0],Land right next to your team,팀 바로 옆에 착석
+deal#3.opts.c.pros[1],Always a spot for returners,복귀자 자리 항상 확보
+deal#3.opts.c.cons[0],"Any free spot, never the same",매번 다른 빈자리
+deal#3.opts.c.cons[1],A few desks set aside,책상 몇 개를 따로 할당
+deal#3.opts.c.reply[1],"Good. Returners should sit with us, not in some far corner.",좋아요. 복귀자는 먼 구석 말고 우리 옆에 앉아야죠.
+deal#3.opts.c.conseq[2],Three engineers came back at once. The landing zone was full.,엔지니어 세 명이 한꺼번에 복귀했어요. 복귀존이 꽉 찼어요.
+deal#4.title,One desk upgrade,자리 업그레이드 하나
+deal#4.msg,"New floor, new desk. You can have one upgrade.","새 사무실, 새 자리. 업그레이드는 하나만 고를 수 있어요."
+deal#4.tap,Pick an upgrade,업그레이드 고르기
+deal#4.q,Which one upgrade do you want?,어떤 업그레이드를 고를까요?
+deal#4.opts.a.name,Second monitor,모니터 추가
+deal#4.opts.a.real,Dual screens on an arm,암에 단 듀얼 모니터
+deal#4.opts.a.cost,"−Wider desk, fewer seats","−넓은 책상, 줄어든 좌석"
+deal#4.opts.a.catchT,"More screen, fewer seats.","화면은 늘고, 좌석은 줄고."
+deal#4.opts.a.gave,Two seats in your row,같은 줄 좌석 2개
+deal#4.opts.a.pros[0],Twice the screen for data,데이터 볼 화면 두 배
+deal#4.opts.a.pros[1],Charts and code side by side,차트와 코드를 나란히
+deal#4.opts.a.cons[0],"Wider desks, fewer seats","넓은 책상, 줄어든 좌석"
+deal#4.opts.a.cons[1],Tied to that one desk,그 책상에 묶임
+deal#4.opts.a.reply[1],Two screens. Now I can see the tool logs and the report.,화면 두 개. 이제 장비 로그랑 보고서를 같이 볼 수 있어요.
+deal#4.opts.a.conseq[2],Wider desks meant two fewer seats in your row.,책상이 넓어져서 같은 줄 좌석이 두 개 줄었어요.
+deal#4.opts.b.name,Dock-and-go set-up,도킹 앤 고
+deal#4.opts.b.real,"One cable, any desk works",케이블 하나로 어느 자리든 OK
+deal#4.opts.b.cost,Less personal desk,덜 개인적인 자리
+deal#4.opts.b.catchT,"Works anywhere, belongs nowhere.","어디서든 되지만, 어디에도 속하지 않아요."
+deal#4.opts.b.gain,Any desk works in seconds,몇 초면 어느 자리든 OK
+deal#4.opts.b.gave,A desk that feels personal,내 자리 같은 느낌
+deal#4.opts.b.pros[1],Move freely around the floor,사무실 어디든 자유롭게
+deal#4.opts.b.cons[0],Desk feels less like yours,내 자리 느낌이 덜함
+deal#4.opts.b.cons[1],Nothing personal stays out,개인 물건을 둘 수 없음
+deal#4.opts.b.reply[1],Nice. Plug in anywhere and your screens just work.,좋네요. 어디서든 꽂기만 하면 화면이 바로 떠요.
+deal#4.opts.b.conseq[2],"Every desk works, but none of them feels like yours.","어느 자리든 되지만, 내 자리 같은 곳은 없어요."
+deal#4.opts.c.name,Bigger storage,수납 확장
+deal#4.opts.c.real,A deep lockable pedestal,깊은 잠금식 서랍장
+deal#4.opts.c.cost,Desk can’t be shared,공유 불가한 자리
+deal#4.opts.c.catchT,"Plenty of room, desk locked to you.","공간은 넉넉, 자리는 나만."
+deal#4.opts.c.gave,A desk others could share,함께 쓸 수 있는 자리
+deal#4.opts.c.pros[0],Room for manuals and parts,매뉴얼과 부품 둘 공간
+deal#4.opts.c.pros[1],Everything locked and close,전부 잠가서 가까이
+deal#4.opts.c.cons[0],Desk can't be shared,공유 불가한 자리
+deal#4.opts.c.cons[1],A heavy pedestal underfoot,발밑의 무거운 서랍장
+deal#4.opts.c.reply[1],"Finally, somewhere to keep my binders and spare cables.",드디어 바인더랑 여분 케이블 둘 데가 생겼어요.
+deal#4.opts.c.conseq[2],Your desk can't join the sharing pool now. It sits empty on fab days.,이제 이 자리는 공유할 수 없어요. 팹 가는 날엔 비어 있어요.
+deal#5.title,Clear desks every night,매일 밤 클린 데스크
+deal#5.msg,New rule: clear your desk every night so cleaners and sharers can use it.,새 규칙이에요. 청소와 공유를 위해 매일 밤 책상을 비워 주세요.
+deal#5.tap,Clear up,정리하기
+deal#5.q,Where do your things go tonight?,오늘 밤 내 물건은 어디에 둘까요?
+deal#5.opts.a.name,Locker nearby,가까운 사물함
+deal#5.opts.a.real,Personal locker ten steps away,열 걸음 거리의 개인 사물함
+deal#5.opts.a.cost,−Walk to the locker,−사물함까지 걷기
+deal#5.opts.a.catchT,"Clean desks, queue at the lockers.","책상은 깨끗, 사물함은 줄 서기."
+deal#5.opts.a.gain,A locker ten steps away,열 걸음 거리 사물함
+deal#5.opts.a.gave,A wall of floor space,벽 한 면의 공간
+deal#5.opts.a.pros[0],Things locked away safely,안전하게 잠가 보관
+deal#5.opts.a.pros[1],Clean desk in two minutes,2분이면 책상 정리 끝
+deal#5.opts.a.cons[0],A walk to the locker daily,매일 사물함까지 걷기
+deal#5.opts.a.cons[1],Locker wall takes floor space,사물함 벽이 공간 차지
+deal#5.opts.a.reply[1],Your locker is the third on the left. Code is on your badge.,사물함은 왼쪽 세 번째예요. 비밀번호는 사원증에 있어요.
+deal#5.opts.a.conseq[2],Locker bank by the lift was crowded at six. Everyone left at once.,6시에 엘리베이터 옆 사물함이 붐볐어요. 다들 동시에 퇴근했거든요.
+deal#5.opts.b.name,Caddy on wheels,바퀴 달린 카트
+deal#5.opts.b.real,A pedestal you roll each day,매일 끌고 다니는 서랍장
+deal#5.opts.b.cost,Rolling it daily,매일 끌고 다니기
+deal#5.opts.b.catchT,"Mobile, but always pushing a cart.","이동은 자유, 늘 카트를 밀어요."
+deal#5.opts.b.gave,A clear corridor at night,밤 시간의 깨끗한 복도
+deal#5.opts.b.pros[0],Everything rolls with you,모든 게 나와 함께 이동
+deal#5.opts.b.pros[1],Pack up in one push,한 번 밀면 정리 끝
+deal#5.opts.b.cons[0],Rolling it every single day,매일매일 끌고 다니기
+deal#5.opts.b.cons[1],Caddies crowd the corridor,복도를 막는 카트
+deal#5.opts.b.reply[1],Fine. I'll just park it by the window each night.,좋아요. 밤마다 창가에 세워 둘게요.
+deal#5.opts.b.conseq[1],Cleaner,미화원
+deal#5.opts.b.conseq[2],Caddies blocked the corridor overnight. I couldn't get the trolley through.,밤새 카트가 복도를 막아서 청소 카트가 못 지나갔어요.
+deal#5.opts.c.name,Opt out,예외 신청
+deal#5.opts.c.real,Your things stay out,물건을 그대로 두기
+deal#5.opts.c.catchT,"Easy for you, unfair to others.","나는 편하고, 남에겐 불공평해요."
+deal#5.opts.c.gain,Your desk stays as is,그대로인 내 자리
+deal#5.opts.c.pros[0],Nothing to pack up,정리할 것 없음
+deal#5.opts.c.pros[1],Desk stays how you like it,내 마음대로인 자리
+deal#5.opts.c.cons[1],Cleaners work around your things,청소할 때 내 물건 피해 가기
+deal#5.opts.c.reply[1],"Okay, but then nobody else can use that desk.",알겠어요. 그럼 그 자리는 다른 사람이 못 써요.
+deal#5.opts.c.conseq[2],Others are clearing up nightly. They're asking why your desk is different.,"다들 매일 밤 정리하는데, 왜 당신 자리만 다르냐고 물어요."
+deal#6.theme,Storage & gear,보관 & 짐
+deal#6.title,Gear after a fab visit,팹 방문 후 짐
+deal#6.opts.d.real,Lockers beside the team zone,팀 구역 옆 사물함
+deal#6.opts.d.cost,−Two desks,−책상 2개
+deal#6.opts.d.catchT,"Your own locker, two fewer desks.","내 사물함 생기고, 책상 2개 줄고."
+deal#6.opts.d.gain,A locked spot for every kit,키트마다 잠금 공간
+deal#6.opts.d.gave,Two desks,책상 2개
+deal#6.opts.d.pros[0],Your own locked space,잠글 수 있는 내 공간
+deal#6.opts.d.pros[1],Kit stays right by you,키트를 바로 곁에
+deal#6.opts.d.cons[0],Two desks go,책상 2개 감소
+deal#6.opts.d.cons[1],Bulky sample boxes barely fit,큰 샘플 박스는 겨우 들어감
+deal#6.opts.d.reply[1],"A locker with my name on it. Finally, no more guessing.",내 이름 붙은 사물함이라니. 이제 헤맬 일 없겠네요.
+deal#6.opts.d.conseq[2],"Two people lost their desks, and the big sample box still sat on the floor.","두 명이 자리를 잃었는데, 큰 샘플 박스는 여전히 바닥에 있어요."
+deal#7.title,The missing spare-parts kit,사라진 예비 부품 키트
+deal#7.msg,We lost an hour looking for the O-ring kit again.,O-링 키트 찾느라 또 한 시간 날렸어요.
+deal#7.tap,Find the kit,키트 찾기
+deal#7.q,Where should spare parts live?,예비 부품은 어디에 둘까요?
+deal#7.opts.a.real,Caged parts room with a hatch,창구가 있는 철망 부품실
+deal#7.opts.a.cost,−A meeting room,−회의실 1개
+deal#7.opts.a.catchT,"Parts sorted, one room gone.","부품은 정리, 회의실은 하나 줄고."
+deal#7.opts.a.gain,A caged parts room,철망 부품실
+deal#7.opts.a.gave,A meeting room,회의실 1개
+deal#7.opts.a.pros[0],One place for every part,모든 부품을 한곳에
+deal#7.opts.a.pros[1],Always stocked and tracked,재고 관리와 추적
+deal#7.opts.a.cons[0],Loses a meeting room,회의실 1개 감소
+deal#7.opts.a.cons[1],Hatch has set hours,창구 운영 시간 제한
+deal#7.opts.a.reply[1],One place for every kit. No more hunting through drawers.,키트가 전부 한곳에. 이제 서랍 뒤질 일 없겠네요.
+deal#7.opts.a.conseq[2],We lost the meeting room. Weekly reviews moved to the cafe.,회의실이 없어졌어요. 주간 리뷰는 카페로 옮겼어요.
+deal#7.opts.b.real,App-booked lockers with status screens,상태 화면이 있는 앱 예약 사물함
+deal#7.opts.b.cost,Booking every time,매번 예약
+deal#7.opts.b.catchT,"Always tracked, never instant.","추적은 확실, 즉시는 안 돼요."
+deal#7.opts.b.gain,Lockers that show what's in,내용물이 보이는 사물함
+deal#7.opts.b.gave,A wall by the corridor,복도 옆 벽 한 면
+deal#7.opts.b.pros[0],Grab parts any hour,언제든 부품 꺼내기
+deal#7.opts.b.pros[1],Screens show what is in,화면으로 내용물 확인
+deal#7.opts.b.cons[1],Lockers line a wall,벽 한 면을 차지
+deal#7.opts.b.reply[1],"Book in the app, tap your badge, the door pops open.",앱에서 예약하고 사원증을 대면 문이 열려요.
+deal#7.opts.b.conseq[2],Urgent call from the fab. I had to book a locker first.,"팹에서 급한 전화가 왔는데, 사물함부터 예약해야 했어요."
+deal#7.opts.c.name,Own kits,개인 키트
+deal#7.opts.c.real,Each engineer keeps a full kit,엔지니어마다 전체 키트 보유
+deal#7.opts.c.cost,Heavy pedestals at every desk,자리마다 무거운 서랍장
+deal#7.opts.c.catchT,"Always at hand, never tracked.","늘 손 닿는 곳에, 추적은 안 돼요."
+deal#7.opts.c.gain,A full kit at your desk,내 자리의 전체 키트
+deal#7.opts.c.gave,Legroom at every desk,자리마다 발 공간
+deal#7.opts.c.pros[0],"Your kit, always at hand",내 키트가 늘 손 닿는 곳에
+deal#7.opts.c.pros[1],"No booking, no walking","예약도, 걷기도 없음"
+deal#7.opts.c.cons[1],Parts duplicated and hard to track,"부품 중복, 추적 어려움"
+deal#7.opts.c.reply[1],"My own kit. Nobody borrows it, nobody loses it.","내 키트예요. 빌려 가는 사람도, 잃어버리는 사람도 없죠."
+deal#7.opts.c.conseq[2],Desks are crammed. Nobody knows which O-rings are expired.,자리가 꽉 찼어요. 어떤 O-링이 만료됐는지 아무도 몰라요.
+deal#8.title,Wafer sample boxes,웨이퍼 샘플 박스
+deal#8.who,Lab tech,랩 엔지니어
+deal#8.msg,"Six sample boxes need a safe, static-free home until Friday.",샘플 박스 6개를 금요일까지 정전기 없이 안전하게 둬야 해요.
+deal#8.tap,Store the samples,샘플 보관하기
+deal#8.q,Where do the sample boxes go?,샘플 박스는 어디에 둘까요?
+deal#8.opts.a.real,Anti-static cabinet in the team zone,팀 구역의 정전기 방지 캐비닛
+deal#8.opts.a.cost,−A collab table,−협업 테이블 1개
+deal#8.opts.a.catchT,"Samples safe, one table gone.","샘플은 안전, 테이블은 하나 줄고."
+deal#8.opts.a.gain,Safe samples in the team zone,팀 구역의 안전한 샘플
+deal#8.opts.a.pros[0],"Safe, static-free, close by",안전하고 정전기 없이 가까이
+deal#8.opts.a.pros[1],Team can check them anytime,팀이 언제든 확인 가능
+deal#8.opts.a.cons[0],Loses a collab table,협업 테이블 1개 감소
+deal#8.opts.a.cons[1],Someone must keep it tidy,누군가 정리를 맡아야 함
+deal#8.opts.a.reply[1],Good. Static-free and right next to the team. I can relax.,좋아요. 정전기 걱정 없고 팀 바로 옆이라 안심이에요.
+deal#8.opts.a.conseq[2],The collab table is gone. We huddled standing at the cabinet.,협업 테이블이 없어져서 캐비닛 앞에 서서 모였어요.
+deal#8.opts.b.name,Keep them in the lab,랩에 그대로
+deal#8.opts.b.real,Lab holds all samples,모든 샘플을 랩에서 보관
+deal#8.opts.b.cost,A walk every time,매번 걸어가기
+deal#8.opts.b.catchT,"Safest home, longest walk.","가장 안전, 가장 먼 길."
+deal#8.opts.b.gain,Samples in safe hands,믿을 만한 곳의 샘플
+deal#8.opts.b.gave,Time walking to the lab,랩까지 걷는 시간
+deal#8.opts.b.pros[0],Safest place for samples,샘플에 가장 안전한 곳
+deal#8.opts.b.pros[1],Nothing new on the floor,사무실에 새로 놓을 것 없음
+deal#8.opts.b.cons[1],Hard to show in meetings,회의 때 보여 주기 어려움
+deal#8.opts.b.reply[1],They stay with me. Come down whenever you need them.,제가 갖고 있을게요. 필요할 때 언제든 내려오세요.
+deal#8.opts.b.conseq[2],Three trips to the lab before lunch. Nearly missed a review.,점심 전에 랩을 세 번 다녀왔어요. 리뷰를 놓칠 뻔했어요.
+deal#8.opts.c.name,At your desk,내 자리에
+deal#8.opts.c.real,Boxes stay with you,박스를 곁에 두기
+deal#8.opts.c.cost,Clutter and risk,어수선함과 위험
+deal#8.opts.c.catchT,"Handy, but not safe.","편하지만, 안전하진 않아요."
+deal#8.opts.c.gain,Samples within arm's reach,손 닿는 곳의 샘플
+deal#8.opts.c.gave,Half your desk,책상 절반
+deal#8.opts.c.pros[0],Right there when needed,필요할 때 바로 옆에
+deal#8.opts.c.pros[1],"No walking, no booking","걷기도, 예약도 없음"
+deal#8.opts.c.cons[0],Clutter on your desk,어수선한 책상
+deal#8.opts.c.cons[1],Static and damage risk,정전기·파손 위험
+deal#8.opts.c.reply[1],I'll stack them by my monitor. It's only until Friday.,모니터 옆에 쌓아 둘게요. 금요일까지만이에요.
+deal#8.opts.c.conseq[2],One box got knocked off your desk. We have to check it.,박스 하나가 책상에서 떨어졌어요. 확인해 봐야 해요.
+deal#10.title,Parcels at reception,안내데스크의 택배
+deal#10.who,Reception,안내데스크
+deal#10.msg,Your parcel is at reception. It closes at 12.,택배가 안내데스크에 와 있어요. 12시에 마감해요.
+deal#10.tap,Get the parcel,택배 받기
+deal#10.q,How should parcels reach you?,택배는 어떻게 받을까요?
+deal#10.opts.a.real,Pick up any time with a code,코드로 언제든 수령
+deal#10.opts.a.cost,−Wall space by the lift,−엘리베이터 옆 벽 공간
+deal#10.opts.a.catchT,"Any time, until they fill up.","언제든 OK, 꽉 차기 전까지는."
+deal#10.opts.a.gain,Parcels any time with a code,코드로 언제든 택배 수령
+deal#10.opts.a.gave,The wall by the lift,엘리베이터 옆 벽
+deal#10.opts.a.pros[0],Pick up any time,언제든 수령
+deal#10.opts.a.pros[1],No noon rush downstairs,정오에 1층으로 뛸 필요 없음
+deal#10.opts.a.cons[0],Wall space by the lift,엘리베이터 옆 벽 공간
+deal#10.opts.a.cons[1],Lockers fill on busy days,바쁜 날엔 보관함이 꽉 참
+deal#10.opts.a.reply[1],Your code comes by text. Grab it whenever you like.,코드는 문자로 가요. 편할 때 찾아가세요.
+deal#10.opts.a.conseq[2],The lockers were full. My parcel went back to reception anyway.,보관함이 꽉 차서 결국 택배가 안내데스크로 돌아갔어요.
+deal#10.opts.b.name,Desk delivery,자리로 배달
+deal#10.opts.b.real,Facilities brings it up,시설팀이 올려다 줌
+deal#10.opts.b.cost,"Slower, once a day","하루 한 번, 느림"
+deal#10.opts.b.catchT,"No trip, but a long wait.","갈 필요는 없지만, 오래 기다려요."
+deal#10.opts.b.gain,Parcels brought to your desk,자리로 오는 택배
+deal#10.opts.b.gave,Getting it the same morning,당일 오전 수령
+deal#10.opts.b.pros[0],Lands right on your desk,내 책상에 바로 도착
+deal#10.opts.b.pros[1],No trip downstairs,1층에 내려갈 필요 없음
+deal#10.opts.b.cons[1],Hard if you hot-desk,공용 좌석이면 곤란
+deal#10.opts.b.reply[1],We'll bring it up at four. Just make sure you're at your desk.,4시에 올려다 드릴게요. 자리에 꼭 계세요.
+deal#10.opts.b.conseq[2],You weren't at your desk. Your parcel went back downstairs.,자리에 안 계셔서 택배를 다시 1층으로 가져갔어요.
+deal#10.opts.c.name,Pick up when you can,시간 날 때 수령
+deal#10.opts.c.real,As today,지금처럼
+deal#10.opts.c.cost,A queue at noon,정오의 대기 줄
+deal#10.opts.c.catchT,"Simple, but the noon queue stays.","간단하지만, 정오 줄은 그대로."
+deal#10.opts.c.gain,No change to the floor,사무실 변화 없음
+deal#10.opts.c.gave,Part of your lunch break,점심시간 일부
+deal#10.opts.c.pros[0],Nothing changes on the floor,사무실은 그대로
+deal#10.opts.c.pros[1],Reception knows your face,안내데스크와 얼굴 익힘
+deal#10.opts.c.cons[1],"Miss it, wait a day",놓치면 하루 대기
+deal#10.opts.c.reply[1],I'll run down now. Hope the line isn't long.,지금 내려갈게요. 줄이 길지 않으면 좋겠네요.
+deal#10.opts.c.conseq[2],Twelve people in line. Your lunch went cold on the desk.,줄이 열두 명이었어요. 점심은 책상 위에서 식었고요.
+deal#11.theme,Privacy & calls,프라이버시 & 통화
+deal#11.title,A confidential customer call,고객사 기밀 통화
+deal#11.opts.d.name,Privacy Chair,프라이버시 체어
+deal#11.opts.d.real,Wing-back chair that wraps around you,몸을 감싸는 윙백 의자
+deal#11.opts.d.cost,Calls are only half private,반쯤만 비공개인 통화
+deal#11.opts.d.catchT,"Feels private, sounds half public.","비공개 같지만, 반은 다 들려요."
+deal#11.opts.d.gain,A quiet nook right on the floor,사무실 안의 조용한 구석
+deal#11.opts.d.gave,Calls only half private,반쯤만 비공개인 통화
+deal#11.opts.d.pros[0],"No walk, no booking","걷기도, 예약도 없음"
+deal#11.opts.d.pros[1],Cozy and easy to grab,아늑하고 바로 사용
+deal#11.opts.d.cons[0],Voices still carry nearby,근처에 목소리가 새어 나감
+deal#11.opts.d.cons[1],Not for real secrets,진짜 기밀엔 부적합
+deal#11.opts.d.reply[1],I tucked into the wing chair and kept my voice low.,윙 의자에 쏙 들어가서 목소리를 낮췄어요.
+deal#11.opts.d.conseq[2],The next desk caught a customer's name. Your lead asked you to step out.,옆자리에서 고객 이름을 들었대요. 팀장님이 자리를 옮기라고 했어요.
+deal#12.title,A private word,조용히 할 얘기
+deal#12.who,Colleague,동료
+deal#12.msg,Can we talk about something personal? Somewhere private.,개인적인 얘기 좀 할 수 있을까요? 조용한 데서요.
+deal#12.tap,Find some privacy,조용한 곳 찾기
+deal#12.q,Where do you have the talk?,어디서 얘기할까요?
+deal#12.opts.a.real,Enclosed booth for two,밀폐된 2인용 부스
+deal#12.opts.a.cost,−A sofa,−소파 1개
+deal#12.opts.a.catchT,"Private and close, one sofa gone.","조용하고 가깝지만, 소파는 하나 줄고."
+deal#12.opts.a.gain,An enclosed booth for two,밀폐된 2인용 부스
+deal#12.opts.a.gave,A sofa in the lounge,라운지 소파 1개
+deal#12.opts.a.pros[0],Enclosed and close by,"밀폐형, 가까운 거리"
+deal#12.opts.a.pros[1],Quick to find free,빈 곳 찾기 쉬움
+deal#12.opts.a.cons[0],Loses a sofa,소파 1개 감소
+deal#12.opts.a.cons[1],Tight for a long talk,긴 대화엔 비좁음
+deal#12.opts.a.reply[1],This is good. Nobody can hear us in here.,여기 좋네요. 아무도 못 듣겠어요.
+deal#12.opts.a.conseq[2],The sofa is gone. Nowhere to sit for a quick chat now.,소파가 없어졌어요. 이제 잠깐 앉아 얘기할 데가 없어요.
+deal#12.opts.b.real,"Small room, round table",원탁이 있는 작은 방
+deal#12.opts.b.cost,−The huddle table,−허들 테이블
+deal#12.opts.b.catchT,"A real room, no huddle table.","제대로 된 방, 허들 테이블은 없어요."
+deal#12.opts.b.gain,A small room for 1:1s,1:1용 작은 방
+deal#12.opts.b.gave,The huddle table,허들 테이블
+deal#12.opts.b.pros[0],"Proper room, calm table","제대로 된 방, 차분한 테이블"
+deal#12.opts.b.pros[1],Easy for hard conversations,어려운 대화도 편하게
+deal#12.opts.b.cons[0],Loses the huddle table,허들 테이블 감소
+deal#12.opts.b.cons[1],Often booked by others,다른 사람이 자주 예약
+deal#12.opts.b.reply[1],Thanks for finding a real room. This matters to me.,제대로 된 방을 찾아 줘서 고마워요. 저한텐 중요한 얘기라서요.
+deal#12.opts.b.conseq[2],The huddle table is gone. Our stand-up now happens in the aisle.,허들 테이블이 없어져서 스탠드업을 통로에서 해요.
+deal#12.opts.c.name,Walk outside,밖에서 산책
+deal#12.opts.c.real,Talk on the terrace,테라스에서 대화
+deal#12.opts.c.cost,"Weather, and no screen","날씨, 그리고 화면 없음"
+deal#12.opts.c.catchT,"Easy and calm, until it rains.","편하고 차분해요, 비 오기 전까진."
+deal#12.opts.c.gain,A calm talk outside,밖에서 나눈 차분한 대화
+deal#12.opts.c.gave,Shelter and a screen,비 피할 곳과 화면
+deal#12.opts.c.pros[0],"Fresh air, relaxed talk","바깥 공기, 편한 대화"
+deal#12.opts.c.pros[1],Nothing taken from the floor,사무실 공간 그대로
+deal#12.opts.c.cons[0],Depends on the weather,날씨에 좌우됨
+deal#12.opts.c.cons[1],No screen to share,공유할 화면 없음
+deal#12.opts.c.reply[1],A walk is nice. Easier to talk side by side.,산책 좋아요. 나란히 걸으면 얘기하기 편하죠.
+deal#12.opts.c.conseq[2],It started raining halfway through. We cut it short.,중간에 비가 와서 일찍 끝냈어요.
+deal#13.title,Next year’s pricing,내년 단가
+deal#13.who,Customer · purchasing,고객사 · 구매팀
+deal#13.msg,Next year’s pricing. Confidential. Can you talk now?,내년 단가 건이에요. 기밀이에요. 지금 통화 돼요?
+deal#13.tap,Take the call,전화 받기
+deal#13.opts.a.real,Windowless room with a badge reader,출입 카드 리더가 있는 창 없는 방
+deal#13.opts.a.catchT,"Fully secure, one room gone.","완벽한 보안, 회의실은 하나 줄고."
+deal#13.opts.a.gain,A badge-locked room for secrets,카드로 잠기는 기밀실
+deal#13.opts.a.pros[0],"Truly private, badge only","완전 비공개, 카드 출입만"
+deal#13.opts.a.pros[1],Screen for the pricing deck,단가 자료 띄울 화면
+deal#13.opts.a.cons[1],Windowless and a bit grim,창이 없어 좀 답답함
+deal#13.opts.a.reply[0],Customer,고객
+deal#13.opts.a.reply[1],Good. Please confirm the room is secure before we start.,좋아요. 시작 전에 방이 안전한지 확인해 주세요.
+deal#13.opts.a.conseq[2],One less meeting room. Our design review got bumped again.,회의실이 하나 줄어서 디자인 리뷰가 또 밀렸어요.
+deal#13.opts.b.real,"Small booth, no screen",화면 없는 작은 부스
+deal#13.opts.b.cost,No room to share a deck,자료 공유 불가
+deal#13.opts.b.catchT,"Quick and private, no screen.","빠르고 조용하지만, 화면이 없어요."
+deal#13.opts.b.gain,A quiet booth close by,가까운 조용한 부스
+deal#13.opts.b.gave,Sharing a deck live,실시간 자료 공유
+deal#13.opts.b.pros[0],Private and right nearby,"비공개, 바로 근처"
+deal#13.opts.b.pros[1],Free in a minute,금방 자리 남
+deal#13.opts.b.cons[1],Cramped for a long call,긴 통화엔 비좁음
+deal#13.opts.b.reply[1],I'll grab the booth. Can you send the numbers by email?,부스로 갈게요. 수치는 메일로 보내 주실래요?
+deal#13.opts.b.conseq[2],We couldn't walk through the deck together. Let's reschedule.,자료를 같이 못 봤네요. 일정 다시 잡죠.
+deal#13.opts.c.name,Your car,내 차
+deal#13.opts.c.real,Call from the car park,주차장에서 통화
+deal#13.opts.c.cost,Leave the building,건물 밖으로 나가기
+deal#13.opts.c.catchT,"Private, but out of the building.","비공개지만, 건물 밖이에요."
+deal#13.opts.c.gain,Privacy without new space,새 공간 없이 얻은 프라이버시
+deal#13.opts.c.gave,Time away from your desk,자리를 비운 시간
+deal#13.opts.c.pros[0],Totally private,완전 비공개
+deal#13.opts.c.cons[1],"No screen, no notes","화면도, 메모도 없음"
+deal#13.opts.c.reply[1],Are you driving? It sounds like you're in a car park.,운전 중이세요? 주차장에 계신 것 같은데요.
+deal#13.opts.c.conseq[2],You were in the car park when I needed you for sign-off.,결재가 필요할 때 주차장에 있었잖아요.
+deal#14.title,Someone read our yield chart,누가 수율 차트를 봤어요
+deal#14.tap,Guard the data,데이터 지키기
+deal#14.q,How do you protect the charts?,차트를 어떻게 보호할까요?
+deal#14.opts.a.name,Privacy screens,보안 필름
+deal#14.opts.a.real,Screens on every desk,모든 자리에 보안 필름
+deal#14.opts.a.cost,A closed-in feel,갇힌 느낌
+deal#14.opts.a.catchT,"Data hidden, sharing harder.","데이터는 숨고, 공유는 어려워요."
+deal#14.opts.a.gain,Screens nobody can read sideways,옆에서 못 읽는 화면
+deal#14.opts.a.gave,Easy over-the-shoulder help,어깨 너머 손쉬운 도움
+deal#14.opts.a.pros[0],Screens unreadable from the side,옆에서는 안 보이는 화면
+deal#14.opts.a.pros[1],Team stays in the open,팀은 오픈된 공간 유지
+deal#14.opts.a.cons[1],Hard to share a quick look,잠깐 보여 주기 어려움
+deal#14.opts.a.reply[1],"Better. Now I have to lean in to show you anything, though.",낫네요. 대신 뭘 보여 주려면 몸을 기울여야 해요.
+deal#14.opts.a.conseq[2],Quick screen checks got awkward. People email screenshots instead.,화면 잠깐 보는 게 어색해져서 다들 스크린숏을 메일로 보내요.
+deal#14.opts.b.name,Closed team zone,폐쇄형 팀 구역
+deal#14.opts.b.real,Partition the team area,팀 구역에 칸막이 설치
+deal#14.opts.b.cost,−Open views,−트인 시야
+deal#14.opts.b.catchT,"Safe inside, walled off outside.","안은 안전, 밖과는 단절."
+deal#14.opts.b.gain,A partitioned team area,칸막이 친 팀 구역
+deal#14.opts.b.gave,Open views across the floor,사무실 전체의 트인 시야
+deal#14.opts.b.pros[0],Whole team area protected,팀 구역 전체 보호
+deal#14.opts.b.pros[1],Talk data freely inside,안에선 데이터 얘기 자유롭게
+deal#14.opts.b.cons[0],Lose the open views,트인 시야 사라짐
+deal#14.opts.b.cons[1],Other teams feel shut out,다른 팀은 소외감
+deal#14.opts.b.reply[1],Good. Now we can put charts on the wall without worrying.,좋아요. 이제 걱정 없이 벽에 차트를 붙일 수 있어요.
+deal#14.opts.b.conseq[2],I used to drop by with questions. Now I need a badge.,"예전엔 질문하러 들르곤 했는데, 이젠 출입 카드가 필요해요."
+deal#14.opts.c.name,Accept it,그냥 둔다
+deal#14.opts.c.real,Stay open,오픈 유지
+deal#14.opts.c.cost,The risk stays,위험은 그대로
+deal#14.opts.c.catchT,"Open floor, open data.","트인 사무실, 드러난 데이터."
+deal#14.opts.c.gain,"An open, connected floor",트이고 연결된 사무실
+deal#14.opts.c.gave,Peace of mind about data,데이터에 대한 안심
+deal#14.opts.c.pros[0],Floor stays open and bright,밝고 트인 사무실 유지
+deal#14.opts.c.pros[1],Easy to work across teams,팀 간 협업이 쉬움
+deal#14.opts.c.cons[1],People self-censor screens,화면을 스스로 가림
+deal#14.opts.c.reply[1],Fine. I'll just minimise windows when someone walks by.,알겠어요. 누가 지나가면 창을 내릴게요.
+deal#14.opts.c.conseq[2],Someone saw the customer yield chart again. Now it's an issue.,누가 고객 수율 차트를 또 봤어요. 이제 문제가 됐어요.
+deal#15.title,The 9 pm call with California,밤 9시 캘리포니아 통화
+deal#15.who,US team,미국 팀
+deal#15.msg,Weekly call with California at 9 pm Korea time.,"한국 시간 밤 9시, 캘리포니아와 주간 통화예요."
+deal#15.tap,Plan the call,통화 준비하기
+deal#15.q,Where do you take the late call?,늦은 통화는 어디서 할까요?
+deal#15.opts.a.name,Take it from home,집에서 받기
+deal#15.opts.a.real,"Leave at 6, dial in later","6시 퇴근, 나중에 접속"
+deal#15.opts.a.cost,Home set-up needed,집에 장비 필요
+deal#15.opts.a.catchT,"Home for dinner, shaky at home.","저녁은 집에서, 연결은 불안."
+deal#15.opts.a.gain,Evenings back at home,집에서 보내는 저녁
+deal#15.opts.a.gave,A proper call set-up,제대로 된 통화 환경
+deal#15.opts.a.pros[0],"Leave at six, eat dinner","6시 퇴근, 저녁 식사"
+deal#15.opts.a.pros[1],Nothing new in the office,사무실에 새로 놓을 것 없음
+deal#15.opts.a.cons[1],Family noise in the background,뒤에서 들리는 가족 소리
+deal#15.opts.a.reply[1],I'll head home and dial in after dinner.,집에 가서 저녁 먹고 접속할게요.
+deal#15.opts.a.conseq[2],Your audio kept cutting out. Can we redo the chart review?,소리가 계속 끊겼어요. 차트 리뷰 다시 할 수 있을까요?
+deal#15.opts.b.name,After-hours video room,야간 화상 회의실
+deal#15.opts.b.real,Stay and use a proper room,남아서 제대로 된 방 사용
+deal#15.opts.b.cost,Staying late,야근
+deal#15.opts.b.catchT,"Great call, very long day.","통화는 최고, 하루는 너무 길어요."
+deal#15.opts.b.gain,A proper room for the call,통화용 제대로 된 방
+deal#15.opts.b.gave,Your evening at home,집에서의 저녁
+deal#15.opts.b.pros[0],Proper camera and big screen,좋은 카메라와 큰 화면
+deal#15.opts.b.pros[1],Clear sound for the call,깨끗한 통화 음질
+deal#15.opts.b.cons[0],Staying late at the office,사무실에서 야근
+deal#15.opts.b.cons[1],Empty building feels long,텅 빈 건물에서 긴 시간
+deal#15.opts.b.reply[1],Good call. The room looks much better than a laptop camera.,잘 정했어요. 노트북 카메라보다 훨씬 낫네요.
+deal#15.opts.b.conseq[2],"Call ended at ten. You got home past eleven, tired.",통화는 10시에 끝났어요. 11시 넘어 지쳐서 귀가했어요.
+deal#15.opts.c.name,Hybrid pod near the exit,출구 옆 하이브리드 부스
+deal#15.opts.c.real,A pod you can use any hour,언제든 쓸 수 있는 부스
+deal#15.opts.c.cost,−A lounge corner,−라운지 한 구석
+deal#15.opts.c.catchT,"Any-hour pod, one lounge corner.","언제든 쓰는 부스, 라운지 한 구석과 맞바꿈."
+deal#15.opts.c.gain,A pod you can use anytime,언제든 쓸 수 있는 부스
+deal#15.opts.c.gave,A lounge corner,라운지 한 구석
+deal#15.opts.c.pros[0],Use it any hour,언제든 사용
+deal#15.opts.c.pros[1],"Quick in, quick out",빨리 들어가고 빨리 나옴
+deal#15.opts.c.cons[0],Loses a lounge corner,라운지 한 구석 감소
+deal#15.opts.c.cons[1],Small for group calls,그룹 통화엔 좁음
+deal#15.opts.c.reply[1],Nice. You can jump on and be out the door in minutes.,좋네요. 접속했다가 몇 분 만에 퇴근할 수 있어요.
+deal#15.opts.c.conseq[2],The lounge corner is gone. Afternoon coffee chats moved to the aisle.,라운지 구석이 없어져서 오후 커피 수다는 통로로 옮겼어요.
+deal#16.theme,Focus,집중
+deal#16.title,Recipe review at noon,정오 레시피 리뷰
+deal#16.opts.d.name,Focus Cockpit,포커스 콕핏
+deal#16.opts.d.real,Paired desks with tall acoustic sides,높은 흡음 패널을 두른 짝 책상
+deal#16.opts.d.cost,Desks feel boxed in,갇힌 듯한 자리
+deal#16.opts.d.catchT,"Deep focus, walled-in desks.","깊은 집중, 갇힌 자리."
+deal#16.opts.d.gain,Two quiet hours at your desk,내 자리에서 조용한 2시간
+deal#16.opts.d.gave,"An open, airy desk row",탁 트인 책상 줄
+deal#16.opts.d.pros[0],Tall sides cut the noise,높은 패널이 소음 차단
+deal#16.opts.d.pros[1],Stay at your own desk,내 자리에서 그대로
+deal#16.opts.d.cons[1],Harder to catch teammates' eyes,팀원과 눈 마주치기 어려움
+deal#16.opts.d.reply[1],Head down behind the panels. I can finally think.,패널 뒤에 숨어 집중. 드디어 생각이 되네요.
+deal#16.opts.d.conseq[2],"The analysis got done, but the team says the row now feels like cubicles.","분석은 끝냈지만, 팀은 이 줄이 칸막이 사무실 같대요."
+deal#17.title,Five overdue service reports,밀린 서비스 리포트 5건
+deal#17.msg,Five service reports are overdue. Today would be good.,서비스 리포트 5건이 밀렸어요. 오늘 끝내면 좋겠어요.
+deal#17.tap,Clear the backlog,밀린 일 처리
+deal#17.q,Where do you write the reports?,리포트는 어디서 쓸까요?
+deal#17.opts.a.real,A row of high-sided desks,칸막이 높은 책상 한 줄
+deal#17.opts.a.catchT,"Quiet desks, nowhere to sit back.","조용한 책상, 기댈 곳은 없어요."
+deal#17.opts.a.gain,A walled-off desk to write,칸막이 친 글쓰기 책상
+deal#17.opts.a.gave,The lounge sofa,라운지 소파
+deal#17.opts.a.pros[0],High sides block the floor,높은 칸막이로 주변 차단
+deal#17.opts.a.pros[1],Your own corner to write,글 쓸 나만의 구석
+deal#17.opts.a.cons[0],The sofa is gone,소파가 없어짐
+deal#17.opts.a.cons[1],Feels a bit like exams,시험장 같은 느낌
+deal#17.opts.a.reply[1],Good call. I've got two reports overdue as well.,잘 정했어요. 저도 밀린 리포트가 두 건이에요.
+deal#17.opts.a.conseq[2],The sofa went. Visitors now wait standing by the lifts.,소파가 없어져서 방문객이 엘리베이터 앞에 서서 기다려요.
+deal#17.opts.b.name,Hanging pod,행잉 부스
+deal#17.opts.b.real,"Open-top felt pod, one seat",천장이 트인 펠트 1인 부스
+deal#17.opts.b.cost,Only one at a time,한 번에 한 명만
+deal#17.opts.b.catchT,"Calm seat, but only one.","편한 자리, 딱 하나뿐."
+deal#17.opts.b.gain,"A soft, quiet seat nearby",가까운 아늑하고 조용한 자리
+deal#17.opts.b.gave,Room for one at a time,한 번에 한 명만
+deal#17.opts.b.pros[0],Felt walls soften the noise,펠트 벽이 소음 완화
+deal#17.opts.b.pros[1],Close to your team,팀과 가까움
+deal#17.opts.b.cons[0],Only one person fits,한 명만 들어감
+deal#17.opts.b.cons[1],Someone else may be in it,다른 사람이 쓰고 있을 수도
+deal#17.opts.b.reply[1],"Nice. A little cocoon, right here on the floor.",좋네요. 사무실 안의 작은 고치 같아요.
+deal#17.opts.b.conseq[2],Two of you needed the pod. You waited forty minutes for it.,둘 다 부스가 필요해서 40분을 기다렸어요.
+deal#17.opts.c.name,Work from home tomorrow,내일 재택근무
+deal#17.opts.c.real,Write them at home,집에서 작성
+deal#17.opts.c.cost,A day away from the team,팀과 떨어진 하루
+deal#17.opts.c.catchT,"Reports done, the team missed you.","리포트는 끝, 팀은 아쉬웠어요."
+deal#17.opts.c.gain,A full day of quiet,온종일 조용한 하루
+deal#17.opts.c.gave,A day with your team,팀과 함께하는 하루
+deal#17.opts.c.pros[0],No interruptions at all,방해 전혀 없음
+deal#17.opts.c.pros[1],Write at your own pace,내 속도로 작성
+deal#17.opts.c.cons[1],Hard to reach if needed,급할 때 연락 어려움
+deal#17.opts.c.reply[1],Fine. Just keep your phone on for the fab.,좋아요. 팹 연락 오니까 전화는 켜 두세요.
+deal#17.opts.c.conseq[2],Tomorrow's install moved up. They wanted you there in person.,내일 설치가 앞당겨졌어요. 직접 와 주길 원했어요.
+deal#18.title,Stand-up next to your desk,내 자리 옆 스탠드업
+deal#18.msg,The team next door holds its stand-up beside you every morning.,옆 팀이 매일 아침 내 옆에서 스탠드업을 해요.
+deal#18.tap,Get some calm,조용함 되찾기
+deal#18.q,How do you handle the noise?,소음을 어떻게 처리할까요?
+deal#18.opts.a.real,A light that turns red when it’s loud,시끄러우면 빨간불이 켜지는 조명
+deal#18.opts.a.cost,Social pressure,사회적 압박
+deal#18.opts.a.catchT,"Quieter floor, tenser mornings.","조용한 사무실, 날 선 아침."
+deal#18.opts.a.gain,A visible cue to keep it down,소리를 줄이라는 눈에 보이는 신호
+deal#18.opts.a.gave,"Some easy, loud chatter",편하고 시끌벅적한 수다
+deal#18.opts.a.pros[0],People see when it's loud,시끄러운 걸 다 같이 봄
+deal#18.opts.a.pros[1],No walls to build,벽 공사 없음
+deal#18.opts.a.cons[0],Feels like being policed,감시받는 느낌
+deal#18.opts.a.cons[1],People learn to ignore it,점점 무시하게 됨
+deal#18.opts.a.reply[1],"A traffic light for talking? Okay, we'll try it.","대화용 신호등이요? 좋아요, 해볼게요."
+deal#18.opts.a.conseq[1],Neighbour team lead,옆 팀 팀장님
+deal#18.opts.a.conseq[2],The light stayed red. Our stand-up now feels like a whisper.,불이 계속 빨간색이었어요. 이제 스탠드업이 속삭이는 수준이에요.
+deal#18.opts.b.real,Move stand-ups to a bar table,스탠드업을 바 테이블로 옮김
+deal#18.opts.b.catchT,"Calm desk, two fewer seats.","조용한 자리, 좌석 2개 감소."
+deal#18.opts.b.gain,A home for stand-ups,스탠드업 전용 공간
+deal#18.opts.b.pros[0],Stand-ups get their own spot,스탠드업 전용 자리 생김
+deal#18.opts.b.pros[1],Your desk stays calm,내 자리는 조용
+deal#18.opts.b.cons[0],Two desks are gone,책상 2개 사라짐
+deal#18.opts.b.cons[1],Others still drift past,여전히 사람들이 지나다님
+deal#18.opts.b.reply[1],Fair enough. A bar table is better for us too.,그렇네요. 저희도 바 테이블이 더 나아요.
+deal#18.opts.b.conseq[2],Two desks went. New starters next month have nowhere fixed to sit.,책상 2개가 빠졌어요. 다음 달 신입은 고정석이 없어요.
+deal#18.opts.c.name,Headphones,헤드폰
+deal#18.opts.c.real,Live with it,그냥 참기
+deal#18.opts.c.cost,A tiring morning,지치는 아침
+deal#18.opts.c.catchT,"No fuss, a draining morning.","잡음 없이, 진 빠지는 아침."
+deal#18.opts.c.gain,Peace with the neighbours,옆 팀과의 평화
+deal#18.opts.c.gave,Your energy each morning,매일 아침의 에너지
+deal#18.opts.c.pros[1],No awkward conversation,어색한 대화 없음
+deal#18.opts.c.cons[0],Your morning is tiring,아침이 피곤함
+deal#18.opts.c.cons[1],Same noise every day,매일 같은 소음
+deal#18.opts.c.reply[1],"Fine. Volume up, head down.",됐어요. 볼륨 올리고 일이나 할게요.
+deal#18.opts.c.conseq[2],By eleven your head hurts and the analysis is half done.,11시쯤 머리가 아픈데 분석은 반밖에 못 했어요.
+deal#19.title,A full day of analysis,하루 종일 분석
+deal#19.msg,A whole day of data analysis ahead.,오늘은 하루 종일 데이터 분석이에요.
+deal#19.tap,Plan your day,하루 계획하기
+deal#19.q,Where do you spend the day?,하루를 어디서 보낼까요?
+deal#19.opts.a.name,Book a pod all day,부스 종일 예약
+deal#19.opts.a.real,A focus pod till 6,6시까지 집중 부스
+deal#19.opts.a.cost,Others can’t use it,다른 사람은 사용 불가
+deal#19.opts.a.catchT,"Your focus, everyone else's corridor calls.","나의 집중, 남들의 복도 통화."
+deal#19.opts.a.gain,A sealed room till six,6시까지 닫힌 방
+deal#19.opts.a.gave,The pod for everyone else,다른 사람들의 부스
+deal#19.opts.a.pros[0],Fully closed and quiet,완전히 닫혀서 조용함
+deal#19.opts.a.pros[1],"Your screens, all day",종일 내 모니터
+deal#19.opts.a.cons[0],Others can't use it,다른 사람은 사용 불가
+deal#19.opts.a.cons[1],Cut off from the team,팀과 단절
+deal#19.opts.a.reply[1],All day? I hoped to grab it for a call.,하루 종일요? 저 통화하려고 쓰려 했는데.
+deal#19.opts.a.conseq[2],Three people needed the pod for calls. They took them in the corridor.,"세 명이 통화하려고 부스가 필요했는데, 결국 복도에서 받았어요."
+deal#19.opts.b.name,Quiet zone,조용한 구역
+deal#19.opts.b.real,"Rules: no calls, no chat","규칙: 통화 금지, 잡담 금지"
+deal#19.opts.b.cost,Far from the team,팀과 멀어짐
+deal#19.opts.b.catchT,"Real quiet, but out of reach.","진짜 조용함, 대신 연락이 안 닿음."
+deal#19.opts.b.gain,A rule-based silent area,규칙으로 지키는 조용한 공간
+deal#19.opts.b.gave,Being near your team,팀 옆자리
+deal#19.opts.b.pros[0],"No calls, no chat","통화 없음, 잡담 없음"
+deal#19.opts.b.pros[1],Shared by many people,여러 명이 함께 사용
+deal#19.opts.b.cons[1],Rules are hard to keep,규칙 지키기 어려움
+deal#19.opts.b.reply[1],Silence. Finally. Just me and the data.,드디어 조용하네요. 나와 데이터뿐.
+deal#19.opts.b.conseq[2],We needed a quick answer and walked across the floor to find you.,급히 물어볼 게 있어서 사무실 반대편까지 찾으러 갔어요.
+deal#19.opts.c.real,Bright desk by the window,창가의 밝은 자리
+deal#19.opts.c.cost,A window seat for others,다른 사람의 창가 자리
+deal#19.opts.c.catchT,"Your daylight, someone's lost view.","나의 햇살, 누군가 잃은 전망."
+deal#19.opts.c.gain,A bright desk by the window,창가의 밝은 자리
+deal#19.opts.c.pros[0],Bright light keeps you sharp,밝은 빛에 정신이 맑음
+deal#19.opts.c.pros[1],Still in the team area,여전히 팀 구역 안
+deal#19.opts.c.cons[0],Takes a window seat,창가 자리를 차지함
+deal#19.opts.c.cons[1],Open-floor noise stays,개방형 소음은 그대로
+deal#19.opts.c.reply[1],Lucky you. That's the best seat on the floor.,좋겠다. 사무실 명당이잖아요.
+deal#19.opts.c.conseq[2],Someone who wanted the window seat sat by the printer instead.,창가 자리를 원하던 사람은 대신 프린터 옆에 앉았어요.
+deal#20.title,Tool certification due,장비 인증 마감
+deal#20.who,Training,교육팀
+deal#20.msg,Your tool certification module is due this week.,장비 인증 모듈 마감이 이번 주예요.
+deal#20.tap,Get certified,인증 받기
+deal#20.q,Where do you do the module?,모듈을 어디서 들을까요?
+deal#20.opts.a.name,Training room slots,교육실 세션
+deal#20.opts.a.real,Fixed-time group sessions,정해진 시간의 단체 수업
+deal#20.opts.a.cost,Fixed times,고정된 시간
+deal#20.opts.a.catchT,"Proper teaching, rigid timing.","제대로 된 수업, 빡빡한 일정."
+deal#20.opts.a.gain,A guided group session,강사가 이끄는 단체 수업
+deal#20.opts.a.gave,Choosing your own time,원하는 시간 선택
+deal#20.opts.a.pros[0],A trainer in the room,강사가 직접 진행
+deal#20.opts.a.pros[1],Learn alongside others,다른 사람과 함께 학습
+deal#20.opts.a.cons[0],Fixed times only,정해진 시간만 가능
+deal#20.opts.a.cons[1],Clashes with fab calls,팹 통화와 겹침
+deal#20.opts.a.reply[1],Thursday at two is the next slot. Seat booked.,다음 세션은 목요일 2시예요. 자리 예약했어요.
+deal#20.opts.a.conseq[2],Thursday at two clashes with the customer review. You can't do both.,목요일 2시는 고객 리뷰랑 겹쳐요. 둘 다는 못 해요.
+deal#20.opts.b.name,VR training station,VR 교육 스테이션
+deal#20.opts.b.real,Practise the tool in VR,VR로 장비 실습
+deal#20.opts.b.catchT,"Hands-on practice, one less room.","직접 실습, 회의실 하나 감소."
+deal#20.opts.b.gain,Tool practice without the fab,팹 없이 하는 장비 실습
+deal#20.opts.b.pros[0],Practise the tool hands-on,장비를 직접 실습
+deal#20.opts.b.pros[1],Learn whenever it's free,빌 때 언제든 학습
+deal#20.opts.b.cons[0],A meeting room is gone,회의실 하나 사라짐
+deal#20.opts.b.cons[1],Headset queue on busy days,바쁜 날엔 헤드셋 대기
+deal#20.opts.b.reply[1],VR? I want a turn after you.,VR이요? 다음은 저도 해볼래요.
+deal#20.opts.b.conseq[2],The meeting room became the VR bay. Today's review had nowhere to go.,회의실이 VR실이 됐어요. 오늘 리뷰는 갈 곳이 없었어요.
+deal#20.opts.c.real,Fit it in,틈틈이 하기
+deal#20.opts.c.cost,Interruptions,잦은 방해
+deal#20.opts.c.catchT,"Easy to start, slow to finish.","시작은 쉽고, 끝은 더디게."
+deal#20.opts.c.gain,Learning at your own desk,내 자리에서 하는 학습
+deal#20.opts.c.gave,"Your focus, in small pieces",조각난 집중력
+deal#20.opts.c.pros[1],Fit it in when you can,시간 날 때 틈틈이
+deal#20.opts.c.cons[0],Constant interruptions,계속 끊김
+deal#20.opts.c.cons[1],Takes far longer,훨씬 오래 걸림
+deal#20.opts.c.reply[1],I'll squeeze it in between emails.,메일 사이사이에 끼워서 할게요.
+deal#20.opts.c.conseq[2],"Four interruptions later, you're still on module two.",네 번이나 끊기고 아직도 모듈 2예요.
+deal#21.theme,Collaboration,협업
+deal#21.title,A yield issue across two teams,두 팀에 걸친 수율 문제
+deal#21.opts.d.real,Big shared table between the teams,두 팀 사이의 큰 공용 테이블
+deal#21.opts.d.cost,−Four desks,−책상 4개
+deal#21.opts.d.catchT,"Teams meet, neighbours lose quiet.","팀은 만나고, 이웃은 조용함을 잃고."
+deal#21.opts.d.gain,One table where teams meet,두 팀이 만나는 테이블
+deal#21.opts.d.gave,Four desks,책상 4개
+deal#21.opts.d.pros[0],Both teams at one table,두 팀이 한 테이블에
+deal#21.opts.d.pros[1],Spread out wafer maps freely,웨이퍼 맵을 마음껏 펼침
+deal#21.opts.d.cons[0],Four desks go,책상 4개 사라짐
+deal#21.opts.d.cons[1],Noisy for nearby desks,주변 자리는 시끄러움
+deal#21.opts.d.reply[1],"Good. Everyone round the table, maps out, let's crack it.",좋아요. 다 같이 모여서 맵 펼치고 해결해봐요.
+deal#21.opts.d.conseq[2],"The table worked, but the desks around it couldn't hear their own calls.","테이블은 효과가 있었지만, 주변 자리는 자기 통화도 안 들렸어요."
+deal#22.title,Line down at the customer,고객사 라인 정지
+deal#22.msg,Tool down at the fab. The line has stopped.,팹에서 장비가 다운됐어요. 라인이 멈췄어요.
+deal#22.tap,Get the line running,라인 다시 돌리기
+deal#22.q,How do you respond?,어떻게 대응할까요?
+deal#22.opts.a.real,Wall of screens watching tools live,장비를 실시간으로 보는 스크린 벽
+deal#22.opts.a.catchT,"Fast eyes, one less room.","빠른 파악, 회의실 하나 감소."
+deal#22.opts.a.gain,Live tool data on one wall,한 벽에 모인 실시간 장비 데이터
+deal#22.opts.a.pros[0],See the tool live,장비를 실시간으로 확인
+deal#22.opts.a.pros[1],Whole team at one wall,팀 전체가 한 벽 앞에
+deal#22.opts.a.cons[1],Screens need constant watching,계속 화면을 지켜봐야 함
+deal#22.opts.a.reply[1],Good. Get the logs on the big screen now.,좋아요. 로그 바로 큰 화면에 띄워요.
+deal#22.opts.a.conseq[2],We spotted the fault fast. But the morning meeting had no room.,고장은 빨리 찾았어요. 그런데 아침 회의할 방이 없었어요.
+deal#22.opts.b.real,Guide the fab team by AR,AR로 팹 팀을 안내
+deal#22.opts.b.cost,−A quiet corner,−조용한 코너
+deal#22.opts.b.catchT,"Quick help, no quiet corner.","빠른 지원, 조용한 코너는 없음."
+deal#22.opts.b.gain,Expert eyes at the fab instantly,바로 팹에 닿는 전문가의 눈
+deal#22.opts.b.gave,The quiet corner,조용한 코너
+deal#22.opts.b.pros[0],Guide the fab team live,팹 팀을 실시간으로 안내
+deal#22.opts.b.pros[1],No time lost driving,이동 시간 낭비 없음
+deal#22.opts.b.cons[0],The quiet corner is gone,조용한 코너 사라짐
+deal#22.opts.b.cons[1],Depends on fab-side skill,팹 쪽 실력에 좌우됨
+deal#22.opts.b.reply[1],"Okay, our engineer has the headset on now.","네, 저희 엔지니어가 지금 헤드셋 썼어요."
+deal#22.opts.b.conseq[2],The headset bay took the quiet corner. Focus work moved to the canteen.,헤드셋 공간이 조용한 코너를 차지했어요. 집중 업무는 구내식당으로 갔어요.
+deal#22.opts.c.name,Everyone drives over,다 같이 출동
+deal#22.opts.c.real,All hands at the fab,전원 팹으로
+deal#22.opts.c.cost,An hour on the road,이동에 한 시간
+deal#22.opts.c.catchT,"Full presence, lost hour.","전원 출동, 한 시간 손실."
+deal#22.opts.c.gain,Your whole team on site,팀 전체가 현장에
+deal#22.opts.c.pros[0],Hands on the tool,장비를 직접 만짐
+deal#22.opts.c.pros[1],Customer sees you there,고객이 현장에서 봄
+deal#22.opts.c.cons[1],Office left empty,사무실이 텅 빔
+deal#22.opts.c.reply[1],"Thank you. Please hurry, the line is waiting.","감사합니다. 서둘러 주세요, 라인이 기다려요."
+deal#22.opts.c.conseq[2],You arrived at eight. The line was down a whole extra hour.,8시에 도착했어요. 라인이 한 시간 더 멈춰 있었어요.
+deal#23.title,Half the team is on video,팀의 절반이 화상으로
+deal#23.msg,Half the team is at the fabs. The meeting has to work on video.,팀 절반이 팹에 있어요. 회의를 화상으로 해야 해요.
+deal#23.tap,Make the call work,화상회의 되게 하기
+deal#23.q,Where does the hybrid meeting happen?,하이브리드 회의는 어디서 할까요?
+deal#23.opts.a.real,Small room with a video bar,비디오 바가 있는 작은 방
+deal#23.opts.a.catchT,"Clear calls, two fewer desks.","깨끗한 통화, 책상 2개 감소."
+deal#23.opts.a.gain,A video-ready room nearby,가까운 화상회의용 방
+deal#23.opts.a.pros[0],Everyone heard clearly,모두 잘 들림
+deal#23.opts.a.pros[1],Right on your floor,바로 우리 사무실에
+deal#23.opts.a.cons[1],Fits only a few,몇 명만 들어감
+deal#23.opts.a.reply[1],The fab side can finally hear us properly.,드디어 팹 쪽에서 우리 말이 잘 들리네요.
+deal#23.opts.a.conseq[2],Two desks went for the pod. The new hire sits at a spare corner.,부스 때문에 책상 2개가 빠졌어요. 신입 사원은 남는 구석에 앉아요.
+deal#23.opts.b.name,Boardroom with camera,카메라 있는 대회의실
+deal#23.opts.b.real,"The big room, one floor up",한 층 위의 큰 방
+deal#23.opts.b.cost,Far and formal,멀고 딱딱함
+deal#23.opts.b.catchT,"Proper kit, stiff mood.","장비는 좋은데, 분위기는 딱딱."
+deal#23.opts.b.gain,A well-equipped big room,잘 갖춰진 큰 방
+deal#23.opts.b.gave,Ten minutes and a relaxed tone,10분과 편한 분위기
+deal#23.opts.b.pros[0],Good camera and sound,좋은 카메라와 음향
+deal#23.opts.b.pros[1],Room for everyone,모두 앉을 자리
+deal#23.opts.b.cons[0],One floor up,한 층 위
+deal#23.opts.b.cons[1],Feels formal and stiff,격식 있고 딱딱함
+deal#23.opts.b.reply[1],"Fine, but we start late with the walk up.","좋아요, 근데 올라가느라 늦게 시작하겠네요."
+deal#23.opts.b.conseq[2],"Nobody spoke up. It felt like presenting, not discussing.",아무도 말을 안 했어요. 토론이 아니라 발표 같았어요.
+deal#23.opts.c.name,Headsets at desks,자리에서 헤드셋
+deal#23.opts.c.real,Everyone stays put,모두 제자리에서
+deal#23.opts.c.cost,Noise for neighbours,옆자리 소음
+deal#23.opts.c.catchT,"Zero setup, a loud floor.","준비는 제로, 사무실은 시끌."
+deal#23.opts.c.gain,Instant meeting from your seat,내 자리에서 바로 회의
+deal#23.opts.c.gave,Quiet for the people nearby,주변 사람들의 조용함
+deal#23.opts.c.pros[0],No room to find,방 찾을 필요 없음
+deal#23.opts.c.pros[1],Start right away,바로 시작
+deal#23.opts.c.cons[1],Hard to share a screen,화면 공유가 어려움
+deal#23.opts.c.reply[0],Neighbour,옆자리 동료
+deal#23.opts.c.reply[1],Could you keep it down a little?,조금만 조용히 해주실래요?
+deal#23.opts.c.conseq[2],Half the floor heard your meeting. Two people left to find quiet.,사무실 절반이 회의를 다 들었어요. 두 명은 조용한 곳을 찾아 떠났어요.
+deal#24.title,The install schedule changed again,설치 일정이 또 바뀌었어요
+deal#24.msg,The install schedule changes every day. We need one view of it.,설치 일정이 매일 바뀌어요. 한눈에 볼 곳이 필요해요.
+deal#24.tap,Pin down the plan,계획 확정하기
+deal#24.q,Where does the schedule live?,일정은 어디에 둘까요?
+deal#24.opts.a.real,Lean board wall with sticky notes,포스트잇 린 보드 벽
+deal#24.opts.a.catchT,"One clear wall, one less sofa.","명확한 벽 하나, 소파 하나 감소."
+deal#24.opts.a.gain,A shared planning wall,공용 계획 벽
+deal#24.opts.a.pros[0],Everyone sees one plan,모두가 같은 계획을 봄
+deal#24.opts.a.pros[1],Quick to move notes,메모 옮기기 쉬움
+deal#24.opts.a.cons[1],Notes fall and go stale,메모가 떨어지고 낡음
+deal#24.opts.a.reply[1],"A wall of sticky notes. Very lean, very us.",포스트잇 벽이라니. 완전 린하고 우리답네요.
+deal#24.opts.a.conseq[2],Half the notes were outdated by noon. Nobody updated the wall.,점심쯤 메모 절반이 옛날 거였어요. 아무도 벽을 업데이트 안 했어요.
+deal#24.opts.b.real,A digital board on wheels,바퀴 달린 디지털 보드
+deal#24.opts.b.cost,Screen time,화면 보는 시간
+deal#24.opts.b.catchT,"Live board, no fixed home.","실시간 보드, 정해진 자리 없음."
+deal#24.opts.b.gain,A digital board that moves,움직이는 디지털 보드
+deal#24.opts.b.gave,A bit of open floor,약간의 빈 공간
+deal#24.opts.b.pros[0],Always up to date,항상 최신 상태
+deal#24.opts.b.pros[1],Rolls to any huddle,어느 모임에든 끌고 감
+deal#24.opts.b.cons[0],More screen time,화면 보는 시간 증가
+deal#24.opts.b.cons[1],Needs someone to run it,관리할 사람 필요
+deal#24.opts.b.reply[1],Good. Roll it over for the 9 o'clock.,좋아요. 9시 회의에 끌고 와요.
+deal#24.opts.b.conseq[2],The screen sat unplugged in a corner. Nobody knew who owned it.,스크린이 코드 뽑힌 채 구석에 있었어요. 담당자가 누군지 아무도 몰라요.
+deal#24.opts.c.name,Shared spreadsheet,공유 스프레드시트
+deal#24.opts.c.real,Stay digital,디지털로 유지
+deal#24.opts.c.cost,No shared wall,공용 벽 없음
+deal#24.opts.c.catchT,"Easy to share, easy to miss.","공유는 쉽고, 놓치기도 쉽고."
+deal#24.opts.c.gain,A plan anyone can open,누구나 여는 계획
+deal#24.opts.c.gave,A place to plan together,함께 계획할 공간
+deal#24.opts.c.pros[1],Easy from the fab,팹에서도 쉽게 접속
+deal#24.opts.c.cons[1],Versions get messy,버전이 엉망이 됨
+deal#24.opts.c.reply[1],Another spreadsheet. Which tab is the real one?,또 스프레드시트요. 진짜는 어느 탭이에요?
+deal#24.opts.c.conseq[2],Two teams worked from different versions. One install got double-booked.,두 팀이 서로 다른 버전으로 일했어요. 설치 하나가 중복 예약됐어요.
+deal#25.title,Got ten minutes?,10분만 시간 돼요?
+deal#25.msg,Got ten minutes? Quick question about the PM plan.,10분만 시간 돼요? PM 계획 관련해서 잠깐 질문이요.
+deal#25.tap,Make ten minutes,10분 내기
+deal#25.q,Where do you talk it through?,어디서 이야기할까요?
+deal#25.opts.a.real,Bar table for quick huddles,짧은 모임용 바 테이블
+deal#25.opts.a.catchT,"Quick chats, two fewer desks.","빠른 대화, 책상 2개 감소."
+deal#25.opts.a.gain,A spot for quick huddles,짧은 모임 자리
+deal#25.opts.a.pros[0],Quick and informal,빠르고 편하게
+deal#25.opts.a.pros[1],Easy to drop in,쉽게 들를 수 있음
+deal#25.opts.a.cons[1],Others overhear you,다른 사람이 엿들음
+deal#25.opts.a.reply[1],"Perfect. Ten minutes, standing, then back to work.","좋아요. 서서 10분, 그리고 다시 일하러."
+deal#25.opts.a.conseq[2],Two desks went. A visiting engineer worked from the canteen.,책상 2개가 빠졌어요. 방문 엔지니어는 구내식당에서 일했어요.
+deal#25.opts.b.name,Huddle room,소회의실
+deal#25.opts.b.real,Small room for four,4인용 작은 방
+deal#25.opts.b.cost,Booking it,예약 필요
+deal#25.opts.b.catchT,"Private, but rarely free.","비공개지만, 빈 적이 드묾."
+deal#25.opts.b.gain,A closed room for four,닫힌 4인용 방
+deal#25.opts.b.gave,Spontaneity of a quick chat,즉흥적인 짧은 대화
+deal#25.opts.b.pros[0],"Door closes, private talk",문 닫고 비공개 대화
+deal#25.opts.b.pros[1],Screen to share plans,계획 공유할 화면
+deal#25.opts.b.cons[0],Must book it first,먼저 예약해야 함
+deal#25.opts.b.cons[1],Often already taken,이미 차 있을 때가 많음
+deal#25.opts.b.reply[1],Is it free? Let me check the booking.,비어 있나요? 예약 확인해 볼게요.
+deal#25.opts.b.conseq[2],The room was booked. Ten minutes became a meeting tomorrow.,방이 예약돼 있었어요. 10분 얘기가 내일 회의가 됐어요.
+deal#25.opts.c.real,Chat where you sit,앉은 자리에서 대화
+deal#25.opts.c.catchT,"Instant answer, annoyed neighbours.","즉각 답변, 짜증 난 옆자리."
+deal#25.opts.c.gain,"A quick answer, right there",그 자리에서 바로 답변
+deal#25.opts.c.gave,Your neighbours' quiet,옆자리의 조용함
+deal#25.opts.c.pros[1],Answer in two minutes,2분 만에 답변
+deal#25.opts.c.cons[1],Screen too small to share,화면이 작아 공유가 어려움
+deal#25.opts.c.reply[1],Could you two take that somewhere else?,"두 분, 다른 데서 얘기해 주실래요?"
+deal#25.opts.c.conseq[2],Your chat ran twenty minutes. The desk next to you lost focus.,대화가 20분이나 갔어요. 옆자리는 집중이 다 깨졌어요.
+deal#25.opts.d.real,Round table in the open,열린 공간의 원형 테이블
+deal#25.opts.d.cost,−A desk,−책상 1개
+deal#25.opts.d.catchT,"Easy talk, one fewer desk.","편한 대화, 책상 1개 감소."
+deal#25.opts.d.gain,An open table to sit and talk,앉아서 얘기하는 열린 테이블
+deal#25.opts.d.gave,A desk,책상 1개
+deal#25.opts.d.pros[0],"Sit down, open and easy",앉아서 편하게
+deal#25.opts.d.pros[1],Others can join in,다른 사람도 합류 가능
+deal#25.opts.d.cons[0],A desk is gone,책상 1개 사라짐
+deal#25.opts.d.cons[1],Not private,비공개 아님
+deal#25.opts.d.reply[1],Nice. Let's grab the round table.,좋네요. 원형 테이블로 가요.
+deal#25.opts.d.conseq[2],The table took a desk. Hot-desk mornings got a little tighter.,테이블이 책상 하나를 차지했어요. 공용 좌석 아침이 조금 더 빠듯해졌어요.
+deal#26.title,Sketch a new idea,새 아이디어 스케치
+deal#26.msg,New process idea. We need to sketch it out.,새 공정 아이디어가 있어요. 그려봐야 해요.
+deal#26.tap,Start sketching,스케치 시작
+deal#26.q,Where do you sketch it out?,어디서 그려볼까요?
+deal#26.opts.a.real,Whiteboard paint on a wall,화이트보드 페인트 벽
+deal#26.opts.a.cost,−A pinboard,−게시판
+deal#26.opts.a.catchT,"Big canvas, no pinboard.","큰 캔버스, 게시판은 없음."
+deal#26.opts.a.gain,A wall to draw on,그림 그릴 벽
+deal#26.opts.a.gave,The pinboard,게시판
+deal#26.opts.a.pros[0],Sketch on the spot,그 자리에서 바로 스케치
+deal#26.opts.a.pros[1],Ideas stay up for days,아이디어가 며칠간 남음
+deal#26.opts.a.cons[0],The pinboard is gone,게시판 사라짐
+deal#26.opts.a.cons[1],Everyone can see it,누구나 볼 수 있음
+deal#26.opts.a.reply[1],"Great. Grab a marker, let's draw it out.",좋아요. 마커 들고 그려봐요.
+deal#26.opts.a.conseq[2],The pinboard came down. Safety notices now hang on the fridge.,게시판을 뗐어요. 안전 공지는 이제 냉장고에 붙어 있어요.
+deal#26.opts.b.real,Re-arrangeable soft seats,배치를 바꾸는 소프트 의자
+deal#26.opts.b.catchT,"Flexible seats, two fewer desks.","유연한 좌석, 책상 2개 감소."
+deal#26.opts.b.gain,A space that reshapes,모양이 바뀌는 공간
+deal#26.opts.b.pros[0],Rearrange for any group,인원에 맞게 재배치
+deal#26.opts.b.pros[1],Relaxed and playful,편하고 재밌는 분위기
+deal#26.opts.b.cons[1],Floor looks messy,사무실이 어수선해 보임
+deal#26.opts.b.reply[1],"Cubes? Okay, let's make a circle.","큐브요? 좋아요, 동그랗게 앉아요."
+deal#26.opts.b.conseq[2],Two desks went for cubes. They were moved and never put back.,큐브 때문에 책상 2개가 빠졌어요. 옮긴 큐브는 제자리로 안 돌아왔어요.
+deal#26.opts.c.name,Meeting room whiteboard,회의실 화이트보드
+deal#26.opts.c.real,Book a room,회의실 예약
+deal#26.opts.c.cost,Waiting for a room,회의실 대기
+deal#26.opts.c.catchT,"Proper room, lost momentum.","제대로 된 방, 사라진 추진력."
+deal#26.opts.c.gain,A private board to sketch on,스케치할 전용 보드
+deal#26.opts.c.gave,An hour of waiting,한 시간 대기
+deal#26.opts.c.pros[0],"Closed door, focused talk",문 닫고 집중 토론
+deal#26.opts.c.cons[0],Must wait for a room,회의실 대기 필요
+deal#26.opts.c.cons[1],Sketches erased after,끝나면 스케치 지워짐
+deal#26.opts.c.reply[1],Book one. Earliest slot is at four.,예약해요. 제일 빠른 게 4시예요.
+deal#26.opts.c.conseq[2],By four the energy was gone. The idea felt smaller.,4시쯤엔 열기가 식었어요. 아이디어가 작아 보였어요.
+deal#27.title,Room booked all week,일주일 내내 예약된 회의실
+deal#27.msg,The 6-seat room is booked all week by one person.,6인 회의실을 한 사람이 일주일 내내 예약했어요.
+deal#27.tap,Free up the room,회의실 비우기
+deal#27.q,What do you do about bookings?,예약을 어떻게 할까요?
+deal#27.opts.a.name,Auto-release,자동 해제
+deal#27.opts.a.real,Rooms free up after 10 minutes empty,10분간 비면 예약 자동 해제
+deal#27.opts.a.cost,You can lose a booking,예약을 잃을 수 있음
+deal#27.opts.a.catchT,"Fair rooms, strict clock.","공정한 회의실, 엄격한 시간."
+deal#27.opts.a.gain,Rooms that free themselves,알아서 비워지는 회의실
+deal#27.opts.a.gave,Some slack on bookings,예약의 여유
+deal#27.opts.a.pros[0],Ghost bookings disappear,유령 예약 사라짐
+deal#27.opts.a.pros[1],Rooms get used more,회의실 활용도 증가
+deal#27.opts.a.cons[1],Late starts get punished,늦으면 불이익
+deal#27.opts.a.reply[1],Finally. No more holding rooms for nobody.,드디어요. 아무도 안 쓰는 방 잡아두기는 끝이에요.
+deal#27.opts.a.conseq[2],I was five minutes late from the fab. My room was gone.,팹에서 오느라 5분 늦었는데 회의실이 없어졌어요.
+deal#27.opts.b.name,More small rooms,소회의실 늘리기
+deal#27.opts.b.real,Split it into two,둘로 나누기
+deal#27.opts.b.cost,−The big room,−큰 회의실
+deal#27.opts.b.catchT,"More rooms, none big enough.","방은 많은데, 큰 방이 없음."
+deal#27.opts.b.gain,Two small meeting rooms,작은 회의실 2개
+deal#27.opts.b.pros[0],Two rooms instead of one,방 하나가 둘로
+deal#27.opts.b.pros[1],Fewer booking fights,예약 다툼 감소
+deal#27.opts.b.cons[0],The big room is gone,큰 회의실 사라짐
+deal#27.opts.b.cons[1],Six can't meet anymore,6명 회의 불가
+deal#27.opts.b.reply[1],We can split it with a wall this week.,이번 주에 벽으로 나눌 수 있어요.
+deal#27.opts.b.conseq[2],The design review needed six seats. We squeezed into a four-room.,디자인 리뷰에 6석이 필요했어요. 4인실에 끼어 앉았어요.
+deal#27.opts.c.name,Leave it,그냥 두기
+deal#27.opts.c.cost,Frustration,불만
+deal#27.opts.c.catchT,"Peace with one person, not the team.","한 사람과는 평화, 팀과는 아님."
+deal#27.opts.c.gain,No new rules,새 규칙 없음
+deal#27.opts.c.gave,A usable meeting room,쓸 수 있는 회의실
+deal#27.opts.c.pros[0],"No change, no fuss",변화도 잡음도 없음
+deal#27.opts.c.pros[1],No one feels policed,감시받는 사람 없음
+deal#27.opts.c.cons[0],Frustration keeps growing,불만이 계속 쌓임
+deal#27.opts.c.cons[1],Others still can't book,여전히 예약 불가
+deal#27.opts.c.reply[1],So we just keep waiting? Okay.,그럼 계속 기다리라고요? 알겠어요.
+deal#27.opts.c.conseq[2],We held our meeting in the corridor again. It was empty all day.,또 복도에서 회의했어요. 그 방은 하루 종일 비어 있었어요.
+deal#28.theme,Fab link,팹 연계
+deal#28.title,Can you see what I see?,제가 보는 게 보이세요?
+deal#28.who,Junior engineer at the fab,팹의 주니어 엔지니어
+deal#28.msg,I’m at the tool. Can you see what I see?,장비 앞이에요. 제가 보는 게 보이세요?
+deal#28.tap,Help them see it,보이게 도와주기
+deal#28.q,How do you see the tool?,장비를 어떻게 볼까요?
+deal#28.opts.a.real,AR headset bay,AR 헤드셋 공간
+deal#28.opts.a.catchT,"Instant eyes, no quiet corner.","즉각적인 눈, 조용한 코너는 없음."
+deal#28.opts.a.gain,Live view of the tool,장비 실시간 화면
+deal#28.opts.a.pros[0],See exactly what they see,상대가 보는 그대로 봄
+deal#28.opts.a.pros[1],Help in minutes,몇 분 만에 지원
+deal#28.opts.a.cons[1],Headset can feel clunky,헤드셋이 불편할 수 있음
+deal#28.opts.a.reply[1],I see your arrow. Turning that valve now.,화살표 보여요. 그 밸브 지금 돌릴게요.
+deal#28.opts.a.conseq[2],The headset bay took the quiet corner. Calls now happen at desks.,헤드셋 공간이 조용한 코너를 차지했어요. 통화는 이제 자리에서 해요.
+deal#28.opts.b.name,Video room,화상회의실
+deal#28.opts.b.real,Book a room and dial in,회의실 예약 후 접속
+deal#28.opts.b.catchT,"Clear view, slow start.","선명한 화면, 느린 시작."
+deal#28.opts.b.gain,A proper screen to look at,제대로 볼 수 있는 화면
+deal#28.opts.b.gave,Half an hour of waiting,30분 대기
+deal#28.opts.b.pros[0],"Bigger screen, clear audio","큰 화면, 깨끗한 음성"
+deal#28.opts.b.pros[1],Uses an existing room,기존 회의실 활용
+deal#28.opts.b.cons[1],Phone video is shaky,폰 영상이 흔들림
+deal#28.opts.b.reply[1],Okay. I'll hold the phone steady until then.,네. 그때까지 폰 잘 들고 있을게요.
+deal#28.opts.b.conseq[2],We waited thirty minutes for a room. The tool stayed down.,회의실을 30분 기다렸어요. 장비는 계속 다운이었어요.
+deal#28.opts.c.name,Drive over,직접 가기
+deal#28.opts.c.real,Go to the fab,팹으로 출동
+deal#28.opts.c.cost,An hour each way,편도 한 시간
+deal#28.opts.c.catchT,"Real fix, lost evening.","확실한 해결, 사라진 저녁."
+deal#28.opts.c.gain,Your hands on the problem,문제를 직접 해결
+deal#28.opts.c.gave,Two hours on the road,이동에 두 시간
+deal#28.opts.c.pros[1],Junior learns by watching,주니어가 보면서 배움
+deal#28.opts.c.cons[1],Your evening is gone,저녁 시간이 사라짐
+deal#28.opts.c.reply[1],Thank you. I'll wait here with the tool.,감사합니다. 장비 옆에서 기다릴게요.
+deal#28.opts.c.conseq[2],You reached the fab at half five. Dinner is not happening.,5시 반에 팹에 도착했어요. 저녁은 물 건너갔어요.
+deal#29.title,Handover before the fab,팹 가기 전 인수인계
+deal#29.who,Night shift,야간 근무자
+deal#29.msg,Handover before you head to the fab.,팹 가기 전에 인수인계해요.
+deal#29.tap,Take the handover,인수인계 받기
+deal#29.q,Where does the handover happen?,인수인계는 어디서 할까요?
+deal#29.opts.a.name,Handover desk at the entry,입구 인수인계 데스크
+deal#29.opts.a.real,Drop-in spot near the door,문 옆에 잠깐 들르는 자리
+deal#29.opts.a.cost,−The welcome lounge,−웰컴 라운지
+deal#29.opts.a.catchT,"Tidy handover, no welcome lounge.","깔끔한 인수인계, 웰컴 라운지는 없음."
+deal#29.opts.a.gain,A handover spot by the door,문 옆 인수인계 자리
+deal#29.opts.a.pros[0],Quick drop-in spot,잠깐 들르기 좋음
+deal#29.opts.a.pros[1],Shifts actually meet,근무조가 실제로 만남
+deal#29.opts.a.cons[0],The welcome lounge is gone,웰컴 라운지 사라짐
+deal#29.opts.a.cons[1],"Busy, noisy entrance",붐비고 시끄러운 입구
+deal#29.opts.a.reply[1],Good. I'll leave the logs here every morning.,좋아요. 매일 아침 여기 로그 두고 갈게요.
+deal#29.opts.a.conseq[2],A customer arrived. There was nowhere to welcome them.,고객이 왔는데 맞이할 곳이 없었어요.
+deal#29.opts.b.name,Video handover,화상 인수인계
+deal#29.opts.b.real,From home before driving,출발 전 집에서
+deal#29.opts.b.cost,Home set-up,재택 환경 필요
+deal#29.opts.b.catchT,"No commute, patchy handover.","출근은 없고, 인수인계는 뚝뚝."
+deal#29.opts.b.gain,A handover from home,집에서 하는 인수인계
+deal#29.opts.b.gave,Your kitchen table at dawn,새벽의 식탁
+deal#29.opts.b.pros[0],No early commute,이른 출근 없음
+deal#29.opts.b.pros[1],Straight to the fab after,끝나고 바로 팹으로
+deal#29.opts.b.cons[0],Needs a home set-up,재택 환경이 필요
+deal#29.opts.b.cons[1],Hard to share drawings,도면 공유가 어려움
+deal#29.opts.b.reply[1],Can you see my screen? The connection's a bit slow.,제 화면 보여요? 연결이 좀 느리네요.
+deal#29.opts.b.conseq[2],Your home wifi dropped twice. We missed the alarm history.,집 와이파이가 두 번 끊겼어요. 알람 이력을 놓쳤어요.
+deal#29.opts.c.real,Skip the office,사무실 건너뛰기
+deal#29.opts.c.cost,No office time,사무실 시간 없음
+deal#29.opts.c.catchT,"Close to the tool, far from the team.","장비와는 가깝고, 팀과는 멀고."
+deal#29.opts.c.gain,A handover beside the tool,장비 옆 인수인계
+deal#29.opts.c.gave,Your time in the office,사무실에서의 시간
+deal#29.opts.c.pros[0],Handover right at the tool,장비 바로 앞에서 인수인계
+deal#29.opts.c.pros[1],No office stop,사무실 경유 없음
+deal#29.opts.c.cons[0],No office time at all,사무실 시간이 전혀 없음
+deal#29.opts.c.cons[1],Team never sees you,팀이 나를 못 봄
+deal#29.opts.c.reply[1],Fine. Meet me at the tool bay.,좋아요. 장비 베이에서 봬요.
+deal#29.opts.c.conseq[2],You haven't been in the office all week. We miss your input.,일주일 내내 사무실에 안 왔네요. 의견이 아쉬워요.
+deal#30.title,Three fab days this month,이번 달 팹 근무 주 3일
+deal#30.msg,"This month: three days a week at the fab, two at the office.","이번 달은 주 3일 팹, 2일 사무실이에요."
+deal#30.tap,Plan my desk,내 자리 계획
+deal#30.q,What happens to your desk?,내 자리는 어떻게 할까요?
+deal#30.opts.a.name,Keep my own desk,내 자리 유지
+deal#30.opts.a.real,"Mine, even when empty",비어 있어도 내 자리
+deal#30.opts.a.cost,Empty three days a week,주 3일은 빈자리
+deal#30.opts.a.catchT,"Your desk, empty most of the week.","내 자리, 일주일 대부분 비어 있음."
+deal#30.opts.a.gave,Seats for new teammates,새 팀원의 자리
+deal#30.opts.a.pros[0],Your things stay put,내 물건 그대로
+deal#30.opts.a.pros[1],Same spot every office day,출근하면 늘 같은 자리
+deal#30.opts.a.cons[1],Teammates squeeze in elsewhere,팀원들은 다른 데 끼어 앉음
+deal#30.opts.a.reply[1],Fine by me. I'll keep using the corner by the printer.,저는 괜찮아요. 프린터 옆 구석 계속 쓸게요.
+deal#30.opts.a.conseq[2],Two new hires were seated by the printer. Your desk sat empty.,신입 두 명이 프린터 옆에 앉았어요. 당신 자리는 비어 있었고요.
+deal#30.opts.b.name,Share on fab days,팹 가는 날 공유
+deal#30.opts.b.real,A teammate uses it when you’re out,내가 없을 때 팀원이 사용
+deal#30.opts.b.cost,No guarantee on odd days,변동 일정엔 자리 보장 없음
+deal#30.opts.b.catchT,"Shared desk, clash when plans change.","공유 자리, 일정 바뀌면 충돌."
+deal#30.opts.b.gain,A desk that never sits idle,놀지 않는 자리
+deal#30.opts.b.gave,Sure seat on odd days,변동일의 확실한 자리
+deal#30.opts.b.pros[0],Desk gets used every day,자리가 매일 쓰임
+deal#30.opts.b.pros[1],You still keep a home base,내 근거지는 유지
+deal#30.opts.b.cons[0],Odd days can clash,일정이 바뀌면 겹침
+deal#30.opts.b.cons[1],Tidy up every fab morning,팹 가는 아침마다 정리
+deal#30.opts.b.reply[1],"Great, I'll use it Monday to Wednesday. I'll keep it tidy.","좋아요, 월~수 쓸게요. 깨끗하게 쓸게요."
+deal#30.opts.b.conseq[2],Your fab visit moved to Thursday. Your desk was already taken.,팹 방문이 목요일로 바뀌었어요. 자리는 이미 누가 쓰고 있었어요.
+deal#30.opts.c.name,Hot desk with locker,공용 좌석 + 사물함
+deal#30.opts.c.real,"Any desk, personal locker","아무 자리, 개인 사물함"
+deal#30.opts.c.cost,−No set spot,−고정 자리 없음
+deal#30.opts.c.catchT,"Free choice, no fixed home.","선택은 자유, 정해진 자리는 없음."
+deal#30.opts.c.gain,"Any desk, things safe in a locker","아무 자리, 물건은 사물함에"
+deal#30.opts.c.pros[0],Pick any free desk,빈자리 아무 데나
+deal#30.opts.c.pros[1],Locker keeps your things safe,사물함에 물건 안전 보관
+deal#30.opts.c.cons[0],No set spot,고정 자리 없음
+deal#30.opts.c.cons[1],Hunt for teammates each morning,매일 아침 팀원 찾기
+deal#30.opts.c.reply[1],Your locker is number 14. Grab any free desk.,사물함은 14번이에요. 빈자리 아무 데나 앉으세요.
+deal#30.opts.c.conseq[2],Your team spread across the floor. It took a while to find them.,팀이 사무실 곳곳에 흩어졌어요. 찾는 데 한참 걸렸어요.
+deal#31.theme,Visitors & customers,방문객 & 고객
+deal#31.title,A customer delegation,고객사 방문단
+deal#31.msg,A customer delegation of eight arrives at two.,고객사 방문단 8명이 2시에 도착해요.
+deal#31.tap,Welcome the guests,손님 맞이하기
+deal#31.q,Where do you host the delegation?,방문단을 어디서 맞이할까요?
+deal#31.opts.a.real,Sofas and check-in at the entry,입구의 소파와 체크인
+deal#31.opts.a.catchT,"Great first impression, four fewer desks.","훌륭한 첫인상, 책상 4개 감소."
+deal#31.opts.a.gain,A proper welcome at the door,입구에서의 제대로 된 환영
+deal#31.opts.a.gave,Four desks near the entry,입구 근처 책상 4개
+deal#31.opts.a.pros[0],Warm welcome at the entry,입구에서 따뜻한 환영
+deal#31.opts.a.pros[1],Guests check in smoothly,손님 체크인이 매끄러움
+deal#31.opts.a.cons[0],Four desks gone,책상 4개 사라짐
+deal#31.opts.a.cons[1],Lounge sits idle most days,평소엔 라운지가 놂
+deal#31.opts.a.reply[1],What a nice welcome. Can we sit here before the meeting?,환영이 정말 좋네요. 회의 전에 여기 앉아 있어도 될까요?
+deal#31.opts.a.conseq[2],The team that lost four desks spent the afternoon at the long table.,책상 4개를 잃은 팀은 오후 내내 긴 테이블에서 일했어요.
+deal#31.opts.b.real,A cutaway tool on a plinth,받침대 위 단면 장비
+deal#31.opts.b.catchT,"Impressive tool, one less meeting room.","인상적인 장비, 회의실 하나 감소."
+deal#31.opts.b.gain,A real tool for guests to see,손님에게 보여줄 진짜 장비
+deal#31.opts.b.pros[0],Guests see the tool up close,손님이 장비를 가까이서 봄
+deal#31.opts.b.pros[1],Easy start to the talk,대화 시작이 쉬움
+deal#31.opts.b.cons[0],One meeting room gone,회의실 하나 사라짐
+deal#31.opts.b.cons[1],Needs care and upkeep,관리와 유지가 필요
+deal#31.opts.b.reply[1],So that is what sits inside the chamber. Very impressive.,챔버 안이 저렇게 생겼군요. 정말 인상적이에요.
+deal#31.opts.b.conseq[2],Our weekly review had no room. We met standing in the corridor.,주간 리뷰할 방이 없었어요. 복도에 서서 했어요.
+deal#31.opts.c.name,Book the boardroom,대회의실 예약
+deal#31.opts.c.catchT,"No change, but far and formal.","변화는 없지만, 멀고 딱딱함."
+deal#31.opts.c.gain,A room big enough for all,모두 들어가는 큰 방
+deal#31.opts.c.gave,Ten minutes walking each way,편도 10분 이동
+deal#31.opts.c.pros[1],Room fits all eight,8명 모두 수용
+deal#31.opts.c.cons[1],Feels stiff and formal,딱딱하고 격식 있음
+deal#31.opts.c.reply[1],"Boardroom is booked. It's on the top floor, so start walking early.",대회의실 예약됐어요. 꼭대기 층이라 일찍 출발하세요.
+deal#31.opts.c.conseq[2],The long walk and formal table made the talk feel stiff.,긴 이동과 격식 있는 테이블 때문에 대화가 딱딱했어요.
+deal#31.opts.d.name,Live demo wall,라이브 데모 월
+deal#31.opts.d.real,Screens showing tools running,장비 가동을 보여주는 스크린
+deal#31.opts.d.cost,−Wall space,−벽 공간
+deal#31.opts.d.catchT,"Live show, glare for the desks nearby.","라이브 쇼, 주변 자리엔 눈부심."
+deal#31.opts.d.gain,Tools running live for guests,손님에게 보여주는 실시간 장비
+deal#31.opts.d.gave,A wall of pinboards,게시판 벽
+deal#31.opts.d.pros[0],Real tools running on screen,실제 장비 가동 화면
+deal#31.opts.d.pros[1],Engineers can explain live,엔지니어가 실시간 설명
+deal#31.opts.d.cons[0],Takes a whole wall,벽 하나를 통째로 씀
+deal#31.opts.d.cons[1],Screens glare on nearby desks,주변 자리에 화면 눈부심
+deal#31.opts.d.reply[1],I'll put the etch run on the big screen. They'll love it.,식각 공정을 큰 화면에 띄울게요. 좋아하실 거예요.
+deal#31.opts.d.conseq[2],The wall screens shone on our desks all afternoon. Hard to focus.,벽 스크린이 오후 내내 우리 자리를 비췄어요. 집중이 안 됐어요.
+deal#32.title,Visitors in the engineering zone,엔지니어링 구역의 방문객
+deal#32.msg,Visitors keep wandering into the engineering zone.,방문객들이 자꾸 엔지니어링 구역으로 들어와요.
+deal#32.tap,Sort out zones,구역 정리하기
+deal#32.q,How do you keep visitors out?,방문객 출입을 어떻게 막을까요?
+deal#32.opts.a.name,Gates and escorts,게이트와 동행
+deal#32.opts.a.real,"Badge gates, escorted zones","출입증 게이트, 동행 구역"
+deal#32.opts.a.cost,−Slower for everyone,−모두에게 느려짐
+deal#32.opts.a.catchT,"Safe zone, slower for everyone.","안전한 구역, 모두에게 느려짐."
+deal#32.opts.a.gain,A locked engineering zone,잠긴 엔지니어링 구역
+deal#32.opts.a.gave,Quick walks across the floor,사무실을 가로지르는 빠른 이동
+deal#32.opts.a.pros[0],Engineering zone stays closed,엔지니어링 구역 차단
+deal#32.opts.a.pros[1],Clear who is allowed where,출입 권한이 명확함
+deal#32.opts.a.cons[0],Slower for everyone,모두에게 느려짐
+deal#32.opts.a.cons[1],Someone must walk every guest,손님마다 누군가 동행
+deal#32.opts.a.reply[1],Gates go live Monday. Every guest needs an escort inside.,월요일부터 게이트 가동해요. 안에선 손님마다 동행이 필요해요.
+deal#32.opts.a.conseq[2],I waited at the gate for my badge. Missed the start of standup.,게이트에서 출입증 기다리다가 스탠드업 시작을 놓쳤어요.
+deal#32.opts.b.name,Visitor lounge only,방문객 라운지만
+deal#32.opts.b.real,Guests stay at the front,손님은 앞쪽에만
+deal#32.opts.b.cost,−Limited access for guests,−손님 출입 제한
+deal#32.opts.b.catchT,"Calm floor, guests kept at a distance.","조용한 사무실, 손님과는 거리감."
+deal#32.opts.b.gain,Guests kept at the front,앞쪽에 머무는 손님
+deal#32.opts.b.gave,Desks near the entry,입구 근처 자리
+deal#32.opts.b.pros[0],Guests stay up front,손님은 앞쪽에 머묾
+deal#32.opts.b.pros[1],No gates for staff,직원은 게이트 없음
+deal#32.opts.b.cons[0],Guests can't see the work,손님이 일하는 모습을 못 봄
+deal#32.opts.b.cons[1],Lounge takes front desks,라운지가 앞쪽 자리를 차지
+deal#32.opts.b.reply[1],Comfortable here. But I hoped to meet the engineers at their desks.,여기 편하네요. 그런데 엔지니어들 자리에서 만나고 싶었어요.
+deal#32.opts.b.conseq[1],Sales,영업팀
+deal#32.opts.b.conseq[2],The customer wanted to see the team. We stayed stuck at the front.,"고객은 팀을 보고 싶어 했는데, 우린 앞쪽에만 묶여 있었어요."
+deal#32.opts.c.name,Trust and sign,믿고 서명
+deal#32.opts.c.real,Sign an NDA at reception,안내 데스크에서 NDA 서명
+deal#32.opts.c.catchT,"Easy for guests, risk stays.","손님은 편하고, 위험은 그대로."
+deal#32.opts.c.gain,"Open floor, paperwork at the door","열린 사무실, 서류는 입구에서"
+deal#32.opts.c.gave,Peace of mind at your desk,내 자리에서의 안심
+deal#32.opts.c.pros[1],Guests move freely,손님이 자유롭게 이동
+deal#32.opts.c.cons[1],Screens left open to anyone,누구에게나 열린 화면
+deal#32.opts.c.reply[1],Everyone signs at the desk. Then they're free to go in.,모두 데스크에서 서명해요. 그다음엔 자유롭게 들어가요.
+deal#32.opts.c.conseq[2],A guest stopped by a desk and read a customer roadmap on screen.,손님 한 명이 자리 앞에 멈춰서 화면 속 고객 로드맵을 읽었어요.
+deal#33.title,Lunch with your visitors,방문객과 점심
+deal#33.who,Visitor,방문객
+deal#33.msg,Your visitors are here early. Lunch with them?,방문객이 일찍 왔어요. 같이 점심 할까요?
+deal#33.q,Where do you have lunch?,점심은 어디서 먹을까요?
+deal#33.opts.a.real,Long table on the floor,사무실 안 긴 테이블
+deal#33.opts.a.cost,−Kitchen counter space,−탕비실 조리대 공간
+deal#33.opts.a.catchT,"Shared lunch, noise near desks.","함께하는 점심, 자리 근처 소음."
+deal#33.opts.a.gain,A long table for shared meals,함께 먹는 긴 테이블
+deal#33.opts.a.gave,Kitchen counter space,탕비실 조리대 공간
+deal#33.opts.a.pros[0],Eat with the team,팀과 함께 식사
+deal#33.opts.a.pros[1],Close to your desk,내 자리와 가까움
+deal#33.opts.a.cons[0],Less kitchen counter space,탕비실 조리대 축소
+deal#33.opts.a.cons[1],Lunch noise reaches desks,점심 소음이 자리까지
+deal#33.opts.a.reply[1],Eating with the whole team? I like this. Very relaxed.,팀 전체랑 같이 먹어요? 좋네요. 아주 편해요.
+deal#33.opts.a.conseq[2],Lunch chatter drifted over to our desks. My call was hard to hear.,점심 수다가 우리 자리까지 들렸어요. 통화가 잘 안 들렸어요.
+deal#33.opts.b.real,Indoor bistro with vines,덩굴 있는 실내 비스트로
+deal#33.opts.b.catchT,"Lovely café, four fewer desks.","멋진 카페, 책상 4개 감소."
+deal#33.opts.b.gain,A garden-like café on the floor,사무실 안 정원 같은 카페
+deal#33.opts.b.pros[0],Feels like going out,외식하는 기분
+deal#33.opts.b.pros[1],Nice spot to host guests,손님 접대하기 좋은 곳
+deal#33.opts.b.cons[1],Busy and loud at noon,점심엔 붐비고 시끄러움
+deal#33.opts.b.reply[1],Is this inside the office? It feels like a garden.,여기 사무실 안이에요? 정원 같아요.
+deal#33.opts.b.conseq[2],Four people moved to make room for the café. They're still unpacking.,카페 자리 만드느라 네 명이 자리를 옮겼어요. 아직도 짐 푸는 중이에요.
+deal#33.opts.c.name,Cafeteria,구내식당
+deal#33.opts.c.cost,The queue,대기 줄
+deal#33.opts.c.catchT,"No change, long queue.","변화 없음, 긴 줄."
+deal#33.opts.c.gain,The usual cafeteria choices,익숙한 구내식당 메뉴
+deal#33.opts.c.gave,Half your lunch to the queue,줄 서느라 날린 점심 절반
+deal#33.opts.c.pros[1],Lots of food choices,메뉴 선택이 다양
+deal#33.opts.c.cons[1],Hard to talk in the noise,시끄러워서 대화가 어려움
+deal#33.opts.c.reply[1],"Sure, the cafeteria is fine. Is the line always this long?","네, 구내식당 좋아요. 줄이 항상 이렇게 길어요?"
+deal#33.opts.c.conseq[2],We spent most of lunch in the queue. Little time to talk.,점심시간 대부분을 줄 서느라 썼어요. 얘기할 시간이 별로 없었어요.
+deal#33.opts.d.real,Diner-style booths,다이너 스타일 부스
+deal#33.opts.d.catchT,"Cosy booths, always taken.","아늑한 부스, 늘 만석."
+deal#33.opts.d.gain,Quiet booths to eat and talk,먹고 얘기할 조용한 부스
+deal#33.opts.d.pros[0],Private enough to talk,대화하기 충분히 아늑함
+deal#33.opts.d.pros[1],Doubles as a meeting spot,회의 공간으로도 활용
+deal#33.opts.d.cons[0],Two desks gone,책상 2개 사라짐
+deal#33.opts.d.cons[1],Booths fill up fast,부스가 금방 참
+deal#33.opts.d.reply[1],A booth is perfect. We can talk about the order here.,부스 딱 좋네요. 여기서 주문 얘기해요.
+deal#33.opts.d.conseq[2],The booths were full all afternoon. People used them as meeting rooms.,부스는 오후 내내 꽉 찼어요. 다들 회의실처럼 썼어요.
+deal#34.theme,Food & breaks,식사 & 휴식
+deal#34.title,The lunch queue,점심 줄
+deal#35.title,Delivery at the gate,정문에 온 배달
+deal#35.msg,"Your lunch delivery is at the gate, five floors down.",점심 배달이 다섯 층 아래 정문에 도착했어요.
+deal#35.tap,Get my lunch,점심 가지러 가기
+deal#35.q,How does lunch reach you?,점심을 어떻게 받을까요?
+deal#35.opts.a.real,Heated lockers on the floor,층마다 있는 보온 사물함
+deal#35.opts.a.catchT,"Warm food upstairs, full at peak.","위층에서 따뜻한 식사, 피크엔 만석."
+deal#35.opts.a.gain,Hot lunch steps from your desk,자리 바로 옆 따뜻한 점심
+deal#35.opts.a.gave,A wall by the lifts,엘리베이터 옆 벽 한 면
+deal#35.opts.a.pros[0],Food stays warm,음식이 따뜻하게 유지
+deal#35.opts.a.pros[1],Pick up on your floor,같은 층에서 픽업
+deal#35.opts.a.cons[0],Takes a wall,벽 한 면 차지
+deal#35.opts.a.cons[1],Lockers full at noon,정오엔 사물함 만석
+deal#35.opts.a.reply[1],Locker 6. Still hot. Back at my desk in a minute.,6번 사물함. 아직 따뜻해요. 금방 자리로 갈게요.
+deal#35.opts.a.conseq[2],All lockers were full at noon. My lunch waited downstairs anyway.,정오에 사물함이 꽉 찼어요. 결국 제 점심은 아래층에서 기다렸어요.
+deal#35.opts.b.name,Pantry pickup,탕비실 픽업
+deal#35.opts.b.real,Delivered to the pantry,탕비실로 배달
+deal#35.opts.b.cost,Messy counter,어수선한 카운터
+deal#35.opts.b.catchT,"Easy pickup, crowded pantry.","픽업은 쉽고, 탕비실은 붐비고."
+deal#35.opts.b.gain,Lunch delivered to your floor,층까지 오는 점심 배달
+deal#35.opts.b.gave,A clean pantry counter,깨끗한 탕비실 카운터
+deal#35.opts.b.pros[0],Lunch comes to the floor,점심이 층까지 배달
+deal#35.opts.b.pros[1],Nothing new to build,새로 지을 게 없음
+deal#35.opts.b.cons[1],Bags mixed up,봉지가 뒤섞임
+deal#35.opts.b.reply[1],Your bag is on the pantry counter. Next to about twenty others.,봉지는 탕비실 카운터에 있어요. 스무 개쯤 되는 봉지 옆에요.
+deal#35.opts.b.conseq[2],Someone took the wrong bag. The pantry smelled of food all afternoon.,누가 봉지를 잘못 가져갔어요. 오후 내내 탕비실에 음식 냄새가 났어요.
+deal#35.opts.c.name,Go down,내려가기
+deal#35.opts.c.cost,Ten minutes each way,편도 10분
+deal#35.opts.c.catchT,"No change, twenty minutes gone.","변화 없음, 20분 증발."
+deal#35.opts.c.gain,A break outside the building,건물 밖에서의 휴식
+deal#35.opts.c.gave,Twenty minutes of lunch,점심시간 20분
+deal#35.opts.c.pros[0],Nothing changes upstairs,위층은 그대로
+deal#35.opts.c.pros[1],A short walk outside,바깥 짧은 산책
+deal#35.opts.c.cons[1],Lifts are packed at noon,정오엔 엘리베이터 만원
+deal#35.opts.c.reply[1],"Okay, heading down. Hope the lift isn't full again.","알겠어요, 내려가요. 엘리베이터가 또 꽉 차진 않았으면."
+deal#35.opts.c.conseq[2],You came back late. The 1 pm sync started without you.,늦게 돌아왔네요. 1시 싱크는 먼저 시작했어요.
+deal#36.title,3 pm coffee,오후 3시 커피
+deal#36.msg,3 pm. Coffee needed.,오후 3시. 커피가 필요해요.
+deal#36.tap,Get a coffee,커피 마시기
+deal#36.q,Where do you get coffee?,커피는 어디서 마실까요?
+deal#36.opts.a.cost,−A queue at peak,−피크 시간 대기 줄
+deal#36.opts.a.catchT,"Quick coffee, queue at peak.","빠른 커피, 피크엔 줄."
+deal#36.opts.a.gain,Fresh coffee in two minutes,2분 만에 신선한 커피
+deal#36.opts.a.gave,A corner near the lifts,엘리베이터 옆 코너
+deal#36.opts.a.pros[0],"Good coffee, fast","맛있는 커피, 빠르게"
+deal#36.opts.a.pros[1],Fun to show guests,손님에게 보여주기 좋음
+deal#36.opts.a.cons[0],A queue at peak,피크 시간 대기 줄
+deal#36.opts.a.cons[1],Loud near desks,자리 근처에서 시끄러움
+deal#36.opts.a.reply[1],The robot is great. Unless the whole floor wants coffee at three.,로봇 좋아요. 층 전체가 3시에 커피 찾지만 않으면요.
+deal#36.opts.a.conseq[2],Everyone came at three. The queue and grinder noise reached our desks.,다들 3시에 몰렸어요. 줄이랑 그라인더 소리가 자리까지 왔어요.
+deal#36.opts.b.real,A barista-style bar,바리스타 스타일 바
+deal#36.opts.b.catchT,"Great coffee, four fewer desks.","훌륭한 커피, 책상은 4개 줄고."
+deal#36.opts.b.gain,A café bar on the floor,층 안의 카페 바
+deal#36.opts.b.pros[0],Real café on the floor,층 안의 진짜 카페
+deal#36.opts.b.pros[1],Good spot to chat,대화하기 좋은 곳
+deal#36.opts.b.cons[1],Gets crowded and loud,붐비고 시끄러움
+deal#36.opts.b.reply[1],"Finally, decent coffee. And somewhere to sit for five minutes.",드디어 괜찮은 커피네요. 5분 앉아 있을 곳도 생기고요.
+deal#36.opts.b.conseq[2],The café crowd got loud. The team nearby moved to quiet rooms.,카페가 시끄러워졌어요. 근처 팀은 조용한 방으로 옮겼어요.
+deal#36.opts.c.name,Pantry coffee,탕비실 커피
+deal#36.opts.c.real,Drip coffee in the pantry,탕비실 드립 커피
+deal#36.opts.c.cost,Basic,평범함
+deal#36.opts.c.catchT,"No change, basic coffee.","변화 없음, 평범한 커피."
+deal#36.opts.c.gain,Coffee with no waiting,기다림 없는 커피
+deal#36.opts.c.gave,A real coffee break,제대로 된 커피 타임
+deal#36.opts.c.pros[0],Already there,이미 있음
+deal#36.opts.c.pros[1],No waiting,기다림 없음
+deal#36.opts.c.cons[1],Pot often empty,포트가 자주 빔
+deal#36.opts.c.reply[1],"Drip coffee again. Well, it keeps me awake.","또 드립 커피네요. 뭐, 잠은 깨니까요."
+deal#36.opts.c.conseq[2],The pot was empty again. People went out to the café instead.,포트가 또 비었어요. 다들 밖에 카페로 나갔어요.
+deal#37.title,Canteen closed before shift,근무 전 문 닫은 식당
+deal#37.msg,The canteen is closed and your shift starts at six.,식당은 문을 닫았는데 근무는 6시에 시작해요.
+deal#37.tap,Find breakfast,아침 찾기
+deal#37.q,What do you eat before shift?,근무 전에 뭘 먹을까요?
+deal#37.opts.a.name,24/7 food lockers,24시간 푸드 사물함
+deal#37.opts.a.real,Stocked meals any hour,언제든 채워진 식사
+deal#37.opts.a.catchT,"Food any hour, thin choice late.","언제든 식사, 늦으면 선택지 부족."
+deal#37.opts.a.gain,Real meals before every shift,매 근무 전 제대로 된 식사
+deal#37.opts.a.gave,A wall by the pantry,탕비실 옆 벽 한 면
+deal#37.opts.a.pros[0],Hot meals any hour,언제든 따뜻한 식사
+deal#37.opts.a.pros[1],Fits early and late shifts,이른·늦은 근무에 맞음
+deal#37.opts.a.cons[1],Choices run low by night,밤엔 선택지가 줄어듦
+deal#37.opts.a.reply[1],"Rice bowl, still warm. Ready by six.","덮밥, 아직 따뜻해요. 6시 전에 준비 완료."
+deal#37.opts.a.conseq[2],By the night shift the lockers were almost empty. Same two meals left.,야간 근무 때쯤 사물함이 거의 비었어요. 같은 메뉴 두 개만 남았어요.
+deal#37.opts.b.name,Stocked pantry,채워진 탕비실
+deal#37.opts.b.real,Snacks and ready meals,간식과 간편식
+deal#37.opts.b.cost,−Pantry space,−탕비실 공간
+deal#37.opts.b.catchT,"Something to eat, crowded pantry.","먹을 건 있고, 탕비실은 붐비고."
+deal#37.opts.b.gain,Snacks at any hour,언제든 먹는 간식
+deal#37.opts.b.gave,Pantry counter space,탕비실 카운터 공간
+deal#37.opts.b.pros[0],Snacks always ready,간식이 항상 준비됨
+deal#37.opts.b.pros[1],Uses the pantry you have,기존 탕비실 활용
+deal#37.opts.b.cons[0],Pantry gets cramped,탕비실이 비좁아짐
+deal#37.opts.b.cons[1],"Snacks, not real meals",식사가 아닌 간식
+deal#37.opts.b.reply[1],Instant noodles and a banana. It will do.,컵라면이랑 바나나. 이거면 돼요.
+deal#37.opts.b.conseq[2],The pantry shelves are packed. There's no room left to make tea.,탕비실 선반이 꽉 찼어요. 차 탈 공간도 없어요.
+deal#37.opts.c.name,Nothing,아무것도 안 함
+deal#37.opts.c.cost,Hungry start,배고픈 시작
+deal#37.opts.c.catchT,"No change, hungry shift start.","변화 없음, 배고픈 근무 시작."
+deal#37.opts.c.gain,A floor that stays the same,그대로인 사무실
+deal#37.opts.c.gave,Breakfast before early shifts,이른 근무 전 아침 식사
+deal#37.opts.c.pros[1],Canteen stays the plan,식당이 계속 기본
+deal#37.opts.c.cons[1],Tired by mid-morning,오전 중반엔 지침
+deal#37.opts.c.reply[1],No food again. Coffee will have to do.,또 굶네요. 커피로 버텨야죠.
+deal#37.opts.c.conseq[2],You were slow on the first tool check. Hunger caught up.,첫 장비 점검이 느렸어요. 배고픔이 티가 났네요.
+deal#38.theme,Wellbeing,웰빙
+deal#38.title,The afternoon slump,오후의 졸음
+deal#39.title,After a 12-hour fab shift,12시간 팹 근무 후
+deal#39.msg,Twelve hours in the fab. The report is still due.,팹에서 12시간. 보고서는 아직 남았어요.
+deal#39.tap,Recover first,먼저 회복하기
+deal#39.q,How do you get through the report?,보고서를 어떻게 끝낼까요?
+deal#39.opts.a.real,Recliner with a reading lamp,독서등 달린 리클라이너
+deal#39.opts.a.catchT,"A rest, but only one recliner.","휴식은 되지만, 리클라이너는 하나뿐."
+deal#39.opts.a.gain,A quiet spot to recharge,재충전할 조용한 곳
+deal#39.opts.a.pros[0],Rest twenty minutes first,먼저 20분 휴식
+deal#39.opts.a.pros[1],Write it fresh tonight,오늘 밤 맑은 정신으로 작성
+deal#39.opts.a.cons[0],One desk gone,책상 1개 사라짐
+deal#39.opts.a.cons[1],Often taken after shifts,근무 후엔 자주 사용 중
+deal#39.opts.a.reply[1],Twenty minutes with my feet up. Then the report.,20분만 다리 올리고요. 그다음 보고서.
+deal#39.opts.a.conseq[2],"Two people came in after their shift. One recliner, three tired engineers.",근무 끝나고 두 명이 더 왔어요. 리클라이너 하나에 지친 엔지니어 셋.
+deal#39.opts.b.name,Showers and changing,샤워실과 탈의실
+deal#39.opts.b.real,Freshen up before the office,사무실 전에 씻고 정돈
+deal#39.opts.b.cost,−Storage room,−창고
+deal#39.opts.b.catchT,"Fresh start, storage spills out.","개운한 시작, 창고 짐은 넘치고."
+deal#39.opts.b.gain,Showers right on the floor,층 안의 샤워실
+deal#39.opts.b.gave,The storage room,창고
+deal#39.opts.b.pros[0],Feel fresh after the fab,팹 근무 후 개운함
+deal#39.opts.b.pros[1],Ready for the office,사무실 업무 준비 완료
+deal#39.opts.b.cons[0],Storage room gone,창고 사라짐
+deal#39.opts.b.cons[1],Boxes pile up elsewhere,박스가 다른 곳에 쌓임
+deal#39.opts.b.reply[1],A hot shower first. I feel human again.,뜨거운 샤워부터. 이제 좀 사람 같네요.
+deal#39.opts.b.conseq[2],The storage boxes moved into the corridor. Now they block the fire door.,창고 박스가 복도로 나왔어요. 지금 비상문을 막고 있어요.
+deal#39.opts.c.name,Go home,퇴근하기
+deal#39.opts.c.real,Write it tomorrow,내일 작성
+deal#39.opts.c.cost,A late report,늦은 보고서
+deal#39.opts.c.catchT,"Proper rest, late report.","제대로 휴식, 보고서는 지연."
+deal#39.opts.c.gain,A full night of rest,푹 쉬는 하룻밤
+deal#39.opts.c.gave,A report on time,제때 낸 보고서
+deal#39.opts.c.pros[0],Rest properly tonight,오늘 밤 푹 쉼
+deal#39.opts.c.cons[1],Details fade overnight,밤새 디테일이 흐려짐
+deal#39.opts.c.reply[1],"Okay, go rest. But I need it first thing tomorrow.","알겠어요, 가서 쉬어요. 대신 내일 아침 일찍 줘야 해요."
+deal#39.opts.c.conseq[2],The customer asked for the report tonight. It wasn't ready.,고객이 오늘 밤에 보고서를 요청했어요. 준비가 안 됐네요.
+deal#40.title,Four hours sitting,4시간째 앉아 있음
+deal#40.msg,You have been sitting for four hours.,4시간째 앉아만 있었어요.
+deal#40.tap,Get moving,몸 움직이기
+deal#40.q,How do you get moving?,어떻게 몸을 움직일까요?
+deal#40.opts.a.real,Walk while you work,걸으면서 일하기
+deal#40.opts.a.catchT,"Moving at work, a hum nearby.","일하며 운동, 옆엔 웅웅 소리."
+deal#40.opts.a.gain,Walking time during work,업무 중 걷는 시간
+deal#40.opts.a.pros[1],No need to leave,자리 뜰 필요 없음
+deal#40.opts.a.cons[1],Hard to type while walking,걸으며 타이핑 어려움
+deal#40.opts.a.reply[1],"Slow walk, emails open. Not bad.",천천히 걸으면서 메일 확인. 나쁘지 않네요.
+deal#40.opts.a.conseq[2],The treadmill hum carried across the row during my call.,통화 중에 러닝머신 소리가 줄 전체에 울렸어요.
+deal#40.opts.b.real,Small gym on the floor,층 안의 작은 헬스장
+deal#40.opts.b.catchT,"Gym on the floor, one less room.","층 안의 헬스장, 회의실은 하나 줄고."
+deal#40.opts.b.gain,A small gym steps away,몇 걸음 거리의 작은 헬스장
+deal#40.opts.b.pros[0],Real workout on the floor,층 안에서 제대로 운동
+deal#40.opts.b.pros[1],Quick stretch between tasks,업무 사이 짧은 스트레칭
+deal#40.opts.b.cons[0],A meeting room gone,회의실 1개 사라짐
+deal#40.opts.b.cons[1],Sweaty back to desk,땀 난 채로 자리 복귀
+deal#40.opts.b.reply[1],Five minutes on the bike? I'll join you.,자전거 5분 타요? 저도 같이 갈게요.
+deal#40.opts.b.conseq[2],No meeting room was free for the design review. We used the pantry.,설계 리뷰할 회의실이 없었어요. 탕비실에서 했어요.
+deal#40.opts.c.name,Walking trail,산책로
+deal#40.opts.c.real,Loop outside,건물 밖 순환로
+deal#40.opts.c.cost,Weather,날씨
+deal#40.opts.c.catchT,"Fresh air, if the weather allows.","신선한 공기, 날씨가 허락하면."
+deal#40.opts.c.gain,A walking loop outside,건물 밖 산책 코스
+deal#40.opts.c.gave,Part of the green outside,바깥 녹지 일부
+deal#40.opts.c.pros[0],Fresh air and daylight,신선한 공기와 햇빛
+deal#40.opts.c.pros[1],Clear your head outside,밖에서 머리 식히기
+deal#40.opts.c.cons[1],Far from your desk,자리에서 멂
+deal#40.opts.c.reply[1],"One loop outside. Wait, is it raining?","밖에 한 바퀴. 잠깐, 비 와요?"
+deal#40.opts.c.conseq[2],Rain started halfway round. You came back wet and sat down again.,반쯤 돌았을 때 비가 왔어요. 젖은 채로 돌아와 다시 앉았어요.
+deal#41.title,Ten minutes alone,혼자만의 10분
+deal#41.msg,You need ten minutes alone.,혼자 있을 10분이 필요해요.
+deal#41.q,Where do you go to be alone?,혼자 있으려면 어디로 갈까요?
+deal#41.opts.a.real,"Quiet room, low light",조명 낮춘 조용한 방
+deal#41.opts.a.catchT,"True quiet, one less meeting room.","진짜 고요, 회의실은 하나 줄고."
+deal#41.opts.a.gain,A quiet room to reset,리셋할 조용한 방
+deal#41.opts.a.pros[0],"Low light, real quiet","은은한 조명, 진짜 고요"
+deal#41.opts.a.pros[1],Door that closes,닫히는 문
+deal#41.opts.a.cons[1],Booked solid at lunch,점심시간엔 예약 꽉 참
+deal#41.opts.a.reply[1],"Dim lights, door shut. Ten minutes is enough.",불 낮추고 문 닫고. 10분이면 충분해요.
+deal#41.opts.a.conseq[2],Our team sync lost its room. We crammed into a phone booth.,팀 싱크할 방이 없어졌어요. 폰부스에 우르르 끼어 들어갔어요.
+deal#41.opts.b.name,Swing seat corner,그네 의자 코너
+deal#41.opts.b.real,Hanging chair by the window,창가의 행잉 체어
+deal#41.opts.b.catchT,"Cosy corner, people still pass by.","아늑한 코너, 그래도 사람은 지나가요."
+deal#41.opts.b.gain,A swing seat by the window,창가의 그네 의자
+deal#41.opts.b.gave,A sofa,소파 1개
+deal#41.opts.b.pros[0],Nice view by the window,창가의 좋은 전망
+deal#41.opts.b.cons[1],Not truly private,완전히 사적이진 않음
+deal#41.opts.b.reply[1],Swinging by the window. Better than I expected.,창가에서 흔들흔들. 생각보다 좋네요.
+deal#41.opts.b.conseq[2],People stopped to chat by the swing. Not much quiet after all.,다들 그네 옆에서 멈춰 수다를 떨었어요. 결국 별로 조용하지 않았어요.
+deal#41.opts.c.name,Stairwell,계단실
+deal#41.opts.c.cost,Not much of a break,제대로 된 휴식은 아님
+deal#41.opts.c.catchT,"No change, a poor break.","변화 없음, 부실한 휴식."
+deal#41.opts.c.gain,A spot that is always free,항상 비어 있는 곳
+deal#41.opts.c.gave,A real place to rest,제대로 쉴 공간
+deal#41.opts.c.pros[1],Always free,항상 비어 있음
+deal#41.opts.c.cons[1],Cold and echoey,춥고 소리가 울림
+deal#41.opts.c.reply[1],The stairwell again. At least nobody is here.,또 계단실이네요. 그래도 아무도 없어요.
+deal#41.opts.c.conseq[2],Someone took the stairs and stopped to talk. The break was over.,누가 계단으로 오다가 말을 걸었어요. 휴식 끝.
+deal#41.opts.d.real,Quiet room for prayer or reflection,기도나 명상을 위한 조용한 방
+deal#41.opts.d.catchT,"Calm space, one less meeting room.","평온한 공간, 회의실은 하나 줄고."
+deal#41.opts.d.gain,A room for prayer or reflection,기도나 명상을 위한 방
+deal#41.opts.d.pros[0],Quiet room for prayer,기도할 수 있는 조용한 방
+deal#41.opts.d.pros[1],Calm for anyone who needs it,필요한 누구에게나 평온
+deal#41.opts.d.cons[1],Used by few each day,하루 이용자가 적음
+deal#41.opts.d.reply[1],Thank you. I used to pray in my car.,고마워요. 전엔 차 안에서 기도했거든요.
+deal#41.opts.d.conseq[2],We needed a room for a call. The reflection room sat empty.,"통화할 방이 필요했는데, 명상실은 비어 있었어요."
+deal#42.title,Back from parental leave,육아휴직 후 복귀
+deal#42.msg,A colleague is back from parental leave and needs a private room twice a day.,육아휴직에서 복귀한 동료가 하루 두 번 개인 공간이 필요해요.
+deal#42.tap,Find a room,방 찾기
+deal#42.q,Where can your colleague go?,동료는 어디로 가면 될까요?
+deal#42.opts.a.name,Parents’ room,부모 전용실
+deal#42.opts.a.real,Room with fridge and sink,냉장고와 싱크대가 있는 방
+deal#42.opts.a.cost,−A phone booth,−폰부스 1개
+deal#42.opts.a.catchT,"Parents covered, one less booth.","부모는 챙기고, 부스는 하나 줄고."
+deal#42.opts.a.gain,A proper room for parents,부모를 위한 제대로 된 방
+deal#42.opts.a.gave,A phone booth,폰부스 1개
+deal#42.opts.a.pros[0],Fridge and sink inside,냉장고와 싱크대 완비
+deal#42.opts.a.pros[1],Private and always ready,프라이빗하고 항상 준비됨
+deal#42.opts.a.cons[0],A phone booth gone,폰부스 1개 사라짐
+deal#42.opts.a.cons[1],Empty much of the day,하루 대부분 비어 있음
+deal#42.opts.a.reply[1],A fridge and a sink. This makes coming back so much easier.,냉장고에 싱크대까지. 복귀가 훨씬 수월해졌어요.
+deal#42.opts.a.conseq[2],One fewer phone booth. I took my call in the corridor.,폰부스가 하나 줄었어요. 저는 복도에서 통화했어요.
+deal#42.opts.b.name,Any small room,아무 작은 방
+deal#42.opts.b.real,Book what’s free,빈 방 예약
+deal#42.opts.b.cost,Not equipped,설비 없음
+deal#42.opts.b.catchT,"No change, no sure room.","변화 없음, 확실한 방도 없음."
+deal#42.opts.b.gain,A room when one is free,비어 있을 때 쓰는 방
+deal#42.opts.b.gave,A reliable private space,믿을 수 있는 개인 공간
+deal#42.opts.b.pros[1],Uses rooms already there,기존 방 활용
+deal#42.opts.b.cons[1],Rooms often booked,방이 자주 예약됨
+deal#42.opts.b.reply[1],I'll check the booking app. Hope something's free at two.,예약 앱 확인해 볼게요. 2시에 빈 방이 있으면 좋겠네요.
+deal#42.opts.b.conseq[2],Every small room was booked. I waited twenty minutes for one.,작은 방이 전부 예약돼 있었어요. 20분 기다렸어요.
+deal#42.opts.c.name,Leave early,조기 퇴근
+deal#42.opts.c.real,Go home sooner,더 일찍 귀가
+deal#42.opts.c.cost,Shorter days,짧아진 근무일
+deal#42.opts.c.catchT,"More home time, less office time.","집에선 더 길게, 사무실에선 더 짧게."
+deal#42.opts.c.gain,Time at home with the baby,아기와 함께하는 시간
+deal#42.opts.c.gave,Afternoons with the team,팀과 함께하는 오후
+deal#42.opts.c.pros[0],More time at home,집에서 더 많은 시간
+deal#42.opts.c.cons[1],Misses late meetings,늦은 회의 불참
+deal#42.opts.c.reply[1],I'll leave at three then. Can we move the review earlier?,그럼 3시에 퇴근할게요. 리뷰를 앞당길 수 있을까요?
+deal#42.opts.c.conseq[2],The afternoon review moved twice to fit. Two teams had to shuffle.,오후 리뷰를 맞추느라 두 번이나 옮겼어요. 두 팀이 일정을 바꿔야 했어요.
+deal#43.theme,Arrival & commute,출근 & 통근
+deal#43.title,The last shuttle,마지막 셔틀
+deal#43.msg,Last shuttle at 18:20. The meeting is running late.,마지막 셔틀은 18:20. 회의가 길어지고 있어요.
+deal#43.tap,Catch my ride,셔틀 타러 가기
+deal#43.q,How do you get home?,집에 어떻게 갈까요?
+deal#43.opts.a.real,Live timetable at a lobby lounge,로비 라운지의 실시간 시간표
+deal#43.opts.a.cost,−Lobby seats,−로비 좌석
+deal#43.opts.a.catchT,"Easy wait, fewer lobby seats.","편한 대기, 로비 좌석은 줄고."
+deal#43.opts.a.gain,Live shuttle times in the lobby,로비의 실시간 셔틀 시간
+deal#43.opts.a.gave,Lobby seating,로비 좌석
+deal#43.opts.a.pros[0],See the live timetable,실시간 시간표 확인
+deal#43.opts.a.pros[1],Wait in comfort,편하게 대기
+deal#43.opts.a.cons[0],Lobby seats gone,로비 좌석 사라짐
+deal#43.opts.a.cons[1],Still tied to the timetable,여전히 시간표에 묶임
+deal#43.opts.a.reply[1],Board says four minutes. Time to wrap up and go.,전광판에 4분 남았대요. 정리하고 갈 시간이네요.
+deal#43.opts.a.conseq[2],Guests waited standing in the lobby. The lounge took their seats.,손님들이 로비에서 서서 기다렸어요. 라운지가 좌석을 차지했거든요.
+deal#43.opts.b.name,Flexible hours,유연 근무
+deal#43.opts.b.real,Leave early when you need to,필요할 때 일찍 퇴근
+deal#43.opts.b.cost,Meetings move earlier,회의가 앞당겨짐
+deal#43.opts.b.catchT,"Home on time, earlier meetings.","제때 귀가, 회의는 더 일찍."
+deal#43.opts.b.gain,Freedom to leave on time,제때 퇴근할 자유
+deal#43.opts.b.gave,Late afternoon meetings,늦은 오후 회의
+deal#43.opts.b.pros[0],Leave when you need to,필요할 때 퇴근
+deal#43.opts.b.pros[1],Catch the shuttle calmly,여유 있게 셔틀 탑승
+deal#43.opts.b.cons[1],Late-day calls get harder,늦은 통화가 어려워짐
+deal#43.opts.b.reply[1],Go catch it. Let's move this meeting to the morning.,얼른 타러 가요. 이 회의는 아침으로 옮기죠.
+deal#43.opts.b.conseq[2],Tomorrow starts with a 7:30 meeting. Not everyone is happy.,내일은 7:30 회의로 시작해요. 다들 좋아하진 않네요.
+deal#43.opts.c.name,Drive,자가용
+deal#43.opts.c.real,Take the car,차로 이동
+deal#43.opts.c.cost,Parking spaces,주차 공간
+deal#43.opts.c.catchT,"Your own time, more cars.","내 시간대로, 차는 더 늘고."
+deal#43.opts.c.gain,Leave whenever you're done,끝나는 대로 출발
+deal#43.opts.c.gave,A parking space for someone else,다른 사람의 주차 공간
+deal#43.opts.c.pros[0],Leave whenever you finish,일 끝나면 바로 출발
+deal#43.opts.c.pros[1],No timetable to chase,시간표에 쫓기지 않음
+deal#43.opts.c.cons[0],Parking spaces fill up,주차 공간이 참
+deal#43.opts.c.cons[1],Traffic on the way home,퇴근길 교통 체증
+deal#43.opts.c.reply[1],I'll drive in from now on. No more running for the shuttle.,이제부터 차로 다닐래요. 셔틀 잡으러 뛰는 건 끝.
+deal#43.opts.c.conseq[2],Stuck in traffic at the gate. Home later than the shuttle would be.,정문에서 차가 막혔어요. 셔틀보다 늦게 집에 도착했어요.
+deal#44.title,Car park full by 8:15,8:15면 주차장 만차
+deal#44.msg,The car park is full by 8:15.,주차장이 8:15면 꽉 차요.
+deal#44.tap,Find a spot,자리 찾기
+deal#44.q,Who gets the parking?,주차 공간은 누구에게 줄까요?
+deal#44.opts.a.name,Priority parking for fab-goers,팹 출장자 우선 주차
+deal#44.opts.a.real,Bays for people driving to fabs,팹으로 운전하는 사람 전용 칸
+deal#44.opts.a.cost,Others lose bays,다른 사람은 주차 칸 잃음
+deal#44.opts.a.catchT,"Fab-goers park easy, others don't.","팹 출장자는 편하게, 나머지는 아니고."
+deal#44.opts.a.gain,Saved bays for fab drivers,팹 운전자 전용 주차 칸
+deal#44.opts.a.gave,Bays for everyone else,다른 모두의 주차 칸
+deal#44.opts.a.pros[0],Fab-goers park fast,팹 출장자는 빠른 주차
+deal#44.opts.a.pros[1],Quick drive out to fabs,팹까지 빠르게 출발
+deal#44.opts.a.cons[1],Feels unfair to some,일부는 불공평하다고 느낌
+deal#44.opts.a.reply[1],Great for me. I'm at the fab three days this week.,저한텐 딱이에요. 이번 주 사흘은 팹에 있거든요.
+deal#44.opts.a.conseq[2],I circled for twenty minutes and parked on the street.,20분 동안 빙빙 돌다가 길가에 댔어요.
+deal#44.opts.b.name,Bikes and showers,자전거와 샤워실
+deal#44.opts.b.real,Bike storage and showers,자전거 보관소와 샤워실
+deal#44.opts.b.cost,−Basement storage,−지하 창고
+deal#44.opts.b.catchT,"More riders, less storage.","자전거족은 늘고, 창고는 줄고."
+deal#44.opts.b.gain,Bike racks and showers,자전거 거치대와 샤워실
+deal#44.opts.b.gave,Basement storage,지하 창고
+deal#44.opts.b.pros[0],Fewer cars at the gate,정문 앞 차량 감소
+deal#44.opts.b.pros[1],Ride and freshen up,자전거 타고 와서 샤워
+deal#44.opts.b.cons[0],Basement storage gone,지하 창고 사라짐
+deal#44.opts.b.cons[1],Helps only nearby riders,근처 사는 사람만 혜택
+deal#44.opts.b.reply[1],Bike racks and showers go into the basement store.,자전거 거치대와 샤워실은 지하 창고에 들어가요.
+deal#44.opts.b.conseq[2],The basement store is gone. Spare parts now sit in the hallway.,지하 창고가 없어졌어요. 이제 예비 부품이 복도에 있어요.
+deal#44.opts.c.name,More shuttles,셔틀 증편
+deal#44.opts.c.real,Extra shuttle runs,셔틀 추가 운행
+deal#44.opts.c.cost,Fixed timetable,고정된 시간표
+deal#44.opts.c.catchT,"More runs, still on a timetable.","운행은 늘고, 여전히 시간표대로."
+deal#44.opts.c.gain,Extra shuttle runs each morning,매일 아침 추가 셔틀
+deal#44.opts.c.gave,Freedom to come and go,자유로운 출퇴근
+deal#44.opts.c.pros[0],Fewer cars needed,필요한 차량 감소
+deal#44.opts.c.cons[1],Long rides from far stops,먼 정류장은 오래 걸림
+deal#44.opts.c.reply[1],Two more runs added. First one leaves at 7:10.,두 편 추가했어요. 첫 차는 7:10 출발이에요.
+deal#44.opts.c.conseq[2],The extra run still didn't stop near me. I drove again.,추가 편도 우리 집 근처엔 안 서요. 또 차 끌고 왔어요.
+deal#45.title,Where do you head first?,어디부터 갈까요?
+deal#45.msg,You arrive. Where do you head first?,도착했어요. 어디부터 갈까요?
+deal#45.tap,Pick a spot,자리 고르기
+deal#45.opts.a.name,Team neighbourhood,팀 네이버후드
+deal#45.opts.a.real,"Your team’s zone, marked",표시된 우리 팀 구역
+deal#45.opts.a.cost,A fixed zone,고정된 구역
+deal#45.opts.a.catchT,"Belonging, but walls between teams.","소속감은 있지만, 팀 사이엔 벽."
+deal#45.opts.a.gain,A home zone with your team,팀과 함께하는 홈 구역
+deal#45.opts.a.gave,Freedom to sit anywhere,아무 데나 앉을 자유
+deal#45.opts.a.pros[0],Your team is always nearby,팀이 늘 가까이
+deal#45.opts.a.pros[1],Feels like your place,내 공간 같은 느낌
+deal#45.opts.a.cons[0],Locked into one zone,한 구역에 묶임
+deal#45.opts.a.cons[1],Hard to sit with others,다른 팀과 앉기 어려움
+deal#45.opts.a.reply[1],"Morning. Your usual corner's free, same as always.",좋은 아침이에요. 늘 앉던 코너 비어 있어요.
+deal#45.opts.a.conseq[1],Process engineer,공정 엔지니어
+deal#45.opts.a.conseq[2],The cross-team engineer you needed sat two zones away all morning.,필요했던 타 팀 엔지니어가 오전 내내 두 구역 떨어져 있었어요.
+deal#45.opts.b.real,Find a free spot on a map,지도에서 빈자리 찾기
+deal#45.opts.b.cost,Searching each day,매일 자리 찾기
+deal#45.opts.b.catchT,"Easy to find, hard to stay close.","찾긴 쉽고, 붙어 있긴 어렵고."
+deal#45.opts.b.gain,A free seat in seconds,몇 초 만에 찾는 빈자리
+deal#45.opts.b.gave,Sitting near your own team,우리 팀 근처 자리
+deal#45.opts.b.pros[0],See free spots at a glance,빈자리 한눈에 확인
+deal#45.opts.b.pros[1],No wandering the floor,사무실을 헤맬 필요 없음
+deal#45.opts.b.cons[0],Searching again every morning,매일 아침 다시 찾기
+deal#45.opts.b.cons[1],Team ends up scattered,팀이 흩어짐
+deal#45.opts.b.reply[1],"Okay, a free spot by the lab door. Good enough.","좋아요, 랩 문 옆 빈자리. 이 정도면 됐어요."
+deal#45.opts.b.conseq[2],Your team landed in four different corners. Nobody overheard anything useful.,팀원들이 네 군데 코너에 흩어졌어요. 쓸 만한 얘기는 아무도 못 들었어요.
+deal#45.opts.c.name,Any free desk,아무 빈자리
+deal#45.opts.c.real,First you find,처음 찾은 곳
+deal#45.opts.c.cost,Random neighbours,매번 바뀌는 옆자리
+deal#45.opts.c.catchT,"No effort, no place of your own.","노력은 제로, 내 자리도 제로."
+deal#45.opts.c.gain,A desk with no fuss,번거로움 없는 자리
+deal#45.opts.c.gave,Knowing who sits beside you,옆에 누가 앉는지 아는 것
+deal#45.opts.c.pros[0],Zero planning needed,계획 필요 없음
+deal#45.opts.c.pros[1],Meet new faces,새 얼굴과 만남
+deal#45.opts.c.cons[0],Random neighbours each day,매일 바뀌는 옆자리
+deal#45.opts.c.cons[1],No sense of home,내 자리라는 느낌 없음
+deal#45.opts.c.reply[1],This one's open. I'll just sit down here.,여기 비었네요. 그냥 여기 앉을게요.
+deal#45.opts.c.conseq[2],Your new neighbour has calls all morning. You moved twice already.,새 옆자리 사람이 오전 내내 통화해요. 벌써 두 번 옮겼어요.
+deal#46.title,Stuck in traffic,교통 체증
+deal#46.msg,Traffic jam to Hwaseong. A satellite hub is 15 minutes away.,화성 가는 길이 꽉 막혔어요. 거점 오피스는 15분 거리예요.
+deal#46.tap,Beat the traffic,체증 피하기
+deal#46.q,Where do you work this morning?,오늘 오전엔 어디서 일할까요?
+deal#46.opts.a.name,Satellite hub,거점 오피스
+deal#46.opts.a.real,Book a desk near home,집 근처 자리 예약
+deal#46.opts.a.cost,Away from the team,팀과 떨어짐
+deal#46.opts.a.catchT,"Short commute, far from the action.","짧은 출근, 현장과는 먼 거리."
+deal#46.opts.a.gain,A desk fifteen minutes away,15분 거리의 자리
+deal#46.opts.a.gave,A morning beside your team,팀 곁에서 보내는 오전
+deal#46.opts.a.pros[0],Fifteen minutes from home,집에서 15분
+deal#46.opts.a.pros[1],A proper desk and quiet,제대로 된 자리와 고요함
+deal#46.opts.a.cons[1],No access to the tools,장비 접근 불가
+deal#46.opts.a.reply[1],Hub desk booked. Coffee in fifteen minutes instead of ninety.,거점 자리 예약 완료. 90분 대신 15분 만에 커피.
+deal#46.opts.a.conseq[2],The tool alarm was solved at the bench. You only heard after.,장비 알람은 벤치에서 해결됐어요. 나중에야 소식을 들었죠.
+deal#46.opts.b.name,Come in late,늦게 출근
+deal#46.opts.b.real,Arrive after the jam,체증 끝나고 도착
+deal#46.opts.b.cost,A shorter day,짧아진 하루
+deal#46.opts.b.catchT,"Calmer drive, a day cut short.","여유로운 운전, 짧아진 하루."
+deal#46.opts.b.gain,A calmer drive in,여유로운 출근길
+deal#46.opts.b.gave,Your morning hours on site,현장에서의 오전 시간
+deal#46.opts.b.pros[0],Skip the worst of the jam,최악의 체증은 피함
+deal#46.opts.b.pros[1],Still a full office day,그래도 사무실 근무
+deal#46.opts.b.cons[0],A shorter working day,짧아진 근무 시간
+deal#46.opts.b.cons[1],Miss the morning stand-up,아침 스탠드업 불참
+deal#46.opts.b.reply[1],"Fine, just dial in to stand-up from the car.","좋아요, 스탠드업은 차에서 전화로 들어와요."
+deal#46.opts.b.conseq[2],"Stand-up decided the week's priorities. You joined halfway, on mute.",스탠드업에서 이번 주 우선순위가 정해졌어요. 중간에 음소거로 들어왔죠.
+deal#46.opts.c.name,Work from home,재택근무
+deal#46.opts.c.real,Stay home,집에 머물기
+deal#46.opts.c.catchT,"Saved the drive, lost the day on site.","운전은 아꼈지만, 현장의 하루는 잃음."
+deal#46.opts.c.gain,Hours back from the road,도로에서 되찾은 시간
+deal#46.opts.c.gave,A day with the team,팀과 함께하는 하루
+deal#46.opts.c.pros[0],No commute at all,출퇴근 제로
+deal#46.opts.c.cons[0],No office time today,오늘은 사무실 시간 없음
+deal#46.opts.c.cons[1],Hands-on work waits,현장 작업은 대기
+deal#46.opts.c.reply[1],No problem. I'll message you if the tool acts up.,괜찮아요. 장비가 말썽 부리면 메시지 드릴게요.
+deal#46.opts.c.conseq[2],The tool acted up. They had to wait until you were back tomorrow.,장비가 말썽을 부렸어요. 내일 돌아올 때까지 기다려야 했어요.
+deal#47.theme,Growth & onboarding,성장 & 온보딩
+deal#47.title,A new engineer on Monday,월요일 신입 엔지니어
+deal#47.who,HR,인사팀
+deal#47.msg,A new engineer starts on Monday.,월요일에 신입 엔지니어가 입사해요.
+deal#47.tap,Plan the welcome,환영 준비하기
+deal#47.q,Where does the new engineer sit?,신입 엔지니어는 어디 앉을까요?
+deal#47.opts.a.real,Welcome desk with a starter kit,스타터 키트가 있는 환영 데스크
+deal#47.opts.a.catchT,"Warm welcome, a desk often empty.","따뜻한 환영, 자주 비는 책상."
+deal#47.opts.a.gain,A ready welcome desk,준비된 환영 데스크
+deal#47.opts.a.gave,One team desk,팀 책상 1개
+deal#47.opts.a.pros[0],Starter kit ready on arrival,도착하면 스타터 키트 준비
+deal#47.opts.a.pros[1],A clear first stop,명확한 첫 방문지
+deal#47.opts.a.cons[0],Feels apart from the team,팀과 떨어진 느낌
+deal#47.opts.a.cons[1],A desk sits idle between hires,입사 사이엔 책상이 놀음
+deal#47.opts.a.reply[1],Lovely. I'll lay out the laptop and badge on Friday.,좋아요. 금요일에 노트북이랑 출입증 놓아둘게요.
+deal#47.opts.a.conseq[2],The welcome desk sits empty most weeks. Someone asked to use it.,환영 데스크가 대부분 비어 있어요. 누가 써도 되냐고 물어봤어요.
+deal#47.opts.b.name,Sit with a mentor,멘토 옆자리
+deal#47.opts.b.real,Next to their buddy,버디 바로 옆
+deal#47.opts.b.cost,Crowded desk,비좁은 책상
+deal#47.opts.b.catchT,"Fast learning, one crowded desk.","빠른 학습, 비좁은 책상 하나."
+deal#47.opts.b.gain,A buddy within arm's reach,손 닿는 거리의 버디
+deal#47.opts.b.gave,Elbow room at the mentor's desk,멘토 책상의 여유 공간
+deal#47.opts.b.pros[0],Questions answered on the spot,질문에 바로 답변
+deal#47.opts.b.pros[1],Learns the team fast,팀을 빨리 익힘
+deal#47.opts.b.cons[0],Crowded at the mentor's desk,멘토 책상이 비좁음
+deal#47.opts.b.cons[1],Mentor's own work slows,멘토 본업이 느려짐
+deal#47.opts.b.reply[0],Senior engineer,선배 엔지니어
+deal#47.opts.b.reply[1],"Sure, I'll pull up a second chair next to mine.","그럼요, 제 옆에 의자 하나 더 갖다 놓을게요."
+deal#47.opts.b.conseq[2],Two people at one desk all week. The mentor's report slipped.,일주일 내내 책상 하나에 두 명. 멘토 보고서가 밀렸어요.
+deal#47.opts.c.real,Wherever is open,비어 있는 곳 아무 데나
+deal#47.opts.c.cost,They feel lost,신입이 헤맴
+deal#47.opts.c.catchT,"Easy for you, lonely for them.","나는 편하고, 신입은 외롭고."
+deal#47.opts.c.gain,No planning needed,계획 필요 없음
+deal#47.opts.c.gave,A real welcome,제대로 된 환영
+deal#47.opts.c.pros[0],Nothing to set up,준비할 게 없음
+deal#47.opts.c.pros[1],Flexible from day one,첫날부터 유연함
+deal#47.opts.c.cons[0],New hire feels lost,신입이 헤맴
+deal#47.opts.c.cons[1],Nobody to ask nearby,근처에 물어볼 사람 없음
+deal#47.opts.c.reply[1],Okay. I'll tell them to find an open desk.,알겠어요. 빈자리 찾아 앉으라고 할게요.
+deal#47.opts.c.conseq[1],New engineer,신입 엔지니어
+deal#47.opts.c.conseq[2],They spent the first hour looking for a seat and a charger.,첫 한 시간을 자리랑 충전기 찾느라 보냈어요.
+deal#48.title,Walk me through that fault,그 고장 좀 설명해 주세요
+deal#48.who,Junior engineer,주니어 엔지니어
+deal#48.msg,Can you walk me through that fault?,그 고장 건 좀 차근차근 설명해 주실래요?
+deal#48.tap,Show them how,보여주기
+deal#48.q,Where do you explain the fault?,고장은 어디서 설명할까요?
+deal#48.opts.a.real,Two armchairs and a side table,안락의자 두 개와 사이드 테이블
+deal#48.opts.a.catchT,"Easy to talk, nothing to touch.","말하긴 쉽고, 만질 건 없고."
+deal#48.opts.a.gain,A quiet corner for teaching,가르치기 좋은 조용한 코너
+deal#48.opts.a.pros[0],"Calm, face-to-face chat",차분한 대면 대화
+deal#48.opts.a.pros[1],Doesn't disturb anyone,아무도 방해 안 함
+deal#48.opts.a.cons[0],No real parts to show,보여줄 실물 부품 없음
+deal#48.opts.a.cons[1],Lounge loses its sofa,라운지 소파가 사라짐
+deal#48.opts.a.reply[1],Thanks. Easier to ask silly questions here.,감사해요. 여기선 엉뚱한 질문도 하기 편하네요.
+deal#48.opts.a.conseq[2],They understood the theory but still couldn't spot the fault on the tool.,이론은 이해했는데 장비에서 고장은 여전히 못 찾았어요.
+deal#48.opts.b.real,Show it on real parts,실물 부품으로 보여주기
+deal#48.opts.b.cost,−Lab space,−랩 공간
+deal#48.opts.b.catchT,"Hands-on learning, lab space shrinks.","직접 배우고, 랩 공간은 줄고."
+deal#48.opts.b.gain,A bench to learn on parts,부품으로 배우는 벤치
+deal#48.opts.b.gave,A slice of lab space,랩 공간 일부
+deal#48.opts.b.pros[1],Lesson really sticks,배운 게 확실히 남음
+deal#48.opts.b.cons[0],Takes up bench time,벤치 시간 차지
+deal#48.opts.b.cons[1],Less room for lab work,랩 작업 공간 감소
+deal#48.opts.b.reply[1],"Oh, so that's what the worn seal looks like.","아, 마모된 씰이 저렇게 생겼구나."
+deal#48.opts.b.conseq[1],Lab technician,랩 기술자
+deal#48.opts.b.conseq[2],Your lesson ran long. The bench test they'd queued had to wait.,수업이 길어졌어요. 잡아둔 벤치 테스트가 밀렸어요.
+deal#48.opts.c.real,Explain there,자리에서 설명
+deal#48.opts.c.catchT,"Quick start, noisy for everyone.","빠른 시작, 모두에게 시끄럽고."
+deal#48.opts.c.gain,Help in the moment,그 자리에서 바로 도움
+deal#48.opts.c.pros[1],Your files are right there,자료가 바로 옆에
+deal#48.opts.c.cons[0],Noise for your neighbours,옆자리에 소음
+deal#48.opts.c.cons[1],Hard to sketch it out,그려서 설명하기 어려움
+deal#48.opts.c.reply[1],Could you two keep it down a little? I'm on a call.,두 분 조금만 조용히 해 주실래요? 통화 중이에요.
+deal#48.opts.c.conseq[2],Your neighbour moved away mid-call. The lesson was cut short.,옆자리 사람이 통화 중에 자리를 옮겼어요. 수업은 중간에 끝났어요.
+deal#49.title,30% more people next year,내년 인원 30% 증가
+deal#49.who,Leadership,경영진
+deal#49.msg,Next year we grow by 30%. Same floor.,내년에 30% 늘어요. 사무실은 그대로고요.
+deal#49.tap,Plan for growth,성장 대비하기
+deal#49.q,How do we fit everyone?,모두를 어떻게 수용할까요?
+deal#49.opts.a.name,Share at 1:1.25,1:1.25 공유
+deal#49.opts.a.real,More people than desks,책상보다 많은 인원
+deal#49.opts.a.cost,−Not everyone has a desk,−모두에게 책상이 있진 않음
+deal#49.opts.a.catchT,"One team, not enough desks.","한 팀이지만, 책상은 부족."
+deal#49.opts.a.gain,The whole team on one floor,한 층에 모인 팀 전체
+deal#49.opts.a.gave,A desk for every person,1인 1책상
+deal#49.opts.a.pros[0],Everyone stays on one floor,모두 한 층에
+deal#49.opts.a.pros[1],Desks rarely sit empty,빈 책상이 거의 없음
+deal#49.opts.a.reply[1],"Good. One floor, one team. Make the booking work.","좋아요. 한 층, 한 팀. 예약 시스템이 잘 돌아가게 해 주세요."
+deal#49.opts.a.conseq[2],"On Tuesdays, five engineers had no desk and worked from the lounge.",화요일엔 엔지니어 다섯 명이 책상이 없어 라운지에서 일했어요.
+deal#49.opts.b.name,A new floor elsewhere,다른 곳에 새 층
+deal#49.opts.b.real,Take space in another building,다른 건물에 공간 확보
+deal#49.opts.b.cost,The team splits,팀이 나뉨
+deal#49.opts.b.catchT,"Plenty of room, team in two places.","공간은 넉넉, 팀은 두 곳에."
+deal#49.opts.b.gain,Room for thirty percent more,30% 더 수용할 공간
+deal#49.opts.b.gave,Having the team together,한곳에 모인 팀
+deal#49.opts.b.pros[0],Room for every new hire,모든 신입을 위한 공간
+deal#49.opts.b.pros[1],Space to breathe again,다시 숨 쉴 여유
+deal#49.opts.b.cons[1],Walking between buildings,건물 간 이동
+deal#49.opts.b.reply[1],Fine. I'll ask Facilities to find a floor nearby.,좋아요. 시설팀에 근처 층을 찾아 달라고 할게요.
+deal#49.opts.b.conseq[2],Half the team is across the street. Quick questions now need a meeting.,팀 절반이 길 건너에 있어요. 간단한 질문도 이제 회의가 필요해요.
+deal#49.opts.c.name,Smaller desks,작은 책상
+deal#49.opts.c.real,Shrink every desk,모든 책상 축소
+deal#49.opts.c.cost,−Tight desks,−비좁은 책상
+deal#49.opts.c.catchT,"A desk each, but cramped.","각자 책상은 있지만, 비좁고."
+deal#49.opts.c.gain,Own desk kept for everyone,모두 자기 책상 유지
+deal#49.opts.c.gave,Width on every desk,모든 책상의 너비
+deal#49.opts.c.pros[0],Everyone keeps a desk,모두 책상 유지
+deal#49.opts.c.cons[0],Tight desks for all,모두에게 비좁은 책상
+deal#49.opts.c.cons[1],No room for two monitors,모니터 두 대 놓을 공간 없음
+deal#49.opts.c.reply[1],Smaller? Where do my second screen and drawings go?,더 작게요? 제 보조 모니터랑 도면은 어디 둬요?
+deal#49.opts.c.conseq[2],Everyone squeezed in. Drawings now pile on the floor beside desks.,다들 끼어 앉았어요. 이제 도면이 책상 옆 바닥에 쌓여 있어요.
+deal#50.theme,Hybrid rhythm,하이브리드 리듬
+deal#50.title,Same day in?,같은 날 출근?
+deal#50.msg,Should we all come in on the same day?,다 같이 같은 날 출근할까요?
+deal#50.tap,Set the rhythm,리듬 정하기
+deal#50.q,When does the team come in?,팀은 언제 출근할까요?
+deal#50.opts.a.name,Fixed team day,고정 팀 데이
+deal#50.opts.a.real,Everyone in on Tuesdays,매주 화요일 전원 출근
+deal#50.opts.a.cost,Less flexibility,유연성 감소
+deal#50.opts.a.catchT,"Together, but one crowded day.","함께지만, 붐비는 하루."
+deal#50.opts.a.gain,One day with the whole team,팀 전원이 모이는 하루
+deal#50.opts.a.gave,Choosing your own office days,출근일 자유 선택
+deal#50.opts.a.pros[0],Everyone in the same room,모두 한 공간에
+deal#50.opts.a.pros[1],Easy to plan meetings,회의 잡기 쉬움
+deal#50.opts.a.cons[0],Less flexibility for all,모두의 유연성 감소
+deal#50.opts.a.cons[1],Floor packed on Tuesdays,화요일엔 사무실 북적
+deal#50.opts.a.reply[1],Great. Tuesdays it is. Block your calendars.,좋아요. 화요일로 하죠. 캘린더 막아 두세요.
+deal#50.opts.a.conseq[2],Tuesday came. Every meeting room was taken by nine.,화요일이 됐어요. 9시에 회의실이 전부 찼어요.
+deal#50.opts.b.name,Free choice,자유 출근
+deal#50.opts.b.real,Come when you like,원할 때 출근
+deal#50.opts.b.cost,Empty days,텅 빈 날
+deal#50.opts.b.catchT,"Total freedom, few overlaps.","완전한 자유, 겹치는 날은 드묾."
+deal#50.opts.b.gain,Your own schedule,나만의 일정
+deal#50.opts.b.gave,Days with the team together,팀이 다 모이는 날
+deal#50.opts.b.pros[0],Come when it suits you,편할 때 출근
+deal#50.opts.b.pros[1],Fewer crowded days,붐비는 날 감소
+deal#50.opts.b.cons[0],Empty days on the floor,사무실이 텅 빈 날
+deal#50.opts.b.cons[1],Hard to meet in person,직접 만나기 어려움
+deal#50.opts.b.reply[1],Nice. I'll come whenever the tools need me.,좋네요. 장비가 부를 때마다 나올게요.
+deal#50.opts.b.conseq[2],Planning needed four people. They were never in on the same day.,"기획에 네 명이 필요했는데, 같은 날 나온 적이 없었어요."
+deal#50.opts.c.name,Half-teams rotate,반반 교대 출근
+deal#50.opts.c.real,Two groups alternate,두 그룹이 번갈아 출근
+deal#50.opts.c.catchT,"Calm floor, half the team away.","조용한 사무실, 팀 절반은 부재."
+deal#50.opts.c.gain,An evenly busy floor,고르게 붐비는 사무실
+deal#50.opts.c.gave,The whole team in one room,팀 전원이 한자리에
+deal#50.opts.c.pros[0],Floor never overcrowded,사무실이 붐비지 않음
+deal#50.opts.c.pros[1],Some face time each week,매주 대면 시간 확보
+deal#50.opts.c.cons[0],The team splits in two,팀이 둘로 나뉨
+deal#50.opts.c.cons[1],Half are always missing,늘 절반은 부재
+deal#50.opts.c.reply[1],"Okay. Group A Monday-Wednesday, group B Tuesday-Thursday.","좋아요. A그룹은 월·수, B그룹은 화·목이에요."
+deal#50.opts.c.conseq[2],The fix needed someone from group B. They were home today.,"수리에 B그룹 사람이 필요했는데, 오늘 재택이었어요."
+deal#51.title,Book tomorrow’s desk?,내일 자리 예약할까요?
+deal#51.who,App,앱
+deal#51.tap,Sort tomorrow out,내일 준비하기
+deal#51.q,How do you get a desk?,자리는 어떻게 구할까요?
+deal#51.opts.a.name,Book the night before,전날 밤 예약
+deal#51.opts.a.real,In the app,앱으로 예약
+deal#51.opts.a.cost,A task every evening,매일 저녁 할 일
+deal#51.opts.a.catchT,"Certainty, plus one more chore.","확실함, 그리고 할 일 하나 더."
+deal#51.opts.a.gain,A desk you can count on,믿을 수 있는 내 자리
+deal#51.opts.a.gave,Evenings free of work apps,업무 앱 없는 저녁
+deal#51.opts.a.pros[0],Desk guaranteed tomorrow,내일 자리 보장
+deal#51.opts.a.pros[1],Pick your favourite spot,원하는 자리 선택
+deal#51.opts.a.cons[1],"Plans change, seats sit empty",계획이 바뀌면 빈자리
+deal#51.opts.a.reply[1],"Booked. Window seat, near the team. Done for tonight.","예약 완료. 창가, 팀 근처. 오늘 밤은 끝."
+deal#51.opts.a.conseq[2],You forgot to cancel last week. Your booked desk sat empty all day.,지난주에 취소를 깜빡했죠. 예약한 자리가 하루 종일 비어 있었어요.
+deal#51.opts.b.name,First come,선착순
+deal#51.opts.b.real,Turn up and find one,와서 빈자리 찾기
+deal#51.opts.b.cost,No certainty,불확실함
+deal#51.opts.b.catchT,"No chores, no guaranteed seat.","할 일은 없지만, 자리도 보장 없음."
+deal#51.opts.b.gain,A quiet evening,조용한 저녁
+deal#51.opts.b.gave,Knowing where you'll sit,어디 앉을지 아는 것
+deal#51.opts.b.pros[0],Nothing to do tonight,오늘 밤 할 일 없음
+deal#51.opts.b.pros[1],No booking app,예약 앱 불필요
+deal#51.opts.b.cons[0],No certainty in the morning,아침까지 불확실
+deal#51.opts.b.cons[1],Late arrivals get leftovers,늦으면 남은 자리뿐
+deal#51.opts.b.reply[1],I'll just turn up and see what's free.,그냥 가서 빈자리 볼게요.
+deal#51.opts.b.conseq[2],They're coming early tomorrow to grab the good desks. You won't.,다들 좋은 자리 잡으려고 내일 일찍 온대요. 나는 못 가요.
+deal#51.opts.c.name,Team block,팀 블록 예약
+deal#51.opts.c.real,The team books a zone,팀이 구역을 예약
+deal#51.opts.c.cost,Tied to team days,팀 데이에 묶임
+deal#51.opts.c.catchT,"Together, but only on set days.","함께지만, 정해진 날만."
+deal#51.opts.c.gain,"A team zone, booked for you",미리 잡힌 팀 구역
+deal#51.opts.c.gave,Flexible days on your own,혼자 정하는 유연한 출근일
+deal#51.opts.c.pros[0],The team sits together,팀이 함께 앉음
+deal#51.opts.c.pros[1],Nobody books alone,혼자 예약할 필요 없음
+deal#51.opts.c.cons[1],Zone empty other days,다른 날엔 구역이 텅 빔
+deal#51.opts.c.reply[1],I'll block our zone for Tuesday and Thursday.,"화요일, 목요일에 우리 구역 잡아 둘게요."
+deal#51.opts.c.conseq[2],You need to come in Wednesday. The team zone isn't yours that day.,"수요일에 출근해야 하는데, 그날은 팀 구역이 우리 게 아니에요."
+deal#52.theme,Comfort,쾌적함
+deal#52.title,Freezing by the window,창가가 너무 추워요
+deal#52.msg,The air conditioning is freezing by the window.,창가 쪽 에어컨이 너무 추워요.
+deal#52.tap,Warm up,몸 녹이기
+deal#52.q,How do you stop shivering?,어떻게 추위를 피할까요?
+deal#52.opts.a.name,Climate control zones,구역별 냉난방
+deal#52.opts.a.real,Adjust your zone,구역별 온도 조절
+deal#52.opts.a.cost,Open-plan feel,개방감
+deal#52.opts.a.catchT,"Your own climate, a less open floor.","나만의 온도, 덜 트인 사무실."
+deal#52.opts.a.gain,Control over your temperature,내 온도 조절권
+deal#52.opts.a.gave,Some of the open-plan feel,개방감 일부
+deal#52.opts.a.pros[0],Set your own temperature,내 온도는 내가 조절
+deal#52.opts.a.pros[1],Fixes it for the whole area,구역 전체가 해결
+deal#52.opts.a.cons[0],Glass partitions break up space,유리 칸막이로 공간 분절
+deal#52.opts.a.cons[1],Neighbours argue over settings,옆자리와 설정 다툼
+deal#52.opts.a.reply[1],We'll zone the window side. You'll get a dial.,창가 쪽을 구역으로 나눌게요. 조절기도 드려요.
+deal#52.opts.a.conseq[2],Your neighbour turned the dial cold again. Now there's a thermostat war.,옆자리가 또 온도를 낮췄어요. 이제 온도 전쟁이에요.
+deal#52.opts.b.name,Move from the window,창가에서 이동
+deal#52.opts.b.real,Swap seats,자리 바꾸기
+deal#52.opts.b.cost,Your view,창밖 풍경
+deal#52.opts.b.catchT,"Warm seat, no window.","따뜻한 자리, 창문은 없음."
+deal#52.opts.b.gain,A warmer seat today,오늘은 더 따뜻한 자리
+deal#52.opts.b.gave,Your window view,내 창밖 풍경
+deal#52.opts.b.pros[0],Warm right away,바로 따뜻해짐
+deal#52.opts.b.pros[1],No work for Facilities,시설팀 할 일 없음
+deal#52.opts.b.cons[0],You lose your view,창밖 풍경 포기
+deal#52.opts.b.cons[1],Inner seats are darker,안쪽 자리는 더 어두움
+deal#52.opts.b.reply[1],"Sure, swap with me. I like it cold anyway.","그래요, 저랑 바꿔요. 전 추운 게 좋아요."
+deal#52.opts.b.conseq[2],"Warm now, but no daylight. The afternoon dragged on.",따뜻해졌지만 햇빛이 없어요. 오후가 너무 길었어요.
+deal#52.opts.c.name,Blanket,담요
+deal#52.opts.c.real,Make do,그냥 버티기
+deal#52.opts.c.cost,Cold afternoons,추운 오후
+deal#52.opts.c.catchT,"Kept the view, kept the chill.","풍경도 지키고, 추위도 그대로."
+deal#52.opts.c.gain,Your window seat kept,지켜낸 창가 자리
+deal#52.opts.c.gave,Comfortable afternoons,편안한 오후
+deal#52.opts.c.pros[0],Keep your favourite seat,좋아하는 자리 유지
+deal#52.opts.c.cons[0],Still cold every afternoon,매일 오후 여전히 추움
+deal#52.opts.c.cons[1],Problem never really fixed,근본 해결은 안 됨
+deal#52.opts.c.reply[1],"Here, take my spare. Everyone by the window has one.","여기, 제 여분 써요. 창가 사람은 다 하나씩 있어요."
+deal#52.opts.c.conseq[2],The blanket helped a little. Your hands were still too cold to type.,담요가 조금 도움은 됐어요. 그래도 손이 시려서 타이핑이 안 돼요.
+deal#53.title,Far from daylight,햇빛이 먼 자리
+deal#53.msg,Your seat is far from the windows.,내 자리가 창문에서 멀어요.
+deal#53.tap,Find more light,빛 더 찾기
+deal#53.q,Who gets the daylight?,햇빛은 누구 차지일까요?
+deal#53.opts.a.real,Lights that follow the day,하루 흐름을 따르는 조명
+deal#53.opts.a.cost,None,없음
+deal#53.opts.a.catchT,"Better light, still no sky.","더 나은 빛, 하늘은 없음."
+deal#53.opts.a.gain,Day-like light at every desk,모든 자리에 낮 같은 빛
+deal#53.opts.a.gave,"Steady, familiar office lighting",익숙하고 일정한 조명
+deal#53.opts.a.pros[0],Light follows the day,하루 흐름 따라 변하는 빛
+deal#53.opts.a.pros[1],Every seat feels brighter,모든 자리가 더 환하게
+deal#53.opts.a.cons[0],Still no real window,진짜 창문은 여전히 없음
+deal#53.opts.a.cons[1],Some find the shifts odd,빛 변화가 어색한 사람도
+deal#53.opts.a.reply[1],We'll install tuning lights across the inner rows.,안쪽 줄 전체에 조절형 조명을 달게요.
+deal#53.opts.a.conseq[2],The lights turned warm at four. It still felt like a basement.,4시에 조명이 따뜻해졌어요. 그래도 지하실 같았어요.
+deal#53.opts.b.name,Windows for shared spaces,창가는 공용 공간
+deal#53.opts.b.real,"Lounges by the glass, desks inside","창가엔 라운지, 자리는 안쪽"
+deal#53.opts.b.cost,−Window desks,−창가 자리
+deal#53.opts.b.catchT,"Light for all, desks for none.","빛은 모두에게, 창가 자리는 없음."
+deal#53.opts.b.gain,Bright lounges along the glass,창가를 따라 밝은 라운지
+deal#53.opts.b.gave,Every window desk,모든 창가 자리
+deal#53.opts.b.pros[0],Everyone enjoys the view,모두가 누리는 풍경
+deal#53.opts.b.pros[1],Breaks feel brighter,더 환한 휴식 시간
+deal#53.opts.b.cons[0],No one works by windows,창가에서 일하는 사람 없음
+deal#53.opts.b.cons[1],Desks move to the inside,자리는 안쪽으로 이동
+deal#53.opts.b.reply[1],"So my window desk becomes a lounge? Hmm, okay.","그럼 제 창가 자리가 라운지가 된다고요? 음, 알겠어요."
+deal#53.opts.b.conseq[2],Lunch by the glass is lovely. Long focus hours now happen in the inner rows.,창가 점심은 좋아요. 긴 집중 업무는 이제 안쪽 줄에서 해요.
+deal#53.opts.c.name,Window desks by seniority,창가는 연차순
+deal#53.opts.c.real,As often today,지금처럼
+deal#53.opts.c.cost,Juniors sit inside,주니어는 안쪽
+deal#53.opts.c.catchT,"Simple rule, juniors in the dark.","단순한 규칙, 주니어는 어둠 속."
+deal#53.opts.c.gain,"No change, no arguments",변화도 다툼도 없음
+deal#53.opts.c.gave,Daylight for junior engineers,주니어의 햇빛
+deal#53.opts.c.pros[0],"Clear, familiar rule",명확하고 익숙한 규칙
+deal#53.opts.c.pros[1],Seniors keep their spots,선임은 자리 유지
+deal#53.opts.c.cons[0],Juniors always sit inside,주니어는 늘 안쪽
+deal#53.opts.c.cons[1],Feels unfair to new hires,신입에겐 불공평
+deal#53.opts.c.reply[1],"So I'll be inside for a few more years, then.",그럼 전 몇 년 더 안쪽이네요.
+deal#53.opts.c.conseq[2],A junior engineer asked why the light depends on job title.,주니어 엔지니어가 왜 직급에 따라 햇빛이 다르냐고 물었어요.
+deal#54.title,One green upgrade,그린 업그레이드 하나
+deal#54.msg,There is room for one green upgrade on the floor.,사무실에 그린 업그레이드 하나 할 자리가 있어요.
+deal#54.tap,Pick the green,그린 고르기
+deal#54.q,Which green upgrade gets the space?,어떤 그린 업그레이드에 공간을 줄까요?
+deal#54.opts.a.name,Green wall,그린 월
+deal#54.opts.a.real,Planted wall,식물 벽
+deal#54.opts.a.cost,−Wall art,−벽 장식
+deal#54.opts.a.catchT,"Lush wall, lost the story.","푸른 벽, 사라진 이야기."
+deal#54.opts.a.gain,A living wall of plants,살아 있는 식물 벽
+deal#54.opts.a.gave,The wall art,벽 장식
+deal#54.opts.a.pros[0],"Fresh, calm look",싱그럽고 차분한 분위기
+deal#54.opts.a.pros[1],Softens a noisy floor,시끄러운 사무실을 부드럽게
+deal#54.opts.a.cons[0],The wall art comes down,벽 장식은 철거
+deal#54.opts.a.cons[1],"Looks only, nothing to use","보기만 할 뿐, 쓸 건 없음"
+deal#54.opts.a.reply[1],"Nice. Shame about the old fab photos, though.",좋네요. 옛날 팹 사진은 좀 아쉽지만요.
+deal#54.opts.a.conseq[2],The plants look great. People ask where the team history photos went.,식물은 멋져요. 팀 역사 사진은 어디 갔냐고들 물어요.
+deal#54.opts.b.real,Grow herbs at work,사무실에서 허브 재배
+deal#54.opts.b.cost,Someone tends it,관리 담당 필요
+deal#54.opts.b.catchT,"Fun harvest, one more chore.","재밌는 수확, 할 일 하나 더."
+deal#54.opts.b.gain,Herbs growing on the floor,사무실에서 자라는 허브
+deal#54.opts.b.gave,Someone's time each week,매주 누군가의 시간
+deal#54.opts.b.pros[0],Fresh herbs for lunch,점심에 신선한 허브
+deal#54.opts.b.pros[1],Something to talk around,대화 거리가 생김
+deal#54.opts.b.cons[0],Someone has to tend it,누군가 돌봐야 함
+deal#54.opts.b.cons[1],Wilts if nobody cares,아무도 안 챙기면 시듦
+deal#54.opts.b.reply[1],Basil at work? I'm in. Who's watering it though?,사무실에 바질이요? 찬성. 근데 물은 누가 줘요?
+deal#54.opts.b.conseq[2],Nobody signed up to tend it. The lettuce is turning brown.,관리하겠다는 사람이 없었어요. 상추가 누렇게 변하고 있어요.
+deal#54.opts.c.name,Terrace planters,테라스 화분
+deal#54.opts.c.real,Plants outside only,식물은 실외에만
+deal#54.opts.c.cost,Indoors stays grey,실내는 회색 그대로
+deal#54.opts.c.catchT,"Green outside, grey inside.","밖은 초록, 안은 회색."
+deal#54.opts.c.gain,A greener terrace,더 푸른 테라스
+deal#54.opts.c.gave,Greenery where you work,일하는 곳의 초록
+deal#54.opts.c.pros[0],Nice spot for breaks,휴식하기 좋은 곳
+deal#54.opts.c.pros[1],No upkeep at your desk,자리에서 관리할 것 없음
+deal#54.opts.c.cons[1],Only nice in good weather,날씨 좋을 때만 좋음
+deal#54.opts.c.reply[1],We'll line the terrace. Good for coffee breaks.,테라스에 쭉 놓을게요. 커피 타임에 좋아요.
+deal#54.opts.c.conseq[2],"It rained all week. Nobody saw the plants, and the floor stayed grey.","일주일 내내 비가 왔어요. 식물 본 사람도 없고, 사무실은 회색 그대로예요."
+deal#55.title,Cups everywhere,온통 컵 천지
+deal#55.msg,The bin is overflowing with paper cups.,쓰레기통에 종이컵이 넘쳐요.
+deal#55.tap,Deal with the cups,컵 처리하기
+deal#55.q,What do you do about cups?,"컵 문제, 어떻게 할까요?"
+deal#55.opts.a.real,Taps and sorted bins,급수대와 분리수거함
+deal#55.opts.a.cost,−A pantry counter,−탕비실 카운터
+deal#55.opts.a.catchT,"Less waste, less pantry counter.","쓰레기도, 탕비실 카운터도 줄었어요."
+deal#55.opts.a.gain,Refills and sorted bins,리필과 분리수거함
+deal#55.opts.a.gave,A pantry counter,탕비실 카운터
+deal#55.opts.a.pros[0],Water and coffee on tap,물과 커피를 바로
+deal#55.opts.a.pros[1],Bins sorted at a glance,한눈에 분리수거
+deal#55.opts.a.cons[0],Takes a pantry counter,탕비실 카운터 차지
+deal#55.opts.a.cons[1],Someone must keep it clean,누군가 청소해야 함
+deal#55.opts.a.reply[1],We can fit taps and sorted bins where the counter is.,카운터 자리에 급수대랑 분리수거함을 넣을 수 있어요.
+deal#55.opts.a.conseq[2],"The hub is busy, but the counter where people prepped lunch is gone.","리필 존은 붐비지만, 점심 준비하던 카운터가 없어졌어요."
+deal#55.opts.b.name,No single-use cups,일회용 컵 금지
+deal#55.opts.b.real,Bring your own,개인 컵 지참
+deal#55.opts.b.cost,Habits change,습관 변화
+deal#55.opts.b.catchT,"Clean bins, thirsty forgetful people.","깨끗한 쓰레기통, 목마른 건망증."
+deal#55.opts.b.gain,"An empty, tidy bin",텅 빈 깔끔한 쓰레기통
+deal#55.opts.b.gave,Grab-and-go cups,바로 쓰는 일회용 컵
+deal#55.opts.b.pros[0],Waste drops fast,쓰레기가 확 줄어듦
+deal#55.opts.b.cons[0],Forgotten mugs mean no coffee,컵 잊으면 커피도 없음
+deal#55.opts.b.cons[1],Visitors need cups too,방문객도 컵이 필요
+deal#55.opts.b.reply[1],"Fine, but I left my mug at home today.",좋아요. 근데 오늘 머그컵을 집에 두고 왔어요.
+deal#55.opts.b.conseq[2],Half the team forgot mugs. A customer visit had nothing to drink from.,팀 절반이 컵을 깜빡했어요. 고객 방문 때 마실 컵이 없었어요.
+deal#55.opts.c.cost,Waste,쓰레기
+deal#55.opts.c.catchT,"Easy day, overflowing bin.","편한 하루, 넘치는 쓰레기통."
+deal#55.opts.c.gain,Nothing to change today,오늘은 바꿀 것 없음
+deal#55.opts.c.gave,A tidy pantry,깔끔한 탕비실
+deal#55.opts.c.pros[0],No change to anyone's habits,아무도 습관 안 바꿔도 됨
+deal#55.opts.c.pros[1],Pantry stays as it is,탕비실은 그대로
+deal#55.opts.c.cons[0],Bins keep overflowing,쓰레기통이 계속 넘침
+deal#55.opts.c.cons[1],The waste keeps piling up,쓰레기가 계속 쌓임
+deal#55.opts.c.reply[1],It's just cups. Someone will empty it.,그냥 컵인데요. 누가 비우겠죠.
+deal#55.opts.c.conseq[2],The bin spilled over again and cups rolled onto the pantry floor.,쓰레기통이 또 넘쳐서 컵이 탕비실 바닥으로 굴러갔어요.
+deal#56.theme,Culture & belonging,문화와 소속감
+deal#56.title,Should leads keep offices?,"팀장 개인실, 유지할까요?"
+deal#56.msg,Should team leads keep their own offices?,팀장들이 개인 사무실을 계속 써야 할까요?
+deal#56.tap,Weigh in,의견 내기
+deal#56.q,Where should leads sit?,팀장은 어디에 앉아야 할까요?
+deal#56.opts.a.name,Leads sit with the team,팀장도 팀과 함께
+deal#56.opts.a.real,Open desks for everyone,모두 오픈 좌석
+deal#56.opts.a.cost,Less privacy for leads,팀장 프라이버시 감소
+deal#56.opts.a.catchT,"Close leads, no private corner.","가까운 팀장, 개인 공간은 없음."
+deal#56.opts.a.gain,Leads right beside the team,팀 바로 옆의 팀장
+deal#56.opts.a.gave,Leads' private rooms,팀장 개인실
+deal#56.opts.a.pros[0],Leads easy to reach,팀장에게 다가가기 쉬움
+deal#56.opts.a.pros[1],"Faster answers, fewer emails","빠른 답, 메일은 줄고"
+deal#56.opts.a.cons[0],Leads lose privacy,팀장 프라이버시 없음
+deal#56.opts.a.cons[1],Tough talks need a room,어려운 대화엔 방이 필요
+deal#56.opts.a.reply[1],"Alright, I'll sit with you all. Expect more questions from me.","좋아요, 여러분이랑 앉을게요. 질문 많이 할 거예요."
+deal#56.opts.a.conseq[2],A hard one-to-one had nowhere private to go. They hunted for a room.,어려운 1:1 면담을 할 조용한 곳이 없어서 방을 찾아 헤맸어요.
+deal#56.opts.b.name,Glass offices,유리 사무실
+deal#56.opts.b.real,Leads keep rooms,팀장 개인실 유지
+deal#56.opts.b.catchT,"Private leads, four fewer desks.","팀장은 프라이버시, 책상은 4개 줄고."
+deal#56.opts.b.gain,A door for every lead,팀장마다 문 하나
+deal#56.opts.b.pros[0],Leads get privacy on tap,언제든 프라이버시
+deal#56.opts.b.pros[1],Still visible through the glass,유리 너머로 보임
+deal#56.opts.b.cons[1],Feels like a step apart,한발 떨어진 느낌
+deal#56.opts.b.reply[1],Good. I need a door for performance talks.,좋아요. 성과 면담하려면 문이 필요해요.
+deal#56.opts.b.conseq[2],"Four people lost desks, and the team waits outside the glass to ask.","네 명이 자리를 잃었고, 팀원들은 유리문 밖에서 질문하려고 기다려요."
+deal#56.opts.c.name,Bookable rooms,예약형 회의실
+deal#56.opts.c.real,Leads book rooms when needed,필요할 때 팀장이 방 예약
+deal#56.opts.c.cost,No permanent office,고정 사무실 없음
+deal#56.opts.c.catchT,"Shared rooms, no lead's own space.","공유하는 방, 팀장 공간은 없음."
+deal#56.opts.c.gain,Private rooms when needed,필요할 때 쓰는 개인실
+deal#56.opts.c.gave,Leads' permanent offices,팀장 고정 사무실
+deal#56.opts.c.pros[0],Privacy when it matters,필요할 때 프라이버시
+deal#56.opts.c.pros[1],Rooms shared by everyone,모두가 함께 쓰는 방
+deal#56.opts.c.cons[0],No office to call home,내 사무실이 없음
+deal#56.opts.c.cons[1],Rooms can be booked out,방이 다 찰 수도
+deal#56.opts.c.reply[1],"I can work with that, as long as a room is free.",방만 비어 있으면 괜찮아요.
+deal#56.opts.c.conseq[2],Every room was booked when a sensitive call came in. It waited.,민감한 전화가 왔을 때 방이 다 차 있어서 미뤄야 했어요.
+deal#57.title,The tool qualified early,장비 조기 퀄 통과
+deal#57.msg,The tool qualified two weeks early. Let’s celebrate.,장비가 2주 일찍 퀄을 통과했어요. 축하합시다.
+deal#57.tap,Celebrate the win,성과 축하하기
+deal#57.q,How does the team celebrate?,팀은 어떻게 축하할까요?
+deal#57.opts.a.real,Wins and photos on a wall,성과와 사진을 거는 벽
+deal#57.opts.a.catchT,"A lasting win, a lost pinboard.","오래 남는 성과, 사라진 게시판."
+deal#57.opts.a.gain,Wins on show every day,매일 보이는 성과
+deal#57.opts.a.gave,The notices pinboard,공지 게시판
+deal#57.opts.a.pros[0],The win stays visible,성과가 늘 보임
+deal#57.opts.a.pros[1],Everyone sees team photos,모두가 보는 팀 사진
+deal#57.opts.a.cons[0],"Quiet, not much of a party",조용해서 파티 느낌 없음
+deal#57.opts.a.cons[1],Takes the pinboard space,게시판 자리 차지
+deal#57.opts.a.reply[1],Put the qual photo up top. We earned that spot.,퀄 사진은 맨 위에 걸어요. 그 자리 받을 만해요.
+deal#57.opts.a.conseq[2],"The wall looks great, but the old notices have nowhere to go now.","벽은 멋진데, 기존 공지문 붙일 곳이 없어졌어요."
+deal#57.opts.b.real,Steps for town halls,타운홀용 계단석
+deal#57.opts.b.cost,−Floor space,−사무실 공간
+deal#57.opts.b.catchT,"Big gathering spot, big footprint.","큰 모임 공간, 큰 면적."
+deal#57.opts.b.gain,A place for the whole floor,층 전체가 모이는 곳
+deal#57.opts.b.gave,A wide stretch of floor,넓은 사무실 공간
+deal#57.opts.b.pros[0],Whole floor gathers at once,층 전체가 한 번에 모임
+deal#57.opts.b.pros[1],Doubles for town halls,타운홀 겸용
+deal#57.opts.b.cons[0],Eats a lot of floor,공간을 많이 차지
+deal#57.opts.b.cons[1],Empty most of the day,대부분 시간엔 텅 빔
+deal#57.opts.b.reply[1],Everyone on the steps. I'll say a few words.,다들 계단에 앉아요. 제가 몇 마디 할게요.
+deal#57.opts.b.conseq[2],"The stair is great for the big moment, but desks moved to fit it.","큰 행사엔 계단이 좋지만, 그 자리 때문에 책상을 옮겼어요."
+deal#57.opts.c.name,Team dinner out,팀 회식
+deal#57.opts.c.real,Celebrate off site,밖에서 축하
+deal#57.opts.c.cost,Late night,늦은 밤
+deal#57.opts.c.catchT,"Great night, not everyone came.","멋진 밤, 다 오진 못했어요."
+deal#57.opts.c.gain,A shared night out,함께한 저녁
+deal#57.opts.c.gave,An evening at home,집에서의 저녁
+deal#57.opts.c.pros[0],A real night together,제대로 함께하는 밤
+deal#57.opts.c.cons[0],Late night for everyone,모두 늦게 귀가
+deal#57.opts.c.cons[1],Parents and commuters miss out,부모와 장거리 통근자는 빠짐
+deal#57.opts.c.reply[1],Dinner out? I'm in. Somebody book a big table.,회식이요? 좋아요. 누가 큰 테이블 예약해 줘요.
+deal#57.opts.c.conseq[2],Two engineers with early fab shifts had to leave before the food came.,팹 새벽 근무가 있는 엔지니어 둘은 음식 나오기 전에 떠났어요.
+deal#58.title,Games night?,게임 나이트?
+deal#58.msg,Games night after work?,퇴근 후에 게임 나이트 어때요?
+deal#58.tap,Plan the night,저녁 계획하기
+deal#58.q,Where does games night happen?,게임 나이트는 어디서 할까요?
+deal#58.opts.a.real,Board games and snacks,보드게임과 간식
+deal#58.opts.a.catchT,"Fun corner, one less quiet spot.","재밌는 코너, 조용한 곳은 하나 줄고."
+deal#58.opts.a.gain,A cozy spot to play,아늑한 놀이 공간
+deal#58.opts.a.gave,A quiet corner,조용한 구석
+deal#58.opts.a.pros[0],Easy to join after work,퇴근 후 쉽게 참여
+deal#58.opts.a.pros[1],Low-key and friendly,편하고 친근한 분위기
+deal#58.opts.a.cons[0],A quiet corner goes,조용한 구석이 사라짐
+deal#58.opts.a.cons[1],Snacks attract crumbs and noise,간식 부스러기와 소음
+deal#58.opts.a.reply[1],Board games and snacks? I'll bring the strategy one.,보드게임에 간식이요? 전략 게임은 제가 가져올게요.
+deal#58.opts.a.conseq[2],Someone needed the quiet corner for a late call. It was full of games.,"늦은 통화로 조용한 구석이 필요했는데, 게임으로 꽉 차 있었어요."
+deal#58.opts.b.real,A table on the floor,사무실에 탁구대
+deal#58.opts.b.cost,−Noise,−소음
+deal#58.opts.b.catchT,"Lively floor, louder desks.","활기찬 사무실, 더 시끄러운 자리."
+deal#58.opts.b.gain,A quick game any time,언제든 한 게임
+deal#58.opts.b.gave,Quiet on the floor,사무실의 조용함
+deal#58.opts.b.pros[0],"Quick games, quick energy","짧은 게임, 빠른 충전"
+deal#58.opts.b.pros[1],Mixes teams easily,팀 간 교류가 쉬움
+deal#58.opts.b.cons[0],Loud on the floor,사무실이 시끄러움
+deal#58.opts.b.cons[1],Bounces into nearby desks' focus,근처 자리 집중 방해
+deal#58.opts.b.reply[1],Table tennis! Winner stays on. I'm first.,탁구! 이긴 사람이 계속 해요. 제가 먼저요.
+deal#58.opts.b.conseq[2],The pinging carried across the floor. Late workers couldn't hear their calls.,탁구 소리가 사무실 전체에 울렸어요. 야근자들은 통화를 못 들었어요.
+deal#58.opts.c.name,Go out,밖으로
+deal#58.opts.c.real,Dinner out together,다 같이 저녁 외식
+deal#58.opts.c.cost,A late night,늦은 귀가
+deal#58.opts.c.catchT,"Good night, half the team.","좋은 밤, 팀은 절반만."
+deal#58.opts.c.gain,A night away from the office,사무실을 벗어난 밤
+deal#58.opts.c.pros[0],A real break from work,업무에서 제대로 휴식
+deal#58.opts.c.cons[0],Late night out,늦은 밤 외출
+deal#58.opts.c.cons[1],Not everyone can stay,다 남을 수는 없음
+deal#58.opts.c.reply[1],Let's go out. I know a good place nearby.,나가요. 근처에 좋은 데 알아요.
+deal#58.opts.c.conseq[2],"It was fun, but half the team headed home early for the commute.","재밌었지만, 팀 절반은 통근 때문에 일찍 집에 갔어요."
+deal#59.title,Drawings left on the printer,프린터에 남은 도면
+deal#59.msg,Customer drawings were left on the printer.,고객사 도면이 프린터에 방치돼 있었어요.
+deal#59.tap,Lock it down,보안 강화
+deal#59.q,How do you stop this?,재발을 어떻게 막을까요?
+deal#59.opts.a.real,Lockable confidential bins,잠금식 기밀 문서함
+deal#59.opts.a.cost,−A corner,−구석 공간
+deal#59.opts.a.catchT,"Safe disposal, printer still exposed.","안전한 폐기, 프린터는 여전히 노출."
+deal#59.opts.a.gain,Locked bins for sensitive paper,민감 문서용 잠금함
+deal#59.opts.a.gave,A corner of the floor,사무실 한구석
+deal#59.opts.a.pros[0],Confidential paper locked away,기밀 문서는 잠금 보관
+deal#59.opts.a.pros[1],Easy drop on your way,지나가며 쉽게 투입
+deal#59.opts.a.cons[0],Takes a corner,구석 공간 차지
+deal#59.opts.a.cons[1],Prints still sit on the tray,출력물은 여전히 트레이에
+deal#59.opts.a.reply[1],Good. Anything confidential goes in the locked bin.,좋아요. 기밀 문서는 전부 잠금함에 넣어 주세요.
+deal#59.opts.a.conseq[2],"Bins are working, but another drawing still sat on the printer tray.","문서함은 잘 쓰이는데, 또 다른 도면이 프린터 트레이에 남아 있었어요."
+deal#59.opts.b.name,Print release,출력 인증
+deal#59.opts.b.real,Print only at the hub with a badge,출력 존에서 사원증 찍어야 출력
+deal#59.opts.b.cost,A walk to the hub,출력 존까지 걷기
+deal#59.opts.b.catchT,"Nothing left out, more walking.","방치는 없지만, 더 걷기."
+deal#59.opts.b.gain,Prints only reach your hands,내 손에만 오는 출력물
+deal#59.opts.b.gave,Printing right by your desk,자리 옆 바로 출력
+deal#59.opts.b.pros[0],Nothing prints until you badge,사원증 찍기 전엔 출력 안 됨
+deal#59.opts.b.pros[1],No drawings left lying around,방치되는 도면 없음
+deal#59.opts.b.cons[1],Slower when you're in a rush,급할 땐 더 느림
+deal#59.opts.b.reply[1],"So I walk to the hub every time? Okay, fair.","매번 출력 존까지 가라고요? 뭐, 맞는 말이에요."
+deal#59.opts.b.conseq[2],A rushed engineer walked to the hub three times before the customer call.,급한 엔지니어가 고객 통화 전에 출력 존을 세 번이나 오갔어요.
+deal#59.opts.c.name,Go paperless,페이퍼리스
+deal#59.opts.c.real,No printing,출력 금지
+deal#59.opts.c.cost,Old habits,오랜 습관
+deal#59.opts.c.catchT,"Nothing to leak, harder reviews.","유출은 없지만, 검토는 더 힘들게."
+deal#59.opts.c.gain,No paper to lose,잃어버릴 종이 없음
+deal#59.opts.c.gave,Paper drawings to mark up,메모할 종이 도면
+deal#59.opts.c.pros[0],Nothing on paper to lose,잃어버릴 종이가 없음
+deal#59.opts.c.cons[0],Hard to mark up drawings,도면에 메모하기 어려움
+deal#59.opts.c.cons[1],Old habits fight back,오랜 습관의 저항
+deal#59.opts.c.reply[1],No printing at all? I review drawings on paper.,출력을 아예 안 해요? 전 도면을 종이로 검토하는데요.
+deal#59.opts.c.conseq[2],Reviewing a big drawing on a laptop took twice as long.,큰 도면을 노트북으로 검토하니 두 배나 걸렸어요.
+deal#60.title,Laptop broke at the fab,팹에서 노트북 고장
+deal#60.who,IT,IT팀
+deal#60.msg,Your laptop broke at the fab.,팹에서 노트북이 고장 났어요.
+deal#60.tap,Get back online,다시 연결하기
+deal#60.q,How do you get working again?,어떻게 다시 일할까요?
+deal#60.opts.a.real,Walk-up IT desk,방문형 IT 데스크
+deal#60.opts.a.catchT,"Fast help, two fewer desks.","빠른 지원, 책상은 2개 줄고."
+deal#60.opts.a.gain,Face-to-face help on the floor,사무실 내 대면 지원
+deal#60.opts.a.pros[0],Talk to a real person,사람과 직접 상담
+deal#60.opts.a.pros[1],Fixed or swapped on the spot,그 자리에서 수리·교체
+deal#60.opts.a.cons[1],Queues when many need help,몰리면 대기 줄
+deal#60.opts.a.reply[1],Bring it over. We'll have you sorted this morning.,가져오세요. 오전 중에 해결해 드릴게요.
+deal#60.opts.a.conseq[2],"The IT bar was busy, and two engineers lost their desks for it.","IT 바는 붐볐고, 그것 때문에 엔지니어 둘이 자리를 잃었어요."
+deal#60.opts.b.name,Swap locker,교체용 사물함
+deal#60.opts.b.real,Pick up a spare from a locker,사물함에서 예비 노트북 수령
+deal#60.opts.b.cost,−Locker space,−사물함 공간
+deal#60.opts.b.catchT,"Quick spare, not your machine.","빠른 예비품, 내 노트북은 아님."
+deal#60.opts.b.gain,A spare laptop in minutes,몇 분 만에 예비 노트북
+deal#60.opts.b.gave,Some locker space,사물함 공간 일부
+deal#60.opts.b.pros[0],Grab a spare any time,언제든 예비품 수령
+deal#60.opts.b.pros[1],No waiting on anyone,누구도 기다릴 필요 없음
+deal#60.opts.b.cons[0],Takes locker space,사물함 공간 차지
+deal#60.opts.b.cons[1],Spares may lack your setup,내 환경 설정이 없을 수도
+deal#60.opts.b.reply[1],Tap your badge at the locker. A spare is waiting.,사물함에 사원증을 찍으세요. 예비 노트북이 있어요.
+deal#60.opts.b.conseq[2],"The spare worked, but your tools and files took an hour to set up.","예비 노트북은 됐는데, 툴이랑 파일 세팅에 한 시간 걸렸어요."
+deal#60.opts.c.name,Ship and wait,택배 후 대기
+deal#60.opts.c.real,Send it off,수리 보내기
+deal#60.opts.c.cost,Days without a laptop,노트북 없는 며칠
+deal#60.opts.c.catchT,"No floor change, days stuck.","사무실은 그대로, 며칠은 발 묶임."
+deal#60.opts.c.gain,"Your own machine, repaired",수리된 내 노트북
+deal#60.opts.c.gave,Days of normal work,며칠간의 정상 업무
+deal#60.opts.c.pros[1],Your own laptop comes back,내 노트북이 돌아옴
+deal#60.opts.c.cons[1],Fab reports pile up,팹 보고서가 밀림
+deal#60.opts.c.reply[1],We'll ship it today. Expect it back in a few days.,오늘 보낼게요. 며칠 뒤에 돌아올 거예요.
+deal#60.opts.c.conseq[2],"The customer report is due, and you're borrowing a teammate's screen.","고객 보고서 마감인데, 팀원 화면을 빌려 쓰고 있네요."
+deal#62.title,Lost on the way in,오는 길에 길을 잃음
+deal#62.msg,I’m here for a 9 o’clock with the CMP team. Which way?,9시에 CMP팀과 약속이 있어요. 어느 쪽인가요?
+deal#62.tap,Point the way,길 안내하기
+deal#62.q,How do visitors find their way?,방문객은 어떻게 길을 찾을까요?
+deal#62.opts.a.name,Wayfinding totems,길안내 사인
+deal#62.opts.a.real,Signs with live maps at each junction,교차로마다 실시간 지도 사인
+deal#62.opts.a.cost,−Floor space at junctions,−교차로 공간
+deal#62.opts.a.catchT,"Clear signs, tighter junctions.","명확한 안내, 좁아진 교차로."
+deal#62.opts.a.gain,Maps right where you turn,꺾는 곳마다 지도
+deal#62.opts.a.gave,Space at busy junctions,붐비는 교차로의 공간
+deal#62.opts.a.pros[0],Live maps at every junction,교차로마다 실시간 지도
+deal#62.opts.a.pros[1],Visitors find their own way,방문객 스스로 길 찾기
+deal#62.opts.a.cons[0],Clutters busy junctions,붐비는 교차로가 복잡해짐
+deal#62.opts.a.cons[1],Maps need keeping up to date,지도 업데이트 필요
+deal#62.opts.a.reply[1],"Oh, a map. CMP team is just past the corner.","아, 지도가 있네요. CMP팀은 모퉁이 바로 너머네요."
+deal#62.opts.a.conseq[2],A cart caught a totem at the junction. It's a tight squeeze now.,카트가 교차로 사인에 걸렸어요. 이제 지나가기 빡빡해요.
+deal#62.opts.b.name,Main street,메인 스트리트
+deal#62.opts.b.real,One clear walkway through the floor,사무실을 가로지르는 통로 하나
+deal#62.opts.b.cost,−A row of desks,−책상 한 줄
+deal#62.opts.b.catchT,"Easy to navigate, fewer desks.","찾기 쉽지만, 책상은 줄고."
+deal#62.opts.b.gain,A clear path through the floor,사무실을 가로지르는 명확한 길
+deal#62.opts.b.gave,A row of desks,책상 한 줄
+deal#62.opts.b.pros[0],One obvious walkway,한눈에 보이는 통로
+deal#62.opts.b.pros[1],Easy to find any team,어느 팀이든 찾기 쉬움
+deal#62.opts.b.cons[0],A row of desks goes,책상 한 줄이 사라짐
+deal#62.opts.b.cons[1],Traffic passes close by desks,자리 바로 옆으로 통행
+deal#62.opts.b.reply[1],Just follow the main walkway? Easy enough.,메인 통로만 따라가면 돼요? 쉽네요.
+deal#62.opts.b.conseq[2],The new walkway runs past our desks. People stroll by all day.,새 통로가 우리 자리 옆을 지나요. 하루 종일 사람들이 오가요.
+deal#62.opts.c.real,Touch screen to find people and rooms,사람과 회의실을 찾는 터치스크린
+deal#62.opts.c.cost,−A spot by the lift,−엘리베이터 옆 자리
+deal#62.opts.c.catchT,"Smart help, crowded lift lobby.","똑똑한 안내, 붐비는 엘리베이터 홀."
+deal#62.opts.c.gain,Search anyone in seconds,누구든 몇 초 만에 검색
+deal#62.opts.c.gave,A spot by the lift,엘리베이터 옆 자리
+deal#62.opts.c.pros[0],Find people and rooms instantly,사람과 회의실 즉시 검색
+deal#62.opts.c.pros[1],Works for staff too,직원도 사용 가능
+deal#62.opts.c.cons[0],Takes a spot by the lift,엘리베이터 옆 자리 차지
+deal#62.opts.c.cons[1],Some visitors avoid screens,화면을 꺼리는 방문객도
+deal#62.opts.c.reply[1],"Let me search CMP. There it is, room three.","CMP 검색해 볼게요. 여기 있네요, 3번 회의실."
+deal#62.opts.c.conseq[2],"A queue formed at the kiosk, blocking the lift doors at nine.",9시에 키오스크 앞에 줄이 생겨서 엘리베이터 문을 막았어요.
+deal#63.title,Someone feels faint,어지러운 동료
+deal#63.msg,A teammate feels faint after a double shift. Where can they lie down?,연속 근무 후 팀원이 어지러워해요. 어디 누울 데 있을까요?
+deal#63.tap,Find a place,쉴 곳 찾기
+deal#63.q,Where can they lie down?,어디에 누울 수 있을까요?
+deal#63.opts.a.real,"Bed, kit and a door","침대, 구급함, 그리고 문"
+deal#63.opts.a.catchT,"Real care, one less booth.","제대로 된 돌봄, 폰부스는 하나 줄고."
+deal#63.opts.a.gain,A proper place to recover,제대로 회복할 곳
+deal#63.opts.a.pros[1],Ready for real emergencies,실제 응급 상황에 대비
+deal#63.opts.a.cons[0],A phone booth goes,폰부스 1개 감소
+deal#63.opts.a.cons[1],Sits empty most days,대부분 비어 있음
+deal#63.opts.a.reply[1],Thanks. A proper bed and a closed door helps.,고마워요. 제대로 된 침대에 문까지 닫히니 좋네요.
+deal#63.opts.a.conseq[2],"They rested well, but two calls queued for the one booth left.","푹 쉬었지만, 하나 남은 폰부스에 통화 두 건이 줄을 섰어요."
+deal#63.opts.b.real,Quiet room with a daybed,데이베드가 있는 조용한 방
+deal#63.opts.b.catchT,"Room to rest, one less meeting room.","쉴 방은 생기고, 회의실은 하나 줄고."
+deal#63.opts.b.gain,A quiet room to recover,회복할 조용한 방
+deal#63.opts.b.pros[0],Calm room with a daybed,데이베드가 있는 차분한 방
+deal#63.opts.b.pros[1],Also for prayer or rest,기도나 휴식에도 사용
+deal#63.opts.b.cons[0],A meeting room goes,회의실 1개 감소
+deal#63.opts.b.cons[1],Harder to find a meeting room,회의실 잡기 더 어려움
+deal#63.opts.b.reply[1],A quiet room. I just need twenty minutes.,조용한 방이네요. 20분만 있으면 돼요.
+deal#63.opts.b.conseq[2],The 4pm review had no room. We squeezed into the pantry.,4시 리뷰할 방이 없어서 탕비실에 끼어 앉았어요.
+deal#63.opts.c.real,A recliner in a quiet corner,조용한 구석의 리클라이너
+deal#63.opts.c.catchT,"Close by, but on show.","가깝지만, 다 보여요."
+deal#63.opts.c.gain,A rest spot near the desks,자리 근처의 휴식 공간
+deal#63.opts.c.pros[0],Quick to reach,바로 갈 수 있음
+deal#63.opts.c.pros[1],Takes very little space,공간을 거의 안 차지
+deal#63.opts.c.cons[0],Out in the open,탁 트인 곳에 있음
+deal#63.opts.c.cons[1],"No door, no real privacy","문도, 프라이버시도 없음"
+deal#63.opts.c.reply[1],A recliner works. Just let me close my eyes.,리클라이너면 돼요. 잠깐 눈 좀 붙일게요.
+deal#63.opts.c.conseq[2],People kept walking past. They didn't feel comfortable resting there.,사람들이 계속 지나다녀서 편하게 쉬지 못했어요.
