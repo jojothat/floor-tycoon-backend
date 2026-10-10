@@ -91,7 +91,7 @@ All are under `/v1/read/`. The table gives the response shape, and each endpoint
 | --- | --- | --- |
 | `meta` | `{n, n_all, versions[], synthetic_in_store, types[], palettes:[{name, kind: Neutral or Edgy, colors[5], desc}], scenarios:[{id, zone, time, question, theme, native, options:[{k, name, item}]}]}` | filter lists, pictures, palette swatches |
 | `summary` | `{n, started, completed, completion, median_play_s, by_type:{CE..Lead, none: n or null}, synthetic}` | KPI tiles, status chips |
-| `funnel` | `{n: starts, steps:[{key, label, n}] or null, lt10?}` | Did people actually play? |
+| `funnel` | `{n: starts, steps:[{key, label, n, lt10?, dropped_lt10?}] or null, lt10?}`; a step's `n` is null when under 10 (`lt10`) or fewer than 10 short of the starts (`dropped_lt10`) | Did people actually play? |
 | `picks` | `{n, scenarios:[{id, zone, time, question, theme, n, lt10?, options:[{k, name, share}], skip_share, top_share, median_decide_s, edit_share}]}` | Agree vs argue, explorer, CSV |
 | `skips` | `{n, rows:[{id, question, time, n, skip_share}]}`, sorted by skip_share descending | Where none of the fixes worked |
 | `edits` | `{n, any_share, rows:[{id, question, time, n, edit_share, top_switch:{from, to, from_k, to_k, n} or null}], switches:[{id, question, from:{k, name}, to:{k, name}, n, share}] (n≥10, top 4)}` | Second thoughts |
