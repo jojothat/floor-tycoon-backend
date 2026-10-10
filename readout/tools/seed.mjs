@@ -10,6 +10,8 @@ import { randomUUID } from 'node:crypto';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const API = (process.env.API || 'http://localhost:8787').replace(/\/$/, '');
+// The pilot's invite token (the game sends its config's pilotToken). The mock ignores it; the real backend needs it.
+const PILOT_TOKEN = process.env.PILOT_TOKEN || 'dev-pilot';
 const N = +process.env.N || 300;
 const SCEN = JSON.parse(readFileSync(process.env.SCENARIOS || join(here, 'scenarios.json'), 'utf8'));
 const ITEMS = JSON.parse(readFileSync(process.env.ITEMS || join(here, 'items.json'), 'utf8')).filter(i => !/gowning|airshower|ppevend/.test(i.id));
@@ -35,7 +37,7 @@ async function post(path, body, key, anon) {
 
 async function playOne(i) {
   const anon = randomUUID(), type = pick(TYPE_MIX.map(x => x[0]), TYPE_MIX.map(x => x[1]));
-  const s = await post('/v1/sessions', { client_session_id: randomUUID(), anon_player_id: anon, invite_code: null, game_version: 'synthetic-seed', flow: 'quick', role_type: type, language: 'ko-KR', device_class: 'phone', viewport_h: 390, viewport_w: 844 }, null, anon);
+  const s = await post('/v1/sessions', { client_session_id: randomUUID(), anon_player_id: anon, pilot_token: PILOT_TOKEN, invite_code: null, game_version: 'synthetic-seed', flow: 'quick', role_type: type, language: 'ko-KR', device_class: 'phone', viewport_h: 390, viewport_w: 844 }, null, anon);
   const deal = s.deal; const key = s.write_key; let seq = 0, t = 0; const ev = []; const E = e => ev.push({ ...e, seq: ++seq, t: Math.round(t) });
   E({ ev: 'deal', ids: deal, src: 'server' }); E({ ev: 'role_set', type });
   const scen = deal.map(id => SCEN.find(d => d.id === id)).sort((a, b) => a.time.localeCompare(b.time));
@@ -80,8 +82,9 @@ const res = { done: 0, quit: 0, failed: 0 };
 // after the plays: some players open other offices on the wall (views)
 async function viewWall(k) {
   for (let j = 0; j < k; j++) { const anon = randomUUID();
-    const w = await (await fetch(API + '/v1/wall', { headers: { 'X-FT-Player': anon } })).json().catch(() => ({ posts: [] }));
-    for (const p of (w.posts || [])) if (rnd() < .08) await fetch(API + `/v1/wall/${p.id}/view`, { method: 'POST', headers: { 'X-FT-Player': anon } }).catch(() => {}); }
+    const h = { 'X-FT-Player': anon, 'X-Pilot-Token': PILOT_TOKEN };   // a viewer who has not played yet reaches the wall by the invite
+    const w = await (await fetch(API + '/v1/wall', { headers: h })).json().catch(() => ({ posts: [] }));
+    for (const p of (w.posts || [])) if (rnd() < .08) await fetch(API + `/v1/wall/${p.id}/view`, { method: 'POST', headers: h }).catch(() => {}); }
 }
 for (let i = 0; i < N; i++) { try { res[await playOne(i)]++; } catch (e) { res.failed++; if (res.failed < 3) console.error(e.message); } }
 await viewWall(Math.round(N / 3));

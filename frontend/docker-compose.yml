@@ -1,5 +1,5 @@
 # Game + backend + database, and an end-to-end test that plays one game through them.
-#   docker compose up --build web api db                 → play at http://localhost:8080
+#   docker compose up --build web api db readout         → play at http://localhost:8080, readout at :8081
 #   docker compose --profile test run --rm e2e           → scripted full play, exit 0 = pass
 #   docker compose --profile mock up --build web mock    → game against the mock API (no backend needed)
 # "api" is the real backend from ../ (repo root): its Dockerfile, listening on 8000.
@@ -25,6 +25,9 @@ services:
       FT_PILOT_TOKEN: ${FT_PILOT_TOKEN:-dev-pilot}
       TRUST_PROXY: "true"          # behind the web container's nginx
       RATE_LIMIT_SECRET: ${RATE_LIMIT_SECRET:-dev-only}
+      RATE_LIMIT_IP_PER_MIN: ${RATE_LIMIT_IP_PER_MIN:-0}   # off in dev: the seeder plays hundreds of games from one IP
+      APP_ENV: dev
+      READ_TOKEN: ${READ_TOKEN:-dev-viewer}                # the readout's viewer token (dev only)
     command: ["sh", "-c", "python -m app.db && python -m app.admin add-pilot dev dev-site \"$$FT_PILOT_TOKEN\" && exec uvicorn app.main:app --host 0.0.0.0 --port 8000 --proxy-headers --forwarded-allow-ips='*'"]
     depends_on:
       db: { condition: service_healthy }
@@ -33,6 +36,17 @@ services:
       interval: 5s
       timeout: 3s
       retries: 10
+
+  readout:
+    # The management dashboard (../readout) against this backend: http://localhost:8081
+    build: { context: ../readout, dockerfile: docker/readout.Dockerfile }
+    ports: ["8081:80"]
+    environment:
+      API_UPSTREAM: http://api:8000
+      RO_API_BASE: /api
+      RO_READ_TOKEN: ${READ_TOKEN:-dev-viewer}
+    depends_on:
+      api: { condition: service_healthy }
 
   db:
     image: postgres:16-alpine
