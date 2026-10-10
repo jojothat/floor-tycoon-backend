@@ -11,6 +11,7 @@ from sqlalchemy import func, select
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.orm import Session
 
+from app import activity
 from app.config import Settings
 from app.deps import admit, db, resolve_pilot, settings, writable_session
 from app.models import Addition, Deal, Event, Floor, GameSession, Pilot, WallPost, WallView
@@ -68,6 +69,9 @@ def post_wall(body: WallPostIn, authorization: str | None = Header(default=None)
         stmt.on_conflict_do_update(index_elements=[WallPost.anon_player_id], set_=fields).returning(WallPost.id)
     ).scalar_one()
     s.commit()
+    if activity.on():
+        offices = s.scalar(select(func.count()).select_from(WallPost).where(WallPost.pilot_id == gs.pilot_id))
+        activity.say(gs.session_id, f"Shared the office to the wall · the wall now shows {offices} offices")
     return {"ok": True, "id": post_id}
 
 

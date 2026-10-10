@@ -98,7 +98,7 @@ docker compose up -d
 | To | Run |
 | --- | --- |
 | See what is running | `docker compose ps` |
-| Read the logs | `docker compose logs -f api` (or `caddy`, `jobs`, `backup`) |
+| Watch games arrive, in plain English | `docker compose logs -f api` (or `caddy`, `jobs`, `backup`) |
 | Stop everything (data is kept) | `docker compose down` |
 | Change a setting | edit `.env`, then `docker compose up -d` |
 

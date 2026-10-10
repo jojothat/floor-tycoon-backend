@@ -35,7 +35,7 @@ from pydantic import BaseModel, field_validator
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
-from app import clean
+from app import activity, clean
 from app.config import Settings
 from app.deps import db, settings, sha256
 from app.models import (
@@ -124,9 +124,13 @@ def filters(request: Request) -> Filters:
 
 
 def audit(s: Session, who: ReadViewer, endpoint: str, f: Filters, export=False) -> None:
-    s.add(AuditLog(viewer_id=who.viewer_id, endpoint=endpoint, params=f.model_dump(mode="json", exclude_none=True),
-                   export=export))
+    params = f.model_dump(mode="json", exclude_none=True)
+    s.add(AuditLog(viewer_id=who.viewer_id, endpoint=endpoint, params=params, export=export))
     s.commit()
+    if endpoint in ("summary", "export.csv"):  # one line per readout load, not one per chart
+        shown = ", ".join(f"{k}={v}" for k, v in params.items()) or "everyone"
+        activity.say(None, f"[readout]  {who.viewer_id} {'downloaded the CSV export' if export else 'opened the readout'}"
+                           f" ({shown})")
 
 
 # ---------------------------------------------------------------- numbers, as the mock writes them

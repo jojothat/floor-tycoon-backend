@@ -19,6 +19,8 @@ x-env: &env
   RATE_LIMIT_PILOT_PER_MIN: ${RATE_LIMIT_PILOT_PER_MIN:-6000}
   TRUST_PROXY: "true"  # behind Caddy, which replaces any X-Forwarded-For a client sends
   READ_QUALITY: ${READ_QUALITY:-off}
+  READ_CACHE_SECONDS: ${READ_CACHE_SECONDS:-30}
+  LOG_ACTIVITY: ${LOG_ACTIVITY:-on}  # plain-English lines in `docker compose logs -f api`
 
 x-app: &app
   build:
