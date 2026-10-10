@@ -1,4 +1,3 @@
-import hashlib
 import random
 
 import pytest
@@ -6,22 +5,16 @@ from sqlalchemy import select
 
 from app import clean
 from app.config import get_settings
-from app.models import AuditLog, Moment, Viewer
+from app.models import AuditLog, Moment
 from app.privacy import merge_small, protect
 from app.read import weighted_shares
+from tests.conftest import EXPORT_TOKEN, TOKEN
 from tests.scripted import script_play
 from tests.test_clean import play_through_api
 
-TOKEN = "viewer-token"
-EXPORT_TOKEN = "exporter-token"
 FEW = "fewer than 10"
 
-
-@pytest.fixture(autouse=True)
-def viewers(db):
-    db.add(Viewer(viewer_id="manager-1", token_hash=hashlib.sha256(TOKEN.encode()).hexdigest()))
-    db.add(Viewer(viewer_id="analyst-1", token_hash=hashlib.sha256(EXPORT_TOKEN.encode()).hexdigest(), can_export=True))
-    db.commit()
+pytestmark = pytest.mark.usefixtures("viewers")
 
 
 def read(client, path, token=TOKEN, **params):

@@ -28,6 +28,7 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from app import clean
+from app import deal as deal_fn
 from app.config import Settings
 from app.deps import db, settings, sha256
 from app.models import (
@@ -187,18 +188,23 @@ def weighted_rate(items: list[tuple[bool, float]]) -> float:
 
 def breakdown(rows: list, type_of: Callable, compute: Callable, f: Filters, mg: int) -> dict:
     """`compute(rows)` for all rows, and per employee type when `by=type`, with the rule
-    applied: n is the number of plays behind each value."""
-    n = len(rows)
-    out = {"n": hide(n, n, mg), "value": hide(n, compute(rows) if n else None, mg)}
+    applied. n is the number of distinct plays behind each value: one play can give
+    several rows (two moments in the same hour, say), and the rule counts plays."""
+    def plays_in(sub):
+        return len({r.session_id for r in sub})
+
+    n = plays_in(rows)
+    out = {"n": hide(n, n, mg), "value": hide(n, compute(rows) if rows else None, mg)}
     if f.by == "type":
-        groups = merge_small(Counter(type_of(r) for r in rows), mg)
+        per_play = {r.session_id: type_of(r) for r in rows}
+        groups = merge_small(Counter(per_play.values()), mg)
         if groups is None:
             out["by_type"] = fewer(mg)
         else:
             out["by_type"] = []
             for label, keys in groups.items():
                 sub = [r for r in rows if type_of(r) in keys]
-                out["by_type"].append({"type": TYPE_LABELS.get(label, label), "n": len(sub), "value": compute(sub)})
+                out["by_type"].append({"type": TYPE_LABELS.get(label, label), "n": plays_in(sub), "value": compute(sub)})
     return out
 
 
@@ -214,6 +220,12 @@ def agreement(shares: dict[str, float]) -> str:
 def moments_of(s: Session, plays: list[Play]) -> list[Moment]:
     ids = [p.session_id for p in plays]
     return s.scalars(select(Moment).where(Moment.session_id.in_(ids), Moment.chosen.is_not(None))).all() if ids else []
+
+
+def last_edits(s: Session, ids: list[str]) -> dict[tuple[str, str], Edit]:
+    """(session, zone) -> its end-of-day edit; the last edit of a zone wins."""
+    rows = s.scalars(select(Edit).where(Edit.session_id.in_(ids)).order_by(Edit.id)).all() if ids else []
+    return {(e.session_id, e.zone): e for e in rows}
 
 
 def options_of(scenario_id: int | None) -> list[str]:
@@ -333,8 +345,7 @@ def edits(f: Filters = Depends(), who=Depends(viewer), s: Session = Depends(db),
     mg = cfg.min_group_size
     by_id = {p.session_id: p for p in plays}
     ids = list(by_id)
-    edit_rows = s.scalars(select(Edit).where(Edit.session_id.in_(ids))).all() if ids else []
-    edited = {(e.session_id, e.zone): e for e in edit_rows}  # the last edit of a zone wins
+    edited = last_edits(s, ids)
     by_scenario: dict[int, list[Moment]] = {}
     for m in moments_of(s, plays):
         by_scenario.setdefault(m.scenario_id, []).append(m)
@@ -397,6 +408,87 @@ def sim(f: Filters = Depends(), who=Depends(viewer), s: Session = Depends(db), c
 
     return {**meta(s, plays, cfg),
             "distributions": breakdown(floors, lambda fl: by_id[fl.session_id].role_type, dist, f, cfg.min_group_size)}
+
+
+@router.get("/leads-gap")
+def leads_gap(f: Filters = Depends(), who=Depends(viewer), s: Session = Depends(db), cfg: Settings = Depends(settings)):
+    """Leads vs staff: per scenario, each group's pick shares and the gap in percentage
+    points (leads minus staff). Staff is every other type, "Prefer not to say" included.
+    A scenario shows only when both groups have 10 plays or more."""
+    if f.type is not None or f.by is not None:
+        raise HTTPException(422, "leads-gap compares types itself: leave out type and by")
+    plays = scope(s, who, "leads-gap", f, cfg, preferences=True)
+    mg = cfg.min_group_size
+    by_id = {p.session_id: p for p in plays}
+    by_scenario: dict[int, list[Moment]] = {}
+    for m in moments_of(s, plays):
+        by_scenario.setdefault(m.scenario_id, []).append(m)
+    out = []
+    for sid, ms in sorted(by_scenario.items(), key=lambda kv: (kv[0] is None, kv[0])):
+        keys = options_of(sid) + ["skip"]
+        leads = [m for m in ms if by_id[m.session_id].role_type == "Lead"]
+        staff = [m for m in ms if by_id[m.session_id].role_type != "Lead"]
+        # Both counts show or neither does: the scenario's total is public in /picks,
+        # so one count shown next to a hidden one would give the hidden one away.
+        both = min(len(leads), len(staff))
+        row = {"scenario_id": sid, "zone": ms[0].zone, "leads": hide(both, len(leads), mg),
+               "staff": hide(both, len(staff), mg)}
+        if both < mg:
+            row["gap"] = fewer(mg)
+        else:
+            lead_s = weighted_shares([(m.chosen, by_id[m.session_id].weight) for m in leads], keys)
+            staff_s = weighted_shares([(m.chosen, by_id[m.session_id].weight) for m in staff], keys)
+            gap = {k: round(100 * (lead_s[k] - staff_s[k]), 1) for k in keys}
+            biggest = max(keys, key=lambda k: (abs(gap[k]), k))
+            row.update({"lead_shares": lead_s, "staff_shares": staff_s, "gap": gap,
+                        "biggest_gap": {"option": biggest, "points": gap[biggest]}})
+        out.append(row)
+    return {**meta(s, plays, cfg), "scenarios": out}
+
+
+def hour_of(scenario_id: int | None) -> int | None:
+    lib = clean.library(str(settings().scenarios_path))
+    sc = lib.get(scenario_id)
+    h = deal_fn._time_key(sc.time)[0] if sc else 99
+    return None if h == 99 else h
+
+
+@router.get("/pain-hours")
+def pain_hours(f: Filters = Depends(), who=Depends(viewer), s: Session = Depends(db), cfg: Settings = Depends(settings)):
+    """Pain by hour of the game day: per hour, the median time to decide (bubble tap to
+    Choose or Skip), the skip rate and the edit rate, plus the hours ranked by each.
+    There is no combined pain score: the three are ranked separately."""
+    plays = scope(s, who, "pain-hours", f, cfg, preferences=True)
+    mg = cfg.min_group_size
+    by_id = {p.session_id: p for p in plays}
+    edited = last_edits(s, list(by_id))
+    by_hour: dict[int, list[Moment]] = {}
+    for m in moments_of(s, plays):
+        if (h := hour_of(m.scenario_id)) is not None:
+            by_hour.setdefault(h, []).append(m)
+
+    def measures(sub):
+        times = [m.time_to_decide_ms for m in sub if m.time_to_decide_ms is not None]
+        return {
+            "median_decide_s": round(statistics.median(times) / 1000, 1) if times else None,
+            "skip_rate": weighted_rate([(m.chosen == "skip", by_id[m.session_id].weight) for m in sub]),
+            "edit_rate": weighted_rate([((m.session_id, m.zone) in edited, by_id[m.session_id].weight) for m in sub]),
+        }
+
+    hours = [
+        {"hour": f"{h:02d}:00", "scenarios": sorted({m.scenario_id for m in ms}),
+         **breakdown(ms, lambda m: by_id[m.session_id].role_type, measures, f, mg)}
+        for h, ms in sorted(by_hour.items())
+    ]
+    shown = [h for h in hours if isinstance(h["value"], dict)]
+
+    def ranked(key):
+        rows = [h for h in shown if h["value"][key] is not None]
+        return [h["hour"] for h in sorted(rows, key=lambda h: (-h["value"][key], h["hour"]))]
+
+    return {**meta(s, plays, cfg), "hours": hours,
+            "ranked": {"slowest": ranked("median_decide_s"), "most_skipped": ranked("skip_rate"),
+                       "most_edited": ranked("edit_rate")}}
 
 
 @router.get("/export.csv")

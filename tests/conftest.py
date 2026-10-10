@@ -20,9 +20,11 @@ from sqlalchemy import text  # noqa: E402
 from app.config import get_settings  # noqa: E402
 from app.db import get_engine, init_db, make_sessionmaker  # noqa: E402
 from app.main import app  # noqa: E402
-from app.models import Base, Pilot  # noqa: E402
+from app.models import Base, Pilot, Viewer  # noqa: E402
 
 PILOT_TOKEN = "test-invite-token"
+TOKEN = "viewer-token"
+EXPORT_TOKEN = "exporter-token"
 
 
 @pytest.fixture(scope="session")
@@ -86,3 +88,11 @@ def new_session(client):
 
 def load_json(path: Path):
     return json.loads(path.read_text())
+
+
+@pytest.fixture
+def viewers(db):
+    """Two management viewers for the read API; only the analyst may export."""
+    db.add(Viewer(viewer_id="manager-1", token_hash=hashlib.sha256(TOKEN.encode()).hexdigest()))
+    db.add(Viewer(viewer_id="analyst-1", token_hash=hashlib.sha256(EXPORT_TOKEN.encode()).hexdigest(), can_export=True))
+    db.commit()
