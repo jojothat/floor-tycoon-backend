@@ -72,6 +72,8 @@ class GameSession(Base):
     # Set by the retention job when this play's raw events were deleted. Derived tables and
     # the quality score are kept, and are no longer rebuilt.
     events_deleted_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    # Shared to the wall at least once (stays true when a later post replaces this one).
+    posted_to_wall: Mapped[bool] = mapped_column(Boolean, default=False, server_default="false")
 
 
 class Deal(Base):
@@ -113,6 +115,7 @@ class Moment(Base):
     # a-d, "skip", or NULL if the player left before deciding.
     chosen: Mapped[str | None] = mapped_column(String(4))
     time_to_decide_ms: Mapped[int | None] = mapped_column(Integer)
+    choose_ms: Mapped[int | None] = mapped_column(Integer)  # bubble tap to the last Choose; None if never chosen
     rethinks: Mapped[int] = mapped_column(Integer, default=0)
 
 

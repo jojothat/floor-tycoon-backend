@@ -1,0 +1,2852 @@
+[
+ {
+  "id": 1,
+  "zone": "z7",
+  "time": "17:00",
+  "theme": "Desk & sharing",
+  "tier": "Core",
+  "roles": "ALL",
+  "native": true,
+  "question": "The team grows to 14",
+  "options": [
+   {
+    "k": "a",
+    "name": "Compact Desks",
+    "item": "bench",
+    "removes": true,
+    "none": false,
+    "real": "Three tight benches, 12 seats",
+    "items": [
+     "bench"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Team Nest",
+    "item": "bench",
+    "removes": true,
+    "none": false,
+    "real": "10 shared seats for 14 + team storage",
+    "items": [
+     "bench",
+     "teamwall",
+     "neighbourhood"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Keep My Desk",
+    "item": "desk",
+    "removes": false,
+    "none": false,
+    "real": "6 desks stay + a perch counter",
+    "items": [
+     "desk",
+     "touchdown"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 2,
+  "zone": "z2",
+  "time": "10:00",
+  "theme": "Desk & sharing",
+  "tier": "Rotating",
+  "roles": "LEAD;SUP",
+  "native": false,
+  "question": "What happens to the empty desks?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Keep them all",
+    "item": "desk",
+    "removes": false,
+    "none": true,
+    "real": "Every desk stays assigned",
+    "items": [
+     "desk"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Make a project room",
+    "item": "warroom",
+    "removes": true,
+    "none": false,
+    "real": "6 desks become a war room",
+    "items": [
+     "warroom"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Book-ahead desks",
+    "item": "deskstatus",
+    "removes": false,
+    "none": false,
+    "real": "Desks get a status light, booked in an app",
+    "items": [
+     "deskstatus"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 3,
+  "zone": "z2",
+  "time": "09:00",
+  "theme": "Desk & sharing",
+  "tier": "Role",
+  "roles": "CE;INS",
+  "native": false,
+  "question": "What happens to your desk while away?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Lock my desk",
+    "item": "pedestal",
+    "removes": false,
+    "none": false,
+    "real": "It waits for you, empty",
+    "items": [
+     "pedestal"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Release it, keep a caddy",
+    "item": "caddy",
+    "removes": false,
+    "none": false,
+    "real": "Your things roll with you",
+    "items": [
+     "caddy"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Team landing zone",
+    "item": "touchdown",
+    "removes": true,
+    "none": false,
+    "real": "Shared spots for returners near the team",
+    "items": [
+     "touchdown"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 4,
+  "zone": "z2",
+  "time": "08:45",
+  "theme": "Desk & sharing",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "Which one upgrade do you want?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Second monitor",
+    "item": "desk",
+    "removes": true,
+    "none": false,
+    "real": "Dual screens on an arm",
+    "items": [
+     "desk"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Dock-and-go set-up",
+    "item": "dockdesk",
+    "removes": false,
+    "none": false,
+    "real": "One cable, any desk works",
+    "items": [
+     "dockdesk"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Bigger storage",
+    "item": "pedestal",
+    "removes": false,
+    "none": false,
+    "real": "A deep lockable pedestal",
+    "items": [
+     "pedestal"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 5,
+  "zone": "z2",
+  "time": "18:30",
+  "theme": "Desk & sharing",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "Where do your things go tonight?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Locker nearby",
+    "item": "smartlockers",
+    "removes": true,
+    "none": false,
+    "real": "Personal locker ten steps away",
+    "items": [
+     "smartlockers"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Caddy on wheels",
+    "item": "caddy",
+    "removes": false,
+    "none": false,
+    "real": "A pedestal you roll each day",
+    "items": [
+     "caddy"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Opt out",
+    "item": "desk",
+    "removes": false,
+    "none": true,
+    "real": "Your things stay out",
+    "items": [
+     "desk"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 6,
+  "zone": "z1",
+  "time": "08:30",
+  "theme": "Storage & gear",
+  "tier": "Role",
+  "roles": "CE;INS",
+  "native": true,
+  "question": "Where does the gear live?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Kit Nook",
+    "item": "kitnook",
+    "removes": true,
+    "none": false,
+    "real": "Kit shelves + day lockers by the entry",
+    "items": [
+     "kitnook",
+     "lockers"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Bottomless Pedestal",
+    "item": "sofa",
+    "removes": false,
+    "none": false,
+    "real": "A big lockable pedestal at your own desk",
+    "items": [
+     "sofa",
+     "welcome",
+     "pedestal"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Team Armoury",
+    "item": "teamwall",
+    "removes": true,
+    "none": false,
+    "real": "A team shelf wall + a few lockers",
+    "items": [
+     "teamwall",
+     "lockers"
+    ]
+   },
+   {
+    "k": "d",
+    "name": "Personal lockers",
+    "item": "lockers",
+    "removes": true,
+    "none": false,
+    "real": "Lockers beside the team zone",
+    "items": [
+     "lockers"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 7,
+  "zone": "z1",
+  "time": "11:00",
+  "theme": "Storage & gear",
+  "tier": "Role",
+  "roles": "CE;INS",
+  "native": false,
+  "question": "Where should spare parts live?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Tool crib",
+    "item": "toolcrib",
+    "removes": true,
+    "none": false,
+    "real": "Caged parts room with a hatch",
+    "items": [
+     "toolcrib"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Smart lockers",
+    "item": "smartlockers",
+    "removes": false,
+    "none": false,
+    "real": "App-booked lockers with status screens",
+    "items": [
+     "smartlockers"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Own kits",
+    "item": "pedestal",
+    "removes": false,
+    "none": false,
+    "real": "Each engineer keeps a full kit",
+    "items": [
+     "pedestal"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 8,
+  "zone": "z1",
+  "time": "14:00",
+  "theme": "Storage & gear",
+  "tier": "Role",
+  "roles": "PSE",
+  "native": false,
+  "question": "Where do the sample boxes go?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Sample cabinet",
+    "item": "samplecab",
+    "removes": true,
+    "none": false,
+    "real": "Anti-static cabinet in the team zone",
+    "items": [
+     "samplecab"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Keep them in the lab",
+    "item": "protolab",
+    "removes": false,
+    "none": false,
+    "real": "Lab holds all samples",
+    "items": [
+     "protolab"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "At your desk",
+    "item": "desk",
+    "removes": false,
+    "none": false,
+    "real": "Boxes stay with you",
+    "items": [
+     "desk"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 10,
+  "zone": "z1",
+  "time": "12:30",
+  "theme": "Storage & gear",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "How should parcels reach you?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Parcel lockers",
+    "item": "mail",
+    "removes": true,
+    "none": false,
+    "real": "Pick up any time with a code",
+    "items": [
+     "mail"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Desk delivery",
+    "item": "welcome",
+    "removes": false,
+    "none": false,
+    "real": "Facilities brings it up",
+    "items": [
+     "welcome"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Pick up when you can",
+    "item": "welcome",
+    "removes": false,
+    "none": true,
+    "real": "As today",
+    "items": [
+     "welcome"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 11,
+  "zone": "z2",
+  "time": "09:40",
+  "theme": "Privacy & calls",
+  "tier": "Core",
+  "roles": "ALL",
+  "native": true,
+  "question": "Where do you take the call?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Pop-up Booth",
+    "item": "phonebooth",
+    "removes": true,
+    "none": false,
+    "real": "Phone booths beside the team",
+    "items": [
+     "phonebooth"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Whisper Room",
+    "item": "enclave",
+    "removes": true,
+    "none": false,
+    "real": "Two small bookable rooms",
+    "items": [
+     "enclave"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Sound Cone",
+    "item": "screens",
+    "removes": false,
+    "none": false,
+    "real": "Acoustic screens + privacy seats",
+    "items": [
+     "screens",
+     "wingchair"
+    ]
+   },
+   {
+    "k": "d",
+    "name": "Privacy Chair",
+    "item": "wingchair",
+    "removes": false,
+    "none": false,
+    "real": "Wing-back chair that wraps around you",
+    "items": [
+     "wingchair"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 12,
+  "zone": "z2",
+  "time": "15:00",
+  "theme": "Privacy & calls",
+  "tier": "Role",
+  "roles": "LEAD;SUP",
+  "native": false,
+  "question": "Where do you have the talk?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Duo booth",
+    "item": "duobooth",
+    "removes": true,
+    "none": false,
+    "real": "Enclosed booth for two",
+    "items": [
+     "duobooth"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "One-to-one room",
+    "item": "oneonone",
+    "removes": true,
+    "none": false,
+    "real": "Small room, round table",
+    "items": [
+     "oneonone"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Walk outside",
+    "item": "terrace",
+    "removes": false,
+    "none": true,
+    "real": "Talk on the terrace",
+    "items": [
+     "terrace"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 13,
+  "zone": "z2",
+  "time": "10:15",
+  "theme": "Privacy & calls",
+  "tier": "Role",
+  "roles": "SAL",
+  "native": false,
+  "question": "Where do you take the call?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Secure NDA room",
+    "item": "ndaroom",
+    "removes": true,
+    "none": false,
+    "real": "Windowless room with a badge reader",
+    "items": [
+     "ndaroom"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Phone booth",
+    "item": "phonebooth",
+    "removes": false,
+    "none": false,
+    "real": "Small booth, no screen",
+    "items": [
+     "phonebooth"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Your car",
+    "item": "evcharge",
+    "removes": false,
+    "none": true,
+    "real": "Call from the car park",
+    "items": [
+     "evcharge"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 14,
+  "zone": "z2",
+  "time": "13:30",
+  "theme": "Privacy & calls",
+  "tier": "Rotating",
+  "roles": "PSE;SAL",
+  "native": false,
+  "question": "How do you protect the charts?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Privacy screens",
+    "item": "screens",
+    "removes": false,
+    "none": false,
+    "real": "Screens on every desk",
+    "items": [
+     "screens"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Closed team zone",
+    "item": "partition",
+    "removes": true,
+    "none": false,
+    "real": "Partition the team area",
+    "items": [
+     "partition"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Accept it",
+    "item": "desk",
+    "removes": false,
+    "none": true,
+    "real": "Stay open",
+    "items": [
+     "desk"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 15,
+  "zone": "z2",
+  "time": "21:00",
+  "theme": "Privacy & calls",
+  "tier": "Role",
+  "roles": "PSE;LEAD",
+  "native": false,
+  "question": "Where do you take the late call?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Take it from home",
+    "item": "touchdown",
+    "removes": false,
+    "none": true,
+    "real": "Leave at 6, dial in later",
+    "items": [
+     "touchdown"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "After-hours video room",
+    "item": "videoroom",
+    "removes": false,
+    "none": false,
+    "real": "Stay and use a proper room",
+    "items": [
+     "videoroom"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Hybrid pod near the exit",
+    "item": "hybridpod",
+    "removes": true,
+    "none": false,
+    "real": "A pod you can use any hour",
+    "items": [
+     "hybridpod"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 16,
+  "zone": "z3",
+  "time": "10:30",
+  "theme": "Focus",
+  "tier": "Core",
+  "roles": "ALL",
+  "native": true,
+  "question": "Where do you get two quiet hours?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Silence Bubble",
+    "item": "focuspod",
+    "removes": true,
+    "none": false,
+    "real": "Focus pods for one",
+    "items": [
+     "focuspod",
+     "collabtable"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Library Wing",
+    "item": "greenwall",
+    "removes": true,
+    "none": false,
+    "real": "A quiet zone behind a green wall",
+    "items": [
+     "greenwall",
+     "library",
+     "screens"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Hush Canopy",
+    "item": "collabtable",
+    "removes": false,
+    "none": false,
+    "real": "Ceiling baffles + plants over the tables",
+    "items": [
+     "collabtable",
+     "greenwall"
+    ]
+   },
+   {
+    "k": "d",
+    "name": "Focus Cockpit",
+    "item": "cockpit",
+    "removes": false,
+    "none": false,
+    "real": "Paired desks with tall acoustic sides",
+    "items": [
+     "cockpit"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 17,
+  "zone": "z3",
+  "time": "16:00",
+  "theme": "Focus",
+  "tier": "Role",
+  "roles": "CE;INS",
+  "native": false,
+  "question": "Where do you write the reports?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Study carrels",
+    "item": "carrels",
+    "removes": true,
+    "none": false,
+    "real": "A row of high-sided desks",
+    "items": [
+     "carrels"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Hanging pod",
+    "item": "hangpod",
+    "removes": false,
+    "none": false,
+    "real": "Open-top felt pod, one seat",
+    "items": [
+     "hangpod"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Work from home tomorrow",
+    "item": "touchdown",
+    "removes": false,
+    "none": true,
+    "real": "Write them at home",
+    "items": [
+     "touchdown"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 18,
+  "zone": "z3",
+  "time": "09:15",
+  "theme": "Focus",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "How do you handle the noise?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Noise traffic light",
+    "item": "noiselight",
+    "removes": false,
+    "none": false,
+    "real": "A light that turns red when it’s loud",
+    "items": [
+     "noiselight"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Stand-up table",
+    "item": "standtable",
+    "removes": true,
+    "none": false,
+    "real": "Move stand-ups to a bar table",
+    "items": [
+     "standtable"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Headphones",
+    "item": "screens",
+    "removes": false,
+    "none": true,
+    "real": "Live with it",
+    "items": [
+     "screens"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 19,
+  "zone": "z3",
+  "time": "08:00",
+  "theme": "Focus",
+  "tier": "Role",
+  "roles": "PSE",
+  "native": false,
+  "question": "Where do you spend the day?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Book a pod all day",
+    "item": "focuspod",
+    "removes": false,
+    "none": false,
+    "real": "A focus pod till 6",
+    "items": [
+     "focuspod"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Quiet zone",
+    "item": "library",
+    "removes": false,
+    "none": false,
+    "real": "Rules: no calls, no chat",
+    "items": [
+     "library"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Daylight lamp desk",
+    "item": "lightdesk",
+    "removes": false,
+    "none": false,
+    "real": "Bright desk by the window",
+    "items": [
+     "lightdesk"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 20,
+  "zone": "z3",
+  "time": "13:00",
+  "theme": "Focus",
+  "tier": "Role",
+  "roles": "CE;INS",
+  "native": false,
+  "question": "Where do you do the module?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Training room slots",
+    "item": "training",
+    "removes": false,
+    "none": false,
+    "real": "Fixed-time group sessions",
+    "items": [
+     "training"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "VR training station",
+    "item": "vrstation",
+    "removes": true,
+    "none": false,
+    "real": "Practise the tool in VR",
+    "items": [
+     "vrstation"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "At your desk",
+    "item": "desk",
+    "removes": false,
+    "none": true,
+    "real": "Fit it in",
+    "items": [
+     "desk"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 21,
+  "zone": "z6",
+  "time": "14:30",
+  "theme": "Collaboration",
+  "tier": "Core",
+  "roles": "PSE;CE",
+  "native": true,
+  "question": "Where do both teams work it out?",
+  "options": [
+   {
+    "k": "a",
+    "name": "War Room",
+    "item": "warroom",
+    "removes": true,
+    "none": false,
+    "real": "A project room kept for weeks",
+    "items": [
+     "warroom"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Crossroads Café",
+    "item": "cafebar",
+    "removes": true,
+    "none": false,
+    "real": "A coffee bar halfway between teams",
+    "items": [
+     "cafebar",
+     "huddle"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Spiral Stair",
+    "item": "stair",
+    "removes": true,
+    "none": false,
+    "real": "An open stair to the next floor",
+    "items": [
+     "stair"
+    ]
+   },
+   {
+    "k": "d",
+    "name": "Open collab table",
+    "item": "collabtable",
+    "removes": true,
+    "none": false,
+    "real": "Big shared table between the teams",
+    "items": [
+     "collabtable"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 22,
+  "zone": "z6",
+  "time": "07:00",
+  "theme": "Collaboration",
+  "tier": "Role",
+  "roles": "CE;PSE;LEAD",
+  "native": false,
+  "question": "How do you respond?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Tool monitoring centre",
+    "item": "opscentre",
+    "removes": true,
+    "none": false,
+    "real": "Wall of screens watching tools live",
+    "items": [
+     "opscentre"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Remote-support station",
+    "item": "vrstation",
+    "removes": true,
+    "none": false,
+    "real": "Guide the fab team by AR",
+    "items": [
+     "vrstation"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Everyone drives over",
+    "item": "shuttle",
+    "removes": false,
+    "none": true,
+    "real": "All hands at the fab",
+    "items": [
+     "shuttle"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 23,
+  "zone": "z6",
+  "time": "11:00",
+  "theme": "Collaboration",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "Where does the hybrid meeting happen?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Hybrid meeting pod",
+    "item": "hybridpod",
+    "removes": true,
+    "none": false,
+    "real": "Small room with a video bar",
+    "items": [
+     "hybridpod"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Boardroom with camera",
+    "item": "boardroom",
+    "removes": false,
+    "none": false,
+    "real": "The big room, one floor up",
+    "items": [
+     "boardroom"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Headsets at desks",
+    "item": "desk",
+    "removes": false,
+    "none": true,
+    "real": "Everyone stays put",
+    "items": [
+     "desk"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 24,
+  "zone": "z6",
+  "time": "08:30",
+  "theme": "Collaboration",
+  "tier": "Role",
+  "roles": "LEAD;INS",
+  "native": false,
+  "question": "Where does the schedule live?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Obeya wall",
+    "item": "obeya",
+    "removes": true,
+    "none": false,
+    "real": "Lean board wall with sticky notes",
+    "items": [
+     "obeya"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Rolling screen",
+    "item": "mediacart",
+    "removes": false,
+    "none": false,
+    "real": "A digital board on wheels",
+    "items": [
+     "mediacart"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Shared spreadsheet",
+    "item": "touchdown",
+    "removes": false,
+    "none": true,
+    "real": "Stay digital",
+    "items": [
+     "touchdown"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 25,
+  "zone": "z6",
+  "time": "15:45",
+  "theme": "Collaboration",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "Where do you talk it through?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Stand-up table",
+    "item": "standtable",
+    "removes": true,
+    "none": false,
+    "real": "Bar table for quick huddles",
+    "items": [
+     "standtable"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Huddle room",
+    "item": "huddleroom",
+    "removes": false,
+    "none": false,
+    "real": "Small room for four",
+    "items": [
+     "huddleroom"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "At your desk",
+    "item": "desk",
+    "removes": false,
+    "none": true,
+    "real": "Chat where you sit",
+    "items": [
+     "desk"
+    ]
+   },
+   {
+    "k": "d",
+    "name": "Huddle table",
+    "item": "huddle",
+    "removes": true,
+    "none": false,
+    "real": "Round table in the open",
+    "items": [
+     "huddle"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 26,
+  "zone": "z6",
+  "time": "14:00",
+  "theme": "Collaboration",
+  "tier": "Rotating",
+  "roles": "PSE;SUP",
+  "native": false,
+  "question": "Where do you sketch it out?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Writable wall",
+    "item": "ideawall",
+    "removes": true,
+    "none": false,
+    "real": "Whiteboard paint on a wall",
+    "items": [
+     "ideawall"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Modular cubes",
+    "item": "modcubes",
+    "removes": true,
+    "none": false,
+    "real": "Re-arrangeable soft seats",
+    "items": [
+     "modcubes"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Meeting room whiteboard",
+    "item": "whiteboard",
+    "removes": false,
+    "none": true,
+    "real": "Book a room",
+    "items": [
+     "whiteboard"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 27,
+  "zone": "z6",
+  "time": "10:00",
+  "theme": "Collaboration",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "What do you do about bookings?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Auto-release",
+    "item": "occscreen",
+    "removes": false,
+    "none": false,
+    "real": "Rooms free up after 10 minutes empty",
+    "items": [
+     "occscreen"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "More small rooms",
+    "item": "huddleroom",
+    "removes": true,
+    "none": false,
+    "real": "Split it into two",
+    "items": [
+     "huddleroom"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Leave it",
+    "item": "meeting",
+    "removes": false,
+    "none": true,
+    "real": "As today",
+    "items": [
+     "meeting"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 28,
+  "zone": "z6",
+  "time": "16:30",
+  "theme": "Fab link",
+  "tier": "Role",
+  "roles": "CE",
+  "native": false,
+  "question": "How do you see the tool?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Remote-support station",
+    "item": "vrstation",
+    "removes": true,
+    "none": false,
+    "real": "AR headset bay",
+    "items": [
+     "vrstation"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Video room",
+    "item": "videoroom",
+    "removes": false,
+    "none": true,
+    "real": "Book a room and dial in",
+    "items": [
+     "videoroom"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Drive over",
+    "item": "shuttle",
+    "removes": false,
+    "none": true,
+    "real": "Go to the fab",
+    "items": [
+     "shuttle"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 29,
+  "zone": "z6",
+  "time": "06:30",
+  "theme": "Fab link",
+  "tier": "Role",
+  "roles": "CE;INS",
+  "native": false,
+  "question": "Where does the handover happen?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Handover desk at the entry",
+    "item": "touchdown",
+    "removes": true,
+    "none": false,
+    "real": "Drop-in spot near the door",
+    "items": [
+     "touchdown"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Video handover",
+    "item": "videoroom",
+    "removes": false,
+    "none": true,
+    "real": "From home before driving",
+    "items": [
+     "videoroom"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "At the fab",
+    "item": "gates",
+    "removes": false,
+    "none": true,
+    "real": "Skip the office",
+    "items": [
+     "gates"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 30,
+  "zone": "z6",
+  "time": "07:00",
+  "theme": "Fab link",
+  "tier": "Core (CE, INS)",
+  "roles": "CE;INS",
+  "native": false,
+  "question": "What happens to your desk?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Keep my own desk",
+    "item": "desk",
+    "removes": false,
+    "none": false,
+    "real": "Mine, even when empty",
+    "items": [
+     "desk"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Share on fab days",
+    "item": "neighbourhood",
+    "removes": false,
+    "none": false,
+    "real": "A teammate uses it when you’re out",
+    "items": [
+     "neighbourhood"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Hot desk with locker",
+    "item": "smartlockers",
+    "removes": true,
+    "none": false,
+    "real": "Any desk, personal locker",
+    "items": [
+     "smartlockers"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 31,
+  "zone": "z6",
+  "time": "13:00",
+  "theme": "Visitors & customers",
+  "tier": "Role",
+  "roles": "SAL;LEAD",
+  "native": false,
+  "question": "Where do you host the delegation?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Visitor lounge",
+    "item": "visitorlounge",
+    "removes": true,
+    "none": false,
+    "real": "Sofas and check-in at the entry",
+    "items": [
+     "visitorlounge"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Tool cutaway showcase",
+    "item": "cutaway",
+    "removes": true,
+    "none": false,
+    "real": "A cutaway tool on a plinth",
+    "items": [
+     "cutaway"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Book the boardroom",
+    "item": "boardroom",
+    "removes": false,
+    "none": true,
+    "real": "As today",
+    "items": [
+     "boardroom"
+    ]
+   },
+   {
+    "k": "d",
+    "name": "Live demo wall",
+    "item": "demo",
+    "removes": true,
+    "none": false,
+    "real": "Screens showing tools running",
+    "items": [
+     "demo"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 32,
+  "zone": "z1",
+  "time": "09:00",
+  "theme": "Visitors & customers",
+  "tier": "Rotating",
+  "roles": "SAL;SUP",
+  "native": false,
+  "question": "How do you keep visitors out?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Gates and escorts",
+    "item": "gates",
+    "removes": true,
+    "none": false,
+    "real": "Badge gates, escorted zones",
+    "items": [
+     "gates"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Visitor lounge only",
+    "item": "visitorlounge",
+    "removes": true,
+    "none": false,
+    "real": "Guests stay at the front",
+    "items": [
+     "visitorlounge"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Trust and sign",
+    "item": "welcome",
+    "removes": false,
+    "none": true,
+    "real": "Sign an NDA at reception",
+    "items": [
+     "welcome"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 33,
+  "zone": "z4",
+  "time": "12:00",
+  "theme": "Visitors & customers",
+  "tier": "Role",
+  "roles": "SAL",
+  "native": false,
+  "question": "Where do you have lunch?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Team dining table",
+    "item": "dining",
+    "removes": true,
+    "none": false,
+    "real": "Long table on the floor",
+    "items": [
+     "dining"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Pergola café",
+    "item": "pergola",
+    "removes": true,
+    "none": false,
+    "real": "Indoor bistro with vines",
+    "items": [
+     "pergola"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Cafeteria",
+    "item": "cafebar",
+    "removes": false,
+    "none": true,
+    "real": "As today",
+    "items": [
+     "cafebar"
+    ]
+   },
+   {
+    "k": "d",
+    "name": "Booth seating",
+    "item": "booth",
+    "removes": true,
+    "none": false,
+    "real": "Diner-style booths",
+    "items": [
+     "booth"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 34,
+  "zone": "z4",
+  "time": "12:00",
+  "theme": "Food & breaks",
+  "tier": "Core",
+  "roles": "ALL",
+  "native": true,
+  "question": "How does the team eat?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Floor Kitchen",
+    "item": "pantry",
+    "removes": true,
+    "none": false,
+    "real": "Pantry + a long team table",
+    "items": [
+     "pantry",
+     "dining"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Garden Table",
+    "item": "terrace",
+    "removes": true,
+    "none": false,
+    "real": "An indoor terrace with planters",
+    "items": [
+     "terrace"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Grab & Go",
+    "item": "cafebar",
+    "removes": true,
+    "none": false,
+    "real": "A café bar + a perch counter",
+    "items": [
+     "cafebar",
+     "touchdown"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 35,
+  "zone": "z4",
+  "time": "12:10",
+  "theme": "Food & breaks",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "How does lunch reach you?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Food pickup lockers",
+    "item": "foodlocker",
+    "removes": true,
+    "none": false,
+    "real": "Heated lockers on the floor",
+    "items": [
+     "foodlocker"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Pantry pickup",
+    "item": "pantry",
+    "removes": false,
+    "none": false,
+    "real": "Delivered to the pantry",
+    "items": [
+     "pantry"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Go down",
+    "item": "gates",
+    "removes": false,
+    "none": true,
+    "real": "As today",
+    "items": [
+     "gates"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 36,
+  "zone": "z4",
+  "time": "15:00",
+  "theme": "Food & breaks",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "Where do you get coffee?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Coffee robot",
+    "item": "coffeerobot",
+    "removes": true,
+    "none": false,
+    "real": "Robot-arm coffee kiosk",
+    "items": [
+     "coffeerobot"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Café bar",
+    "item": "cafebar",
+    "removes": true,
+    "none": false,
+    "real": "A barista-style bar",
+    "items": [
+     "cafebar"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Pantry coffee",
+    "item": "pantry",
+    "removes": false,
+    "none": false,
+    "real": "Drip coffee in the pantry",
+    "items": [
+     "pantry"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 37,
+  "zone": "z4",
+  "time": "05:45",
+  "theme": "Food & breaks",
+  "tier": "Role",
+  "roles": "CE;INS",
+  "native": false,
+  "question": "What do you eat before shift?",
+  "options": [
+   {
+    "k": "a",
+    "name": "24/7 food lockers",
+    "item": "foodlocker",
+    "removes": true,
+    "none": false,
+    "real": "Stocked meals any hour",
+    "items": [
+     "foodlocker"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Stocked pantry",
+    "item": "pantry",
+    "removes": true,
+    "none": false,
+    "real": "Snacks and ready meals",
+    "items": [
+     "pantry"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Nothing",
+    "item": "pantry",
+    "removes": false,
+    "none": true,
+    "real": "As today",
+    "items": [
+     "pantry"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 38,
+  "zone": "z5",
+  "time": "13:00",
+  "theme": "Wellbeing",
+  "tier": "Core",
+  "roles": "ALL",
+  "native": true,
+  "question": "How do you reset?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Dream Pod",
+    "item": "nappod",
+    "removes": true,
+    "none": false,
+    "real": "Nap pods behind a green wall",
+    "items": [
+     "nappod",
+     "greenwall"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Green Loop",
+    "item": "greenwall",
+    "removes": true,
+    "none": false,
+    "real": "An indoor garden walk",
+    "items": [
+     "greenwall"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Massage Lounge",
+    "item": "massage",
+    "removes": true,
+    "none": false,
+    "real": "Massage chairs + a sofa",
+    "items": [
+     "massage",
+     "sofa"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 39,
+  "zone": "z5",
+  "time": "19:00",
+  "theme": "Wellbeing",
+  "tier": "Role",
+  "roles": "CE;INS",
+  "native": false,
+  "question": "How do you get through the report?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Recharge recliner",
+    "item": "recliner",
+    "removes": true,
+    "none": false,
+    "real": "Recliner with a reading lamp",
+    "items": [
+     "recliner"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Showers and changing",
+    "item": "showers",
+    "removes": true,
+    "none": false,
+    "real": "Freshen up before the office",
+    "items": [
+     "showers"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Go home",
+    "item": "touchdown",
+    "removes": false,
+    "none": true,
+    "real": "Write it tomorrow",
+    "items": [
+     "touchdown"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 40,
+  "zone": "z5",
+  "time": "11:00",
+  "theme": "Wellbeing",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "How do you get moving?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Treadmill desk",
+    "item": "treaddesk",
+    "removes": true,
+    "none": false,
+    "real": "Walk while you work",
+    "items": [
+     "treaddesk"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Gym corner",
+    "item": "gym",
+    "removes": true,
+    "none": false,
+    "real": "Small gym on the floor",
+    "items": [
+     "gym"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Walking trail",
+    "item": "terrace",
+    "removes": false,
+    "none": false,
+    "real": "Loop outside",
+    "items": [
+     "terrace"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 41,
+  "zone": "z5",
+  "time": "12:30",
+  "theme": "Wellbeing",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "Where do you go to be alone?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Wellness room",
+    "item": "meditation",
+    "removes": true,
+    "none": false,
+    "real": "Quiet room, low light",
+    "items": [
+     "meditation"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Swing seat corner",
+    "item": "hammock",
+    "removes": true,
+    "none": false,
+    "real": "Hanging chair by the window",
+    "items": [
+     "hammock"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Stairwell",
+    "item": "stair",
+    "removes": false,
+    "none": true,
+    "real": "As today",
+    "items": [
+     "stair"
+    ]
+   },
+   {
+    "k": "d",
+    "name": "Reflection room",
+    "item": "prayer",
+    "removes": true,
+    "none": false,
+    "real": "Quiet room for prayer or reflection",
+    "items": [
+     "prayer"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 42,
+  "zone": "z5",
+  "time": "10:00",
+  "theme": "Wellbeing",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "Where can your colleague go?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Parents’ room",
+    "item": "mothers",
+    "removes": true,
+    "none": false,
+    "real": "Room with fridge and sink",
+    "items": [
+     "mothers"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Any small room",
+    "item": "enclave",
+    "removes": false,
+    "none": false,
+    "real": "Book what’s free",
+    "items": [
+     "enclave"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Leave early",
+    "item": "touchdown",
+    "removes": false,
+    "none": true,
+    "real": "Go home sooner",
+    "items": [
+     "touchdown"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 43,
+  "zone": "z1",
+  "time": "18:00",
+  "theme": "Arrival & commute",
+  "tier": "Core",
+  "roles": "ALL",
+  "native": false,
+  "question": "How do you get home?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Shuttle lounge",
+    "item": "shuttle",
+    "removes": true,
+    "none": false,
+    "real": "Live timetable at a lobby lounge",
+    "items": [
+     "shuttle"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Flexible hours",
+    "item": "touchdown",
+    "removes": false,
+    "none": true,
+    "real": "Leave early when you need to",
+    "items": [
+     "touchdown"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Drive",
+    "item": "evcharge",
+    "removes": false,
+    "none": true,
+    "real": "Take the car",
+    "items": [
+     "evcharge"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 44,
+  "zone": "z1",
+  "time": "08:10",
+  "theme": "Arrival & commute",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "Who gets the parking?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Priority parking for fab-goers",
+    "item": "evcharge",
+    "removes": false,
+    "none": false,
+    "real": "Bays for people driving to fabs",
+    "items": [
+     "evcharge"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Bikes and showers",
+    "item": "bikes",
+    "removes": true,
+    "none": false,
+    "real": "Bike storage and showers",
+    "items": [
+     "bikes"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "More shuttles",
+    "item": "shuttle",
+    "removes": false,
+    "none": true,
+    "real": "Extra shuttle runs",
+    "items": [
+     "shuttle"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 45,
+  "zone": "z1",
+  "time": "08:20",
+  "theme": "Arrival & commute",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "Where do you head first?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Team neighbourhood",
+    "item": "neighbourhood",
+    "removes": false,
+    "none": false,
+    "real": "Your team’s zone, marked",
+    "items": [
+     "neighbourhood"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Occupancy screen",
+    "item": "occscreen",
+    "removes": false,
+    "none": false,
+    "real": "Find a free spot on a map",
+    "items": [
+     "occscreen"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Any free desk",
+    "item": "dockdesk",
+    "removes": false,
+    "none": true,
+    "real": "First you find",
+    "items": [
+     "dockdesk"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 46,
+  "zone": "z1",
+  "time": "07:30",
+  "theme": "Arrival & commute",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "Where do you work this morning?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Satellite hub",
+    "item": "dockdesk",
+    "removes": false,
+    "none": true,
+    "real": "Book a desk near home",
+    "items": [
+     "dockdesk"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Come in late",
+    "item": "shuttle",
+    "removes": false,
+    "none": true,
+    "real": "Arrive after the jam",
+    "items": [
+     "shuttle"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Work from home",
+    "item": "touchdown",
+    "removes": false,
+    "none": true,
+    "real": "Stay home",
+    "items": [
+     "touchdown"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 47,
+  "zone": "z2",
+  "time": "09:00",
+  "theme": "Growth & onboarding",
+  "tier": "Rotating",
+  "roles": "LEAD;SUP",
+  "native": false,
+  "question": "Where does the new engineer sit?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Onboarding desk",
+    "item": "buddydesk",
+    "removes": true,
+    "none": false,
+    "real": "Welcome desk with a starter kit",
+    "items": [
+     "buddydesk"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Sit with a mentor",
+    "item": "mentornook",
+    "removes": false,
+    "none": false,
+    "real": "Next to their buddy",
+    "items": [
+     "mentornook"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Any free desk",
+    "item": "touchdown",
+    "removes": false,
+    "none": true,
+    "real": "Wherever is open",
+    "items": [
+     "touchdown"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 48,
+  "zone": "z3",
+  "time": "16:00",
+  "theme": "Growth & onboarding",
+  "tier": "Role",
+  "roles": "CE;PSE;LEAD",
+  "native": false,
+  "question": "Where do you explain the fault?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Mentoring nook",
+    "item": "mentornook",
+    "removes": true,
+    "none": false,
+    "real": "Two armchairs and a side table",
+    "items": [
+     "mentornook"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Prototyping bench",
+    "item": "protolab",
+    "removes": true,
+    "none": false,
+    "real": "Show it on real parts",
+    "items": [
+     "protolab"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "At your desk",
+    "item": "desk",
+    "removes": false,
+    "none": true,
+    "real": "Explain there",
+    "items": [
+     "desk"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 49,
+  "zone": "z2",
+  "time": "17:00",
+  "theme": "Growth & onboarding",
+  "tier": "Role",
+  "roles": "LEAD",
+  "native": false,
+  "question": "How do we fit everyone?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Share at 1:1.25",
+    "item": "neighbourhood",
+    "removes": true,
+    "none": false,
+    "real": "More people than desks",
+    "items": [
+     "neighbourhood"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "A new floor elsewhere",
+    "item": "stair",
+    "removes": false,
+    "none": true,
+    "real": "Take space in another building",
+    "items": [
+     "stair"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Smaller desks",
+    "item": "bench",
+    "removes": true,
+    "none": false,
+    "real": "Shrink every desk",
+    "items": [
+     "bench"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 50,
+  "zone": "z2",
+  "time": "08:00",
+  "theme": "Hybrid rhythm",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "When does the team come in?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Fixed team day",
+    "item": "neighbourhood",
+    "removes": false,
+    "none": false,
+    "real": "Everyone in on Tuesdays",
+    "items": [
+     "neighbourhood"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Free choice",
+    "item": "touchdown",
+    "removes": false,
+    "none": true,
+    "real": "Come when you like",
+    "items": [
+     "touchdown"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Half-teams rotate",
+    "item": "huddleroom",
+    "removes": false,
+    "none": false,
+    "real": "Two groups alternate",
+    "items": [
+     "huddleroom"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 51,
+  "zone": "z2",
+  "time": "21:00",
+  "theme": "Hybrid rhythm",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "How do you get a desk?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Book the night before",
+    "item": "deskstatus",
+    "removes": false,
+    "none": false,
+    "real": "In the app",
+    "items": [
+     "deskstatus"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "First come",
+    "item": "touchdown",
+    "removes": false,
+    "none": true,
+    "real": "Turn up and find one",
+    "items": [
+     "touchdown"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Team block",
+    "item": "neighbourhood",
+    "removes": false,
+    "none": false,
+    "real": "The team books a zone",
+    "items": [
+     "neighbourhood"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 52,
+  "zone": "z5",
+  "time": "14:00",
+  "theme": "Comfort",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "How do you stop shivering?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Climate control zones",
+    "item": "climate",
+    "removes": false,
+    "none": false,
+    "real": "Adjust your zone",
+    "items": [
+     "climate"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Move from the window",
+    "item": "window",
+    "removes": false,
+    "none": true,
+    "real": "Swap seats",
+    "items": [
+     "window"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Blanket",
+    "item": "sofa",
+    "removes": false,
+    "none": true,
+    "real": "Make do",
+    "items": [
+     "sofa"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 53,
+  "zone": "z5",
+  "time": "10:00",
+  "theme": "Comfort",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "Who gets the daylight?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Circadian lighting",
+    "item": "lights",
+    "removes": false,
+    "none": false,
+    "real": "Lights that follow the day",
+    "items": [
+     "lights"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Windows for shared spaces",
+    "item": "window",
+    "removes": true,
+    "none": false,
+    "real": "Lounges by the glass, desks inside",
+    "items": [
+     "window"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Window desks by seniority",
+    "item": "office",
+    "removes": false,
+    "none": true,
+    "real": "As often today",
+    "items": [
+     "office"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 54,
+  "zone": "z5",
+  "time": "11:30",
+  "theme": "Comfort",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "Which green upgrade gets the space?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Green wall",
+    "item": "greenwall",
+    "removes": true,
+    "none": false,
+    "real": "Planted wall",
+    "items": [
+     "greenwall"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Hydroponic wall",
+    "item": "hydrowall",
+    "removes": false,
+    "none": false,
+    "real": "Grow herbs at work",
+    "items": [
+     "hydrowall"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Terrace planters",
+    "item": "terrace",
+    "removes": false,
+    "none": false,
+    "real": "Plants outside only",
+    "items": [
+     "terrace"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 55,
+  "zone": "z4",
+  "time": "15:30",
+  "theme": "Comfort",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "What do you do about cups?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Refill and recycle hub",
+    "item": "waterhub",
+    "removes": true,
+    "none": false,
+    "real": "Taps and sorted bins",
+    "items": [
+     "waterhub"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "No single-use cups",
+    "item": "pantry",
+    "removes": false,
+    "none": true,
+    "real": "Bring your own",
+    "items": [
+     "pantry"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Leave it",
+    "item": "pantry",
+    "removes": false,
+    "none": true,
+    "real": "As today",
+    "items": [
+     "pantry"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 56,
+  "zone": "z6",
+  "time": "09:00",
+  "theme": "Culture & belonging",
+  "tier": "Core (LEAD)",
+  "roles": "ALL",
+  "native": false,
+  "question": "Where should leads sit?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Leads sit with the team",
+    "item": "desk",
+    "removes": false,
+    "none": true,
+    "real": "Open desks for everyone",
+    "items": [
+     "desk"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Glass offices",
+    "item": "office",
+    "removes": true,
+    "none": false,
+    "real": "Leads keep rooms",
+    "items": [
+     "office"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Bookable rooms",
+    "item": "enclave",
+    "removes": false,
+    "none": false,
+    "real": "Leads book rooms when needed",
+    "items": [
+     "enclave"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 57,
+  "zone": "z4",
+  "time": "17:30",
+  "theme": "Culture & belonging",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "How does the team celebrate?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Culture wall",
+    "item": "culturewall",
+    "removes": true,
+    "none": false,
+    "real": "Wins and photos on a wall",
+    "items": [
+     "culturewall"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Social stair",
+    "item": "bleachers",
+    "removes": true,
+    "none": false,
+    "real": "Steps for town halls",
+    "items": [
+     "bleachers"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Team dinner out",
+    "item": "dining",
+    "removes": false,
+    "none": true,
+    "real": "Celebrate off site",
+    "items": [
+     "dining"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 58,
+  "zone": "z4",
+  "time": "18:00",
+  "theme": "Culture & belonging",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "Where does games night happen?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Games corner",
+    "item": "gamecorner",
+    "removes": true,
+    "none": false,
+    "real": "Board games and snacks",
+    "items": [
+     "gamecorner"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Table tennis",
+    "item": "pingpong",
+    "removes": true,
+    "none": false,
+    "real": "A table on the floor",
+    "items": [
+     "pingpong"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Go out",
+    "item": "dining",
+    "removes": false,
+    "none": true,
+    "real": "Dinner out together",
+    "items": [
+     "dining"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 59,
+  "zone": "z1",
+  "time": "17:45",
+  "theme": "Security",
+  "tier": "Rotating",
+  "roles": "PSE;SAL;SUP",
+  "native": false,
+  "question": "How do you stop this?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Secure shred station",
+    "item": "shredder",
+    "removes": true,
+    "none": false,
+    "real": "Lockable confidential bins",
+    "items": [
+     "shredder"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Print release",
+    "item": "printhub",
+    "removes": false,
+    "none": false,
+    "real": "Print only at the hub with a badge",
+    "items": [
+     "printhub"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Go paperless",
+    "item": "itbar",
+    "removes": false,
+    "none": true,
+    "real": "No printing",
+    "items": [
+     "itbar"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 60,
+  "zone": "z1",
+  "time": "08:00",
+  "theme": "Security",
+  "tier": "Rotating",
+  "roles": "CE;INS",
+  "native": false,
+  "question": "How do you get working again?",
+  "options": [
+   {
+    "k": "a",
+    "name": "IT help bar",
+    "item": "itbar",
+    "removes": true,
+    "none": false,
+    "real": "Walk-up IT desk",
+    "items": [
+     "itbar"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Swap locker",
+    "item": "smartlockers",
+    "removes": true,
+    "none": false,
+    "real": "Pick up a spare from a locker",
+    "items": [
+     "smartlockers"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Ship and wait",
+    "item": "mail",
+    "removes": false,
+    "none": true,
+    "real": "Send it off",
+    "items": [
+     "mail"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 62,
+  "zone": "z1",
+  "time": "08:40",
+  "theme": "Arrival & commute",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "How do visitors find their way?",
+  "options": [
+   {
+    "k": "a",
+    "name": "Wayfinding totems",
+    "item": "totem",
+    "removes": true,
+    "none": false,
+    "real": "Signs with live maps at each junction",
+    "items": [
+     "totem"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Main street",
+    "item": "mainstreet",
+    "removes": true,
+    "none": false,
+    "real": "One clear walkway through the floor",
+    "items": [
+     "mainstreet"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Booking kiosk",
+    "item": "kiosk",
+    "removes": true,
+    "none": false,
+    "real": "Touch screen to find people and rooms",
+    "items": [
+     "kiosk"
+    ]
+   }
+  ]
+ },
+ {
+  "id": 63,
+  "zone": "z5",
+  "time": "15:20",
+  "theme": "Wellbeing",
+  "tier": "Rotating",
+  "roles": "ALL",
+  "native": false,
+  "question": "Where can they lie down?",
+  "options": [
+   {
+    "k": "a",
+    "name": "First-aid room",
+    "item": "firstaid",
+    "removes": true,
+    "none": false,
+    "real": "Bed, kit and a door",
+    "items": [
+     "firstaid"
+    ]
+   },
+   {
+    "k": "b",
+    "name": "Wellness room",
+    "item": "meditation",
+    "removes": true,
+    "none": false,
+    "real": "Quiet room with a daybed",
+    "items": [
+     "meditation"
+    ]
+   },
+   {
+    "k": "c",
+    "name": "Recharge recliner",
+    "item": "recliner",
+    "removes": true,
+    "none": false,
+    "real": "A recliner in a quiet corner",
+    "items": [
+     "recliner"
+    ]
+   }
+  ]
+ }
+]

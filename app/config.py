@@ -34,6 +34,25 @@ class Settings:
     read_exporters: frozenset[str] = field(
         default_factory=lambda: frozenset(v for v in _env("READ_EXPORTERS", "").split(",") if v)
     )
+    # "dev", "staging" or "production". Production refuses to start with a shared viewer
+    # token or the default rate-limit secret (see check_production in app/main.py).
+    app_env: str = field(default_factory=lambda: _env("APP_ENV", "dev"))
+    # One shared viewer token for the read API in dev, CI and staging (the readout's
+    # RO_READ_TOKEN). Unset by default: there is no default token. Never set in production.
+    read_token: str = field(default_factory=lambda: _env("READ_TOKEN", ""))
+    # "off" (default): preference numbers use every completed game, as READOUT.md defines.
+    # "on": they also leave out repeat plays and plays scoring under 40 (spec section 7).
+    read_quality: str = field(default_factory=lambda: _env("READ_QUALITY", "off"))
+    # How long the read API reuses the plays it loaded (READOUT.md allows up to 5 minutes).
+    # The readout fires all its calls at once; this makes them one database load.
+    read_cache_seconds: float = field(default_factory=lambda: float(_env("READ_CACHE_SECONDS", "30")))
+    # The game's item catalogue and palette list, for the read API's meta and space-brief.
+    items_path: Path = field(
+        default_factory=lambda: Path(_env("ITEMS_PATH", str(ROOT / "sample" / "items.json")))
+    )
+    palettes_path: Path = field(
+        default_factory=lambda: Path(_env("PALETTES_PATH", str(ROOT / "sample" / "palettes.json")))
+    )
     # Web origins allowed to call the API from a browser: the game's domain (and the
     # dashboard's, if separate), comma-separated, e.g. "https://play.example.kr".
     # Empty means no cross-origin calls are allowed.

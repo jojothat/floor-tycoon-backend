@@ -19,6 +19,9 @@ class MomentRow:
     chosen: str | None = None
     time_to_decide_ms: int | None = None
     rethinks: int = 0
+    # First bubble tap to the last Choose before the decision; None when the player never
+    # chose (skipped straight away). The read API's decide times use this.
+    choose_ms: int | None = None
 
 
 @dataclass
@@ -39,6 +42,9 @@ class Derived:
     add_declines: list[dict]
     played_deal: list[int] | None
     day_ms: int | None = None  # client t of the last decision of the day: start to the 18:00 floor
+    # The floor's one addition: the last add on a place that never had an addRemoved
+    # ({item_id, how_placed, zone}), or None.
+    final_add: dict | None = None
 
 
 def _how_placed(e: dict) -> str:
@@ -64,6 +70,7 @@ def derive(events: list[dict], zone_to_scenario: dict[str, int]) -> Derived:
     replaying: set[str] = set()  # zones being replayed at the 18:00 floor
     shuffles = 0
     day_ms = None
+    removed_zones: set[str] = set()
 
     def moment(zone: str) -> MomentRow:
         if zone not in moments:
@@ -97,6 +104,8 @@ def derive(events: list[dict], zone_to_scenario: dict[str, int]) -> Derived:
                 row.chosen = e.get("opt") if ev == "keep" else "skip"
                 row.rethinks = int(e.get("rethinks") or 0)
                 day_ms = t
+                if m in last_choose_at and m in answered_at:
+                    row.choose_ms = last_choose_at[m] - answered_at[m]
                 decided = last_choose_at.get(m, t) if ev == "keep" else t
                 if m in answered_at:
                     row.time_to_decide_ms = max(0, decided - answered_at[m])
@@ -123,6 +132,7 @@ def derive(events: list[dict], zone_to_scenario: dict[str, int]) -> Derived:
             )
             shuffles = 0
         elif ev == "addRemoved":
+            removed_zones.add(m)
             for a in reversed(additions):
                 if not a.removed and a.zone == m and a.item_id == str(e.get("item")):
                     a.removed = True
@@ -139,4 +149,6 @@ def derive(events: list[dict], zone_to_scenario: dict[str, int]) -> Derived:
         add_declines=declines,
         played_deal=played_deal,
         day_ms=day_ms,
+        final_add=next(({"item_id": a.item_id, "how_placed": a.how_placed, "zone": a.zone}
+                        for a in reversed(additions) if a.zone not in removed_zones), None),
     )

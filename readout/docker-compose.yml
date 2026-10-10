@@ -1,0 +1,34 @@
+# Space Readout (management dashboard) and what it needs to be tested.
+#   docker compose --profile mock up --build readout mock           → dashboard on :8081 against the mock (empty until seeded)
+#   docker compose --profile mock --profile seed run --rm seed      → 300 synthetic plays into the mock
+#   docker compose --profile mock --profile test run --rm e2e       → dashboard checks, exit 0 = pass
+#   RO_SAMPLE=1 docker compose up --build readout                   → labelled sample data, no backend needed
+# Against the real backend: run the frontend stack (frontend/docker-compose.yml) first, then
+#   API_UPSTREAM=http://api:8000 docker compose up --build readout   with this project joined to that network
+#   (see CLAUDE.md, "Join the frontend stack"), or add the readout service to the frontend compose.
+services:
+  readout:
+    build: { context: ., dockerfile: docker/readout.Dockerfile }
+    ports: ["8081:80"]
+    environment:
+      API_UPSTREAM: ${API_UPSTREAM:-http://api:8000}
+      RO_API_BASE: /api
+      RO_READ_TOKEN: ${RO_READ_TOKEN:-dev-viewer}
+      RO_SAMPLE: ${RO_SAMPLE:-0}
+
+  mock:
+    profiles: [mock]
+    build: { context: ., dockerfile: docker/mock-api.Dockerfile }
+    environment: { READ_TOKEN: dev-viewer }
+    networks: { default: { aliases: [api] } }
+
+  seed:
+    profiles: [seed]
+    build: { context: ., dockerfile: docker/seed.Dockerfile }
+    environment: { API: "${SEED_API:-http://api:8000}", N: "${N:-300}" }
+
+  e2e:
+    profiles: [test]
+    build: { context: ., dockerfile: docker/e2e.Dockerfile }
+    environment: { READOUT_URL: http://readout, API_URL: "http://api:8000", READ_TOKEN: dev-viewer }
+    depends_on: [readout]
