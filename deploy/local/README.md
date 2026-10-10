@@ -102,6 +102,10 @@ docker compose up -d
 | Stop everything (data is kept) | `docker compose down` |
 | Change a setting | edit `.env`, then `docker compose up -d` |
 
+## Record a demo video
+
+`demo/demo.sh` records the game, the backend console and the readout side by side, using a throwaway copy of this stack. See `demo/README.md`.
+
 ## Don't
 
 - Don't run `readout/tools/seed.mjs` or any e2e test against this stack. They write synthetic or test plays into the real data. Use the dev stack in `frontend/docker-compose.yml` for that.
