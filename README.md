@@ -55,6 +55,10 @@ The same steps work on any Linux server with Docker. Clone the repo, create `.en
 
 Use a test server for sample and synthetic data only. Real pilot data must stay in a Korean cloud region (spec section 8), and DigitalOcean has no Korean region.
 
+## Production on your own machine
+
+`deploy/local/` runs the game, the backend, the Space Readout, the jobs and daily backups on one computer, behind HTTPS with a manager login, and with no cloud account. See `deploy/local/README.md`. It holds real pilot data only if that machine is in Korea and Applied Materials Korea accepts self-hosting (spec section 8).
+
 ## CI
 
 GitHub Actions runs the same lint and tests on every pull request (`.github/workflows/test.yml`), against a Postgres 16 service.
