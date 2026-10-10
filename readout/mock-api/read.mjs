@@ -67,6 +67,8 @@ export function readApi(path, url, ctx) {
   const done = R.filter(r => r.completed);
   const N = done.length;
   const base = { n: N, updated_at: new Date().toISOString() };
+  // started minus completed would show the unfinished games, so a gap under 10 hides it
+  const started = R.length - N > 0 && R.length - N < MIN ? null : R.length;
   const name = (id, k) => { const d = SCEN.find(x => x.id === id); const o = d && d.options.find(o => o.k === k); return k === 'skip' ? 'Skipped' : (o && o.name) || k; };
   const route = path.replace('/v1/read/', '');
 
@@ -76,8 +78,8 @@ export function readApi(path, url, ctx) {
 
   if (route === 'summary') {
     const byType = {}; for (const t of [...TYPES, 'none']) { const n = done.filter(r => r.type === t).length; byType[t] = n >= MIN ? n : null; }
-    return { ...base, started: R.length, completed: N, completion: R.length >= MIN ? Math.round(N / R.length * 1000) / 10 : null,
-      median_play_s: N >= MIN ? median(done.map(r => r.playSec)) : null, by_type: byType, synthetic: R.filter(r => r.synthetic).length };
+    return { ...base, started, completed: N, completion: R.length >= MIN && started != null ? Math.round(N / R.length * 1000) / 10 : null,
+      median_play_s: N >= MIN ? median(done.map(r => r.playSec)) : null, by_type: byType, synthetic: done.filter(r => r.synthetic).length };
   }
 
   if (route === 'funnel') {
@@ -85,10 +87,12 @@ export function readApi(path, url, ctx) {
     for (let k = 1; k <= 7; k++) steps.push(['m' + k, `Played moment ${k}`]);
     steps.push(['end', 'Reached 18:00'], ['palette', 'Picked a palette'], ['render', 'Opened the render'], ['wall', 'Shared to the wall']);
     const cnt = key => R.filter(r => key[0] === 'm' ? r.played >= +key.slice(1) : r.reached[key]).length;
-    // a step under 10, or fewer than 10 short of the starts (the drop-out would be a small group), hides its count
-    const step = (key, label) => { const n = cnt(key), gap = R.length - n;
-      return n < MIN ? { key, label, n: null, lt10: true } : gap > 0 && gap < MIN ? { key, label, n: null, dropped_lt10: true } : { key, label, n }; };
-    return { n: R.length, updated_at: base.updated_at, steps: R.length >= MIN ? steps.map(([key, label]) => step(key, label)) : null, lt10: R.length < MIN || undefined };
+    // a step under 10, or within 10 of the starts or of the finished count (n on every response), hides its count
+    const near = (a, b) => a !== b && Math.abs(a - b) < MIN;
+    const step = (key, label) => { const n = cnt(key);
+      return n < MIN ? { key, label, n: null, lt10: true } : near(R.length, n) ? { key, label, n: null, dropped_lt10: true }
+        : near(n, N) ? { key, label, n: null, near_lt10: true } : { key, label, n }; };
+    return { n: started, updated_at: base.updated_at, steps: R.length >= MIN ? steps.map(([key, label]) => step(key, label)) : null, lt10: R.length < MIN || undefined };
   }
 
   // per scenario: what people chose (final pick), how split they were, how long they took

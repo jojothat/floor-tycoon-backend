@@ -137,22 +137,43 @@ def test_filters_where_both_sides_are_ten(client, new_session, db):
     assert ce["n"] == 10 and "lt10" not in team(ce)
 
 
-def test_funnel_steps_under_ten_are_hidden(client, new_session, db):
-    populate(client, new_session, db, [("Lead", "good", 12), ("CE", "good", 12)])
-    for i in range(2):  # 2 Lead games that stop after moment 1: started 14, moment 2 reached by 12
-        s = new_session("Lead", anon_player_id=f"anon-leaver-{i:04d}")
+def leave_after_moment_1(client, new_session, role, count):
+    for i in range(count):
+        s = new_session(role, anon_player_id=f"anon-leaver-{role}-{i:04d}")
         client.post(f"/v1/sessions/{s['session_id']}/events", headers=s["headers"], json={"events": [
             {"seq": 1, "ev": "deal", "t": 0, "ids": s["deal"]}, {"seq": 2, "ev": "answer", "t": 5000, "m": "z1"},
             {"seq": 3, "ev": "keep", "t": 9000, "m": "z1", "opt": "a", "rethinks": 0}]})
+
+
+def no_small_difference(*ns):
+    shown = [n for n in ns if n is not None]
+    return all(not 0 < abs(a - b) < 10 for a in shown for b in shown)
+
+
+def test_funnel_steps_under_ten_are_hidden(client, new_session, db):
+    populate(client, new_session, db, [("Lead", "good", 12), ("CE", "good", 12)])
+    leave_after_moment_1(client, new_session, "Lead", 2)  # Lead: started 14, 12 finished
     f = ok(client, "funnel", type="Lead")
     steps = {st["key"]: st for st in f["steps"]}
-    assert f["n"] == 14 and steps["started"]["n"] == 14 and steps["m1"]["n"] == 14
     # no Lead game shared to the wall: under 10, so no count
     assert steps["wall"] == {"key": "wall", "label": "Shared to the wall", "n": None, "lt10": True}
     # 12 reached moment 2, but 14 - 12 would show the 2 who stopped
     assert steps["m2"]["n"] is None and steps["m2"]["dropped_lt10"] is True and steps["end"]["n"] is None
-    for st in f["steps"]:
-        assert st["n"] is None or (st["n"] >= 10 and f["n"] - st["n"] not in range(1, 10))
+    # 14 started, but 14 - 12 finished (n on every response) would show them too
+    assert f["n"] is None and steps["started"] == {"key": "started", "label": "Started a game", "n": None,
+                                                   "near_lt10": True}
+    s = ok(client, "summary", type="Lead")
+    assert (s["n"], s["started"], s["completed"], s["completion"]) == (12, None, 12, None)
+    assert all(st["n"] is None or st["n"] >= 10 for st in f["steps"])
+    assert no_small_difference(s["n"], s["started"], f["n"], *(st["n"] for st in f["steps"]))
+
+
+def test_ten_unfinished_games_show_the_starts(client, new_session, db):
+    populate(client, new_session, db, [("CE", "good", 10)])
+    leave_after_moment_1(client, new_session, "CE", 10)
+    s = ok(client, "summary")
+    assert (s["started"], s["completed"], s["completion"]) == (20, 10, 50.0)
+    assert ok(client, "funnel")["n"] == 20
 
 
 # ---------------------------------------------------------------- which games count
@@ -171,15 +192,12 @@ def test_synthetic_plays_are_left_out_unless_asked(client, new_session, db):
 
 def test_unfinished_games_count_only_as_started(client, new_session, db):
     populate(client, new_session, db, [("CE", "good", 10)])
-    s = new_session(anon_player_id="anon-leaver-0001")
-    client.post(f"/v1/sessions/{s['session_id']}/events", headers=s["headers"], json={"events": [
-        {"seq": 1, "ev": "deal", "t": 0, "ids": s["deal"]}, {"seq": 2, "ev": "answer", "t": 5000, "m": "z1"},
-        {"seq": 3, "ev": "keep", "t": 9000, "m": "z1", "opt": "a", "rethinks": 0}]})
+    leave_after_moment_1(client, new_session, "CE", 1)
     summary = ok(client, "summary")
-    assert (summary["started"], summary["completed"], summary["completion"]) == (11, 10, 90.9)
+    # 11 started and 10 finished would show the one who left
+    assert (summary["started"], summary["completed"], summary["completion"]) == (None, 10, None)
     steps = {st["key"]: st for st in ok(client, "funnel")["steps"]}
-    assert (steps["started"]["n"], steps["m1"]["n"]) == (11, 11)
-    # 10 reached moment 2, but 11 - 10 would show the one who left
+    assert steps["started"]["near_lt10"] and steps["m1"]["near_lt10"]
     assert steps["m2"]["dropped_lt10"] and steps["end"]["dropped_lt10"] and steps["end"]["n"] is None
 
 
