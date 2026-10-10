@@ -24,15 +24,11 @@ Open a pull request per step. Keep each one small enough to review on a phone.
 - Sample data is always labelled as sample.
 - Raw events are append-only: never update or delete them, except through the retention job.
 
-## Choices left open
+## Pilot decisions
 
-These are in spec section 10 and are not decided:
+Spec section 10 records them: AWS Seoul, an invite link per site, raw events kept 3 months after the pilot ends.
 
-- the cloud provider (it must be a Korean region);
-- invite link vs SSO;
-- the retention period.
-
-Write the code so these are configuration, not code changes. Until hosting is chosen, use Postgres via Docker for local runs and tests.
+Keep them as configuration, not code changes. Use Postgres via Docker for local runs and tests.
 
 ## Style
 

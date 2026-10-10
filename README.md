@@ -19,7 +19,7 @@ The game itself: https://claude.ai/artifact/RpuzqVhRsSVaAFCmqZUGuU (open it on a
 
 ## Status
 
-Spec agreed in draft. Open questions are at the end of `backend-spec.md`: hosting provider, access method, retention, viewers, role codes and pilot size.
+Spec agreed in draft. The pilot decisions (hosting, access, retention, viewers, role codes, pilot size, flow) are at the end of `backend-spec.md`.
 
 ## Run it locally
 
