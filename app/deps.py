@@ -52,6 +52,11 @@ def resolve_pilot(
         )
     if pilot is None:
         raise HTTPException(401, "unknown pilot")
+    return admit(pilot, cfg)
+
+
+def admit(pilot: Pilot, cfg: Settings) -> Pilot:
+    """A known pilot: refused outside its dates, then counted against its rate limit."""
     today = date.today()
     if (pilot.start_date and today < pilot.start_date) or (pilot.end_date and today > pilot.end_date):
         raise HTTPException(403, "pilot is not running")

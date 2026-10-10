@@ -1,0 +1,133 @@
+# Production on your own machine: the game, the backend, the Space Readout, the scheduled jobs and
+# daily backups, behind one HTTPS front door (Caddy). Nothing runs in a cloud account.
+#   ./init.sh <manager>             once: writes .env with random secrets and adds a readout login
+#   docker compose up -d --build    start (and after every update)
+# Only Caddy publishes ports. The database, API and web containers are reachable only inside this stack.
+name: floor-tycoon
+
+x-env: &env
+  APP_ENV: production
+  DATABASE_URL: postgresql+psycopg://ft:${POSTGRES_PASSWORD:?run ./init.sh first}@db:5432/floor_tycoon
+  ACCESS_MODE: invite
+  # Managers sign in at Caddy (basic auth on the readout address); Caddy names them in this header.
+  READ_AUTH: sso
+  SSO_HEADER: X-Auth-User
+  READ_EXPORTERS: ${READ_EXPORTERS:-}
+  RETENTION_MONTHS: ${RETENTION_MONTHS:-12}
+  RATE_LIMIT_SECRET: ${RATE_LIMIT_SECRET:?run ./init.sh first}
+  RATE_LIMIT_IP_PER_MIN: ${RATE_LIMIT_IP_PER_MIN:-600}
+  RATE_LIMIT_PILOT_PER_MIN: ${RATE_LIMIT_PILOT_PER_MIN:-6000}
+  TRUST_PROXY: "true"  # behind Caddy, which replaces any X-Forwarded-For a client sends
+  READ_QUALITY: ${READ_QUALITY:-off}
+
+x-app: &app
+  build:
+    context: ../..
+    secrets: [extra_ca]
+  restart: unless-stopped
+  environment: *env
+  depends_on:
+    db: { condition: service_healthy }
+
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ft
+      POSTGRES_DB: floor_tycoon
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?run ./init.sh first}
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "ft", "-d", "floor_tycoon"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  api:
+    <<: *app
+    # Create missing tables, register the pilot's invite token (idempotent), then serve.
+    command: ["sh", "-c", "python -m app.db && python -m app.admin add-pilot \"$$PILOT_ID\" \"$$PILOT_SITE\" \"$$PILOT_TOKEN\" && exec uvicorn app.main:app --host 0.0.0.0 --port 8000 --proxy-headers --forwarded-allow-ips='*'"]
+    environment:
+      <<: *env
+      PILOT_ID: ${PILOT_ID:-pilot-1}
+      PILOT_SITE: ${PILOT_SITE:-site-1}
+      PILOT_TOKEN: ${PILOT_TOKEN:?run ./init.sh first}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/healthz')"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+
+  jobs:
+    <<: *app
+    command: ["sh", "/srv/jobs.sh"]  # quality scores every 15 minutes, retention once a day
+    depends_on:
+      api: { condition: service_healthy }  # the API creates the tables on start
+
+  web:
+    # The game. Its nginx proxies /api/ to the backend, so phones talk to one origin.
+    build: { context: ../../frontend, dockerfile: docker/web.Dockerfile }
+    restart: unless-stopped
+    environment:
+      API_UPSTREAM: http://api:8000
+      FT_API_BASE: /api
+      FT_PILOT_TOKEN: ${PILOT_TOKEN}
+      FT_GAME_VERSION: ${GAME_VERSION:-pilot-1.0}
+      FT_SIM_MS: ${FT_SIM_MS:-20000}
+
+  readout:
+    # The Space Readout. No viewer token in the page: managers sign in at Caddy instead.
+    build: { context: ../../readout, dockerfile: docker/readout.Dockerfile }
+    restart: unless-stopped
+    environment:
+      API_UPSTREAM: http://api:8000
+      RO_API_BASE: /api
+      RO_READ_TOKEN: ""
+      RO_SAMPLE: "0"
+    depends_on:
+      api: { condition: service_healthy }  # its nginx resolves the api once, at start
+
+  caddy:
+    image: caddy:2.8-alpine
+    restart: unless-stopped
+    ports:
+      - "${HTTP_PORT:-80}:80"
+      - "${HTTPS_PORT:-443}:443"
+      - "${READOUT_PORT:-8443}:8443"
+    environment:
+      GAME_ADDRESS: ${GAME_ADDRESS:-https://localhost}
+      READOUT_ADDRESS: ${READOUT_ADDRESS:-https://localhost:8443}
+      CADDY_TLS: ${CADDY_TLS:-internal}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./managers.caddy:/etc/caddy/managers.caddy:ro
+      - caddy_data:/data  # certificates, and the local CA when CADDY_TLS=internal
+      - caddy_config:/config
+    depends_on: [web, readout]
+
+  backup:
+    # A compressed dump of the database every day, kept BACKUP_KEEP_DAYS days, in ./backups.
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      PGHOST: db
+      PGUSER: ft
+      PGDATABASE: floor_tycoon
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+      BACKUP_KEEP_DAYS: ${BACKUP_KEEP_DAYS:-14}
+    volumes:
+      - ./backup.sh:/backup.sh:ro
+      - ./backups:/backups
+    entrypoint: ["sh", "/backup.sh"]
+    depends_on:
+      api: { condition: service_healthy }  # so the first dump has the tables
+
+volumes:
+  pgdata:
+  caddy_data:
+  caddy_config:
+
+secrets:
+  extra_ca:
+    file: ${EXTRA_CA_FILE:-/dev/null}  # only behind a TLS-inspecting proxy; empty otherwise

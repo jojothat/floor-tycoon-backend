@@ -26,8 +26,8 @@ EXPECTED = {
 }
 
 
-def play_through_api(client, new_session, events, picks, anon, role="CE"):
-    s = new_session(role, anon_player_id=anon)
+def play_through_api(client, new_session, events, picks, anon, role="CE", **start):
+    s = new_session(role, anon_player_id=anon, **start)
     url = f"/v1/sessions/{s['session_id']}"
     for i in range(0, len(events), 10):
         assert client.post(f"{url}/events", headers=s["headers"], json={"events": events[i:i + 10]}).status_code == 200

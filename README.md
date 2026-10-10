@@ -33,6 +33,34 @@ uvicorn app.main:app --reload                            # http://localhost:8000
 pytest                                                   # the tests use floor_tycoon_test
 ```
 
+## Run the whole backend in Docker
+
+The API, the scheduled jobs and Postgres, as containers:
+
+```sh
+cp .env.example .env                                     # then change the password and secret
+docker compose up -d --build --wait                      # API on :8000, health at /healthz
+docker compose exec api python -m app.admin add-pilot test site-a test-invite
+docker compose exec api python -m app.admin add-viewer me my-viewer-token
+python -m scripts.smoke --url http://localhost:8000 --pilot-token test-invite --viewer-token my-viewer-token
+```
+
+The smoke test plays the real sample log over HTTP the way the game would (session, events with retried batches, 18:00, edits, floor, wall, views), plus 11 scripted plays, and reads the management API back. Its plays are labelled sample data (`game_version` `sample-smoke-test`), so use a test pilot.
+
+Postgres only listens on this machine (`127.0.0.1`), with the password from `.env`. Behind a TLS-inspecting proxy, set `EXTRA_CA_FILE` to its CA so the build can install packages.
+
+### On a test server (for example a DigitalOcean droplet)
+
+The same steps work on any Linux server with Docker. Clone the repo, create `.env`, `docker compose up -d --build --wait`, and run the smoke test from your own machine against `http://<server-ip>:8000`. For HTTPS, put Caddy or nginx in front and set `TRUST_PROXY=true`.
+
+Use a test server for sample and synthetic data only. Real pilot data must stay in a Korean cloud region (spec section 8), and DigitalOcean has no Korean region.
+
+## Production on your own machine
+
+`deploy/local/` runs the game, the backend, the Space Readout, the jobs and daily backups on one computer, behind HTTPS with a manager login, and with no cloud account. See `deploy/local/README.md`. It holds real pilot data only if that machine is in Korea and Applied Materials Korea accepts self-hosting (spec section 8).
+
+## CI
+
 GitHub Actions runs the same lint and tests on every pull request (`.github/workflows/test.yml`), against a Postgres 16 service.
 
 Configuration is through environment variables (see `app/config.py`): `DATABASE_URL` (any Postgres, so any Korean-region provider), `ACCESS_MODE` (`invite` or `sso`), `RETENTION_MONTHS`, `WRITE_KEY_TTL_MINUTES`, `MIN_GROUP_SIZE`, `SCENARIOS_PATH` and `DEAL_Z7_SCENARIO_ID`.

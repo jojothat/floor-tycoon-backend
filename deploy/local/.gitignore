@@ -1,0 +1,4 @@
+managers.caddy
+managers.caddy.new
+backups/
+.env.new

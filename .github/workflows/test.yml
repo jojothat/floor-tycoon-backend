@@ -22,7 +22,7 @@ jobs:
         env:
           POSTGRES_USER: ft
           POSTGRES_DB: floor_tycoon_test
-          POSTGRES_HOST_AUTH_METHOD: trust
+          POSTGRES_PASSWORD: ft-local-only
         ports:
           - 5432:5432
         options: >-
@@ -31,7 +31,7 @@ jobs:
           --health-timeout 5s
           --health-retries 10
     env:
-      TEST_DATABASE_URL: postgresql+psycopg://ft@localhost:5432/floor_tycoon_test
+      TEST_DATABASE_URL: postgresql+psycopg://ft:ft-local-only@localhost:5432/floor_tycoon_test
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -43,3 +43,38 @@ jobs:
         run: python -m pyflakes app tests
       - name: Tests
         run: python -m pytest -q
+
+  # The game (frontend/) played end to end in Chromium against this backend, behind the
+  # game's nginx. Skipped while frontend/ is not in the branch being tested.
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Is the game in this branch?
+        id: game
+        run: |
+          if [ -f frontend/e2e/play.mjs ]; then echo "present=true" >> "$GITHUB_OUTPUT"
+          else echo "present=false" >> "$GITHUB_OUTPUT"; echo "::notice::frontend/ is not in this branch yet, e2e skipped"; fi
+      - name: Start the game, the backend and Postgres
+        if: steps.game.outputs.present == 'true'
+        working-directory: frontend
+        env:
+          FT_SIM_MS: "4000"   # a short simulated day
+        run: docker compose up -d --build --wait web api db
+      - uses: actions/setup-node@v4
+        if: steps.game.outputs.present == 'true'
+        with:
+          node-version: "22"
+      - name: Install Playwright and Chromium
+        if: steps.game.outputs.present == 'true'
+        run: npm install --no-save --no-package-lock playwright@1.48.2 && npx playwright install --with-deps chromium
+      - name: Play one full game
+        if: steps.game.outputs.present == 'true'
+        env:
+          BASE_URL: http://localhost:8080
+        run: node frontend/e2e/play.mjs
+      - name: Backend logs
+        if: failure() && steps.game.outputs.present == 'true'
+        working-directory: frontend
+        run: docker compose logs api web

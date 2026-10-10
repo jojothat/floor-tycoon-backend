@@ -227,3 +227,7 @@ def test_classic_rethink(client, new_session, db):
     client.post(f"/v1/sessions/{s['session_id']}/finish", headers=s["headers"], json={"final_picks": {"z2": "c"}})
     m = db.scalar(select(Moment))
     assert (m.previewed, m.first_preview, m.chosen, m.rethinks, m.time_to_decide_ms) == (["a", "c"], "a", "c", 1, 6000)
+
+
+def test_healthz(client):
+    assert client.get("/healthz").json() == {"ok": True}

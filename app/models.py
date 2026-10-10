@@ -51,9 +51,12 @@ class GameSession(Base):
     __table_args__ = (
         CheckConstraint(f"role_type IN {ROLE_TYPES}", name="sessions_role_type"),
         CheckConstraint(f"flow IN {FLOWS}", name="sessions_flow"),
+        UniqueConstraint("pilot_id", "client_session_id", name="sessions_client_session_id"),
     )
 
     session_id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    # The id the phone made for this play, so a retried start returns the same session.
+    client_session_id: Mapped[str | None] = mapped_column(String(64))
     anon_player_id: Mapped[str] = mapped_column(String(64), index=True)
     pilot_id: Mapped[str] = mapped_column(ForeignKey("pilots.pilot_id"), index=True)
     role_type: Mapped[str] = mapped_column(String(16), default="none")
@@ -69,6 +72,8 @@ class GameSession(Base):
     # Set by the retention job when this play's raw events were deleted. Derived tables and
     # the quality score are kept, and are no longer rebuilt.
     events_deleted_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    # Shared to the wall at least once (stays true when a later post replaces this one).
+    posted_to_wall: Mapped[bool] = mapped_column(Boolean, default=False, server_default="false")
 
 
 class Deal(Base):
@@ -110,6 +115,7 @@ class Moment(Base):
     # a-d, "skip", or NULL if the player left before deciding.
     chosen: Mapped[str | None] = mapped_column(String(4))
     time_to_decide_ms: Mapped[int | None] = mapped_column(Integer)
+    choose_ms: Mapped[int | None] = mapped_column(Integer)  # bubble tap to the last Choose; None if never chosen
     rethinks: Mapped[int] = mapped_column(Integer, default=0)
 
 
@@ -159,7 +165,11 @@ class Floor(Base):
     final_picks: Mapped[dict] = mapped_column(JSONB, default=dict)  # zone -> a-d or "0"
     skips: Mapped[list[str]] = mapped_column(JSONB, default=list)  # zones left as they were
     addition: Mapped[dict | None] = mapped_column(JSONB)
-    palette_id: Mapped[str | None] = mapped_column(String(32))
+    palette_id: Mapped[str | None] = mapped_column(String(32))  # the game's palette number
+    palette_name: Mapped[str | None] = mapped_column(String(32))
+    # The addition as the game sent it ({adds: {zone: item}, deskfit: {mode, add, k} or null,
+    # swaps: {zone: item}}), validated: furniture ids only. The wall draws each office from this.
+    wall_addition: Mapped[dict | None] = mapped_column(JSONB)
     # Filled by POST /floor (build step 2): use %, happiness %, desk use %, peak, busy % per place,
     # seats, fab trips.
     sim: Mapped[dict | None] = mapped_column(JSONB)
@@ -175,9 +185,9 @@ class WallPost(Base):
     deal: Mapped[list[int]] = mapped_column(JSONB)
     picks: Mapped[dict] = mapped_column(JSONB)
     skips: Mapped[list[str]] = mapped_column(JSONB, default=list)
-    adds: Mapped[list | None] = mapped_column(JSONB)
-    deskfit: Mapped[str | None] = mapped_column(String(16))
-    swaps: Mapped[dict | None] = mapped_column(JSONB)
+    adds: Mapped[dict | None] = mapped_column(JSONB)  # {zone: item id}, as the game draws it
+    deskfit: Mapped[dict | None] = mapped_column(JSONB)  # {mode, add, k}, as the game draws it
+    swaps: Mapped[dict | None] = mapped_column(JSONB)  # {zone: item}
     palette: Mapped[str | None] = mapped_column(String(32))
     use_pct: Mapped[int | None] = mapped_column(Integer)
     happiness_pct: Mapped[int | None] = mapped_column(Integer)
