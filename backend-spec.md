@@ -191,7 +191,7 @@ Scores and flags are stored but never shown to the player. Every management numb
 - **Group-of-10 rule in the API, not the dashboard.** Every management query counts the plays behind each cell and returns "fewer than 10" instead of a number. A filter combination that would isolate a small group is refused. The wall's games-by-type strip applies the same rule: "Other".
 - **No free text.** Skips carry no reason in the current build. The classic build's optional "What would work instead?" text (80 characters) is accepted but never shown on the wall or in the management read without review.
 - **Data stays in Korea:** the database and backups are in a Korean cloud region.
-- **Retention:** raw events are kept for the pilot plus 12 months, then deleted; aggregated results are kept. To confirm with Applied Materials Korea.
+- **Retention:** raw events are kept for the pilot plus 3 months (about 90 days), then deleted; aggregated results are kept.
 - **Consent line** on the start screen: what is collected, that it is anonymous, and how long it is kept.
 
 ## 9. Management read
@@ -248,17 +248,18 @@ Filters on every call: pilot, site, employee type, game version, flow, date rang
 1. **Collect** (about 1 week): sessions, deal and events API; database; the game sending its existing log with an offline queue. Done when a scripted play (see `sample/`) lands complete in the database.
 2. **Clean** (about 1 week): quality score, repeat-play grouping, and the derived moments, edits, additions and floor tables. Done when 50 scripted plays (good, speeding, position-biased, skip-everything) score as expected.
 3. **Wall and read** (about 2 weeks): the wall API replacing the artifact store, then the read API with the group-of-10 rule, then the dashboard switched from sample data. Done when every chart shows live numbers and its play count.
-4. **Pilot** (2–3 weeks): one site, invite link, daily quality check, threshold tuning, then the readout to Zyeta and Applied Materials Korea.
+4. **Pilot** (2–3 weeks): three sites at once, about 1500 people, one invite link per site, daily quality check, threshold tuning on live data, then the readout to Zyeta and Applied Materials Korea.
 
-**Open questions**
+**Decisions** (10 Oct 2026; these were the open questions)
 
-- [ ] Hosting: which Korean cloud provider Applied Materials Korea accepts.
-- [ ] Access: shared invite link per site, or company SSO in front of the game.
-- [ ] Retention period for raw events.
-- [ ] Who may view the management read, and whether they can export.
-- [ ] Employee type codes: confirm PSE and IE against the report.
-- [ ] Pilot size and site.
-- [ ] Which flow the pilot uses: quick (default) or classic.
+- [x] Hosting: AWS Seoul (ap-northeast-2).
+- [x] Access: a shared invite link per site (`ACCESS_MODE=invite`). No per-person invite codes for the pilot.
+- [x] Retention: raw events are deleted 3 months (about 90 days) after the pilot ends (`RETENTION_MONTHS=3`).
+- [x] Viewers: a short named list. Only 1–2 of them can export.
+- [x] Employee type codes: CE, PSE, IE, Sales, Support and Lead, kept as they are. Labels can change later; the codes stay.
+- [x] Pilot size and sites: about 1500 people across 3 sites, all launched at once.
+- [x] Flow: quick.
+- [x] Funnel counts are rounded to 10, so subtracting two steps never gives an exact small group (to build).
 
 ## 11. What changed since v1 (8 Oct)
 
