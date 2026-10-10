@@ -157,7 +157,7 @@ def create_session(
             raise
         return retried_start(s, again, body, cfg)
     activity.say(session_id, f"New game started · employee type {role if role != 'none' else 'not given'} · "
-                             f"{body.flow} flow · {len(dealt)} moments dealt")
+                             f"{body.flow} flow · {len(dealt)} moments dealt · saved to the database")
     return {
         "session_id": session_id,
         "deal": [d.id for d in dealt],
@@ -322,7 +322,7 @@ def finish(body: FinishIn, gs: GameSession = Depends(writable_session), s: Sessi
         kept = len(body.final_picks) - len(skips)
         done = s.scalar(select(func.count()).select_from(GameSession).where(GameSession.finished_at.is_not(None)))
         activity.say(gs.session_id, f"Reached 18:00 · {kept} fixes kept, {len(skips)} skipped · "
-                                    f"finished games in the database: {done}")
+                                    f"marked finished, moments rebuilt · finished games in the database: {done}")
     return {"ok": True, "first_finish": first}
 
 
@@ -445,6 +445,6 @@ def post_floor(body: FloorIn, gs: GameSession = Depends(writable_session), s: Se
         sim = floor.sim
         nums = ", ".join(f"{label} {sim[k]:.0f}%" for k, label in (("use", "space use"), ("happy", "happiness"),
                                                                     ("deskU", "desk use")) if k in sim)
-        activity.say(gs.session_id, f"Simulated day results saved{': ' + nums if nums else ''}"
+        activity.say(gs.session_id, f"Simulated day results saved to the database{': ' + nums if nums else ''}"
                                     f"{' · quality score ' + str(q.score) + '/100' if q else ''}")
     return {"quality": q.score if q else None}  # never shown to the player

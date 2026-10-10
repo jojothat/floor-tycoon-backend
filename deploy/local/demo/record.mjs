@@ -34,9 +34,9 @@ const logs = spawn('docker', [...COMPOSE, 'logs', '-f', '--tail', '0', '--no-log
 let buf = '';
 logs.stdout.on('data', d => { buf += d; const parts = buf.split('\n'); buf = parts.pop(); parts.forEach(l => l.trim() && send(l)); });
 const PAGE = `<!doctype html><meta charset=utf-8><title>Backend console</title><style>
-body{margin:0;background:#0d1117;color:#c9d1d9;font:15px/1.45 'DejaVu Sans Mono',monospace;height:100vh;display:flex;flex-direction:column}
-header{background:#161b22;border-bottom:1px solid #30363d;padding:12px 16px;color:#e6edf3;font:600 15px 'Inter',sans-serif}
-header small{display:block;color:#8b949e;font:13px 'DejaVu Sans Mono',monospace;margin-top:4px}
+body{margin:0;background:#0d1117;color:#c9d1d9;font:15px/1.45 'DejaVu Sans Mono',Menlo,monospace;height:100vh;display:flex;flex-direction:column}
+header{background:#161b22;border-bottom:1px solid #30363d;padding:12px 16px;color:#e6edf3;font:600 15px 'Inter','Helvetica Neue',sans-serif}
+header small{display:block;color:#8b949e;font:13px 'DejaVu Sans Mono',Menlo,monospace;margin-top:4px}
 #log{flex:1;overflow:hidden;padding:10px 16px;white-space:pre-wrap;word-break:break-word}
 .http{color:#6e7681;font-size:12.5px}.ev{color:#c9d1d9}.ev .tm{color:#6e7681}
 .new{color:#7ee787;font-weight:bold}.fin{color:#f2cc60;font-weight:bold}.sim{color:#79c0ff}.wall{color:#d2a8ff}.ro{color:#ffa657;font-weight:bold}.job{color:#a5d6ff}

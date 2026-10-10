@@ -1,7 +1,7 @@
 """Plain-English activity lines on the console, so whoever runs the backend can watch games arrive.
 
-    09:41:07  [game 3fA9xQ]  New game started · employee type CE · quick flow · 7 moments dealt
-    09:41:12  [game 3fA9xQ]  Saved 3 events (this game now has 12)
+    09:41:07  [game 3fA9xQ]  New game started · employee type CE · quick flow · 7 moments dealt · saved to the database
+    09:41:12  [game 3fA9xQ]  Saved 3 events to the database (this game now has 12)
     09:41:12  [game 3fA9xQ]    · 09:00 Morning stand-up has no room: chose "Huddle Corner"
 
 Turn off with LOG_ACTIVITY=off. A game is named by the first 6 characters of its session id.
@@ -99,7 +99,8 @@ def events_saved(game: str, inserted: list[dict], duplicates: int, total: int, l
     if not inserted:
         say(game, f"Batch was a resend: nothing new{extra}")
         return
-    say(game, f"Saved {len(inserted)} event{'s' if len(inserted) != 1 else ''}{extra} (this game now has {total})")
+    say(game, f"Saved {len(inserted)} event{'s' if len(inserted) != 1 else ''} to the database{extra} "
+             f"(this game now has {total})")
     for ev in inserted:
         if (line := describe(ev, lib, zone_to_id)) is not None:
             say(game, f"  · {line}")
