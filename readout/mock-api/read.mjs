@@ -85,7 +85,10 @@ export function readApi(path, url, ctx) {
     for (let k = 1; k <= 7; k++) steps.push(['m' + k, `Played moment ${k}`]);
     steps.push(['end', 'Reached 18:00'], ['palette', 'Picked a palette'], ['render', 'Opened the render'], ['wall', 'Shared to the wall']);
     const cnt = key => R.filter(r => key[0] === 'm' ? r.played >= +key.slice(1) : r.reached[key]).length;
-    return { n: R.length, updated_at: base.updated_at, steps: R.length >= MIN ? steps.map(([key, label]) => ({ key, label, n: cnt(key) })) : null, lt10: R.length < MIN || undefined };
+    // a step under 10, or fewer than 10 short of the starts (the drop-out would be a small group), hides its count
+    const step = (key, label) => { const n = cnt(key), gap = R.length - n;
+      return n < MIN ? { key, label, n: null, lt10: true } : gap > 0 && gap < MIN ? { key, label, n: null, dropped_lt10: true } : { key, label, n }; };
+    return { n: R.length, updated_at: base.updated_at, steps: R.length >= MIN ? steps.map(([key, label]) => step(key, label)) : null, lt10: R.length < MIN || undefined };
   }
 
   // per scenario: what people chose (final pick), how split they were, how long they took

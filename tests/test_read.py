@@ -137,6 +137,24 @@ def test_filters_where_both_sides_are_ten(client, new_session, db):
     assert ce["n"] == 10 and "lt10" not in team(ce)
 
 
+def test_funnel_steps_under_ten_are_hidden(client, new_session, db):
+    populate(client, new_session, db, [("Lead", "good", 12), ("CE", "good", 12)])
+    for i in range(2):  # 2 Lead games that stop after moment 1: started 14, moment 2 reached by 12
+        s = new_session("Lead", anon_player_id=f"anon-leaver-{i:04d}")
+        client.post(f"/v1/sessions/{s['session_id']}/events", headers=s["headers"], json={"events": [
+            {"seq": 1, "ev": "deal", "t": 0, "ids": s["deal"]}, {"seq": 2, "ev": "answer", "t": 5000, "m": "z1"},
+            {"seq": 3, "ev": "keep", "t": 9000, "m": "z1", "opt": "a", "rethinks": 0}]})
+    f = ok(client, "funnel", type="Lead")
+    steps = {st["key"]: st for st in f["steps"]}
+    assert f["n"] == 14 and steps["started"]["n"] == 14 and steps["m1"]["n"] == 14
+    # no Lead game shared to the wall: under 10, so no count
+    assert steps["wall"] == {"key": "wall", "label": "Shared to the wall", "n": None, "lt10": True}
+    # 12 reached moment 2, but 14 - 12 would show the 2 who stopped
+    assert steps["m2"]["n"] is None and steps["m2"]["dropped_lt10"] is True and steps["end"]["n"] is None
+    for st in f["steps"]:
+        assert st["n"] is None or (st["n"] >= 10 and f["n"] - st["n"] not in range(1, 10))
+
+
 # ---------------------------------------------------------------- which games count
 
 
@@ -159,8 +177,10 @@ def test_unfinished_games_count_only_as_started(client, new_session, db):
         {"seq": 3, "ev": "keep", "t": 9000, "m": "z1", "opt": "a", "rethinks": 0}]})
     summary = ok(client, "summary")
     assert (summary["started"], summary["completed"], summary["completion"]) == (11, 10, 90.9)
-    steps = {st["key"]: st["n"] for st in ok(client, "funnel")["steps"]}
-    assert (steps["started"], steps["m1"], steps["m2"], steps["end"]) == (11, 11, 10, 10)
+    steps = {st["key"]: st for st in ok(client, "funnel")["steps"]}
+    assert (steps["started"]["n"], steps["m1"]["n"]) == (11, 11)
+    # 10 reached moment 2, but 11 - 10 would show the one who left
+    assert steps["m2"]["dropped_lt10"] and steps["end"]["dropped_lt10"] and steps["end"]["n"] is None
 
 
 def test_read_quality_on_leaves_out_low_scores_and_repeats(client, new_session, db, monkeypatch):

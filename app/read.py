@@ -10,6 +10,7 @@ The group-of-10 rule is applied here, never in the page:
 - a share, average or median over fewer than 10 games is null;
 - a whole group under 10 comes back as {"n": n, "lt10": true};
 - lists drop entries under 10;
+- a funnel step under 10, or fewer than 10 short of the starts, has a null count;
 - a filter that leaves out fewer than 10 games (so subtracting two views would show
   a small group) suppresses every number in the response.
 
@@ -453,8 +454,19 @@ def ep_funnel(c: Ctx):
             return sum(r.played >= int(key[1:]) for r in c.R)
         return sum(bool(r.reached[key]) for r in c.R)
 
+    def step(key, label):
+        # a step under 10, or one fewer than 10 short of the starts (started minus it would
+        # show the small group that dropped out), hides its count
+        n = count(key)
+        gap = len(c.R) - n
+        if n < c.rules.mg:
+            return {"key": key, "label": label, "n": None, "lt10": True}
+        if 0 < gap < c.rules.mg:
+            return {"key": key, "label": label, "n": None, "dropped_lt10": True}
+        return {"key": key, "label": label, "n": n}
+
     out = {"n": len(c.R), "updated_at": c.base()["updated_at"],
-           "steps": [{"key": k, "label": label, "n": count(k)} for k, label in FUNNEL] if len(c.R) >= c.rules.mg else None}
+           "steps": [step(k, label) for k, label in FUNNEL] if len(c.R) >= c.rules.mg else None}
     if len(c.R) < c.rules.mg:
         out["lt10"] = True
     return out

@@ -132,7 +132,7 @@ svg .s{font-size:12px;fill:var(--mut)} svg .halo{paint-order:stroke;stroke:#fff;
 /* funnel */
 .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
 .st{background:var(--bg);border-radius:12px;padding:12px;display:grid;gap:2px;position:relative}
-.st b{font:800 30px Archivo,sans-serif;letter-spacing:-.02em;font-variant-numeric:tabular-nums} .st span{font-size:13px} .st em{font:500 11px 'IBM Plex Mono',ui-monospace,monospace;color:var(--mut);font-style:normal}
+.st b{font:800 30px Archivo,sans-serif;letter-spacing:-.02em;font-variant-numeric:tabular-nums} .st b.sm{font-size:17px;line-height:1.2} .st span{font-size:13px} .st em{font:500 11px 'IBM Plex Mono',ui-monospace,monospace;color:var(--mut);font-style:normal}
 @media (max-width:640px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 /* explorer */
 .ex{display:grid;gap:12px}
@@ -445,19 +445,21 @@ function sKinds(br){
 function sFunnel(fn,sum){
   const K='HOW FAR PEOPLE GOT', st=fn&&fn.steps;
   if(!st) return under10(K,'How far people got');
-  const g=k=>(st.find(s=>s.key===k)||{}).n||0, n0=g('started')||1;
+  // a step's n is null when it is under 10 (lt10) or fewer than 10 short of the starts (dropped_lt10)
+  const f=k=>st.find(s=>s.key===k)||{}, g=k=>f(k).n, n0=g('started')||1;
+  const word=s=>s.n!=null?s.n:s.lt10?'Fewer than 10':'All but fewer than 10', share=s=>s.n!=null?p1(s.n/n0*100):s.lt10?'—':'over '+p0((n0-10)/n0*100);
   const ms=[['started','Started a game'],['end','Reached 18:00'],['render','Opened the render'],['wall','Shared to the wall']];
-  const box=el(`<div style="display:grid;gap:14px"><div class="steps">${ms.map(([k,l])=>`<div class="st"><b>${g(k)}</b><span>${l}</span><em>${k==='started'?'100%':p0(g(k)/n0*100)} of starts</em></div>`).join('')}</div><div class="kicker">Still playing after each moment</div></div>`);
-  const pts=[['Start',n0],...[1,2,3,4,5,6,7].map(i=>['M'+i,g('m'+i)]),['18:00',g('end')]], W=inner(),H=160,L=40,x=i=>L+i*(W-L-20)/(pts.length-1),lo=Math.max(0,Math.floor(Math.min(...pts.map(p=>p[1]/n0*100))/10)*10-10),y=v=>14+(100-v)/(100-lo)*(H-44);
+  const box=el(`<div style="display:grid;gap:14px"><div class="steps">${ms.map(([k,l])=>{const s=f(k);return `<div class="st"><b${s.n==null?' class="sm"':''}>${word(s)}</b><span>${l}</span><em>${s.n!=null?(k==='started'?'100%':p0(s.n/n0*100))+' of starts':s.lt10?'hidden under 10':'fewer than 10 stopped'}</em></div>`}).join('')}</div><div class="kicker">Still playing after each moment</div></div>`);
+  const pts=[['Start',n0],...[1,2,3,4,5,6,7].map(i=>['M'+i,g('m'+i)]),['18:00',g('end')]], W=inner(),H=160,L=40,x=i=>L+i*(W-L-20)/(pts.length-1),known=pts.filter(p=>p[1]!=null),lo=Math.max(0,Math.floor(Math.min(...known.map(p=>p[1]/n0*100))/10)*10-10),y=v=>14+(100-v)/(100-lo)*(H-44);
   const s=S(W,H,'Share of starters still playing after each moment');
   [lo,(lo+100)/2,100].forEach(v=>{E(s,'line',{x1:L,x2:W-20,y1:y(v),y2:y(v),stroke:C.line});E(s,'text',{x:L-6,y:y(v)+4,class:'s','text-anchor':'end'},Math.round(v)+'%')});
-  E(s,'path',{d:pts.map((p,i)=>(i?'L':'M')+x(i)+' '+y(p[1]/n0*100)).join(' '),fill:'none',stroke:C.a,'stroke-width':2});
-  pts.forEach((p,i)=>{tip(E(s,'circle',{cx:x(i),cy:y(p[1]/n0*100),r:4.5,fill:C.a,stroke:'#fff','stroke-width':1.5}),`${p[0]}: ${p[1]} (${p1(p[1]/n0*100)})`);if(W>=480||i%2===0||i===pts.length-1)E(s,'text',{x:x(i),y:H-6,class:'m','text-anchor':'middle'},p[0])});
+  E(s,'path',{d:pts.map((p,i)=>p[1]==null?'':(i&&pts.slice(0,i).some(q=>q[1]!=null)?'L':'M')+x(i)+' '+y(p[1]/n0*100)).join(' '),fill:'none',stroke:C.a,'stroke-width':2});
+  pts.forEach((p,i)=>{if(p[1]!=null)tip(E(s,'circle',{cx:x(i),cy:y(p[1]/n0*100),r:4.5,fill:C.a,stroke:'#fff','stroke-width':1.5}),`${p[0]}: ${p[1]} (${p1(p[1]/n0*100)})`);if(W>=480||i%2===0||i===pts.length-1)E(s,'text',{x:x(i),y:H-6,class:'m','text-anchor':'middle'},p[0])});
   box.appendChild(s);
-  const done=g('end')/n0*100;
-  slide(K,{h:`${p0(done)} of people who started finished the day`,body:box,
+  const end=f('end'), done=end.n!=null?end.n/n0*100:end.dropped_lt10?100:0;
+  slide(K,{h:end.n!=null?`${p0(done)} of people who started finished the day`:end.lt10?'Fewer than 10 people who started finished the day':'Fewer than 10 people who started did not finish the day',body:box,
     so:`${sum.completed} finished games sit behind this readout. ${done>=80?'Completion is high, so the results are not skewed toward a keen few.':'Completion is low enough that keen players may be over-represented; read close results with care.'}`,
-    table:{cols:['Step','People','Share of starts'],rows:st.map(s=>[s.label,s.n,p1(s.n/n0*100)])}});
+    table:{cols:['Step','People','Share of starts'],rows:st.map(s=>[s.label,word(s),share(s)])}});
 }
 
 // ---------- 13 every moment: explorer ----------
