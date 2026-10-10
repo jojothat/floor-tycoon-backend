@@ -2,12 +2,14 @@
 // Zero dependencies (Node 18+). In-memory only, never for real data.
 //   node mock-api/server.mjs                     → API on :8787 (routes /v1/... and /api/v1/...)
 //   STATIC_DIR=public node mock-api/server.mjs   → also serves the game, so one port runs everything
-// Env: PORT (8787), STATIC_DIR, SCENARIOS (../sample/scenarios.json or ./scenarios.json)
+// Env: PORT (8787), STATIC_DIR, SCENARIOS (../sample/scenarios.json or ./scenarios.json), ITEMS (./items.json), READ_TOKEN (dev-viewer)
+// Read endpoints for the management dashboard live in read.mjs.
 import http from 'node:http';
 import { readFileSync, existsSync, statSync, createReadStream } from 'node:fs';
 import { join, extname, normalize, dirname } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
+import { readApi, exportCsv } from './read.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const PORT = +process.env.PORT || 8787;
@@ -15,6 +17,7 @@ const STATIC = process.env.STATIC_DIR ? normalize(process.env.STATIC_DIR) : null
 const scenPath = [process.env.SCENARIOS, join(here, 'scenarios.json'), join(here, '../sample/scenarios.json')].find(p => p && existsSync(p));
 const SCEN = scenPath ? JSON.parse(readFileSync(scenPath, 'utf8')) : [];
 const MIN_GROUP = 10;
+const READ_TOKEN = process.env.READ_TOKEN || 'dev-viewer';   // the management read needs a viewer token
 const TYPES = ['CE', 'PSE', 'IE', 'Sales', 'Support', 'Lead', 'none'];
 const ROLECODE = { CE: 'CE', PSE: 'PSE', IE: 'INS', Sales: 'SAL', Support: 'SUP', Lead: 'LEAD' };
 
@@ -89,7 +92,7 @@ async function api(req, res, path) {
     const f = s.floor, add = f.addition || {};
     const post = { id: randomUUID(), anon: s.anon, session_id: s.id, deal: s.deal || (s.events.get(1) || {}).ids, picks: f.picks, skips: f.skips || {}, adds: add.adds || {}, deskfit: add.deskfit || null, swaps: add.swaps || {}, pal: f.palette, use: f.sim && f.sim.use, happy: f.sim && f.sim.happy, ts: Date.now() };
     const prev = wall.get(s.anon); if (prev) for (const v of [...views]) if (v.endsWith('|' + prev.id)) views.delete(v);
-    wall.set(s.anon, post);
+    wall.set(s.anon, post); s._posted = true;
     return send(res, 200, { ok: true, id: post.id });
   }
   if (m === 'GET' && path === '/v1/wall') {
@@ -104,6 +107,13 @@ async function api(req, res, path) {
     if (!p) return send(res, 404, { error: 'no such post' });
     if (me && p.anon !== me) views.add(me + '|' + id);
     return send(res, 200, { ok: true });
+  }
+  if (m === 'GET' && path.startsWith('/v1/read/')) {
+    if (req.headers.authorization !== 'Bearer ' + READ_TOKEN) return send(res, 401, { error: 'viewer token required' });
+    const url = new URL(req.url, 'http://x');
+    if (path === '/v1/read/export.csv') { res.writeHead(200, { 'Content-Type': 'text/csv' }); return res.end(exportCsv(url, { sessions, SCEN, wall, views })); }
+    const out = readApi(path, url, { sessions, SCEN, wall, views });
+    return out ? send(res, 200, out) : send(res, 404, { error: 'not found' });
   }
   if (m === 'GET' && path === '/debug/sessions') {   // mock only: lets tests check what arrived
     return send(res, 200, [...sessions.values()].map(s => ({ id: s.id, role_type: s.body.role_type, flow: s.body.flow, deal: s.deal, events: s.events.size,

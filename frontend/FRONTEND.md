@@ -40,8 +40,7 @@ Every request carries `X-FT-Player: <anon_player_id>`, a random UUID kept in the
    - Expects `201 {"session_id":"…","deal":[7 scenario ids],"write_key":"…"}`.
    - **Must be idempotent on `client_session_id`.** If the call fails or takes over 2.5 s, the game plays offline with its own local deal. It then retries this same body before the first event batch.
    - The game uses the server's `deal` only if it is 7 known scenario ids covering the 7 places once each; otherwise it deals locally. Either way, the `deal` event says which (`src:'server'|'local'`).
-   - `session_id` may differ from `client_session_id` (the real backend makes its own, not a UUID); the game switches to it.
-   - A retry with the same `client_session_id` from the same player returns the same session and deal, with a new `write_key` (only the newest works). Another player reusing the id gets `409`.
+   - `session_id` may differ from `client_session_id`; the game switches to it.
 2. **Every event** (see `events.md` in the backend pack) is queued with `seq` = 1, 2, 3… per session and sent as `POST /v1/sessions/{id}/events` with `{"events":[…]}`.
    - **When:** every 10 events, every 15 s, when the tab is hidden, and on page close (`keepalive`).
    - **Batch size:** up to 50 events.
@@ -51,22 +50,18 @@ Every request carries `X-FT-Player: <anon_player_id>`, a random UUID kept in the
 4. **Simulated day done:** `POST /v1/sessions/{id}/floor`:
    ```json
    {"palette":3,"palette_name":"Japandi","picks":{…},"skips":{…},
-    "addition":{"adds":{"z7":"focuspod"},"deskfit":{"mode":"smaller","add":"focuspod","k":"a"},"swaps":{"z5":"training"}},
+    "addition":{"adds":{"z1":"focuspod"},"deskfit":null,"swaps":{}},
     "sim":{"use":14,"happy":62,"desk_use":36,"desks":12,"peak":14,"peak_at":"09:15","busy":[…],"occ":[…],"occ_fab":[…],"fab_people":5}}
    ```
    It is only sent for the player's own floor, not when watching an office from the wall.
-   - `deskfit` is `null` or `{mode: "smaller"|"share", add: <item id>, k: <the z7 fix>}`; `swaps` maps a place to the **item id** that replaced its fix. The backend accepts furniture ids only in `adds`, `swaps` and `deskfit.add`.
-   - `occ` / `occ_fab` can contain `null` for a missed 15-minute sample: `OCC.map(v=>v||0)` skips holes in the array and JSON writes them as `null`. The backend accepts it; `Array.from(OCC, v => v || 0)` would send zeros instead.
 5. **Share to the wall:** `POST /v1/wall` with `{"session_id":"…"}`. One post per anon player; the latest replaces the last. The server builds the post from the session's deal and floor.
 6. **Wall opened:** `GET /v1/wall` returns:
    ```json
-   {"posts":[{"id":"…","mine":true,"deal":[…],"picks":{…},"skips":{…},"adds":{…},"deskfit":null,"swaps":{},"pal":3,"use":14,"happy":62,"views":2}],
+   {"posts":[{"id":"…","mine":true,"deal":[…],"picks":{…},"skips":{…},"adds":{…},"deskfit":null,"swaps":{},"pal":3,"use":14,"happy":62,"views":2,"ts":1760000000000}],
     "games":{"CE":34,"PSE":21,"Support":18,"other":27,"total":100}}
    ```
    - `mine` is worked out from `X-FT-Player`. Anon ids never leave the server.
-   - Posts come newest first. There is no `ts`: the spec keeps timestamps off the wall, and the game only used it to sort.
-   - The wall calls carry no pilot token, so the backend finds the pilot from the player's own most recent play. A player who has not played yet (Explore before playing) gets an empty wall unless the game sends `X-Pilot-Token: <pilotToken>`, which the backend also accepts.
-   - `games`: types with fewer than 10 completed games are merged into `other` **on the server** (topped up so `other` is never under 10 either). "Prefer not to say" is `na`. Under 10 games in all, the server sends only `{"total": null}` and the game shows labelled sample numbers.
+   - `games`: types with fewer than 10 completed games are merged into `other` **on the server**. The game shows labelled sample numbers until `total` reaches 10.
 7. **An office opened from the wall:** `POST /v1/wall/{post_id}/view` with `{}`. Unique per viewer; the poster's own views are not counted.
 
 All game code for this is in one block in `src/game_tpl.html`; search for `backend link`. The wall still builds each office picture on the phone from `deal` + `picks` + the addition fields, so the server stores those as-is.

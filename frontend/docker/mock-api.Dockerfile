@@ -2,6 +2,6 @@
 FROM node:20-alpine
 WORKDIR /app
 COPY mock-api/ ./
-ENV PORT=8000
+ENV PORT=8000 READ_TOKEN=dev-viewer
 EXPOSE 8000
 CMD ["node", "server.mjs"]
