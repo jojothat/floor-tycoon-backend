@@ -10,7 +10,8 @@ The group-of-10 rule is applied here, never in the page:
 - a share, average or median over fewer than 10 games is null;
 - a whole group under 10 comes back as {"n": n, "lt10": true};
 - lists drop entries under 10;
-- a funnel step under 10, or fewer than 10 short of the starts, has a null count;
+- a funnel step under 10, or within 10 of the starts or the finished count, has a null count;
+- the start count is null when fewer than 10 of the started games are unfinished;
 - a filter that leaves out fewer than 10 games (so subtracting two views would show
   a small group) suppresses every number in the response.
 
@@ -366,6 +367,11 @@ class Ctx:
     def N(self):
         return len(self.done)
 
+    @property
+    def started(self):
+        # started minus completed would show the unfinished games, so a gap under 10 hides it
+        return len(self.R) if not 0 < len(self.R) - self.N < self.rules.mg else None
+
     def base(self):
         # updated_at: when these numbers were computed (READOUT.md §4.7)
         return {"n": self.N, "updated_at": self.computed_at.isoformat(timespec="milliseconds").replace("+00:00", "Z")}
@@ -436,10 +442,10 @@ def ep_meta(c: Ctx):
 def ep_summary(c: Ctx):
     mg = c.rules.mg
     by_type = {t: (n if (n := sum(r.type == t for r in c.done)) >= mg else None) for t in TYPES + ["none"]}
-    return {**c.base(), "started": len(c.R), "completed": c.N,
-            "completion": num(js_round(c.N / len(c.R) * 1000) / 10) if len(c.R) >= mg else None,
+    return {**c.base(), "started": c.started, "completed": c.N,
+            "completion": num(js_round(c.N / len(c.R) * 1000) / 10) if len(c.R) >= mg and c.started is not None else None,
             "median_play_s": median([r.play_s for r in c.done]) if c.N >= mg else None,
-            "by_type": by_type, "synthetic": sum(r.synthetic for r in c.R)}
+            "by_type": by_type, "synthetic": sum(r.synthetic for r in c.done)}
 
 
 FUNNEL = [("started", "Started a game"), ("role", "Chose a job type")] + \
@@ -455,17 +461,18 @@ def ep_funnel(c: Ctx):
         return sum(bool(r.reached[key]) for r in c.R)
 
     def step(key, label):
-        # a step under 10, or one fewer than 10 short of the starts (started minus it would
-        # show the small group that dropped out), hides its count
+        # a step under 10, or within 10 of the starts or of the finished count (n on every
+        # response), hides its count: subtracting the two would show a small group
         n = count(key)
-        gap = len(c.R) - n
         if n < c.rules.mg:
             return {"key": key, "label": label, "n": None, "lt10": True}
-        if 0 < gap < c.rules.mg:
+        if 0 < len(c.R) - n < c.rules.mg:
             return {"key": key, "label": label, "n": None, "dropped_lt10": True}
+        if 0 < abs(n - c.N) < c.rules.mg:
+            return {"key": key, "label": label, "n": None, "near_lt10": True}
         return {"key": key, "label": label, "n": n}
 
-    out = {"n": len(c.R), "updated_at": c.base()["updated_at"],
+    out = {"n": c.started, "updated_at": c.base()["updated_at"],
            "steps": [step(k, label) for k, label in FUNNEL] if len(c.R) >= c.rules.mg else None}
     if len(c.R) < c.rules.mg:
         out["lt10"] = True

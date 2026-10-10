@@ -25,7 +25,7 @@ const sumAll = shapes.summary || {};
 ok((sumAll.completed || 0) >= 10, `at least 10 completed games in the store (${sumAll.completed}); seed first if this fails`);
 const real = await (await fetch(`${API}/v1/read/summary`, { headers: H })).json().catch(() => ({}));
 console.log(`     real (non-synthetic) games: started ${real.started}, completed ${real.completed}`);
-if (process.env.REQUIRE_REAL === '1') ok((real.started || 0) >= 1, 'at least one real game reached the backend');
+if (process.env.REQUIRE_REAL === '1') ok('started' in real && real.started !== 0, 'at least one real game reached the backend');
 // suppression: every per-scenario row under 10 must carry lt10 and no shares
 const leak = (shapes.picks?.scenarios || []).filter(s => s.n < 10 && (s.options || []).some(o => o.share != null));
 ok(leak.length === 0, `no scenario with fewer than 10 games shows shares (${leak.length} leaks)`);
